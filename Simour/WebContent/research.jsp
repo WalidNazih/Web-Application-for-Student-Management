@@ -67,8 +67,6 @@
             </div>
           </div>
           <!-- /menu prile quick info -->
-    <!--  commentaire -->
-    <h3> ok</h3>
           <br />
           <!-- sidebar menu -->
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
