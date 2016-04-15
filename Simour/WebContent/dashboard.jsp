@@ -193,7 +193,7 @@
               </div>
               <div class="x_content">
               <br><br>
-              <a href="inbox.jsp"><center><img src="images/message.png" width="100" height="100"/><br>Display messages</center></a>
+              <a href="http://localhost:8070/Simour/Messages"><center><img src="images/messageicon.png" width="140" height="140"/><br>Display messages</center></a>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -192,110 +193,24 @@
 
 
 									<div class="row">
-
 										<div class="col-sm-3 mail_list_column">
-
-											<div class="mail_list">
-												<div class="left">
-													<i class="fa fa-circle"></i> <i class="fa fa-edit"></i>
-												</div>
-												<div class="right">
-													<h3>
-														Dennis Mugo <small>3.00 PM</small>
-													</h3>
-													<p>Ut enim ad minim veniam, quis nostrud exercitation
-														enim ad minim veniam, quis nostrud exercitation...</p>
-												</div>
-											</div>
-											<div class="mail_list">
-												<div class="left">
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="right">
-													<h3>
-														Jane Nobert <small>4.09 PM</small>
-													</h3>
-													<p>
-														<span class="badge">To</span> Ut enim ad minim veniam,
-														quis nostrud exercitation enim ad minim veniam, quis
-														nostrud exercitation...
-													</p>
-												</div>
-											</div>
-											<div class="mail_list">
-												<div class="left">
-													<i class="fa fa-circle-o"></i><i class="fa fa-paperclip"></i>
-												</div>
-												<div class="right">
-													<h3>
-														Musimbi Anne <small>4.09 PM</small>
-													</h3>
-													<p>
-														<span class="badge">CC</span> Ut enim ad minim veniam,
-														quis nostrud exercitation enim ad minim veniam, quis
-														nostrud exercitation...
-													</p>
-												</div>
-											</div>
-											<div class="mail_list">
-												<div class="left">
-													<i class="fa fa-paperclip"></i>
-												</div>
-												<div class="right">
-													<h3>
-														Jon Dibbs <small>4.09 PM</small>
-													</h3>
-													<p>Ut enim ad minim veniam, quis nostrud exercitation
-														enim ad minim veniam, quis nostrud exercitation...</p>
-												</div>
-											</div>
-											<div class="mail_list">
-												<div class="left">.</div>
-												<div class="right">
-													<h3>
-														Debbis & Raymond <small>4.09 PM</small>
-													</h3>
-													<p>Ut enim ad minim veniam, quis nostrud exercitation
-														enim ad minim veniam, quis nostrud exercitation...</p>
-												</div>
-											</div>
-											<div class="mail_list">
-												<div class="left">.</div>
-												<div class="right">
-													<h3>
-														Debbis & Raymond <small>4.09 PM</small>
-													</h3>
-													<p>Ut enim ad minim veniam, quis nostrud exercitation
-														enim ad minim veniam, quis nostrud exercitation...</p>
-												</div>
-											</div>
-											<div class="mail_list">
-												<div class="left">
-													<i class="fa fa-circle"></i> <i class="fa fa-edit"></i>
-												</div>
-												<div class="right">
-													<h3>
-														Dennis Mugo <small>3.00 PM</small>
-													</h3>
-													<p>Ut enim ad minim veniam, quis nostrud exercitation
-														enim ad minim veniam, quis nostrud exercitation...</p>
-												</div>
-											</div>
-											<div class="mail_list">
-												<div class="left">
-													<i class="fa fa-star"></i>
-												</div>
-												<div class="right">
-													<h3>
-														Jane Nobert <small>4.09 PM</small>
-													</h3>
-													<p>Ut enim ad minim veniam, quis nostrud exercitation
-														enim ad minim veniam, quis nostrud exercitation...</p>
-												</div>
-											</div>
-
-
-
+											<c:forEach var="message" items="${messages}">										
+													<div class="mail_list">
+														<div class="left">
+															<i class="fa fa-circle"></i> <i class="fa fa-edit"></i>
+														</div>
+														<div class="right">
+															<a style="text-decoration:none" href="http://localhost:8070/Simour/Messages?id=${message.id}" >
+															<h3>
+																<c:out value="${message.from}" /> <small><c:out value="${message.date}" /></small>
+															</h3>
+															<p><c:out value="${message.subject}" /></p>
+															
+															
+															</a>
+														</div>
+													</div>
+											</c:forEach>
 										</div>
 										<!-- /MAIL LIST -->
 
@@ -323,105 +238,23 @@
 
 													</div>
 													<div class="col-md-4 text-right">
-														<p class="date">8:02 PM 12 FEB 2014</p>
+														<p class="date">${selectedMessage.date}</p>
 													</div>
 													<div class="col-md-12">
-														<h4>Donec vitae leo at sem lobortis porttitor eu
-															consequat risus. Mauris sed congue orci. Donec ultrices
-															faucibus rutrum.</h4>
+														<h4>${selectedMessage.subject}</h4>
 													</div>
 												</div>
 												<div class="sender-info">
 													<div class="row">
 														<div class="col-md-12">
-															<strong>Jon Doe</strong> <span>(jon.doe@gmail.com)</span>
+															<strong>${selectedMessage.from}</strong>
 															to <strong>me</strong> <a class="sender-dropdown"><i
 																class="fa fa-chevron-down"></i></a>
 														</div>
 													</div>
 												</div>
 												<div class="view-mail">
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-														elit, sed do eiusmod tempor incididunt ut labore et dolore
-														magna aliqua. Ut enim ad minim veniam, quis nostrud
-														exercitation ullamco laboris nisi ut aliquip ex ea commodo
-														consequat. Duis aute irure dolor in reprehenderit in
-														voluptate velit esse cillum dolore eu fugiat nulla
-														pariatur. Excepteur sint occaecat cupidatat non proident,
-														sunt in culpa qui officia deserunt mollit anim id est
-														laborum.</p>
-													<p>Riusmod tempor incididunt ut labor erem ipsum dolor
-														sit amet, consectetur adipiscing elit, sed do eiusmod
-														tempor incididunt ut labore et dolore magna aliqua. Ut
-														enim ad minim veniam, quis nostrud exercitation ullamco
-														laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-														irure dolor in reprehenderit in voluptate velit esse
-														cillum dolore eu fugiat nulla pariatur. Excepteur sint
-														occaecat cupidatat non proident, sunt in culpa qui officia
-														deserunt mollit anim id est laborum.</p>
-													<p>Modesed do eiusmod tempor incididunt ut labore et
-														dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-														exercitation ullamco laboris nisi ut aliquip ex ea commodo
-														consequat. Duis aute irure dolor in reprehenderit in
-														voluptate velit esse cillum dolore eu fugiat nulla
-														pariatur. Excepteur sint occaecat cupidatat non proident,
-														sunt in culpa qui officia deserunt mollit anim id est
-														laborum.</p>
-												</div>
-												<div class="attachment">
-													<p>
-														<span><i class="fa fa-paperclip"></i> 3 attachments
-															— </span> <a href="#">Download all attachments</a> | <a href="#">View
-															all images</a>
-													</p>
-													<ul>
-														<li><a href="#" class="atch-thumb"> <img
-																src="images/1.png" alt="img" />
-														</a>
-
-															<div class="file-name">image-name.jpg</div> <span>12KB</span>
-
-
-															<div class="links">
-																<a href="#">View</a> - <a href="#">Download</a>
-															</div></li>
-
-														<li><a href="#" class="atch-thumb"> <img
-																src="images/1.png" alt="img" />
-														</a>
-
-															<div class="file-name">img_name.jpg</div> <span>40KB</span>
-
-															<div class="links">
-																<a href="#">View</a> - <a href="#">Download</a>
-															</div></li>
-														<li><a href="#" class="atch-thumb"> <img
-																src="images/1.png" alt="img" />
-														</a>
-
-															<div class="file-name">img_name.jpg</div> <span>30KB</span>
-
-															<div class="links">
-																<a href="#">View</a> - <a href="#">Download</a>
-															</div></li>
-
-													</ul>
-												</div>
-												<div class="compose-btn pull-left">
-													<a class="btn btn-sm btn-primary" href="mail_compose.html"><i
-														class="fa fa-reply"></i> Reply</a>
-													<button class="btn btn-sm ">
-														<i class="fa fa-arrow-right"></i> Forward
-													</button>
-													<button title="" data-placement="top" data-toggle="tooltip"
-														type="button" data-original-title="Print"
-														class="btn  btn-sm tooltips">
-														<i class="fa fa-print"></i>
-													</button>
-													<button title="" data-placement="top" data-toggle="tooltip"
-														data-original-title="Trash" class="btn btn-sm tooltips">
-														<i class="fa fa-trash-o"></i>
-													</button>
+													${selectedMessage.message}
 												</div>
 											</div>
 
