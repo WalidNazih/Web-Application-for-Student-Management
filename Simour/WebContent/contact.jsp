@@ -53,7 +53,7 @@
             <a id="logobig" href="index.jsp"><img style="width:180px;height:60px;margin-top:30px;margin-left:10px" src="images/logo.png"></a>
           </div>
           <div >
-            <a id="logosmall" hidden="true" href="index.jsp"><img style="height:50px;width:50px;margin-top:30px;margin-left:9px" src="images/logosmall.png"></a>
+            <a id="logosmall" hidden="true" href="index.jsp"><img style="height:60px;width:60px;margin-top:30px;margin-left:5px" src="images/logosmall.png"></a>
           </div>
           <div class="clearfix"></div>
           
@@ -67,11 +67,11 @@
                 </li>
                 <li><a  href="gallery_front.jsp"><i class="fa fa-camera-retro"></i> Gallery</a>
                 </li>
-                <li><a href="research_front.jsp"><i class="fa fa-book"></i> Research </a>
+                <li><a href="researchweb_front.jsp"><i class="fa fa-book"></i> Research </a>
                 </li>
-            	<li><a href="pedagogy_front.jsp"><i class="fa fa-graduation-cap"></i> Pedagogy</a>
+            	<li><a href="pedagogyweb_front.jsp"><i class="fa fa-graduation-cap"></i> Pedagogy</a>
                 </li>
-                <li><a href="contact.jsp"><i class="fa fa-calendar"></i> Calendar</a>
+                <li><a href="calendar_front.jsp"><i class="fa fa-calendar"></i> Calendar</a>
                 </li>
                 <li><a href="about_front.jsp"><i class="fa fa-edit"></i> About </a>
                 </li>
@@ -116,8 +116,18 @@
 
       <!-- page content -->
       <div class="right_col" role="main">
- 		
-		
+ 		<div>
+ 			<form>
+ 				Full Name : <br>
+ 				<input type="text"><br><br>
+ 				Subject : <br>
+ 				<input type="text"><br><br>
+
+ 			</form>
+ 			Message : <br>
+ 				<textarea rows="10" cols="100"></textarea>
+ 		</div>
+
         <!-- footer content -->
 	<!-- 
         <footer>
