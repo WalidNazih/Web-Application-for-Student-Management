@@ -477,22 +477,13 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    	<div id="cont_MzYwNDF8NXwyfDV8NXxmZmZmZmZ8MXw2NjY2NjZ8Q3wxfGttcGg-"><div id="spa_MzYwNDF8NXwyfDV8NXxmZmZmZmZ8MXw2NjY2NjZ8Q3wxfGttcGg-"><a id="a_MzYwNDF8NXwyfDV8NXxmZmZmZmZ8MXw2NjY2NjZ8Q3wxfGttcGg-" rel="nofollow"  href="http://www.weather-wherever.co.uk/morocco/casablanca_v36041/" target="_blank" style="color:#333;text-decoration:none;">Casablanca Weather forecast</a> © <a href="http://www.weather-wherever.co.uk">weather-wherever.co.uk</a></div><script type="text/javascript" src="http://widget.weather-wherever.co.uk/js/MzYwNDF8NXwyfDV8NXxmZmZmZmZ8MXw2NjY2NjZ8Q3wxfGttcGg-"></script></div>             		
+                    	<div id="cont_MzYwNDF8NXwyfDV8MnxGRkZGRkZ8MXw1YWJkYmR8Q3wxfGttcGg-"><div id="spa_MzYwNDF8NXwyfDV8MnxGRkZGRkZ8MXw1YWJkYmR8Q3wxfGttcGg-"><a id="a_MzYwNDF8NXwyfDV8MnxGRkZGRkZ8MXw1YWJkYmR8Q3wxfGttcGg-" rel="nofollow"  href="http://www.weather-wherever.co.uk/morocco/casablanca_v36041/" target="_blank" style="color:#333;text-decoration:none;">Casablanca Weather forecast</a> © <a href="http://www.weather-wherever.co.uk">weather-wherever.co.uk</a></div><script type="text/javascript" src="http://widget.weather-wherever.co.uk/js/MzYwNDF8NXwyfDV8MnxGRkZGRkZ8MXw1YWJkYmR8Q3wxfGttcGg-"></script></div>             		
                   </div>
                 </div>
 
               </div>
               <!-- end of weather widget -->
             </div>
-
-
-
-
-
-
-
-
-
           </div>
 
         </div>
