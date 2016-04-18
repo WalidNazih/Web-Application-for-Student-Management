@@ -9,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Simour | </title>
+  <title>Contact | </title>
 
   <!-- Bootstrap core CSS -->
 
@@ -50,10 +50,10 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div >
-            <a id="logobig" href="index.jsp"><img style="width:180px;height:60px;margin-top:30px;margin-left:10px" src="images/logo.png"></a>
+            <a id="logobig" href="index.jsp"><img style="margin-bottom:-10px;width:180px;height:60px;margin-top:20px;margin-left:10px" src="images/logo.png"></a>
           </div>
           <div >
-            <a id="logosmall" hidden="true" href="index.jsp"><img style="height:60px;width:60px;margin-top:30px;margin-left:5px" src="images/logosmall.png"></a>
+            <a id="logosmall" hidden="true" href="index.jsp"><img style="height:30px;width:35px;margin-top:20px;margin-left:17px" src="images/logosmall.png"></a>
           </div>
           <div class="clearfix"></div>
           
@@ -71,7 +71,7 @@
                 </li>
             	<li><a href="pedagogyweb_front.jsp"><i class="fa fa-graduation-cap"></i> Pedagogy</a>
                 </li>
-                <li><a href="calendar_front.jsp"><i class="fa fa-calendar"></i> Calendar</a>
+                <li><a href="contact.jsp"><i class="fa fa-envelope-o"></i> Contact</a>
                 </li>
                 <li><a href="about_front.jsp"><i class="fa fa-edit"></i> About </a>
                 </li>
@@ -109,6 +109,16 @@
             </div>
           </nav>
         </div>
+        <div class="title_right" >
+              <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group" style="margin-top:-50px;width:200px;float:right">
+                  <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                  </span>
+                </div>
+              </div>
+            </div>
 
       </div>
       <!-- /top navigation -->
@@ -117,17 +127,45 @@
       <!-- page content -->
       <div class="right_col" role="main">
  		<div>
+ 			<center><h2>Please leave a message</h2></center><br>
  			<form>
- 				Full Name : <br>
- 				<input type="text"><br><br>
- 				Subject : <br>
- 				<input type="text"><br><br>
-
+ 				<div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Full Name :<span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="name" class="form-control col-md-7 col-xs-12" name="name" placeholder="e.g Safaa Askour" required="required" type="text">
+                      </div>
+                 </div><br><br><br>
+                    <div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email :<span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12" placeholder="e.g w95.nazih@gmail.com">
+                      </div>
+                    </div><br><br>
+                    <div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subject">Subject :<span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="name" class="form-control col-md-7 col-xs-12" name="subject" placeholder="80 characters Max" required="required" type="text">
+                      </div>
+                    </div><br><br><br>
+                    <div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Message :<span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <textarea id="textarea" required="required" name="textarea" class="form-control col-md-7 col-xs-12" placeholder="300 characters Max"></textarea>
+                      </div>
+                    </div><br><br>
+                    <div class="item form-group" >
+                      <div class="col-md-6 col-md-offset-3" style="margin-top:20px">
+                        <button id="send" type="submit" class="btn btn-success">Send</button>
+                      </div>
+                    </div><br><br><br><br><br>
+					<h5 style="margin-left:10px">* : Required field.</h5>
  			</form>
- 			Message : <br>
- 				<textarea rows="10" cols="100"></textarea>
+ 				
  		</div>
-
         <!-- footer content -->
 	<!-- 
         <footer>
