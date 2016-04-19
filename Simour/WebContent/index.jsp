@@ -63,17 +63,33 @@
 
             <div class="menu_section">
                <ul class="nav side-menu">
-                <li><a href="index.jsp"><i class="fa fa-home"></i> Home</a>
+                <li class="principale"><a href="index.jsp"><i class="fa fa-home"></i> Home</a>
                 </li>
-                <li><a href="gallery_front.jsp"><i class="fa fa-camera-retro"></i> Gallery</a>
+                <li class="principale"><a href="http://localhost:8070/Simour/Images"><i class="fa fa-camera-retro"></i> Gallery</a>
                 </li>
-                <li><a href="research_front.jsp"><i class="fa fa-book"></i> Research </a>
+                <li class="principale"><a><i class="fa fa-book"></i> Research <span class="fa fa-chevron-down"></span></a>
+                	<ul class="nav child_menu" style="display: none">
+	                    <li><a href="form.html">Books</a>
+	                    </li>
+	                    <li><a href="form_advanced.html">Articles</a>
+	                    </li>
+	                    <li><a href="form_advanced.html">Book Chapters</a>
+	                    </li>
+                    </ul>
                 </li>
-            	<li><a href="pedagogy_front.jsp"><i class="fa fa-graduation-cap"></i> Pedagogy</a>
+            	<li class="principale"><a><i class="fa fa-graduation-cap"></i> Pedagogy <span class="fa fa-chevron-down"></span></a>
+            		<ul class="nav child_menu" style="display: none">
+	                    <li><a href="form.html">Formation Initiale</a>
+	                    </li>
+	                    <li><a href="form_advanced.html">Formation Continue</a>
+	                    </li>
+	                    <li><a href="form_advanced.html">Encadrement</a>
+	                    </li>
+                    </ul>
                 </li>
-                <li><a href="contact.jsp"><i class="fa fa-envelope-o"></i> Contact</a>
+                <li class="principale"><a href="contact.jsp"><i class="fa fa-envelope-o"></i> Contact</a>
                 </li>
-                <li><a href="about_front.jsp"><i class="fa fa-edit"></i> About </a>
+                <li class="principale"><a href="about_front.jsp"><i class="fa fa-edit"></i> About </a>
                 </li>
               </ul>
             </div>
@@ -414,10 +430,27 @@
   </script>
   <script type="text/javascript">
     $(document).ready(function() {
+    	var toggled = true;
+    	var liSize = $(".principale").width();
 		$("#menu_toggle").click(function(){
 			$("#logosmall").toggle();
 			$("#logobig").toggle();
+			if(toggled){
+				$(".principale").width(65);
+			}	
+			else {
+				$(".principale").width(liSize);
+			}
+			toggled = !toggled;
 		});
+		
+		$(".principale").click(function(){
+			if(!toggled){
+				$(this).width(70);
+			}	
+		});
+		
+		
     });
   </script>
   <script>

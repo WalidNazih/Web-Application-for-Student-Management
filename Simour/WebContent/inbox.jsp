@@ -194,6 +194,25 @@
 
 									<div class="row">
 										<div class="col-sm-3 mail_list_column">
+										<c:set var="listSize" scope="session" value="${messages.size()}"/>
+										<c:forEach var="i" begin="1" end="${messages.size()}">										
+													<div class="mail_list">
+														<div class="left">
+															<i class="fa fa-circle"></i> <i class="fa fa-edit"></i>
+														</div>
+														<div class="right">
+															<a style="text-decoration:none" href="http://localhost:8070/Simour/Messages?id=${messages[listSize-i].id}" >
+															<h3>
+																<c:out value="${messages[listSize-i].from}" /> <small><c:out value="${messages[listSize-i].date}" /></small>
+															</h3>
+															<p><c:out value="${messages[listSize-i].subject}" /></p>
+															
+															
+															</a>
+														</div>
+													</div>
+											</c:forEach>
+											<!-- 
 											<c:forEach var="message" items="${messages}">										
 													<div class="mail_list">
 														<div class="left">
@@ -210,7 +229,7 @@
 															</a>
 														</div>
 													</div>
-											</c:forEach>
+											</c:forEach> -->
 										</div>
 										<!-- /MAIL LIST -->
 

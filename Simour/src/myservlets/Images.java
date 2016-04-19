@@ -12,20 +12,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.Image;
 import beans.Message;
 import classes.DAO;
 
 /**
- * Servlet implementation class Messages
+ * Servlet implementation class Images
  */
-@WebServlet("/Messages")
-public class Messages extends HttpServlet {
+@WebServlet("/Images")
+public class Images extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Messages() {
+    public Images() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,30 +35,20 @@ public class Messages extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id;
-		if(request.getParameter("id") != null){
-			id = Integer.parseInt(request.getParameter("id"));
-		}else id=1;
 		
 		try {
 			DAO dao = new DAO("simour", "root", "");
-			ResultSet rs = dao.getMessages();
-			ArrayList<Message> messageList = new ArrayList<>();
+			ResultSet rs = dao.getImages();
+			ArrayList<Image> imageList = new ArrayList<>();
 			while(rs.next()){
-				Message message = new Message(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4), rs.getString(5));
-				messageList.add(message);
+				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4));
+				imageList.add(image);
 			}
 
 			HttpSession session = request.getSession();
-			session.setAttribute("messages", messageList);
-			for(Message m : messageList){
-				if(m.getId() == id) {
-					session.setAttribute("selectedMessage", m);
-					break;
-				}
-			}
+			session.setAttribute("imageL", imageList);
 			
-			request.getRequestDispatcher("inbox.jsp").forward(request, response);
+			request.getRequestDispatcher("gallery_front.jsp").forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,6 +59,7 @@ public class Messages extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

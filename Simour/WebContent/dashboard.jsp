@@ -412,13 +412,45 @@
 
             </div>
             <div class="row">
+            <div id="CalenderModalNew" class="modal fade" tabindex="-1"
+				role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">x</button>
+							<h4 class="modal-title" id="myModalLabel">New TODO Item</h4>
+						</div>
+						<div class="modal-body">
+							<div id="testmodal" style="padding: 5px 20px;">
+								<form id="antoform" class="form-horizontal calender" role="form" action="" method="POST">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">Title</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" id="title"
+												name="title">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default antoclose"
+								data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-default" form="antoform">Save
+								changes</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
               <!-- Start to do list -->
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>To Do List <small>Sample tasks</small></h2>
+                    <h2>TO-DO List</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -427,40 +459,13 @@
                       <ul class="to_do">
                         <li>
                           <p>
-                            <input type="checkbox" class="flat"> Schedule meeting with new client </p>
+                            <input type="checkbox" class="flat"> TODO List </p>
                         </li>
-                        <li>
-                          <p>
-                            <input type="checkbox" class="flat"> Create email address for new intern</p>
-                        </li>
-                        <li>
-                          <p>
-                            <input type="checkbox" class="flat"> Have IT fix the network printer</p>
-                        </li>
-                        <li>
-                          <p>
-                            <input type="checkbox" class="flat"> Copy backups to offsite location</p>
-                        </li>
-                        <li>
-                          <p>
-                            <input type="checkbox" class="flat"> Food truck fixie locavors mcsweeney</p>
-                        </li>
-                        <li>
-                          <p>
-                            <input type="checkbox" class="flat"> Food truck fixie locavors mcsweeney</p>
-                        </li>
-                        <li>
-                          <p>
-                            <input type="checkbox" class="flat"> Create email address for new intern</p>
-                        </li>
-                        <li>
-                          <p>
-                            <input type="checkbox" class="flat"> Have IT fix the network printer</p>
-                        </li>
-                        <li>
-                          <p>
-                            <input type="checkbox" class="flat"> Copy backups to offsite location</p>
-                        </li>
+                        <div id="fc_create" data-toggle="modal"
+						data-target="#CalenderModalNew">
+							<button type="submit" >ADD</button>
+						</div>
+                        
                       </ul>
                     </div>
                   </div>
