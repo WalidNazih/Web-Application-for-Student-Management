@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -164,7 +165,7 @@
         <br />
 
         <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-6 col-sm-6 col-xs-6">
             <div class="x_panel tile fixed_height_320">
               <div class="x_title">
                 <h2>Add Picture</h2>
@@ -173,34 +174,23 @@
                 </div>
               </div>
               <div class="x_content">
-              <input type="file" id="upload" name="upload" style="visibility: hidden; width: 1px; height: 1px" multiple />
-					<a style="text-decoration:none;" href="" onclick="document.getElementById('upload').click(); return false"><center><img src="images/uploadpic.png" width="50" height="50"/><br>Upload Picture</center></a>
-					Title :<br>
-					<input type="text"/><br>
-					Description:<br>
-					<textarea style="width:377px"> </textarea>
-					<input type="submit" value="Add" style="float:right;margin-top:10px"/>
+              		<form id="uploadPic" action="Upload" method="POST" enctype="multipart/form-data">
+              			<center><label id="filelbl" for="file"> 
+              			<img src="images/uploadlogo.png" width="40px" height="40px"/><br>
+              			<input type="file" name="file" id="file" style="opacity:0">
+              			Upload </label></center>
+              			<div id="fields">
+							Title :<br>
+							<input type="text" name="title" size="59"/><br>
+							Description:<br>
+							<textarea style="width:377px" form="uploadPic" name="desc"> </textarea><br>
+							<input type="submit" value="Add" class="btn btn-primary" style="margin-top:10px"/>
+	              		</div>
+	              	</form>
               </div>
             </div>
           </div>
 
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="x_panel tile fixed_height_320 overflow_hidden">
-              <div class="x_title">
-                <h2>Add Video</h2>
-                <div class="clearfix"></div>
-              </div>
-			  <div class="x_content">
-              <input type="file" id="upload" name="upload" style="visibility: hidden; width: 1px; height: 1px" multiple />
-					<a style="text-decoration:none;" href="" onclick="document.getElementById('upload').click(); return false"><center><img src="images/uploadvideo.png" width="50" height="50"/><br>Upload Video</center></a>
-					Title :<br>
-					<input type="text"/><br>
-					Description:<br>
-					<textarea style="width:377px"> </textarea>
-					<input type="submit" value="Add" style="float:right;margin-top:10px"/>
-              </div>
-            </div>
-          </div>
 
 
           <div class="col-md-4 col-sm-4 col-xs-12">

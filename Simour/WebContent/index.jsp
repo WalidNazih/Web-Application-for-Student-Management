@@ -65,7 +65,7 @@
                <ul class="nav side-menu">
                 <li class="principale"><a href="index.jsp"><i class="fa fa-home"></i> Home</a>
                 </li>
-                <li class="principale"><a href="http://localhost:8070/Simour/Images"><i class="fa fa-camera-retro"></i> Gallery</a>
+                <li class="principale"><a href="http://localhost:8080/Simour/Images"><i class="fa fa-camera-retro"></i> Gallery</a>
                 </li>
                 <li class="principale"><a><i class="fa fa-book"></i> Research <span class="fa fa-chevron-down"></span></a>
                 	<ul class="nav child_menu" style="display: none">
@@ -432,6 +432,8 @@
     $(document).ready(function() {
     	var toggled = true;
     	var liSize = $(".principale").width();
+    	
+    	
 		$("#menu_toggle").click(function(){
 			$("#logosmall").toggle();
 			$("#logobig").toggle();
@@ -459,7 +461,5 @@
   <!-- /datepicker -->
   <!-- /footer content -->
 </body>
-
-</html>
 
 </html>

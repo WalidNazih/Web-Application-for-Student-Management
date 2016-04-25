@@ -6,6 +6,10 @@ body.nav-sm .container.body .left_col {
   position: absolute;
 }
 
+#fields{
+	margin-left:10px;
+}
+
 body.nav-sm .container.body .right_col {
   padding: 10px 20px;
   margin-left: 70px;
@@ -1279,7 +1283,7 @@ table.display tr.odd.row_selected td {
   background-color: #9FAFD1;
 }
 div.box {
-  height: 100px;
+  height: 330px;
   padding: 10px;
   overflow: auto;
   border: 1px solid #8080FF;
