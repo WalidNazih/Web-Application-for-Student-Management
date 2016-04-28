@@ -60,6 +60,15 @@ public class DAO {
 		preparedStatement.setString(4, new java.util.Date().toString());
 		preparedStatement.executeUpdate();
 	}
+	public void insertImage(String url, String title, String desc, int category) throws SQLException{
+		String sql = "INSERT INTO images (url,title,description,category) values(?,?,?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, url);
+		preparedStatement.setString(2, title);
+		preparedStatement.setString(3, desc);
+		preparedStatement.setInt(4, category);
+		preparedStatement.executeUpdate();
+	}
 	
 }
 

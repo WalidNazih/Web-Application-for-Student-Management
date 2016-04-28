@@ -166,7 +166,7 @@
 
         <div class="row">
           <div class="col-md-6 col-sm-6 col-xs-6">
-            <div class="x_panel tile fixed_height_320">
+            <div class="x_panel tile fixed_height_400">
               <div class="x_title">
                 <h2>Add Picture</h2>
                 <div class="clearfix">
@@ -176,14 +176,14 @@
               <div class="x_content">
               		<form id="uploadPic" action="Upload" method="POST" enctype="multipart/form-data">
               			<center><label id="filelbl" for="file"> 
-              			<img src="images/uploadlogo.png" width="40px" height="40px"/><br>
+              			<img src="images/uploadlogo.png" width="40px" height="40px" id="blah"/><br>
               			<input type="file" name="file" id="file" style="opacity:0">
               			Upload </label></center>
               			<div id="fields">
 							Title :<br>
-							<input type="text" name="title" size="59"/><br>
+							<input type="text" name="title" size="59" required=""/><br>
 							Description:<br>
-							<textarea style="width:377px" form="uploadPic" name="desc"> </textarea><br>
+							<textarea style="width:377px" name="desc" form="uploadPic"  required=""> </textarea><br>
 							<input type="submit" value="Add" class="btn btn-primary" style="margin-top:10px"/>
 	              		</div>
 	              	</form>
@@ -852,6 +852,24 @@
   </script>
   <script>
     NProgress.done();
+  </script>
+  <script type="text/javascript">
+	  function readURL(input) {
+	
+		    if (input.files && input.files[0]) {
+		        var reader = new FileReader();
+	
+		        reader.onload = function (e) {
+		            $('#blah').attr('src', e.target.result);
+		        }
+	
+		        reader.readAsDataURL(input.files[0]);
+		    }
+		}
+	
+		$("#file").change(function(){
+		    readURL(this);
+		});
   </script>
   <!-- /datepicker -->
   <!-- /footer content -->

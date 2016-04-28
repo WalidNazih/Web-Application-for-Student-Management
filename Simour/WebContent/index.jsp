@@ -354,7 +354,7 @@
       data: data
     });
   </script>
-  <!-- /dashbord linegraph -->
+
   <!-- datepicker -->
   <script type="text/javascript">
     $(document).ready(function() {

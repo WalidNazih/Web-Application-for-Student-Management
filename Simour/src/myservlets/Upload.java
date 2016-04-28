@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import classes.DAO;
  
 /**
  * A Java servlet that handles file upload from client.
@@ -25,7 +27,7 @@ public class Upload extends HttpServlet {
     private static final long serialVersionUID = 1L;
      
     // location to store file uploaded
-    private static final String UPLOAD_DIRECTORY = "upl";
+    private static final String UPLOAD_DIRECTORY = "uploads";
  
     // upload settings
     private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;  // 3MB
@@ -65,7 +67,7 @@ public class Upload extends HttpServlet {
         // constructs the directory path to store upload file
         // this path is relative to application's directory
         String uploadPath = getServletContext().getRealPath("")
-                + File.separator + UPLOAD_DIRECTORY;
+                 + UPLOAD_DIRECTORY;
          
         // creates the directory if it does not exist
         File uploadDir = new File(uploadPath);
@@ -79,27 +81,40 @@ public class Upload extends HttpServlet {
             List<FileItem> formItems = upload.parseRequest(request);
  
             if (formItems != null && formItems.size() > 0) {
+            	String title = null, desc= null, filePath= null;
                 // iterates over form's fields
                 for (FileItem item : formItems) {
                     // processes only fields that are not form fields
-                    if (!item.isFormField()) {
-                        String fileName = new File(item.getName()).getName();
-                        String filePath = uploadPath + File.separator + fileName;
+                    if (item.isFormField()) {
+                        if(item.getFieldName().equals("title")){
+                        	title = item.getString();
+                        }else if(item.getFieldName().equals("desc")){
+                        	desc = item.getString();
+                        }
+                    }else{
+                    	String fileName = new File(item.getName()).getName();
+                        filePath = uploadPath + File.separator + fileName;
                         File storeFile = new File(filePath);
-                        System.out.println(filePath);
+                        //System.out.println(filePath);
                         // saves the file on disk
                         item.write(storeFile);
                         request.setAttribute("message",
                             "Upload has been done successfully!");
                     }
                 }
+                DAO dao = new DAO("simour","root","");
+                if(filePath.endsWith(".jpg") || filePath.endsWith(".png") || filePath.endsWith(".gif")){
+                	dao.insertImage(filePath, title, desc, 3);
+                }
+                
+                
             }
         } catch (Exception ex) {
             request.setAttribute("message",
                     "There was an error: " + ex.getMessage());
         }
         // redirects client to message page
-        getServletContext().getRequestDispatcher("/index.jsp").forward(
+        getServletContext().getRequestDispatcher("/gallery.jsp").forward(
                 request, response);
     }
 }
