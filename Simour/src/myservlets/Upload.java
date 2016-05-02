@@ -95,13 +95,14 @@ public class Upload extends HttpServlet {
                     	fileName = new File(item.getName()).getName();
                         String filePath = uploadPath + File.separator + fileName;
                         File storeFile = new File(filePath);
-                        //System.out.println(filePath);
+                        
                         // saves the file on disk
                         item.write(storeFile);
                         request.setAttribute("message",
                             "Upload has been done successfully!");
                     }
                 }
+                System.out.println(fileName + " "+ title);
                 DAO dao = new DAO("simour","root","");
                 if(fileName.endsWith(".jpg") || fileName.endsWith(".png") || fileName.endsWith(".gif")){
                 	dao.insertImage("uploads/"+fileName, title, desc, 3);

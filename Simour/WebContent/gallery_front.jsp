@@ -33,6 +33,20 @@
         
         <![endif]-->
 <script src="js/bootstrap.min.js"></script>
+	<script>
+		function load(category){
+			var xHttpRequest;
+			xHttpRequest = new XMLHTTTPRequest();
+			xHttpRequest.onreadystatechange = function(){
+				if(xHttpRequest.status == 200 && xHttpRequest.readyState == 4){
+					alert("ok");
+					document.getElementById('#img-container').innerHTML = xHttpRequest.responseText;
+				} 
+			}
+			xHttpRequest.open("GET","ajax_gallery.php",true);
+			xHttpRequest.send();
+		}
+	</script>
 </head>
 
 
@@ -155,16 +169,16 @@
 								<div class="row">
 									<div id="portfolio">
 										<div class="btn-group" style="float: left; margin-left: 10px">
-											<button class="btn btn-default btn-sm" type="button">All</button>
-											<button class="btn btn-default btn-sm" type="button">Photo</button>
+											<button class="btn btn-default btn-sm" type="button" onclick="load(2)">All</button>
+											<button class="btn btn-default btn-sm" type="button" onclick="load(3)">Photo</button>
 											<button class="btn btn-default btn-sm" type="button">Video</button>
 											<button class="btn btn-default btn-sm" type="button">Web</button>
 										</div>
 										<br>
 										<br>
-										<div>
+										<div id="image-container">
 											<c:forEach var="image" items="${imageL}">
-												<div class="col-md-4">
+												<div class="col-sm-3">
 													<div class="thumbnail">
 														<div class="image view view-first">
 															<a href="#" class="pop">
