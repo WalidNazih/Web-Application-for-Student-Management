@@ -44,6 +44,14 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getLastImages(int count) throws SQLException{
+		String sql = "SELECT * FROM ( SELECT * FROM images ORDER BY id DESC LIMIT ? ) sub ORDER BY id ASC";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1,count);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getMessageById(int id) throws SQLException{
 		String sql = "SELECT * FROM MESSAGES WHERE id=1";
 		preparedStatement = con.prepareStatement(sql);

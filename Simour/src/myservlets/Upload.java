@@ -63,7 +63,7 @@ public class Upload extends HttpServlet {
          
         // sets maximum size of request (include file + form data)
         upload.setSizeMax(MAX_REQUEST_SIZE);
- 
+
         // constructs the directory path to store upload file
         // this path is relative to application's directory
         String uploadPath = getServletContext().getRealPath("")
@@ -81,7 +81,7 @@ public class Upload extends HttpServlet {
             List<FileItem> formItems = upload.parseRequest(request);
  
             if (formItems != null && formItems.size() > 0) {
-            	String title = null, desc= null, filePath= null;
+            	String title = null, desc= null, fileName= null;
                 // iterates over form's fields
                 for (FileItem item : formItems) {
                     // processes only fields that are not form fields
@@ -92,8 +92,8 @@ public class Upload extends HttpServlet {
                         	desc = item.getString();
                         }
                     }else{
-                    	String fileName = new File(item.getName()).getName();
-                        filePath = uploadPath + File.separator + fileName;
+                    	fileName = new File(item.getName()).getName();
+                        String filePath = uploadPath + File.separator + fileName;
                         File storeFile = new File(filePath);
                         //System.out.println(filePath);
                         // saves the file on disk
@@ -103,8 +103,8 @@ public class Upload extends HttpServlet {
                     }
                 }
                 DAO dao = new DAO("simour","root","");
-                if(filePath.endsWith(".jpg") || filePath.endsWith(".png") || filePath.endsWith(".gif")){
-                	dao.insertImage(filePath, title, desc, 3);
+                if(fileName.endsWith(".jpg") || fileName.endsWith(".png") || fileName.endsWith(".gif")){
+                	dao.insertImage("uploads/"+fileName, title, desc, 3);
                 }
                 
                 
