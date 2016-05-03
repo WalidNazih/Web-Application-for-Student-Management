@@ -143,14 +143,11 @@
 
 				<!-- top tiles -->
 				<div class="row tile_count"></div>
-
-				<br />
-
 				<div class="row">
 					<div class="col-md-6 col-sm-6 col-xs-6">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
-								<h2>Add Picture</h2>
+								<h2>Import Picture</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content">
@@ -159,9 +156,9 @@
 									enctype="multipart/form-data">
 									<center>
 										<label id="filelbl" for="myfile"> <img
-											src="images/uploadlogo.png" width="40px" height="40px"
-											id="blah" /><br> <input type="file" name="myfile"
-											id="myfile" size="60" style="opacity: 0"> Upload
+											src="img/imgupload.png" width="60px" height="60px" id="blah" /><br>
+											<input type="file" name="myfile" id="myfile" size="60"
+											style="opacity: 0"> Upload
 										</label>
 
 									</center>
@@ -181,9 +178,79 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<div class="x_panel tile fixed_height_400">
+							<div class="x_title">
+								<h2>Import Video</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
 
+								<form id="uploadPic" action="Upload" method="POST"
+									enctype="multipart/form-data">
+									<center>
+										<label id="filelbl" for="myfile"> <img
+											src="img/vidupload.png" width="60px" height="60px" id="blah" /><br>
+											<input type="file" name="myfile" id="myfile" size="60"
+											style="opacity: 0"> Upload
+										</label>
 
+									</center>
+									<div id="fields">
+										Title :<br> <input type="text" name="title" size="59"
+											required="" /><br> Description:<br>
+										<textarea style="width: 377px" name="desc" form="uploadPic"
+											required=""> </textarea>
+										<br> <input type="submit" value="Add"
+											class="btn btn-primary" style="margin-top: 10px"
+											onclick="shozModal()" />
+									</div>
+									<br>
 
+								</form>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="x_panel tile fixed_height_400">
+							<div class="x_title">
+								<h2>Most Liked Pictures</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+								<div>
+									<c:forEach var="image" items="${lastIm}">
+										<div style="margin-left: -10px; margin-top: 20px"
+											class="col-md-2">
+											<div style="height: 120px; width: 130px" class="thumbnail">
+												<div class="image view view-first">
+													<a href="#" class="pop"> <img
+														style="width: 100%; height: 130px; display: block;"
+														src="${image.url}" alt="image" id="clickImage" />
+														<div class="mask">
+															<i style="margin-top: 55px" class="fa fa-search"></i>
+														</div>
+													</a>
+												</div>
+
+											</div>
+										</div>
+									</c:forEach>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="x_panel tile fixed_height_400">
+							<div class="x_title">
+								<h2>Most Liked Videos</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content"></div>
+						</div>
+					</div>
 
 				</div>
 				<!-- /page content -->

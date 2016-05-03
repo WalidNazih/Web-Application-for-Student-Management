@@ -33,19 +33,43 @@
         
         <![endif]-->
 <script src="js/bootstrap.min.js"></script>
-	<script>
-		function load(category){
-			var xHttpRequest;
-			xHttpRequest = new XMLHTTTPRequest();
-			xHttpRequest.onreadystatechange = function(){
-				if(xHttpRequest.status == 200 && xHttpRequest.readyState == 4){
-					alert("ok");
-					document.getElementById('#img-container').innerHTML = xHttpRequest.responseText;
-				} 
-			}
-			xHttpRequest.open("GET","ajax_gallery.php",true);
-			xHttpRequest.send();
-		}
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#all").click(function(){
+				var cat = 4;
+				$.ajax({
+					type: 'POST',
+					data: {cat:cat},
+					url:'ImageAjax',
+					success: function(){
+						$("#img-container").html(result);
+					}
+				});
+			});
+			$("#photo").click(function(){
+				var cat = 2;
+				$.get('ImageAjax', {cat:cat},function(responseText){
+					$("#image-container").html(responseText);
+				});
+			});
+			$("#video").click(function(){
+				var cat = 3;
+				$.get('ImageAjax', {cat:cat},function(responseText){
+					$("#image-container").html(responseText);
+				});
+			});
+			$("#web").click(function(){
+				var cat = 1;
+				$.ajax({
+					type: 'POST',
+					data: {cat:cat},
+					url:'ImageAjax',
+					success: function(){
+						$("#img-container").html("ok");
+					}
+				});
+			});
+		});
 	</script>
 </head>
 
@@ -169,10 +193,10 @@
 								<div class="row">
 									<div id="portfolio">
 										<div class="btn-group" style="float: left; margin-left: 10px">
-											<button class="btn btn-default btn-sm" type="button" onclick="load(2)">All</button>
-											<button class="btn btn-default btn-sm" type="button" onclick="load(3)">Photo</button>
-											<button class="btn btn-default btn-sm" type="button">Video</button>
-											<button class="btn btn-default btn-sm" type="button">Web</button>
+											<button id="all" class="btn btn-default btn-sm" type="button">All</button>
+											<button id="photo" class="btn btn-default btn-sm" type="button">Photo</button>
+											<button id="video" class="btn btn-default btn-sm" type="button">Video</button>
+											<button id="web" class="btn btn-default btn-sm" type="button">Web</button>
 										</div>
 										<br>
 										<br>

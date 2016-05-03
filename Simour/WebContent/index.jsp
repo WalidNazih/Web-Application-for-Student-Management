@@ -201,7 +201,22 @@
 <body class="nav-md">
 	<div class="container body">
 		<div class="main_container">
-			<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog"
+			
+
+			<div class="col-md-3 left_col">
+				<div class="left_col scroll-view">
+					<div>
+						<a id="logobig" href="index.jsp"><img
+							style="margin-bottom: -10px; width: 180px; height: 60px; margin-top: 20px; margin-left: 10px"
+							src="images/logo.png"></a>
+					</div>
+					<div>
+						<a id="logosmall" hidden="true" href="index.jsp"><img
+							style="height: 30px; width: 35px; margin-top: 20px; margin-left: 17px"
+							src="images/logosmall.png"></a>
+					</div>
+					<div class="clearfix"></div>
+					<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog"
 				aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -224,21 +239,6 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="col-md-3 left_col">
-				<div class="left_col scroll-view">
-					<div>
-						<a id="logobig" href="index.jsp"><img
-							style="margin-bottom: -10px; width: 180px; height: 60px; margin-top: 20px; margin-left: 10px"
-							src="images/logo.png"></a>
-					</div>
-					<div>
-						<a id="logosmall" hidden="true" href="index.jsp"><img
-							style="height: 30px; width: 35px; margin-top: 20px; margin-left: 17px"
-							src="images/logosmall.png"></a>
-					</div>
-					<div class="clearfix"></div>
-
 
 					<br />
 					<div id="sidebar-menu"

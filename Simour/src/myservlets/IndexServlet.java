@@ -37,7 +37,7 @@ public class IndexServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		try {
 			DAO dao = new DAO("Simour","root","");
-			ResultSet rs = dao.getLastImages(5);
+			ResultSet rs = dao.getLastImages(6);
 			ArrayList<Image> lastIm = new ArrayList<>();
 			while(rs.next()){
 				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4));
