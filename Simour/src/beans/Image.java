@@ -3,17 +3,18 @@ package beans;
 import java.io.Serializable;
 
 public class Image implements Serializable{
-	private int id, category;
+	private int id, category, likes;
 	private String url, title, description;
 
 	public Image(int id, int category, String url, String title,
-			String description) {
+			String description, int likes) {
 		super();
 		this.id = id;
 		this.category = category;
 		this.url = url;
 		this.title = title;
 		this.description = description;
+		this.likes = likes;
 	}
 
 	public Image() {
@@ -58,6 +59,10 @@ public class Image implements Serializable{
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public int getLikes(){
+		return this.likes;
 	}
 
 }

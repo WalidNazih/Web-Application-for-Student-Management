@@ -33,44 +33,53 @@
         
         <![endif]-->
 <script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#all").click(function(){
-				var cat = 4;
-				$.ajax({
-					type: 'POST',
-					data: {cat:cat},
-					url:'ImageAjax',
-					success: function(){
-						$("#img-container").html(result);
-					}
-				});
-			});
-			$("#photo").click(function(){
-				var cat = 2;
-				$.get('ImageAjax', {cat:cat},function(responseText){
-					$("#image-container").html(responseText);
-				});
-			});
-			$("#video").click(function(){
-				var cat = 3;
-				$.get('ImageAjax', {cat:cat},function(responseText){
-					$("#image-container").html(responseText);
-				});
-			});
-			$("#web").click(function(){
-				var cat = 1;
-				$.ajax({
-					type: 'POST',
-					data: {cat:cat},
-					url:'ImageAjax',
-					success: function(){
-						$("#img-container").html("ok");
-					}
-				});
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#all").click(function() {
+			var cat = 4;
+			$.get('ImageAjax', {
+				cat : cat
+			}, function(responseText) {
+				$("#image-container").html(responseText);
 			});
 		});
-	</script>
+		$("#photo").click(function() {
+			var cat = 2;
+			$.get('ImageAjax', {
+				cat : cat
+			}, function(responseText) {
+				$("#image-container").html(responseText);
+			});
+		});
+		$("#video").click(function() {
+			var cat = 3;
+			$.get('ImageAjax', {
+				cat : cat
+			}, function(responseText) {
+				$("#image-container").html(responseText);
+			});
+		});
+		$("#web").click(function() {
+			var cat = 1;
+			$.get('ImageAjax', {
+				cat : cat
+			}, function(responseText) {
+				$("#image-container").html(responseText);
+			});
+		});
+		$(".like").click(function() {
+			var imgurl = $(this).find('img').attr('src');
+			var obj = $(this);
+			$.get('LikeAjax', {
+				imgurl : imgurl
+			}, function(responseText) {
+				obj.siblings('#likecount').text(responseText + " likes")
+				obj.find('i').removeClass("fa-heart-o");
+				obj.find('i').addClass("fa-heart");
+			});
+		});
+	});
+</script>
 </head>
 
 
@@ -127,7 +136,7 @@
 							</ul>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 
@@ -168,8 +177,10 @@
 							<h4 class="modal-title" id="myModalLabel">Image preview</h4>
 						</div>
 						<div class="modal-body">
-							<center><img src="" class="imagepreview"
-								style="width: 570px; height: 470px;"></center>
+							<center>
+								<img src="" class="imagepreview"
+									style="width: 570px; height: 470px;">
+							</center>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
@@ -194,25 +205,38 @@
 									<div id="portfolio">
 										<div class="btn-group" style="float: left; margin-left: 10px">
 											<button id="all" class="btn btn-default btn-sm" type="button">All</button>
-											<button id="photo" class="btn btn-default btn-sm" type="button">Photo</button>
-											<button id="video" class="btn btn-default btn-sm" type="button">Video</button>
+											<button id="photo" class="btn btn-default btn-sm"
+												type="button">Photo</button>
+											<button id="video" class="btn btn-default btn-sm"
+												type="button">Video</button>
 											<button id="web" class="btn btn-default btn-sm" type="button">Web</button>
 										</div>
-										<br>
-										<br>
+										<br> <br>
 										<div id="image-container">
 											<c:forEach var="image" items="${imageL}">
 												<div class="col-sm-3">
 													<div class="thumbnail">
 														<div class="image view view-first">
-															<a href="#" class="pop">
+
 															<img style="width: 100%; height: 230px; display: block;"
-																src="${image.url}" alt="image"  id="clickImage"/>
-															<div class="mask">
-																<i style="margin-top: 90px"
-																	class="fa fa-search"></i>
+																src="${image.url}" alt="image" id="clickImage" />
+															<div class="mask" style="color: white">
+																<a href="#" class="like"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-heart-o fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${image.url}" alt="image" id="clickImage" /> </a> 
+																<a
+																	href="#" class="pop"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-search fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${image.url}" alt="image" id="clickImage" /> </a> <br>
+																<i id="likecount" style="font-weight: bold">${image.likes}
+																	likes</i>
 															</div>
-															</a>
+
+
 														</div>
 														<div class="caption">
 															<center>
@@ -235,7 +259,7 @@
 
 	</div>
 
-	
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var toggled = true;
@@ -261,10 +285,10 @@
 		});
 	</script>
 	<script>
-	$('.pop').on('click', function() {
-		$('.imagepreview').attr('src', $(this).find('img').attr('src'));
-		$('#imagemodal').modal('show');   
-	});	
+		$('.pop').on('click', function() {
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');
+		});
 	</script>
 </body>
 

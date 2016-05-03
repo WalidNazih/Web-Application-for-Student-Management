@@ -40,7 +40,7 @@ public class IndexServlet extends HttpServlet {
 			ResultSet rs = dao.getLastImages(6);
 			ArrayList<Image> lastIm = new ArrayList<>();
 			while(rs.next()){
-				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4));
+				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6));
 				lastIm.add(image);
 			}
 			HttpSession session = request.getSession();

@@ -3,30 +3,26 @@ package myservlets;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import beans.Image;
-import beans.Message;
 import classes.DAO;
 
 /**
- * Servlet implementation class Images
+ * Servlet implementation class LikeAjax
  */
-@WebServlet("/Images")
-public class Images extends HttpServlet {
+@WebServlet("/LikeAjax")
+public class LikeAjax extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Images() {
+    public LikeAjax() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,20 +31,15 @@ public class Images extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		try {
-			DAO dao = new DAO("simour", "root", "");
-			ResultSet rs = dao.getImages();
-			ArrayList<Image> imageList = new ArrayList<>();
-			while(rs.next()){
-				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6));
-				imageList.add(image);
-			}
-
-			HttpSession session = request.getSession();
-			session.setAttribute("imageL", imageList);
-			
-			request.getRequestDispatcher("gallery_front.jsp").forward(request, response);
+			DAO dao = new DAO("simour","root","");
+			String imgurl = request.getParameter("imgurl");
+			ResultSet rs = dao.getImageInfo(imgurl);
+			rs.next();
+			dao.addLike(rs.getString(2), rs.getInt(6));
+			response.setContentType("text/plain");
+			response.getWriter().write(""+(rs.getInt(6)+1));
+			response.getWriter().close();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

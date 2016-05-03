@@ -68,6 +68,7 @@ public class DAO {
 		preparedStatement.setString(4, new java.util.Date().toString());
 		preparedStatement.executeUpdate();
 	}
+	
 	public void insertImage(String url, String title, String desc, int category) throws SQLException{
 		String sql = "INSERT INTO images (url,title,description,category) values(?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
@@ -76,6 +77,22 @@ public class DAO {
 		preparedStatement.setString(3, desc);
 		preparedStatement.setInt(4, category);
 		preparedStatement.executeUpdate();
+	}
+	
+	public void addLike(String url, int like) throws SQLException{
+		String sql = "UPDATE images set likes=? where url=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, like+1);
+		preparedStatement.setString(2, url);
+		preparedStatement.executeUpdate();
+	}
+	
+	public ResultSet getImageInfo(String url) throws SQLException{
+		String sql = "SELECT * FROM IMAGES WHERE url=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1,url);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
 	}
 	
 }
