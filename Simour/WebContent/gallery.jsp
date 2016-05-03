@@ -218,28 +218,26 @@
 								<h2>Most Liked Pictures</h2>
 								<div class="clearfix"></div>
 							</div>
-							<div class="x_content">
-								<div>
-									<c:forEach var="image" items="${lastIm}">
-										<div style="margin-left: -10px; margin-top: 20px"
-											class="col-md-2">
-											<div style="height: 120px; width: 130px" class="thumbnail">
-												<div class="image view view-first">
-													<a href="#" class="pop"> <img
-														style="width: 100%; height: 130px; display: block;"
-														src="${image.url}" alt="image" id="clickImage" />
-														<div class="mask">
-															<i style="margin-top: 55px" class="fa fa-search"></i>
-														</div>
-													</a>
+							<div>
+										<c:forEach var="image" items="${lastIm}">
+											<div style="margin-left: -10px; margin-top: 20px"
+												class="col-md-2">
+												<div style="height: 120px; width: 130px" class="thumbnail">
+													<div class="image view view-first">
+														<a href="#" class="pop"> <img
+															style="width: 100%; height: 130px; display: block;"
+															src="${image.url}" alt="image" id="clickImage" />
+															<div class="mask">
+																<i style="margin-top: 55px" class="fa fa-search"></i>
+															</div>
+														</a>
+													</div>
+
 												</div>
-
 											</div>
-										</div>
-									</c:forEach>
-								</div>
-
-							</div>
+										</c:forEach>
+									</div>
+									<div class="clearfix"></div>
 						</div>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">

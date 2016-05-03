@@ -52,6 +52,14 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getMostLikedImages() throws SQLException{
+		String sql = "SELECT * FROM Images order by likes desc";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	
 	public ResultSet getMessageById(int id) throws SQLException{
 		String sql = "SELECT * FROM MESSAGES WHERE id=1";
 		preparedStatement = con.prepareStatement(sql);
