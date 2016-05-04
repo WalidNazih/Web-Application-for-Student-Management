@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -144,7 +144,7 @@
 				<!-- top tiles -->
 				<div class="row tile_count"></div>
 				<div class="row">
-					<div class="col-md-6 col-sm-6 col-xs-6">
+					<div class="col-md-5 col-sm-5 col-xs-5">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
 								<h2>Import Picture</h2>
@@ -165,7 +165,7 @@
 									<div id="fields">
 										Title :<br> <input type="text" name="title" size="59"
 											required="" /><br> Description:<br>
-										<textarea style="width: 377px" name="desc" form="uploadPic"
+										<textarea style="width: 446px" name="desc" form="uploadPic"
 											required=""> </textarea>
 										<br> <input type="submit" value="Add"
 											class="btn btn-primary" style="margin-top: 10px"
@@ -178,36 +178,100 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-6">
+					<div class="col-md-2 col-sm-2 col-xs-2">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
-								<h2>Import Video</h2>
+								<h2>Upload Info</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content">
-
-								<form id="uploadPic" action="Upload" method="POST"
-									enctype="multipart/form-data">
+								<div>
 									<center>
-										<label id="filelbl" for="myfile"> <img
-											src="img/vidupload.png" width="60px" height="60px" id="blah" /><br>
-											<input type="file" name="myfile" id="myfile" size="60"
-											style="opacity: 0"> Upload
-										</label>
-
+										<img src="img/imgupload.png" width="40px" height="37px" />
 									</center>
-									<div id="fields">
-										Title :<br> <input type="text" name="title" size="59"
-											required="" /><br> Description:<br>
-										<textarea style="width: 377px" name="desc" form="uploadPic"
-											required=""> </textarea>
-										<br> <input type="submit" value="Add"
-											class="btn btn-primary" style="margin-top: 10px"
-											onclick="shozModal()" />
-									</div>
 									<br>
+									<p>Upload Limit : 100 Mo.</p>
+									<p>Supported Formats : jpg, gif, png.</p>
+								</div>
+								<hr>
+								<div>
+									<center>
+										<img src="img/vidupload.png" width="40px" height="36px" />
+									</center>
+									<br>
+									<p>Upload Limit : 100 Mo.</p>
+									<p>Supported Formats : mp4, avi, wmv.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-5 col-sm-5 col-xs-5">
+						<div class="x_panel tile fixed_height_400">
+							<div class="x_content">
 
-								</form>
+								<div class="" role="tabpanel" data-example-id="togglable-tabs">
+									<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+										<li role="presentation" class="active"><a
+											href="#tab_content1" id="home-tab" role="tab"
+											data-toggle="tab" aria-expanded="true">Import Video From
+												Computer</a></li>
+										<li role="presentation" class=""><a href="#tab_content2"
+											role="tab" id="profile-tab" data-toggle="tab"
+											aria-expanded="false">Import Video From Web</a></li>
+									</ul>
+									<div id="myTabContent" class="tab-content">
+										<div role="tabpanel" class="tab-pane fade active in"
+											id="tab_content1" aria-labelledby="home-tab">
+											<form id="uploadPic" action="Upload" method="POST"
+												enctype="multipart/form-data">
+												<center>
+													<label id="filelbl" for="myfile"> <img
+														src="img/vidupload.png" width="60px" height="60px"
+														id="blah" /><br> <input type="file" name="myfile"
+														id="myfile" size="60" style="opacity: 0"> Upload
+													</label>
+
+												</center>
+												<div id="fields">
+													Title :<br> <input type="text" name="title" size="59"
+														required="" /><br> Description:<br>
+													<textarea style="width: 446px" name="desc" form="uploadPic"
+														required=""> </textarea>
+													<br> <input type="submit" value="Add"
+														class="btn btn-primary" style="margin-top: 18px"
+														onclick="showModal()" />
+												</div>
+
+											</form>
+										</div>
+										<div role="tabpanel" class="tab-pane fade" id="tab_content2"
+											aria-labelledby="profile-tab">
+											<form id="uploadPic" action="Upload" method="POST"
+												enctype="multipart/form-data">
+												<center>
+													<label id="filelbl" for="myfile"> <img
+														src="images/urllogo2.png" width="80px" height="80px"
+														id="blah" /><br>
+													</label>
+
+												</center>
+												
+												<div id="fields" style="margin-top:13px">
+													URL :  <input type="text" name="url"
+														id="url" size="59" ><br>
+													
+													
+													<div style="margin-top:6px">Description:<br><textarea style="width: 446px" name="desc" form="uploadPic"
+														required="" > </textarea></div>
+													<br> <input type="submit" value="Add"
+														class="btn btn-primary" 
+														onclick="showModal()" />
+												</div>
+
+											</form>
+										</div>
+									</div>
+								</div>
 
 							</div>
 						</div>
@@ -219,25 +283,30 @@
 								<div class="clearfix"></div>
 							</div>
 							<div>
-										<c:forEach var="image" items="${lastIm}">
-											<div style="margin-left: -10px; margin-top: 20px"
-												class="col-md-2">
-												<div style="height: 120px; width: 130px" class="thumbnail">
-													<div class="image view view-first">
-														<a href="#" class="pop"> <img
-															style="width: 100%; height: 130px; display: block;"
-															src="${image.url}" alt="image" id="clickImage" />
-															<div class="mask">
-																<i style="margin-top: 55px" class="fa fa-search"></i>
-															</div>
-														</a>
+								<c:forEach var="image" items="${topImages}">
+									<div style="margin-left: -10px; margin-top: 20px"
+										class="col-md-2">
+										<div style="height: 180px; width: 180px" class="thumbnail">
+											<div class="image view view-first">
+												<a href="#" class="pop"> <img
+													style="width: 100%; height: 180px; display: block;"
+													src="${image.url}" alt="image" id="clickImage" />
+													<div class="mask">
+														<div style="margin-top: 80px">
+															<i id="likecount"
+																style="font-weight: bold; color: white;">${image.likes}
+																likes</i>
+														</div>
 													</div>
+												</a>
 
-												</div>
 											</div>
-										</c:forEach>
+
+										</div>
 									</div>
-									<div class="clearfix"></div>
+								</c:forEach>
+							</div>
+							<div class="clearfix"></div>
 						</div>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">

@@ -80,6 +80,7 @@
 		//responsive code end
 	};
 </script>
+<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 
 <style>
 
@@ -330,8 +331,10 @@
 
 							<div class="x_content">
 
-								<div id="jssor_1"
-									style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden; visibility: hidden;">
+								<div class="row">
+									<div class="col-md-6 col-xs-6 col-sm-6">
+									<div id="jssor_1"
+									style="position: relative; margin: 0 auto;margin-left:3px; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden; visibility: hidden;">
 									<!-- Loading Screen -->
 									<div data-u="loading"
 										style="position: absolute; top: 0px; left: 0px;">
@@ -343,16 +346,20 @@
 									<div data-u="slides"
 										style="cursor: default; position: relative; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden;">
 										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/art/p1.jpg" /> <img
-												data-u="thumb" src="images/art/p1.jpg" />
+											<img data-u="image" src="images/art/1.jpg" /> <img
+												data-u="thumb" src="images/art/1.jpg" />
 										</div>
 										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/art/p2.jpg" /> <img
-												data-u="thumb" src="images/art/p2.jpg" />
+											<img data-u="image" src="images/art/2.jpg" /> <img
+												data-u="thumb" src="images/art/2.jpg" />
 										</div>
 										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/art/p3.jpg" /> <img
-												data-u="thumb" src="images/art/p3.jpg" />
+											<img data-u="image" src="images/art/3.jpg" /> <img
+												data-u="thumb" src="images/art/3.jpg" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/art/4.jpg" /> <img
+												data-u="thumb" src="images/art/4.jpg" />
 										</div>
 
 										<a data-u="ad" href="http://www.jssor.com"
@@ -387,6 +394,13 @@
 								<script>
 									jssor_1_slider_init();
 								</script>
+								</div><br><br>
+								<div class="col-md-6 col-xs-6 col-sm-6">
+									<img src="images/androidlogo.png" width="90px" height="100px" style="float:left;display:block;margin-left:150px;margin-top:20px"/>
+									<h1 style="margin-top:35px;font-weight:bold;margin-left:50px;font-family: 'Indie Flower', cursive;" >Android Application <br> Coming Soon</h1><br>
+									<center><img src="images/googleplay.png" width="200px" height="80px" style="display:block;margin-top:20px"/></center>
+								</div>
+								</div>
 								<br> <br>
 								<div class="x_title">
 									<h2>Latest Media</h2>
@@ -397,10 +411,10 @@
 										<c:forEach var="image" items="${lastIm}">
 											<div style="margin-left: -10px; margin-top: 20px"
 												class="col-md-2">
-												<div style="height: 120px; width: 130px" class="thumbnail">
+												<div style="height: 180px; width: 180px" class="thumbnail">
 													<div class="image view view-first">
 														<a href="#" class="pop"> <img
-															style="width: 100%; height: 130px; display: block;"
+															style="width: 100%; height: 180px; display: block;"
 															src="${image.url}" alt="image" id="clickImage" />
 															<div class="mask">
 																<i style="margin-top: 55px" class="fa fa-search"></i>

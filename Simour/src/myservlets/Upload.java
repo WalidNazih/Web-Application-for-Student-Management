@@ -31,7 +31,7 @@ public class Upload extends HttpServlet {
  
     // upload settings
     private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;  // 3MB
-    private static final int MAX_FILE_SIZE      = 1024 * 1024 * 40; // 40MB
+    private static final int MAX_FILE_SIZE      = 1024 * 1024 * 100; // 40MB
     private static final int MAX_REQUEST_SIZE   = 1024 * 1024 * 50; // 50MB
  
     /**
@@ -105,7 +105,9 @@ public class Upload extends HttpServlet {
                 System.out.println(fileName + " "+ title);
                 DAO dao = new DAO("simour","root","");
                 if(fileName.endsWith(".jpg") || fileName.endsWith(".png") || fileName.endsWith(".gif")){
-                	dao.insertImage("uploads/"+fileName, title, desc, 3);
+                	dao.insertImage("uploads/"+fileName, title, desc, 2);
+                }else if(fileName.endsWith(".avi") || fileName.endsWith(".mp4") || fileName.endsWith(".wmv")){
+                	dao.insertVideo("uploads/"+fileName, title, desc, 3);
                 }
                 
                 

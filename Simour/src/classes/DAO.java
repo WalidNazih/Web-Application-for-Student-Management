@@ -87,6 +87,43 @@ public class DAO {
 		preparedStatement.executeUpdate();
 	}
 	
+	public void insertVideo(String url, String title, String desc, int category) throws SQLException{
+		String sql = "INSERT INTO videos (url,title,description,category) values(?,?,?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, url);
+		preparedStatement.setString(2, title);
+		preparedStatement.setString(3, desc);
+		preparedStatement.setInt(4, category);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void insertArticle(String url, String title, String desc, int likes) throws SQLException{
+		String sql = "INSERT INTO article (url,title,description,likes) values(?,?,?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, url);
+		preparedStatement.setString(2, title);
+		preparedStatement.setString(3, desc);
+		preparedStatement.setInt(4, likes);
+		preparedStatement.executeUpdate();
+	}
+	public void insertBook(String url, String title, String desc, int likes) throws SQLException{
+		String sql = "INSERT INTO book (url,title,description,likes) values(?,?,?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, url);
+		preparedStatement.setString(2, title);
+		preparedStatement.setString(3, desc);
+		preparedStatement.setInt(4, likes);
+		preparedStatement.executeUpdate();
+	}
+	public void insertChapters(String url, String title, String desc, int likes) throws SQLException{
+		String sql = "INSERT INTO chapters (url,title,description,likes) values(?,?,?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, url);
+		preparedStatement.setString(2, title);
+		preparedStatement.setString(3, desc);
+		preparedStatement.setInt(4, likes);
+		preparedStatement.executeUpdate();
+	}
 	public void addLike(String url, int like) throws SQLException{
 		String sql = "UPDATE images set likes=? where url=?";
 		preparedStatement = con.prepareStatement(sql);
