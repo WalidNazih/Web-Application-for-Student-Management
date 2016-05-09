@@ -245,8 +245,7 @@
 										</div>
 										<div role="tabpanel" class="tab-pane fade" id="tab_content2"
 											aria-labelledby="profile-tab">
-											<form id="uploadPic" action="Upload" method="POST"
-												enctype="multipart/form-data">
+											<form id="uploadVid" action="WebVideo" method="POST">
 												<center>
 													<label id="filelbl" for="myfile"> <img
 														src="images/urllogo2.png" width="80px" height="80px"
@@ -256,12 +255,14 @@
 												</center>
 												
 												<div id="fields" style="margin-top:13px">
-													URL :  <input type="text" name="url"
+													URL :  <input type="text" name="urlweb"
 														id="url" size="59" ><br>
 													
-													
+													Description :  <input type="text" name="desc"
+														id="desc" size="59" ><br>
+														<!-- 
 													<div style="margin-top:6px">Description:<br><textarea style="width: 446px" name="desc" form="uploadPic"
-														required="" > </textarea></div>
+														required="" > </textarea></div> -->
 													<br> <input type="submit" name="addWeb" value="Add"
 														class="btn btn-primary" 
 														onclick="showModal()" />

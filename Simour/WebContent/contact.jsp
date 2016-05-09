@@ -94,41 +94,37 @@
 
 
 					<br />
-					<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+					<div id="sidebar-menu"
+						class="main_menu_side hidden-print main_menu">
 
-            <div class="menu_section">
-               <ul class="nav side-menu">
-                <li class="principale"><a href="index.jsp"><i class="fa fa-home"></i> Home</a>
-                </li>
-                <li class="principale"><a href="gallery_front.jsp"><i class="fa fa-camera-retro"></i> Gallery</a>
-                </li>
-                <li class="principale"><a><i class="fa fa-book"></i> Research <span class="fa fa-chevron-down"></span></a>
-                	<ul class="nav child_menu" style="display: none">
-	                    <li><a href="form.html">Books</a>
-	                    </li>
-	                    <li><a href="form_advanced.html">Articles</a>
-	                    </li>
-	                    <li><a href="form_advanced.html">Book Chapters</a>
-	                    </li>
-                    </ul>
-                </li>
-            	<li class="principale"><a><i class="fa fa-graduation-cap"></i> Pedagogy <span class="fa fa-chevron-down"></span></a>
-            		<ul class="nav child_menu" style="display: none">
-	                    <li><a href="form.html">Formation Initiale</a>
-	                    </li>
-	                    <li><a href="form_advanced.html">Formation Continue</a>
-	                    </li>
-	                    <li><a href="form_advanced.html">Encadrement</a>
-	                    </li>
-                    </ul>
-                </li>
-                <li class="principale"><a href="contact.jsp"><i class="fa fa-envelope-o"></i> Contact</a>
-                </li>
-                <li class="principale"><a href="about_front.jsp"><i class="fa fa-edit"></i> About </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+						<div class="menu_section">
+							<ul class="nav side-menu">
+								<li class="principale"><a href="index.jsp"><i
+										class="fa fa-home"></i> Home</a></li>
+								<li class="principale"><a href="gallery_front.jsp"><i
+										class="fa fa-camera-retro"></i> Gallery</a></li>
+								<li class="principale"><a><i class="fa fa-book"></i>
+										Research <span class="fa fa-chevron-down"></span></a>
+									<ul class="nav child_menu" style="display: none">
+										<li><a href="form.html">Books</a></li>
+										<li><a href="form_advanced.html">Articles</a></li>
+										<li><a href="form_advanced.html">Book Chapters</a></li>
+									</ul></li>
+								<li class="principale"><a><i
+										class="fa fa-graduation-cap"></i> Pedagogy <span
+										class="fa fa-chevron-down"></span></a>
+									<ul class="nav child_menu" style="display: none">
+										<li><a href="form.html">Formation Initiale</a></li>
+										<li><a href="form_advanced.html">Formation Continue</a></li>
+										<li><a href="form_advanced.html">Encadrement</a></li>
+									</ul></li>
+								<li class="principale"><a href="contact.jsp"><i
+										class="fa fa-envelope-o"></i> Contact</a></li>
+								<li class="principale"><a href="about_front.jsp"><i
+										class="fa fa-edit"></i> About </a></li>
+							</ul>
+						</div>
+					</div>
 
 					<!-- /menu footer buttons -->
 					<div class="sidebar-footer hidden-small">
@@ -188,8 +184,8 @@
 							</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<input id="name" class="form-control col-md-7 col-xs-12"
-									name="sender" placeholder="e.g Safaa Askour" required="required"
-									type="text">
+									name="sender" placeholder="e.g Safaa Askour"
+									required="required" type="text">
 							</div>
 						</div>
 						<br> <br> <br>
@@ -231,12 +227,14 @@
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12"
 									for="email">Verify Yourself :<span class="required"><font
-									color="red"> *</font></span> </label>
+										color="red"> *</font></span>
+								</label>
 
 								<div class="col-md-6 col-sm-6 col-xs-12">
-								<input id="name" class="form-control col-md-7 col-xs-12"
-									name="code" placeholder="Enter Verification code" type="text" required="">
-									<br><br>
+									<input id="name" class="form-control col-md-7 col-xs-12"
+										name="code" placeholder="Enter Verification code" type="text"
+										required=""> <br>
+									<br>
 									<div id="captcha">
 										<div id="captcha_gen">
 											<label align="center" id="randomfield"></label>
@@ -248,8 +246,10 @@
 						<br>
 						<div class="item form-group">
 							<div class="col-md-6 col-md-offset-3" style="margin-top: 20px">
-								<button type="submit" id="Refresh" class="btn btn-success" onClick="getCaptcha();" form="Cnt">Refresh</button>
-								<button id="send" type="submit" class="btn btn-success" onclick="fnsubmit()">Send</button>
+								<button type="submit" id="Refresh" class="btn btn-success"
+									onClick="getCaptcha();" form="Cnt">Refresh</button>
+								<button id="send" type="submit" class="btn btn-success"
+									onclick="fnsubmit()">Send</button>
 							</div>
 						</div>
 						<br> <br> <br> <br> <br>
@@ -565,31 +565,29 @@
 									});
 						});
 	</script>
-	 <script type="text/javascript">
-    $(document).ready(function() {
-    	var toggled = true;
-    	var liSize = $(".principale").width();
-		$("#menu_toggle").click(function(){
-			$("#logosmall").toggle();
-			$("#logobig").toggle();
-			if(toggled){
-				$(".principale").width(65);
-			}	
-			else {
-				$(".principale").width(liSize);
-			}
-			toggled = !toggled;
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var toggled = true;
+			var liSize = $(".principale").width();
+			$("#menu_toggle").click(function() {
+				$("#logosmall").toggle();
+				$("#logobig").toggle();
+				if (toggled) {
+					$(".principale").width(65);
+				} else {
+					$(".principale").width(liSize);
+				}
+				toggled = !toggled;
+			});
+
+			$(".principale").click(function() {
+				if (!toggled) {
+					$(this).width(70);
+				}
+			});
+
 		});
-		
-		$(".principale").click(function(){
-			if(!toggled){
-				$(this).width(70);
-			}	
-		});
-		
-		
-    });
-  </script>
+	</script>
 	<script>
 		NProgress.done();
 	</script>

@@ -153,7 +153,7 @@
 							</div>
 							<div class="x_content">
 
-								<form id="uploadPic" action="Upload" method="POST"
+								<form id="uploadArt" action="Upload" method="POST"
 									enctype="multipart/form-data">
 									<center>
 										<label id="filelbl" for="myfile"> <img
@@ -166,11 +166,11 @@
 									<div id="fields">
 										Title :<br> <input type="text" name="title" size="45"
 											required="" /><br> Description:<br>
-										<textarea style="width: 347px" name="desc" form="uploadPic"
+										<textarea style="width: 347px" name="desc" form="uploadArt"
 											required=""> </textarea>
-										<br> <input type="submit" value="Add"
+										<br> <input type="submit" value="Add" name="articlebtn"
 											class="btn btn-primary" style="margin-top: 10px"
-											onclick="shozModal()" />
+											 />
 									</div>
 									<br>
 
@@ -187,7 +187,7 @@
 							</div>
 							<div class="x_content">
 
-								<form id="uploadPic" action="Upload" method="POST"
+								<form id="uploadBook" action="Upload" method="POST"
 									enctype="multipart/form-data">
 									<center>
 										<label id="filelbl" for="myfile"> <img
@@ -200,9 +200,9 @@
 									<div id="fields">
 										Title :<br> <input type="text" name="title" size="45"
 											required="" /><br> Description:<br>
-										<textarea style="width: 347px" name="desc" form="uploadPic"
+										<textarea style="width: 347px" name="desc" form="uploadBook"
 											required=""> </textarea>
-										<br> <input type="submit" value="Add"
+										<br> <input type="submit" value="Add" name="bookbtn"
 											class="btn btn-primary" style="margin-top: 10px"
 											onclick="shozModal()" />
 									</div>
@@ -221,7 +221,7 @@
 							</div>
 							<div class="x_content">
 
-								<form id="uploadPic" action="Upload" method="POST"
+								<form id="uploadChap" action="Upload" method="POST"
 									enctype="multipart/form-data">
 									<center>
 										<label id="filelbl" for="myfile"> <img
@@ -234,9 +234,9 @@
 									<div id="fields">
 										Title :<br> <input type="text" name="title" size="45"
 											required="" /><br> Description:<br>
-										<textarea style="width: 347px" name="desc" form="uploadPic"
+										<textarea style="width: 347px" name="desc" form="uploadChap"
 											required=""> </textarea>
-										<br> <input type="submit" value="Add"
+										<br> <input type="submit" value="Add" name="chapterbtn"
 											class="btn btn-primary" style="margin-top: 10px"
 											onclick="shozModal()" />
 									</div>

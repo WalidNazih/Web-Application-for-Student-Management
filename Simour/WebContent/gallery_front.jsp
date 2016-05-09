@@ -80,6 +80,12 @@
 		});
 	});
 </script>
+<style>
+.modal-content iframe {
+	margin: 0 auto;
+	display: block;
+}
+</style>
 </head>
 
 
@@ -189,8 +195,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- Video Modal -->
 			<div class="modal fade" id="videomodal" tabindex="-1" role="dialog"
 				aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
@@ -203,8 +207,7 @@
 						</div>
 						<div class="modal-body">
 							<center>
-								<video width="800" height="600" controls> <source
-									src="" type="video/mp4" class="videopreview"></video>
+								<iframe class="videopreview" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
 							</center>
 						</div>
 						<div class="modal-footer">
@@ -214,6 +217,26 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- Video Modal -->
+			<!-- <div class="modal" id="videomodal">
+				<div></div>
+			</div> -->
+			<!-- 
+			<div class="modal fade videomodal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Video Preview</h4>
+						</div>
+						<div class="modal-body">
+							 <iframe class="videopreview" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>				
+						</div>
+					</div>
+				</div>
+			</div> -->
 
 			<div class="right_col" role="main">
 				<div class="page-title"></div>
@@ -296,7 +319,7 @@
 														</div>
 														<div class="caption">
 															<center>
-																<p style="font-weight: bold; font-size: 20px">${vid.description }</p>
+																<p style="font-weight: bold; font-size: 20px">${vid.description}</p>
 															</center>
 														</div>
 													</div>

@@ -84,7 +84,7 @@ public class Upload extends HttpServlet {
             List<FileItem> formItems = upload.parseRequest(request);
  
             if (formItems != null && formItems.size() > 0) {
-            	String title = null, desc= null, fileName= null;
+            	String title = null, desc= null, fileName= null, button = null;
                 // iterates over form's fields
                 for (FileItem item : formItems) {
                     // processes only fields that are not form fields
@@ -93,6 +93,12 @@ public class Upload extends HttpServlet {
                         	title = item.getString();
                         }else if(item.getFieldName().equals("desc")){
                         	desc = item.getString();
+                        }else if(item.getFieldName().equals("bookbtn")){
+                        	button = "book";
+                        }else if(item.getFieldName().equals("articlebtn")){
+                        	button = "article";
+                        }else if(item.getFieldName().equals("chapterbtn")){
+                        	button = "chapter";
                         }
                     }else{
                     	fileName = new File(item.getName()).getName();
@@ -105,14 +111,21 @@ public class Upload extends HttpServlet {
                             "Upload has been done successfully!");
                     }
                 }
-                System.out.println(fileName + " "+ title);
                 DAO dao = new DAO("simour","root","");
                 if(fileName.endsWith(".jpg") || fileName.endsWith(".png") || fileName.endsWith(".gif")){
                 	dao.insertImage("uploads/"+fileName, title, desc, 2);
                 }else if(fileName.endsWith(".avi") || fileName.endsWith(".mp4") || fileName.endsWith(".wmv")){
                 	System.out.println(desc);
                 	dao.insertVideo("uploads/"+fileName, title, 3);
-                	
+                }else if(fileName.endsWith(".doc") || fileName.endsWith(".docx") || fileName.endsWith(".txt") || fileName.endsWith(".pdf")){
+                	System.out.println(button);
+                	if(button.equals("book")){
+                		dao.insertBook("uploads/"+fileName, title, desc);
+                	}else if(button.equals("article")){
+                		dao.insertArticle("uploads/"+fileName, title, desc);
+                	}else if(button.equals("chapter")){
+                		dao.insertChapters("uploads/"+fileName, title, desc);
+                	}
                 }
                 
                 

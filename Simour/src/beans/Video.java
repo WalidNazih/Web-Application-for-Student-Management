@@ -1,6 +1,8 @@
 package beans;
 
-public class Video {
+import java.io.Serializable;
+
+public class Video implements Serializable{
 
 	protected int id, category, likes;
 	protected String url, description, thumbnail;

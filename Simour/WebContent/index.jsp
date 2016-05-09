@@ -301,7 +301,7 @@
 								<div class="row">
 									<div class="col-md-8 col-xs-8 col-sm-8">
 										<div class="shadow" id="jssor_1"
-											style=" position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1000px; height: 500px; overflow: hidden; visibility: hidden;">
+											style=" position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 400px; overflow: hidden; visibility: hidden;">
 											<!-- Loading Screen -->
 											<div data-u="loading"
 												style="position: absolute; top: 0px; left: 0px;">
@@ -311,15 +311,12 @@
 													style="position: absolute; display: block; background: url('img/loading.gif') no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
 											</div>
 											<div data-u="slides"
-												style="cursor: default; position: relative; top: 0px; left: 0px; width: 1000px; height: 500px; overflow: hidden;">
+												style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 400px; overflow: hidden;">
 												<div data-p="112.50" style="display: none;" >
 													<img data-u="image" src="images/slide-01.jpg" class="img-thumbnail"/>
 												</div>
 												<div data-p="112.50" style="display: none;" >
 													<img data-u="image" src="images/slide-02.jpg" class="img-thumbnail"/>
-												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/slide-03.jpg" class="img-thumbnail"/>
 												</div>
 												<div data-p="112.50" style="display: none;" >
 													<img data-u="image" src="images/slide-04.jpg" class="img-thumbnail"/>
@@ -349,12 +346,6 @@
 													<img data-u="image" src="images/Capture7.PNG" class="img-thumbnail"/>
 												</div>
 												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/Capture8.PNG" class="img-thumbnail"/>
-												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/Capture9.PNG" class="img-thumbnail"/>
-												</div>
-												<div data-p="112.50" style="display: none;" >
 													<img data-u="image" src="images/Capture10.PNG" class="img-thumbnail"/>
 												</div>
 												<div data-p="112.50" style="display: none;" >
@@ -379,7 +370,7 @@
 									</div>
 									<div class="col-md-4 col-xs-4 col-sm-4">
 										<img src="images/androidlogo.png" width="90px" height="100px"
-											style="float: left; display: block; margin-left: 150px; margin-top: 20px" />
+											style="float: left; display: block; margin-left: 39px; margin-top: 20px" />
 										<h1
 											style="margin-top: 35px; font-weight: bold; margin-left: 50px; font-family: 'Indie Flower', cursive;">
 											Android Application <br> Coming Soon
@@ -423,7 +414,7 @@
 							<div class="x_title">
 								<h2>Latest Articles</h2>
 								<div class="clearfix"></div>
-
+									
 								<br>
 								<div class="clearfix">
 									<div id="footer">
@@ -521,10 +512,6 @@
 			$('#imagemodal').modal('show');
 		});
 	</script>
-	<script
-		src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-	<script src="js/script.js"></script>
-	<script src="js/autoadvance.js"></script>
 	<!-- /datepicker -->
 	<!-- /footer content -->
 </body>
