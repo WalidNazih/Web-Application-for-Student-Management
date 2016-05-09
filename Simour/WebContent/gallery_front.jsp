@@ -190,6 +190,31 @@
 				</div>
 			</div>
 
+			<!-- Video Modal -->
+			<div class="modal fade" id="videomodal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">Image preview</h4>
+						</div>
+						<div class="modal-body">
+							<center>
+								<video width="800" height="600" controls> <source
+									src="" type="video/mp4" class="videopreview"></video>
+							</center>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="right_col" role="main">
 				<div class="page-title"></div>
 				<div class="clearfix"></div>
@@ -225,8 +250,7 @@
 																	style="color: white; margin-top: 90px"
 																	class="fa fa-heart-o fa-2x"></i> <img
 																	style="display: none; width: 100%; height: 230px;"
-																	src="${image.url}" alt="image" id="clickImage" /> </a> 
-																<a
+																	src="${image.url}" alt="image" id="clickImage" /> </a> <a
 																	href="#" class="pop"><i
 																	style="color: white; margin-top: 90px"
 																	class="fa fa-search fa-2x"></i> <img
@@ -241,6 +265,38 @@
 														<div class="caption">
 															<center>
 																<p style="font-weight: bold; font-size: 20px">${image.title }</p>
+															</center>
+														</div>
+													</div>
+												</div>
+											</c:forEach>
+											<c:forEach var="vid" items="${vidL}">
+												<div class="col-sm-3">
+													<div class="thumbnail">
+														<div class="image view view-first">
+
+															<img style="width: 100%; height: 230px; display: block;"
+																src="${vid.thumbnail}" alt="video" id="clickImage" />
+															<div class="mask" style="color: white">
+																<a href="#" class="like"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-heart-o fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${vid.url}" alt="image" id="clickImage" /> </a> <a
+																	href="#" class="vidpop"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-search fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${vid.url}" alt="image" id="clickImage" /> </a> <br>
+																<i id="likecount" style="font-weight: bold">${vid.likes}
+																	likes</i>
+															</div>
+
+
+														</div>
+														<div class="caption">
+															<center>
+																<p style="font-weight: bold; font-size: 20px">${vid.description }</p>
 															</center>
 														</div>
 													</div>
@@ -288,6 +344,10 @@
 		$('.pop').on('click', function() {
 			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
 			$('#imagemodal').modal('show');
+		});
+		$('.vidpop').on('click', function() {
+			$('.videopreview').attr('src', $(this).find('img').attr('src'));
+			$('#videomodal').modal('show');
 		});
 	</script>
 </body>

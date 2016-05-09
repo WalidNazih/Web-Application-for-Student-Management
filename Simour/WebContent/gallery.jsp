@@ -160,16 +160,15 @@
 											<input type="file" name="myfile" id="myfile" size="60"
 											style="opacity: 0"> Upload
 										</label>
-
 									</center>
 									<div id="fields">
 										Title :<br> <input type="text" name="title" size="59"
 											required="" /><br> Description:<br>
 										<textarea style="width: 446px" name="desc" form="uploadPic"
 											required=""> </textarea>
-										<br> <input type="submit" value="Add"
+										<br> <input type="submit" name="addPic" value="Add"
 											class="btn btn-primary" style="margin-top: 10px"
-											onclick="shozModal()" />
+											onclick="showModal()" />
 									</div>
 									<br>
 
@@ -222,24 +221,24 @@
 									<div id="myTabContent" class="tab-content">
 										<div role="tabpanel" class="tab-pane fade active in"
 											id="tab_content1" aria-labelledby="home-tab">
-											<form id="uploadPic" action="Upload" method="POST"
+											<form id="uploadVid" action="Upload" method="POST"
 												enctype="multipart/form-data">
 												<center>
-													<label id="filelbl" for="myfile"> <img
+													<label id="filelbl" for="myvid"> <img
 														src="img/vidupload.png" width="60px" height="60px"
-														id="blah" /><br> <input type="file" name="myfile"
-														id="myfile" size="60" style="opacity: 0"> Upload
+														id="blah" /><br> <input type="file" name="myvid"
+														id="myvid" size="60" style="opacity: 0"> Upload
 													</label>
 
 												</center>
 												<div id="fields">
 													Title :<br> <input type="text" name="title" size="59"
 														required="" /><br> Description:<br>
-													<textarea style="width: 446px" name="desc" form="uploadPic"
+													<textarea style="width: 446px" name="desc" form="uploadVid"
 														required=""> </textarea>
-													<br> <input type="submit" value="Add"
+													<br> <input type="submit" name="addVid" value="Add"
 														class="btn btn-primary" style="margin-top: 18px"
-														onclick="showModal()" />
+														/>
 												</div>
 
 											</form>
@@ -263,7 +262,7 @@
 													
 													<div style="margin-top:6px">Description:<br><textarea style="width: 446px" name="desc" form="uploadPic"
 														required="" > </textarea></div>
-													<br> <input type="submit" value="Add"
+													<br> <input type="submit" name="addWeb" value="Add"
 														class="btn btn-primary" 
 														onclick="showModal()" />
 												</div>

@@ -1,10 +1,12 @@
 package myservlets;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
- 
+
+import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.jcodec.api.awt.FrameGrab;
 
 import classes.DAO;
  
@@ -107,7 +110,9 @@ public class Upload extends HttpServlet {
                 if(fileName.endsWith(".jpg") || fileName.endsWith(".png") || fileName.endsWith(".gif")){
                 	dao.insertImage("uploads/"+fileName, title, desc, 2);
                 }else if(fileName.endsWith(".avi") || fileName.endsWith(".mp4") || fileName.endsWith(".wmv")){
-                	dao.insertVideo("uploads/"+fileName, title, desc, 3);
+                	System.out.println(desc);
+                	dao.insertVideo("uploads/"+fileName, title, 3);
+                	
                 }
                 
                 
@@ -115,6 +120,7 @@ public class Upload extends HttpServlet {
         } catch (Exception ex) {
             request.setAttribute("message",
                     "There was an error: " + ex.getMessage());
+            System.out.println(ex.getMessage());
         }
         // redirects client to message page
         getServletContext().getRequestDispatcher("/gallery.jsp").forward(

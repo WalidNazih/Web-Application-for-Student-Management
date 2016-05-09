@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import beans.Image;
 import beans.Message;
+import beans.Video;
 import classes.DAO;
 
 /**
@@ -44,10 +45,16 @@ public class Images extends HttpServlet {
 				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6));
 				imageList.add(image);
 			}
+			rs = dao.getVideos();
+			ArrayList<Video> videoList = new ArrayList<>();
+			while(rs.next()){
+				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4));
+				videoList.add(video);
+			}
 
 			HttpSession session = request.getSession();
 			session.setAttribute("imageL", imageList);
-			
+			session.setAttribute("vidL", videoList);
 			request.getRequestDispatcher("gallery_front.jsp").forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

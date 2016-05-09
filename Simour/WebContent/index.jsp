@@ -40,160 +40,127 @@
         <![endif]-->
 
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Indie+Flower'
+	rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
 <!-- use jssor.slider.debug.js instead for debug -->
-<script type="text/javascript" src="js/jssor.slider.min.js"></script>
 <script>
-	jssor_1_slider_init = function() {
+	jQuery(document).ready(function($) {
+
+		var jssor_1_SlideshowTransitions = [ {
+			$Duration : 1200,
+			$Opacity : 2
+		} ];
 
 		var jssor_1_options = {
 			$AutoPlay : true,
+			$SlideshowOptions : {
+				$Class : $JssorSlideshowRunner$,
+				$Transitions : jssor_1_SlideshowTransitions,
+				$TransitionsOrder : 1
+			},
 			$ArrowNavigatorOptions : {
 				$Class : $JssorArrowNavigator$
 			},
-			$ThumbnailNavigatorOptions : {
-				$Class : $JssorThumbnailNavigator$,
-				$Cols : 9,
-				$SpacingX : 3,
-				$SpacingY : 3,
-				$Align : 260
+			$BulletNavigatorOptions : {
+				$Class : $JssorBulletNavigator$
 			}
 		};
 
 		var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
-		//responsive code begin
-		//you can remove responsive code if you don't want the slider scales while window resizing
-		function ScaleSlider() {
-			var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-			if (refSize) {
-				refSize = Math.min(refSize, 700);
-				jssor_1_slider.$ScaleWidth(refSize);
-			} else {
-				window.setTimeout(ScaleSlider, 30);
-			}
-		}
-		ScaleSlider();
-		$Jssor$.$AddEvent(window, "load", ScaleSlider);
-		$Jssor$.$AddEvent(window, "resize", ScaleSlider);
-		$Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+		
 		//responsive code end
-	};
+	});
 </script>
-<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 
 <style>
 
-/* jssor slider arrow navigator skin 02 css */
+/* jssor slider bullet navigator skin 05 css */
 /*
-        .jssora02l                  (normal)
-        .jssora02r                  (normal)
-        .jssora02l:hover            (normal mouseover)
-        .jssora02r:hover            (normal mouseover)
-        .jssora02l.jssora02ldn      (mousedown)
-        .jssora02r.jssora02rdn      (mousedown)
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
         */
-.jssora02l, .jssora02r {
+.jssorb05 {
+	position: absolute;
+}
+
+.jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+	position: absolute;
+	/* size of bullet elment */
+	width: 16px;
+	height: 16px;
+	background: url('img/b05.png') no-repeat;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.jssorb05 div {
+	background-position: -7px -7px;
+}
+
+.jssorb05 div:hover, .jssorb05 .av:hover {
+	background-position: -37px -7px;
+}
+
+.jssorb05 .av {
+	background-position: -67px -7px;
+}
+
+.jssorb05 .dn, .jssorb05 .dn:hover {
+	background-position: -97px -7px;
+}
+
+/* jssor slider arrow navigator skin 12 css */
+/*
+        .jssora12l                  (normal)
+        .jssora12r                  (normal)
+        .jssora12l:hover            (normal mouseover)
+        .jssora12r:hover            (normal mouseover)
+        .jssora12l.jssora12ldn      (mousedown)
+        .jssora12r.jssora12rdn      (mousedown)
+        */
+.jssora12l, .jssora12r {
 	display: block;
 	position: absolute;
 	/* size of arrow element */
-	width: 55px;
-	height: 55px;
+	width: 30px;
+	height: 46px;
 	cursor: pointer;
-	background: url('img/a02.png') no-repeat;
+	background: url('img/a12.png') no-repeat;
 	overflow: hidden;
 }
 
-.jssora02l {
-	background-position: -3px -33px;
+.jssora12l {
+	background-position: -16px -37px;
 }
 
-.jssora02r {
-	background-position: -63px -33px;
+.jssora12r {
+	background-position: -75px -37px;
 }
 
-.jssora02l:hover {
-	background-position: -123px -33px;
+.jssora12l:hover {
+	background-position: -136px -37px;
 }
 
-.jssora02r:hover {
-	background-position: -183px -33px;
+.jssora12r:hover {
+	background-position: -195px -37px;
 }
 
-.jssora02l.jssora02ldn {
-	background-position: -3px -33px;
+.jssora12l.jssora12ldn {
+	background-position: -256px -37px;
 }
 
-.jssora02r.jssora02rdn {
-	background-position: -63px -33px;
+.jssora12r.jssora12rdn {
+	background-position: -315px -37px;
 }
-
-/* jssor slider thumbnail navigator skin 03 css */
-/*
-        .jssort03 .p            (normal)
-        .jssort03 .p:hover      (normal mouseover)
-        .jssort03 .pav          (active)
-        .jssort03 .pdn          (mousedown)
-        */
-.jssort03 .p {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 62px;
-	height: 32px;
-}
-
-.jssort03 .t {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border: none;
-}
-
-.jssort03 .w, .jssort03 .pav:hover .w {
-	position: absolute;
-	width: 60px;
-	height: 30px;
-	border: white 1px dashed;
-	box-sizing: content-box;
-}
-
-.jssort03 .pdn .w, .jssort03 .pav .w {
-	border-style: solid;
-}
-
-.jssort03 .c {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 62px;
-	height: 32px;
-	background-color: #000;
-	filter: alpha(opacity = 45);
-	opacity: .45;
-	transition: opacity .6s;
-	-moz-transition: opacity .6s;
-	-webkit-transition: opacity .6s;
-	-o-transition: opacity .6s;
-}
-
-.jssort03 .p:hover .c, .jssort03 .pav .c {
-	filter: alpha(opacity = 0);
-	opacity: 0;
-}
-
-.jssort03 .p:hover .c {
-	transition: none;
-	-moz-transition: none;
-	-webkit-transition: none;
-	-o-transition: none;
-}
-
-* html .jssort03 .w {
-	width /**/: 62px;
-	height /**/: 32px;
+.shadow {
+-moz-box-shadow: 0 0 30px 5px #999;
+-webkit-box-shadow: 0 0 30px 5px #999;
 }
 </style>
 </head>
@@ -202,7 +169,7 @@
 <body class="nav-md">
 	<div class="container body">
 		<div class="main_container">
-			
+
 
 			<div class="col-md-3 left_col">
 				<div class="left_col scroll-view">
@@ -218,28 +185,28 @@
 					</div>
 					<div class="clearfix"></div>
 					<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog"
-				aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">
-								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-							</button>
-							<h4 class="modal-title" id="myModalLabel">Image preview</h4>
-						</div>
-						<div class="modal-body">
-							<center>
-								<img src="" class="imagepreview"
-									style="width: 570px; height: 470px;">
-							</center>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Close</button>
+						aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">
+										<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+									</button>
+									<h4 class="modal-title" id="myModalLabel">Image preview</h4>
+								</div>
+								<div class="modal-body">
+									<center>
+										<img src="" class="imagepreview"
+											style="width: 570px; height: 470px;">
+									</center>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">Close</button>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
 
 					<br />
 					<div id="sidebar-menu"
@@ -332,155 +299,180 @@
 							<div class="x_content">
 
 								<div class="row">
-									<div class="col-md-6 col-xs-6 col-sm-6">
-									<div id="jssor_1"
-									style="position: relative; margin: 0 auto;margin-left:3px; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden; visibility: hidden;">
-									<!-- Loading Screen -->
-									<div data-u="loading"
-										style="position: absolute; top: 0px; left: 0px;">
-										<div
-											style="filter: alpha(opacity = 70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-										<div
-											style="position: absolute; display: block; background: url('img/loading.gif') no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-									</div>
-									<div data-u="slides"
-										style="cursor: default; position: relative; top: 0px; left: 0px; width: 700px; height: 400px; overflow: hidden;">
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/art/1.jpg" /> <img
-												data-u="thumb" src="images/art/1.jpg" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/art/2.jpg" /> <img
-												data-u="thumb" src="images/art/2.jpg" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/art/3.jpg" /> <img
-												data-u="thumb" src="images/art/3.jpg" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/art/4.jpg" /> <img
-												data-u="thumb" src="images/art/4.jpg" />
-										</div>
-
-										<a data-u="ad" href="http://www.jssor.com"
-											style="display: none">jQuery Slider</a>
-
-									</div>
-									<!-- Thumbnail Navigator -->
-									<div u="thumbnavigator" class="jssort03"
-										style="position: absolute; left: 0px; bottom: 0px; width: 700px; height: 70px;"
-										data-autocenter="1">
-										<div
-											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; filter: alpha(opacity = 70.0); opacity: 0.3;"></div>
-										<!-- Thumbnail Item Skin Begin -->
-										<div u="slides" style="cursor: default;">
-											<div u="prototype" class="p">
-												<div class="w">
-													<div u="thumbnailtemplate" class="t"></div>
-												</div>
-												<div class="c"></div>
+									<div class="col-md-8 col-xs-8 col-sm-8">
+										<div class="shadow" id="jssor_1"
+											style=" position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1000px; height: 500px; overflow: hidden; visibility: hidden;">
+											<!-- Loading Screen -->
+											<div data-u="loading"
+												style="position: absolute; top: 0px; left: 0px;">
+												<div
+													style="filter: alpha(opacity = 70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+												<div
+													style="position: absolute; display: block; background: url('img/loading.gif') no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
 											</div>
+											<div data-u="slides"
+												style="cursor: default; position: relative; top: 0px; left: 0px; width: 1000px; height: 500px; overflow: hidden;">
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/slide-01.jpg" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/slide-02.jpg" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/slide-03.jpg" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/slide-04.jpg" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/slide-05.jpg" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/slide-06.PNG" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/slide-07.PNG" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/Capture3.PNG" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/Capture4.PNG" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/Capture5.PNG" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/Capture6.PNG" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/Capture7.PNG" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/Capture8.PNG" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/Capture9.PNG" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/Capture10.PNG" class="img-thumbnail"/>
+												</div>
+												<div data-p="112.50" style="display: none;" >
+													<img data-u="image" src="images/Capture11.PNG" class="img-thumbnail"/>
+												</div>
+											</div>
+											<!-- Bullet Navigator -->
+											<div data-u="navigator" class="jssorb05"
+												style="bottom: 16px; right: 16px;" data-autocenter="1">
+												<!-- bullet navigator item prototype -->
+												<div data-u="prototype" style="width: 16px; height: 16px;"></div>
+											</div>
+											<!-- Arrow Navigator -->
+											<span data-u="arrowleft" class="jssora12l"
+												style="top: 0px; left: 0px; width: 30px; height: 46px;"
+												data-autocenter="2"></span> <span data-u="arrowright"
+												class="jssora12r"
+												style="top: 0px; right: 0px; width: 30px; height: 46px;"
+												data-autocenter="2"></span>
 										</div>
-										<!-- Thumbnail Item Skin End -->
+
 									</div>
-									<!-- Arrow Navigator -->
-									<span data-u="arrowleft" class="jssora02l"
-										style="top: 0px; left: 8px; width: 55px; height: 55px;"
-										data-autocenter="2"></span> <span data-u="arrowright"
-										class="jssora02r"
-										style="top: 0px; right: 8px; width: 55px; height: 55px;"
-										data-autocenter="2"></span>
-								</div>
-								<script>
-									jssor_1_slider_init();
-								</script>
-								</div><br><br>
-								<div class="col-md-6 col-xs-6 col-sm-6">
-									<img src="images/androidlogo.png" width="90px" height="100px" style="float:left;display:block;margin-left:150px;margin-top:20px"/>
-									<h1 style="margin-top:35px;font-weight:bold;margin-left:50px;font-family: 'Indie Flower', cursive;" >Android Application <br> Coming Soon</h1><br>
-									<center><img src="images/googleplay.png" width="200px" height="80px" style="display:block;margin-top:20px"/></center>
-								</div>
+									<div class="col-md-4 col-xs-4 col-sm-4">
+										<img src="images/androidlogo.png" width="90px" height="100px"
+											style="float: left; display: block; margin-left: 150px; margin-top: 20px" />
+										<h1
+											style="margin-top: 35px; font-weight: bold; margin-left: 50px; font-family: 'Indie Flower', cursive;">
+											Android Application <br> Coming Soon
+										</h1>
+										<br>
+										<center>
+											<img src="images/googleplay.png" width="200px" height="80px"
+												style="display: block; margin-top: 20px" />
+										</center>
+									</div>
 								</div>
 								<br> <br>
-								<div class="x_title">
-									<h2>Latest Media</h2>
-									<div class="clearfix"></div>
-									</div>
-									
-									<div>
-										<c:forEach var="image" items="${lastIm}">
-											<div style="margin-left: -10px; margin-top: 20px"
-												class="col-md-2">
-												<div style="height: 180px; width: 180px" class="thumbnail">
-													<div class="image view view-first">
-														<a href="#" class="pop"> <img
-															style="width: 100%; height: 180px; display: block;"
-															src="${image.url}" alt="image" id="clickImage" />
-															<div class="mask">
-																<i style="margin-top: 55px" class="fa fa-search"></i>
-															</div>
-														</a>
+
+							</div>
+							<br> <br>
+							<div class="x_title">
+								<h2>Latest Media</h2>
+								<div class="clearfix"></div>
+							</div>
+
+							<div>
+								<c:forEach var="image" items="${lastIm}">
+									<div style="margin-left: -10px; margin-top: 20px"
+										class="col-md-2">
+										<div style="height: 180px; width: 180px" class="thumbnail">
+											<div class="image view view-first">
+												<a href="#" class="pop"> <img
+													style="width: 100%; height: 180px; display: block;"
+													src="${image.url}" alt="image" id="clickImage" />
+													<div class="mask">
+														<i style="margin-top: 55px" class="fa fa-search"></i>
 													</div>
-
-												</div>
+												</a>
 											</div>
-										</c:forEach>
+
+										</div>
 									</div>
-									<div class="clearfix"></div>
-									<div class="x_title">
-										<h2>Latest Articles</h2>
-										<div class="clearfix"></div>
-										
-										<br>
-										<div class="clearfix">
-										<div id="footer">
-											<div class="footer-box col-md-4">
-												<h3>Popular Posts</h3>
-												<ul class="popular-posts">
-													<li><a href="#"><img src="style/images/art/s1.jpg"
-															alt="" /></a>
-														<h5>
-															<a href="#">Dolor Commodo Consectetur</a>
-														</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
+								</c:forEach>
+							</div>
+							<div class="clearfix"></div>
+							<div class="x_title">
+								<h2>Latest Articles</h2>
+								<div class="clearfix"></div>
 
-													<li><a href="#"><img src="style/images/art/s2.jpg"
-															alt="" /></a>
-														<h5>
-															<a href="#">Dolor Commodo Consectetur</a>
-														</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
+								<br>
+								<div class="clearfix">
+									<div id="footer">
+										<div class="footer-box col-md-4">
+											<h3>Popular Posts</h3>
+											<ul class="popular-posts">
+												<li><a href="#"><img src="style/images/art/s1.jpg"
+														alt="" /></a>
+													<h5>
+														<a href="#">Dolor Commodo Consectetur</a>
+													</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
 
-													<li><a href="#"><img src="style/images/art/s3.jpg"
-															alt="" /></a>
-														<h5>
-															<a href="#">Dolor Commodo Consectetur</a>
-														</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
+												<li><a href="#"><img src="style/images/art/s2.jpg"
+														alt="" /></a>
+													<h5>
+														<a href="#">Dolor Commodo Consectetur</a>
+													</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
 
-												</ul>
-											</div>
-											<div class="footer-box col-md-4">
-												<h3>About</h3>
-												<p>Donec id elit non mi porta gravida at eget metus.
-													Donec ullamcorper nulla non metus auctor fringilla.</p>
-												<p>
-													Lorem Ipsum Dolor Sit Moon Avenue No:11/21 Planet City,
-													Earth<br> <br> <span class="lite1">Fax:</span>
-													+555 797 534 01<br> <span class="lite1">Tel:</span>
-													+555 636 646 62<br> <span class="lite1">E-mail:</span>
-													name@domain.com
-												</p>
+												<li><a href="#"><img src="style/images/art/s3.jpg"
+														alt="" /></a>
+													<h5>
+														<a href="#">Dolor Commodo Consectetur</a>
+													</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
+
+											</ul>
+										</div>
+										<div class="footer-box col-md-4">
+											<h3>About</h3>
+											<p>Donec id elit non mi porta gravida at eget metus.
+												Donec ullamcorper nulla non metus auctor fringilla.</p>
+											<p>
+												Lorem Ipsum Dolor Sit Moon Avenue No:11/21 Planet City,
+												Earth<br> <br> <span class="lite1">Fax:</span>
+												+555 797 534 01<br> <span class="lite1">Tel:</span>
+												+555 636 646 62<br> <span class="lite1">E-mail:</span>
+												name@domain.com
+											</p>
 
 
-											</div>
+										</div>
 
-											<div class="footer-box col-md-4 last">
-												<h3>Custom Text</h3>
-												<p>Nullam quis risus eget urna mollis ornare vel eu leo.
-													Maecenas faucibus mollis interdum. Etiam porta sem
-													malesuada magna mollis euismod. Nulla vitae elit.</p>
-												<p>Donec ullamcorper nulla non metus auctor fringilla.
-													Maecenas faucibus mollis interdum. Curabitur blandit tempus
-													porttitor.</p>
-											</div>
+										<div class="footer-box col-md-4 last">
+											<h3>Custom Text</h3>
+											<p>Nullam quis risus eget urna mollis ornare vel eu leo.
+												Maecenas faucibus mollis interdum. Etiam porta sem malesuada
+												magna mollis euismod. Nulla vitae elit.</p>
+											<p>Donec ullamcorper nulla non metus auctor fringilla.
+												Maecenas faucibus mollis interdum. Curabitur blandit tempus
+												porttitor.</p>
 										</div>
 									</div>
 								</div>
@@ -489,11 +481,12 @@
 					</div>
 				</div>
 			</div>
-
-
-
 		</div>
-		<!-- /page content -->
+
+
+
+	</div>
+	<!-- /page content -->
 
 	</div>
 
@@ -528,6 +521,10 @@
 			$('#imagemodal').modal('show');
 		});
 	</script>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/autoadvance.js"></script>
 	<!-- /datepicker -->
 	<!-- /footer content -->
 </body>

@@ -36,6 +36,13 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getVideos() throws SQLException{
+		String sql = "SELECT * FROM videos";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getImageByCategory(int category) throws SQLException{
 		String sql = "SELECT * FROM IMAGES WHERE CATEGORY=?";
 		preparedStatement = con.prepareStatement(sql);
@@ -87,13 +94,12 @@ public class DAO {
 		preparedStatement.executeUpdate();
 	}
 	
-	public void insertVideo(String url, String title, String desc, int category) throws SQLException{
-		String sql = "INSERT INTO videos (url,title,description,category) values(?,?,?,?)";
+	public void insertVideo(String url, String desc, int category) throws SQLException{
+		String sql = "INSERT INTO videos (url,description,category) values(?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, url);
-		preparedStatement.setString(2, title);
-		preparedStatement.setString(3, desc);
-		preparedStatement.setInt(4, category);
+		preparedStatement.setString(2, desc);
+		preparedStatement.setInt(3, category);
 		preparedStatement.executeUpdate();
 	}
 	
