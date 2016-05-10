@@ -144,7 +144,7 @@
 				<!-- top tiles -->
 				<div class="row tile_count"></div>
 				<div class="row">
-					
+
 					<div class="col-md-4 col-sm-4 col-xs-4">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
@@ -157,9 +157,9 @@
 									enctype="multipart/form-data">
 									<center>
 										<label id="filelbl" for="myfile"> <img
-											src="images/articleupload.png" width="60px" height="60px" id="blah" /><br>
-											<input type="file" name="myfile" id="myfile" size="60"
-											style="opacity: 0"> Upload
+											src="images/articleupload.png" width="60px" height="60px"
+											id="blah" /><br> <input type="file" name="myfile"
+											id="myfile" size="60" style="opacity: 0"> Upload
 										</label>
 
 									</center>
@@ -169,8 +169,7 @@
 										<textarea style="width: 347px" name="desc" form="uploadArt"
 											required=""> </textarea>
 										<br> <input type="submit" value="Add" name="articlebtn"
-											class="btn btn-primary" style="margin-top: 10px"
-											 />
+											class="btn btn-primary" style="margin-top: 10px" />
 									</div>
 									<br>
 
@@ -191,9 +190,9 @@
 									enctype="multipart/form-data">
 									<center>
 										<label id="filelbl" for="myfile"> <img
-											src="images/bookupload.png" width="60px" height="60px" id="blah" /><br>
-											<input type="file" name="myfile" id="myfile" size="60"
-											style="opacity: 0"> Upload
+											src="images/bookupload.png" width="60px" height="60px"
+											id="blah" /><br> <input type="file" name="myfile"
+											id="myfile" size="60" style="opacity: 0"> Upload
 										</label>
 
 									</center>
@@ -225,9 +224,9 @@
 									enctype="multipart/form-data">
 									<center>
 										<label id="filelbl" for="myfile"> <img
-											src="images/chapters.jpg" width="60px" height="60px" id="blah" /><br>
-											<input type="file" name="myfile" id="myfile" size="60"
-											style="opacity: 0"> Upload
+											src="images/chapters.jpg" width="60px" height="60px"
+											id="blah" /><br> <input type="file" name="myfile"
+											id="myfile" size="60" style="opacity: 0"> Upload
 										</label>
 
 									</center>
@@ -254,27 +253,30 @@
 								<div class="clearfix"></div>
 							</div>
 							<div>
-										<c:forEach var="image" items="${topImages}">
-											<div style="margin-left: -10px; margin-top: 20px"
-												class="col-md-2">
-												<div style="height: 120px; width: 130px" class="thumbnail">
-													<div class="image view view-first">
-														<a href="#" class="pop"> <img
-															style="width: 100%; height: 130px; display: block;"
-															src="${image.url}" alt="image" id="clickImage" />
-															<div class="mask">
-																	<div style="margin-top:51px"><i id="likecount" style="font-weight: bold;color:white;">${image.likes}
-																	likes</i></div>
-															</div>
-														</a>
-														
+								<c:forEach var="image" items="${topImages}">
+									<div style="margin-left: -10px; margin-top: 20px"
+										class="col-md-2">
+										<div style="height: 120px; width: 130px" class="thumbnail">
+											<div class="image view view-first">
+												<a href="#" class="pop"> <img
+													style="width: 100%; height: 130px; display: block;"
+													src="${image.url}" alt="image" id="clickImage" />
+													<div class="mask">
+														<div style="margin-top: 51px">
+															<i id="likecount"
+																style="font-weight: bold; color: white;">${image.likes}
+																likes</i>
+														</div>
 													</div>
+												</a>
 
-												</div>
 											</div>
-										</c:forEach>
+
+										</div>
 									</div>
-									<div class="clearfix"></div>
+								</c:forEach>
+							</div>
+							<div class="clearfix"></div>
 						</div>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">
@@ -283,9 +285,7 @@
 								<h2>Most Liked Articles</h2>
 								<div class="clearfix"></div>
 							</div>
-							<div class="x_content">
-							 
-							</div>
+							<div class="x_content"></div>
 						</div>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">
@@ -294,9 +294,7 @@
 								<h2>Most Liked Book Chapters</h2>
 								<div class="clearfix"></div>
 							</div>
-							<div class="x_content">
-							 
-							</div>
+							<div class="x_content"></div>
 						</div>
 					</div>
 

@@ -222,9 +222,9 @@
 								<li class="principale"><a><i class="fa fa-book"></i>
 										Research <span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="form.html">Books</a></li>
-										<li><a href="form_advanced.html">Articles</a></li>
-										<li><a href="form_advanced.html">Book Chapters</a></li>
+										<li><a href="books.jsp">Books</a></li>
+										<li><a href="articles.jsp">Articles</a></li>
+										<li><a href="chapters.jsp">Book Chapters</a></li>
 									</ul></li>
 								<li class="principale"><a><i
 										class="fa fa-graduation-cap"></i> Pedagogy <span
@@ -274,7 +274,7 @@
 					<div
 						class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
 						<div class="input-group"
-							style="margin-top: -50px; width: 200px; float: right">
+							style="margin-top: -50px; width: 250px; float: right">
 							<input type="text" class="form-control"
 								placeholder="Search for..."> <span
 								class="input-group-btn">
@@ -409,12 +409,13 @@
 										</div>
 									</div>
 								</c:forEach>
+								
 							</div>
 							<div class="clearfix"></div>
 							<div class="x_title">
 								<h2>Latest Articles</h2>
 								<div class="clearfix"></div>
-									
+								</div>	
 								<br>
 								<div class="clearfix">
 									<div id="footer">

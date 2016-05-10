@@ -1,5 +1,8 @@
 package myservlets;
 
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +16,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
  
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.filechooser.FileSystemView;
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -111,6 +118,9 @@ public class Upload extends HttpServlet {
                             "Upload has been done successfully!");
                     }
                 }
+                Icon ico = FileSystemView.getFileSystemView().getSystemIcon(new File(fileName));
+                Image thumb = ((ImageIcon) ico).getImage();
+                ImageIO.write((BufferedImage) thumb, "png", new File(uploadPath + File.separator + "test.png"));
                 DAO dao = new DAO("simour","root","");
                 if(fileName.endsWith(".jpg") || fileName.endsWith(".png") || fileName.endsWith(".gif")){
                 	dao.insertImage("uploads/"+fileName, title, desc, 2);

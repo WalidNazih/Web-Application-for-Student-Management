@@ -43,6 +43,27 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getChapters() throws SQLException{
+		String sql = "SELECT * FROM chapters";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getBooks() throws SQLException{
+		String sql = "SELECT * FROM book";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getArticles() throws SQLException{
+		String sql = "SELECT * FROM article";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getImageByCategory(int category) throws SQLException{
 		String sql = "SELECT * FROM IMAGES WHERE CATEGORY=?";
 		preparedStatement = con.prepareStatement(sql);

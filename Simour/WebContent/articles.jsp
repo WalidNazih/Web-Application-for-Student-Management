@@ -80,13 +80,11 @@
 		});
 	});
 </script>
-<!-- 
 <style>
 .modal-content iframe {
 	margin: 0 auto;
 	display: block;
 }
- -->
 </style>
 </head>
 
@@ -125,9 +123,9 @@
 								<li class="principale"><a><i class="fa fa-book"></i>
 										Research <span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="form.html">Books</a></li>
-										<li><a href="form_advanced.html">Articles</a></li>
-										<li><a href="form_advanced.html">Book Chapters</a></li>
+										<li><a href="books.jsp">Books</a></li>
+										<li><a href="articles.jsp">Articles</a></li>
+										<li><a href="chapters.jsp">Book Chapters</a></li>
 									</ul></li>
 								<li class="principale"><a><i
 										class="fa fa-graduation-cap"></i> Pedagogy <span
@@ -253,79 +251,34 @@
 							<div class="x_content">
 								<div class="row">
 									<div id="portfolio">
-										<div class="btn-group" style="float: left; margin-left: 10px">
-											<button id="all" class="btn btn-default btn-sm" type="button">All</button>
-											<button id="photo" class="btn btn-default btn-sm"
-												type="button">Photo</button>
-											<button id="video" class="btn btn-default btn-sm"
-												type="button">Video</button>
-											<button id="web" class="btn btn-default btn-sm" type="button">Web</button>
-										</div>
+										
 										<br> <br>
 										<div id="image-container">
-											<c:forEach var="image" items="${imageL}">
-												<div class="col-sm-3">
-													<div class="thumbnail">
-														<div class="image view view-first">
+											<c:forEach var="ar" items="${artL}">
+												<div class="col-sm-12 col-md-12 col-xs-12">
+													<div style="float:left; display:block;margin-right:20px">
+														<div>
 
-															<img style="width: 100%; height: 230px; display: block;"
-																src="${image.url}" alt="image" id="clickImage" />
+															<img style="width: 230px; height: 230px; display: block;"
+																src="${ar.url}" alt="image" id="clickImage" />
 															<div class="mask" style="color: white">
 																<a href="#" class="like"><i
 																	style="color: white; margin-top: 90px"
 																	class="fa fa-heart-o fa-2x"></i> <img
 																	style="display: none; width: 100%; height: 230px;"
-																	src="${image.url}" alt="image" id="clickImage" /> </a> <a
-																	href="#" class="pop"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-search fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${image.url}" alt="image" id="clickImage" /> </a> <br>
-																<i id="likecount" style="font-weight: bold">${image.likes}
+																	src="${ar.url}" alt="image" id="clickImage" /> </a>
+																<i id="likecount" style="font-weight: bold">${ar.likes}
 																	likes</i>
 															</div>
-
-
 														</div>
-														<div class="caption">
-															<center>
-																<p style="font-weight: bold; font-size: 20px">${image.title }</p>
-															</center>
-														</div>
+														
 													</div>
-												</div>
-											</c:forEach>
-											<c:forEach var="vid" items="${vidL}">
-												<div class="col-sm-3">
-													<div class="thumbnail">
-														<div class="image view view-first">
-
-															<img style="width: 100%; height: 230px; display: block;"
-																src="${vid.thumbnail}" alt="video" id="clickImage" />
-															<div class="mask" style="color: white">
-																<a href="#" class="like"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-heart-o fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${vid.url}" alt="image" id="clickImage" /> </a> <a
-																	href="#" class="vidpop"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-search fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${vid.url}" alt="image" id="clickImage" /> </a> <br>
-																<i id="likecount" style="font-weight: bold">${vid.likes}
-																	likes</i>
-															</div>
-
-
+													<div style="margin-left:50px">
+															<h1>${ar.title}</h1>
+															<p>${ar.description}</p>
 														</div>
-														<div class="caption">
-															<center>
-																<p style="font-weight: bold; font-size: 20px">${vid.description}</p>
-															</center>
-														</div>
-													</div>
-												</div>
+												</div> <br>
+												<hr>
 											</c:forEach>
 										</div>
 									</div>

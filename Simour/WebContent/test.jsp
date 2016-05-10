@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -38,34 +38,58 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-<script language="javascript" type="text/javascript">
-	function getCaptcha() {
-		var chars = "0Aa1Bb2Cc3Dd4Ee5Ff6Gg7Hh8Ii9Jj0Kk1Ll2Mm3Nn4Oo5Pp6Qq7Rr8Ss9Tt0Uu1Vv2Ww3Xx4Yy5Zz";
-		var string_length = 5;
-		var captchastring = '';
-		for (var i = 0; i < string_length; i++) {
-			var rnum = Math.floor(Math.random() * chars.length);
-			captchastring += chars.substring(rnum, rnum + 1);
-		}
-		document.getElementById("randomfield").innerHTML = captchastring;
-	}
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#all").click(function() {
+			var cat = 4;
+			$.get('ImageAjax', {
+				cat : cat
+			}, function(responseText) {
+				$("#image-container").html(responseText);
+			});
+		});
+		$("#photo").click(function() {
+			var cat = 2;
+			$.get('ImageAjax', {
+				cat : cat
+			}, function(responseText) {
+				$("#image-container").html(responseText);
+			});
+		});
+		$("#video").click(function() {
+			var cat = 3;
+			$.get('ImageAjax', {
+				cat : cat
+			}, function(responseText) {
+				$("#image-container").html(responseText);
+			});
+		});
+		$("#web").click(function() {
+			var cat = 1;
+			$.get('ImageAjax', {
+				cat : cat
+			}, function(responseText) {
+				$("#image-container").html(responseText);
+			});
+		});
+		$(".like").click(function() {
+			var imgurl = $(this).find('img').attr('src');
+			var obj = $(this);
+			$.get('LikeAjax', {
+				imgurl : imgurl
+			}, function(responseText) {
+				obj.siblings('#likecount').text(responseText + " likes")
+				obj.find('i').removeClass("fa-heart-o");
+				obj.find('i').addClass("fa-heart");
+			});
+		});
+	});
 </script>
-<style>
-#captcha {
-	height: 38px;
-	background-image: url(overlay1.png);
-	background-repeat: no-repeat;
-	font-size: 25px;
-	position: relative;
-}
 
-#captcha_gen {
-	left: 10px;
-	top: 3px;
-	position: absolute;
-	Font-family: Monospace;
-	font-weight: bold;
-	text-align: justify;
+<style>
+.modal-content iframe {
+	margin: 0 auto;
+	display: block;
 }
 </style>
 
@@ -173,104 +197,100 @@
 
 			<!-- page content -->
 			<div class="right_col" role="main">
-				<div style="margin-top: 100px">
+				<div class="page-title"></div>
+				<div class="clearfix"></div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="x_panel">
+							<div class="x_title">
+								<h2>Media Gallery</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+								<div class="row">
+									<div id="portfolio">
+										<div class="btn-group" style="float: left; margin-left: 10px">
+											<button id="all" class="btn btn-default btn-sm" type="button">All</button>
+											<button id="photo" class="btn btn-default btn-sm"
+												type="button">Photo</button>
+											<button id="video" class="btn btn-default btn-sm"
+												type="button">Video</button>
+											<button id="web" class="btn btn-default btn-sm" type="button">Web</button>
+										</div>
+										<br> <br>
+										<div id="image-container">
+											<c:forEach var="image" items="${imageL}">
+												<div class="col-sm-3">
+													<div class="thumbnail">
+														<div class="image view view-first">
 
-					<h2>Send me a message :</h2>
-					<br>
-					<form name="randform" action="Contact" methode="post" id="Cnt">
-						<div class="item form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12"
-								for="name">Full Name :<span class="required"><font
-									color="red"> *</font></span>
-							</label>
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input id="name" class="form-control col-md-7 col-xs-12"
-									name="sender" placeholder="e.g Safaa Askour"
-									required="required" type="text">
-							</div>
-						</div>
-						<br> <br> <br>
-						<div class="item form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12"
-								for="email">Email :<span class="required"><font
-									color="red"> *</font></span>
-							</label>
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="email" id="email" name="email" required="required"
-									class="form-control col-md-7 col-xs-12"
-									placeholder="e.g safaa.askour@gmail.com">
-							</div>
-						</div>
-						<br> <br>
-						<div class="item form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12"
-								for="subject">Subject :<span class="required"><font
-									color="red"> *</font></span>
-							</label>
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input id="name" class="form-control col-md-7 col-xs-12"
-									name="subject" placeholder="80 characters Max"
-									required="required" type="text">
-							</div>
-						</div>
-						<br> <br> <br>
-						<div class="item form-group">
-							<label class="control-label col-md-3 col-sm-3 col-xs-12"
-								for="textarea">Message :<span class="required"><font
-									color="red"> *</font></span>
-							</label>
-							<div class="col-md-6 col-sm-6 col-xs-12">
-								<textarea id="textarea" required="required" name="message"
-									class="form-control col-md-7 col-xs-12"
-									placeholder="300 characters Max" form="Cnt"></textarea>
-							</div>
-							<br> <br> <br> <br>
-							<div class="item form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12"
-									for="email">Verify Yourself :<span class="required"><font
-										color="red"> *</font></span>
-								</label>
+															<img style="width: 100%; height: 230px; display: block;"
+																src="${image.url}" alt="image" id="clickImage" />
+															<div class="mask" style="color: white">
+																<a href="#" class="like"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-heart-o fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${image.url}" alt="image" id="clickImage" /> </a> <a
+																	href="#" class="pop"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-search fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${image.url}" alt="image" id="clickImage" /> </a> <br>
+																<i id="likecount" style="font-weight: bold">${image.likes}
+																	likes</i>
+															</div>
 
-								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input id="name" class="form-control col-md-7 col-xs-12"
-										name="code" placeholder="Enter Verification code" type="text"
-										required=""> <br>
-									<br>
-									<div id="captcha">
-										<div id="captcha_gen">
-											<label align="center" id="randomfield"></label>
+
+														</div>
+														<div class="caption">
+															<center>
+																<p style="font-weight: bold; font-size: 20px">${image.title }</p>
+															</center>
+														</div>
+													</div>
+												</div>
+											</c:forEach>
+											<c:forEach var="vid" items="${vidL}">
+												<div class="col-sm-3">
+													<div class="thumbnail">
+														<div class="image view view-first">
+
+															<img style="width: 100%; height: 230px; display: block;"
+																src="${vid.thumbnail}" alt="video" id="clickImage" />
+															<div class="mask" style="color: white">
+																<a href="#" class="like"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-heart-o fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${vid.url}" alt="image" id="clickImage" /> </a> <a
+																	href="#" class="vidpop"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-search fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${vid.url}" alt="image" id="clickImage" /> </a> <br>
+																<i id="likecount" style="font-weight: bold">${vid.likes}
+																	likes</i>
+															</div>
+
+
+														</div>
+														<div class="caption">
+															<center>
+																<p style="font-weight: bold; font-size: 20px">${vid.description}</p>
+															</center>
+														</div>
+													</div>
+												</div>
+											</c:forEach>
 										</div>
 									</div>
+
 								</div>
 							</div>
 						</div>
-						<br>
-						<div class="item form-group">
-							<div class="col-md-6 col-md-offset-3" style="margin-top: 20px">
-								<button type="submit" id="Refresh" class="btn btn-success"
-									onClick="getCaptcha();" form="Cnt">Refresh</button>
-								<button id="send" type="submit" class="btn btn-success"
-									onclick="fnsubmit()">Send</button>
-							</div>
-						</div>
-						<br> <br> <br> <br> <br>
-						<h5 style="margin-left: 10px">
-							<font color="red"> *</font> : Required field.
-						</h5>
-					</form>
-
+					</div>
 				</div>
-				<!-- footer content -->
-				<!-- 
-        <footer>
-          <div class="copyright-info">
-            <p class="pull-right">Safaa Askour & Walid Nazih</a>  
-            </p>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-         -->
-				<!-- /footer content -->
 			</div>
 			<!-- /page content -->
 

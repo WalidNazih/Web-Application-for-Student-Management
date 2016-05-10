@@ -237,7 +237,7 @@
 													<textarea style="width: 446px" name="desc" form="uploadVid"
 														required=""> </textarea>
 													<br> <input type="submit" name="addVid" value="Add"
-														class="btn btn-primary" style="margin-top: 18px"
+														class="btn btn-primary" style="margin-top: 19px"
 														/>
 												</div>
 
@@ -248,18 +248,19 @@
 											<form id="uploadVid" action="WebVideo" method="POST">
 												<center>
 													<label id="filelbl" for="myfile"> <img
-														src="images/urllogo2.png" width="80px" height="80px"
+														src="images/urllogo2.png" width="87px" height="87px"
 														id="blah" /><br>
 													</label>
 
 												</center>
 												
 												<div id="fields" style="margin-top:13px">
-													URL :  <input type="text" name="urlweb"
+													URL : <br> <input type="text" name="urlweb"
 														id="url" size="59" ><br>
 													
-													Description :  <input type="text" name="desc"
-														id="desc" size="59" ><br>
+													Description :  <br>
+													<textarea style="width: 446px" name="desc" form="uploadVid"
+														required=""> </textarea><br>
 														<!-- 
 													<div style="margin-top:6px">Description:<br><textarea style="width: 446px" name="desc" form="uploadPic"
 														required="" > </textarea></div> -->
