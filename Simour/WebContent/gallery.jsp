@@ -247,7 +247,7 @@
 											aria-labelledby="profile-tab">
 											<form id="uploadVid" action="WebVideo" method="POST">
 												<center>
-													<label id="filelbl" for="myfile"> <img
+													<label id="filelbl" for="urlweb"> <img
 														src="images/urllogo2.png" width="87px" height="87px"
 														id="blah" /><br>
 													</label>
@@ -259,8 +259,8 @@
 														id="url" size="59" ><br>
 													
 													Description :  <br>
-													<textarea style="width: 446px" name="desc" form="uploadVid"
-														required=""> </textarea><br>
+													<input type="text" name="urlweb"
+														id="url" size="59" ><br>
 														<!-- 
 													<div style="margin-top:6px">Description:<br><textarea style="width: 446px" name="desc" form="uploadPic"
 														required="" > </textarea></div> -->
