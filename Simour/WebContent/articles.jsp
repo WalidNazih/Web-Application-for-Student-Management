@@ -115,17 +115,17 @@
 
 						<div class="menu_section">
 							<ul class="nav side-menu">
-								<li class="principale"><a href="index.jsp"><i
+								<li class="principale"><a href="http://localhost:8070/Simour/IndexServlet"><i
 										class="fa fa-home"></i> Home</a></li>
 								<li class="principale"><a
-									href="http://localhost:8080/Simour/Images"><i
+									href="http://localhost:8070/Simour/Images"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
 								<li class="principale"><a><i class="fa fa-book"></i>
 										Research <span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="books.jsp">Books</a></li>
-										<li><a href="articles.jsp">Articles</a></li>
-										<li><a href="chapters.jsp">Book Chapters</a></li>
+										<li><a href="http://localhost:8070/Simour/Books">Books</a></li>
+										<li><a href="http://localhost:8070/Simour/Articles">Articles</a></li>
+										<li><a href="http://localhost:8070/Simour/Chapters">Book Chapters</a></li>
 									</ul></li>
 								<li class="principale"><a><i
 										class="fa fa-graduation-cap"></i> Pedagogy <span
@@ -142,7 +142,6 @@
 							</ul>
 						</div>
 					</div>
-
 				</div>
 			</div>
 
@@ -157,17 +156,18 @@
 				</div>
 
 				<div class="title_right">
-					<div
-						class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-						<div class="input-group"
-							style="margin-top: -50px; width: 200px; float: right">
-							<input type="text" class="form-control"
-								placeholder="Search for..."> <span
-								class="input-group-btn">
-								<button class="btn btn-default" type="button">Go!</button>
-							</span>
+					<div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+						<form action="Search" method="POST">
+							<div class="input-group"
+								style="margin-top: -50px; width: 250px; float: right">
+								<input type="text" class="form-control" name="searchQuery"
+									placeholder="Search for..."> <span
+									class="input-group-btn">
+									 <input class="btn btn-default" type="submit" value="GO">
+								</span>
+							</div>
+							</form>
 						</div>
-					</div>
 				</div>
 
 			</div>
@@ -238,47 +238,36 @@
 				</div>
 			</div> -->
 
-			<div class="right_col" role="main">
+			<div class="right_col" style="height:780px" role="main">
 				<div class="page-title"></div>
 				<div class="clearfix"></div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="x_panel">
 							<div class="x_title">
-								<h2>Media Gallery</h2>
+								<h2>Article Gallery</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content">
 								<div class="row">
 									<div id="portfolio">
-										
-										<br> <br>
 										<div id="image-container">
 											<c:forEach var="ar" items="${artL}">
-												<div class="col-sm-12 col-md-12 col-xs-12">
+												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
 													<div style="float:left; display:block;margin-right:20px">
-														<div>
-
-															<img style="width: 230px; height: 230px; display: block;"
-																src="${ar.url}" alt="image" id="clickImage" />
-															<div class="mask" style="color: white">
-																<a href="#" class="like"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-heart-o fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${ar.url}" alt="image" id="clickImage" /> </a>
-																<i id="likecount" style="font-weight: bold">${ar.likes}
-																	likes</i>
-															</div>
+														<div style="width:150px;height:150px">
+															<img style="width: 100%; height: 150px; display: block;"
+																src="${ar.icon}" alt="image" id="clickImage" />
+															
 														</div>
 														
 													</div>
 													<div style="margin-left:50px">
-															<h1>${ar.title}</h1>
-															<p>${ar.description}</p>
+															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${ar.title}</h3>
+															<p >${ar.description}</p>
+															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
 														</div>
-												</div> <br>
-												<hr>
+												</div> 
 											</c:forEach>
 										</div>
 									</div>

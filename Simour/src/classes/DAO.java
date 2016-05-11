@@ -36,8 +36,22 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getImageByName(String name) throws SQLException{
+		String sql = "SELECT * FROM Images where title like '%"+name+"%'";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getVideos() throws SQLException{
 		String sql = "SELECT * FROM videos";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getVideoByName(String name) throws SQLException{
+		String sql = "SELECT * FROM videos where description like '%"+name+"%'";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.executeQuery();
 		return preparedStatement.executeQuery();
@@ -50,6 +64,13 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getChapterByName(String name) throws SQLException{
+		String sql = "SELECT * FROM chapters where title like '%"+name+"%'";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getBooks() throws SQLException{
 		String sql = "SELECT * FROM book";
 		preparedStatement = con.prepareStatement(sql);
@@ -57,8 +78,22 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getBookByName(String name) throws SQLException{
+		String sql = "SELECT * FROM book where title like '%"+name+"%'";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getArticles() throws SQLException{
-		String sql = "SELECT * FROM article";
+		String sql = "SELECT * FROM article ";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getArticleByName(String name) throws SQLException{
+		String sql = "SELECT * FROM article where title like '%"+name+"%'";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.executeQuery();
 		return preparedStatement.executeQuery();
@@ -124,28 +159,31 @@ public class DAO {
 		preparedStatement.executeUpdate();
 	}
 	
-	public void insertArticle(String url, String title, String desc) throws SQLException{
-		String sql = "INSERT INTO article (url,title,description) values(?,?,?)";
+	public void insertArticle(String url, String title, String desc, String icon) throws SQLException{
+		String sql = "INSERT INTO article (url,title,description,icon) values(?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, url);
 		preparedStatement.setString(2, title);
 		preparedStatement.setString(3, desc);
+		preparedStatement.setString(4, icon);
 		preparedStatement.executeUpdate();
 	}
-	public void insertBook(String url, String title, String desc) throws SQLException{
-		String sql = "INSERT INTO book (url,title,description) values(?,?,?)";
+	public void insertBook(String url, String title, String desc, String icon) throws SQLException{
+		String sql = "INSERT INTO book (url,title,description,icon) values(?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, url);
 		preparedStatement.setString(2, title);
 		preparedStatement.setString(3, desc);
+		preparedStatement.setString(4, icon);
 		preparedStatement.executeUpdate();
 	}
-	public void insertChapters(String url, String title, String desc) throws SQLException{
-		String sql = "INSERT INTO chapters (url,title,description) values(?,?,?)";
+	public void insertChapters(String url, String title, String desc, String icon) throws SQLException{
+		String sql = "INSERT INTO chapters (url,title,description,icon) values(?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, url);
 		preparedStatement.setString(2, title);
 		preparedStatement.setString(3, desc);
+		preparedStatement.setString(4, icon);
 		preparedStatement.executeUpdate();
 	}
 	public void addLike(String url, int like) throws SQLException{

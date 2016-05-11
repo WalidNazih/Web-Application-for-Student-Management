@@ -84,14 +84,14 @@ public class Upload extends HttpServlet {
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
         }
- 
+        String button = null;	
         try {
             // parses the request's content to extract file data
             @SuppressWarnings("unchecked")
             List<FileItem> formItems = upload.parseRequest(request);
  
             if (formItems != null && formItems.size() > 0) {
-            	String title = null, desc= null, fileName= null, button = null;
+            	String title = null, desc= null, fileName= null;
                 // iterates over form's fields
                 for (FileItem item : formItems) {
                     // processes only fields that are not form fields
@@ -118,23 +118,26 @@ public class Upload extends HttpServlet {
                             "Upload has been done successfully!");
                     }
                 }
-                Icon ico = FileSystemView.getFileSystemView().getSystemIcon(new File(fileName));
-                Image thumb = ((ImageIcon) ico).getImage();
-                ImageIO.write((BufferedImage) thumb, "png", new File(uploadPath + File.separator + "test.png"));
                 DAO dao = new DAO("simour","root","");
                 if(fileName.endsWith(".jpg") || fileName.endsWith(".png") || fileName.endsWith(".gif")){
                 	dao.insertImage("uploads/"+fileName, title, desc, 2);
                 }else if(fileName.endsWith(".avi") || fileName.endsWith(".mp4") || fileName.endsWith(".wmv")){
                 	System.out.println(desc);
                 	dao.insertVideo("uploads/"+fileName, title, 3);
-                }else if(fileName.endsWith(".doc") || fileName.endsWith(".docx") || fileName.endsWith(".txt") || fileName.endsWith(".pdf")){
-                	System.out.println(button);
+                }else if(fileName.endsWith(".doc") || fileName.endsWith(".docx") || fileName.endsWith(".pdf")){
+                	String ext = null;
+                	if(fileName.endsWith(".doc") || fileName.endsWith(".docx")) ext = "word";
+                	else ext = "pdf";
+                	System.out.println(ext+"");
                 	if(button.equals("book")){
-                		dao.insertBook("uploads/"+fileName, title, desc);
+                		dao.insertBook("uploads/"+fileName, title, desc, "images/"+ext+".png");
+                		System.out.println("book "+ ext);
                 	}else if(button.equals("article")){
-                		dao.insertArticle("uploads/"+fileName, title, desc);
+                		dao.insertArticle("uploads/"+fileName, title, desc, "images/"+ext+".png");
+                		System.out.println("book "+ ext);
                 	}else if(button.equals("chapter")){
-                		dao.insertChapters("uploads/"+fileName, title, desc);
+                		dao.insertChapters("uploads/"+fileName, title, desc, "images/"+ext+".png");
+                		System.out.println(ext);
                 	}
                 }
                 
@@ -146,8 +149,14 @@ public class Upload extends HttpServlet {
             System.out.println(ex.getMessage());
         }
         // redirects client to message page
-        getServletContext().getRequestDispatcher("/gallery.jsp").forward(
-                request, response);
+        
+        if(button.equals("book") || button.equals("article") || button.equals("chapter")){
+        	getServletContext().getRequestDispatcher("/research.jsp").forward(
+                    request, response);
+        }else{
+        	getServletContext().getRequestDispatcher("/gallery.jsp").forward(
+                    request, response);
+        }
     }
 }
 

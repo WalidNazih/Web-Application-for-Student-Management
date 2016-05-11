@@ -40,7 +40,7 @@ public class Books extends HttpServlet {
 			ResultSet rs = dao.getBooks();
 			ArrayList<Book> bookList = new ArrayList<>();
 			while(rs.next()){
-				Book article = new Book(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4));
+				Book article = new Book(rs.getInt(1), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4), rs.getString(5));
 		    	bookList.add(article);
 			}
 

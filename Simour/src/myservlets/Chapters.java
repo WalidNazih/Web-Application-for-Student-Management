@@ -41,7 +41,7 @@ public class Chapters extends HttpServlet {
 			ResultSet rs = dao.getChapters();
 			ArrayList<Chapter> chapList = new ArrayList<>();
 			while(rs.next()){
-				Chapter chapter = new Chapter(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4));
+				Chapter chapter = new Chapter(rs.getInt(1), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4), rs.getString(5));
 				chapList.add(chapter);
 			}
 

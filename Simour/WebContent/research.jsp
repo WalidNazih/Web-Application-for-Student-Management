@@ -305,27 +305,6 @@
 
 		</div>
 		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript">
-			function readURL(input) {
-
-				if (input.files && input.files[0]) {
-					var reader = new FileReader();
-
-					reader.onload = function(e) {
-						$('#blah').attr('src', e.target.result);
-						$('#blah').width("150px");
-						$('#blah').height("150px");
-						$('#blah').addClass("img-thumbnail");
-					}
-
-					reader.readAsDataURL(input.files[0]);
-				}
-			}
-
-			$("#myfile").change(function() {
-				readURL(this);
-			});
-		</script>
 		<!-- /datepicker -->
 		<!-- /footer content -->
 </body>

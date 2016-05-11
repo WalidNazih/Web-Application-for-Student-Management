@@ -5,17 +5,18 @@ import java.io.Serializable;
 public class Book implements Serializable{
 	
 	protected int id, likes;
-	protected String url, title, description;
+	protected String url, title, description, icon;
 	
 	public Book(){}
 
-	public Book(int id, int likes, String url, String title, String description) {
+	public Book(int id, int likes, String url, String title, String description, String icon) {
 		super();
 		this.id = id;
 		this.likes = likes;
 		this.url = url;
 		this.title = title;
 		this.description = description;
+		this.icon = icon;
 	}
 
 	public int getId() {
@@ -56,6 +57,14 @@ public class Book implements Serializable{
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 	
 	
