@@ -122,6 +122,12 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getMostLikedVideos() throws SQLException{
+		String sql = "SELECT * FROM Videos order by likes desc";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
 	
 	public ResultSet getMessageById(int id) throws SQLException{
 		String sql = "SELECT * FROM MESSAGES WHERE id=1";
@@ -130,13 +136,14 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
-	public void insertMessage(String sender, String subject, String message) throws SQLException{
-		String sql = "INSERT INTO messages (sender,subject,message,date) values(?,?,?,?)";
+	public void insertMessage(String sender, String email, String subject, String message) throws SQLException{
+		String sql = "INSERT INTO messages (sender,email,subject,message,date) values(?,?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, sender);
-		preparedStatement.setString(2, subject);
-		preparedStatement.setString(3, message);
-		preparedStatement.setString(4, new java.util.Date().toString());
+		preparedStatement.setString(2, email);
+		preparedStatement.setString(3, subject);
+		preparedStatement.setString(4, message);
+		preparedStatement.setString(5, new java.util.Date().toString());
 		preparedStatement.executeUpdate();
 	}
 	

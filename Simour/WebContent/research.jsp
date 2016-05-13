@@ -124,11 +124,8 @@
 							<ul
 								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
 								<li><a href="index.jsp"> See Changes</a></li>
-								<li><a href="javascript:;"> <span
-										class="badge bg-red pull-right">50%</span> <span>Settings</span>
-								</a></li>
-								<li><a href="javascript:;">Help</a></li>
-								<li><a href="login.html"><i
+								
+								<li><a href="http://localhost:8070/Simour/LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 							</ul></li>
 					</nav>
@@ -156,16 +153,16 @@
 								<form id="uploadArt" action="Upload" method="POST"
 									enctype="multipart/form-data">
 									<center>
-										<label id="filelbl" for="myfile"> <img
+										<label id="filelbl" for="myArticle"> <img
 											src="images/articleupload.png" width="60px" height="60px"
 											id="blah" /><br> <input type="file" name="myfile"
-											id="myfile" size="60" style="opacity: 0"> Upload
+											id="myArticle" size="60" style="opacity: 0"> Upload
 										</label>
 
 									</center>
 									<div id="fields">
 										Title :<br> <input type="text" name="title" size="45"
-											required="" /><br> Description:<br>
+											required="" id="articleUrl"/><br> Description:<br>
 										<textarea style="width: 347px" name="desc" form="uploadArt"
 											required=""> </textarea>
 										<br> <input type="submit" value="Add" name="articlebtn"
@@ -189,16 +186,16 @@
 								<form id="uploadBook" action="Upload" method="POST"
 									enctype="multipart/form-data">
 									<center>
-										<label id="filelbl" for="myfile"> <img
+										<label id="filelbl" for="myBook"> <img
 											src="images/bookupload.png" width="60px" height="60px"
 											id="blah" /><br> <input type="file" name="myfile"
-											id="myfile" size="60" style="opacity: 0"> Upload
+											id="myBook" size="60" style="opacity: 0"> Upload
 										</label>
 
 									</center>
 									<div id="fields">
 										Title :<br> <input type="text" name="title" size="45"
-											required="" /><br> Description:<br>
+											required="" id="bookUrl"/><br> Description:<br>
 										<textarea style="width: 347px" name="desc" form="uploadBook"
 											required=""> </textarea>
 										<br> <input type="submit" value="Add" name="bookbtn"
@@ -223,16 +220,16 @@
 								<form id="uploadChap" action="Upload" method="POST"
 									enctype="multipart/form-data">
 									<center>
-										<label id="filelbl" for="myfile"> <img
+										<label id="filelbl" for="myChapter"> <img
 											src="images/chapters.jpg" width="60px" height="60px"
 											id="blah" /><br> <input type="file" name="myfile"
-											id="myfile" size="60" style="opacity: 0"> Upload
+											id="myChapter" size="60" style="opacity: 0"> Upload
 										</label>
 
 									</center>
 									<div id="fields">
 										Title :<br> <input type="text" name="title" size="45"
-											required="" /><br> Description:<br>
+											required="" id="chapterUrl"/><br> Description:<br>
 										<textarea style="width: 347px" name="desc" form="uploadChap"
 											required=""> </textarea>
 										<br> <input type="submit" value="Add" name="chapterbtn"
@@ -249,7 +246,7 @@
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
-								<h2>Most Liked Books</h2>
+								<h2>Most Downloaded Books</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div>
@@ -282,7 +279,7 @@
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
-								<h2>Most Liked Articles</h2>
+								<h2>Most Downloaded Articles</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content"></div>
@@ -291,7 +288,7 @@
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
-								<h2>Most Liked Book Chapters</h2>
+								<h2>Most Downloaded Book Chapters</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content"></div>
@@ -307,6 +304,42 @@
 		<script src="js/bootstrap.min.js"></script>
 		<!-- /datepicker -->
 		<!-- /footer content -->
+		<script type="text/javascript">
+			function readArticle(input) {
+
+				if (input.files && input.files[0]) {
+
+					var fu1 = document.getElementById("myArticle");
+					$("#articleUrl").attr('value',fu1.value.split("\\")[2].split(".")[0]);
+				}
+			}
+			
+			function readBook(input) {
+
+				if (input.files && input.files[0]) {
+					var fu1 = document.getElementById("myBook");
+					$("#bookUrl").attr('value',fu1.value.split("\\")[2].split(".")[0]);
+				}
+			}
+			
+			function readChapter(input) {
+
+				if (input.files && input.files[0]) {
+					var fu1 = document.getElementById("myChapter");
+					$("#chapterUrl").attr('value',fu1.value.split("\\")[2].split(".")[0]);
+				}
+			}
+
+			$("#myArticle").change(function() {
+				readArticle(this);
+			});
+			$("#myBook").change(function() {
+				readBook(this);
+			});
+			$("#myChapter").change(function() {
+				readChapter(this);
+			});
+		</script>
 </body>
 
 </html>

@@ -124,11 +124,7 @@
 							<ul
 								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
 								<li><a href="index.jsp"> See Changes</a></li>
-								<li><a href="javascript:;"> <span
-										class="badge bg-red pull-right">50%</span> <span>Settings</span>
-								</a></li>
-								<li><a href="javascript:;">Help</a></li>
-								<li><a href="login.html"><i
+								<li><a href="http://localhost:8070/Simour/LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 							</ul></li>
 					</nav>
@@ -162,7 +158,7 @@
 										</label>
 									</center>
 									<div id="fields">
-										Title :<br> <input type="text" name="title" size="59"
+										Title :<br> <input type="text" name="title" id="title" size="59"
 											required="" /><br> Description:<br>
 										<textarea style="width: 446px" name="desc" form="uploadPic"
 											required=""> </textarea>
@@ -224,16 +220,16 @@
 											<form id="uploadVid" action="Upload" method="POST"
 												enctype="multipart/form-data">
 												<center>
-													<label id="filelbl" for="myvid"> <img
+													<label id="filelbl" for="myvideo"> <img
 														src="img/vidupload.png" width="60px" height="60px"
-														id="blah" /><br> <input type="file" name="myvid"
-														id="myvid" size="60" style="opacity: 0"> Upload
+														id="blah" /><br> <input type="file" name="myvideo"
+														id="myVideo" size="60" style="opacity: 0"> Upload
 													</label>
 
 												</center>
 												<div id="fields">
 													Title :<br> <input type="text" name="title" size="59"
-														required="" /><br> Description:<br>
+														required="" id="videoUrl"/><br> Description:<br>
 													<textarea style="width: 446px" name="desc" form="uploadVid"
 														required=""> </textarea>
 													<br> <input type="submit" name="addVid" value="Add"
@@ -259,7 +255,7 @@
 														id="url" size="59" ><br>
 													
 													Description :  <br>
-													<input type="text" name="urlweb"
+													<input type="text" name="desc"
 														id="url" size="59" ><br>
 														<!-- 
 													<div style="margin-top:6px">Description:<br><textarea style="width: 446px" name="desc" form="uploadPic"
@@ -316,7 +312,36 @@
 								<h2>Most Liked Videos</h2>
 								<div class="clearfix"></div>
 							</div>
-							<div class="x_content"></div>
+							<div class="x_content">
+								<c:forEach var="vid" items="${topVideos}">
+												<div class="col-md-2" style="margin-left: -10px; margin-top: 20px">
+													<div class="thumbnail" style="height: 180px; width: 180px">
+														<div class="image view view-first">
+
+															<img style="width: 100%; height: 180px; display: block;"
+																src="${vid.thumbnail}" alt="video" id="clickImage" />
+															<div class="mask" style="color: white">
+																<a href="#" class="like"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-heart-o fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${vid.url}" alt="image" id="clickImage" /> </a> <a
+																	href="#" class="vidpop"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-search fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${vid.url}" alt="image" id="clickImage" /> </a> <br>
+																<i id="likecount" style="font-weight: bold">${vid.likes}
+																	likes</i>
+															</div>
+
+
+														</div>
+														
+													</div>
+												</div>
+											</c:forEach>
+							</div>
 						</div>
 					</div>
 
@@ -341,12 +366,30 @@
 					}
 
 					reader.readAsDataURL(input.files[0]);
+					var fu1 = document.getElementById("myVideo");
+					$("#videoUrl").attr('value',fu1.value);
+					alert(fu1.value);
 				}
 			}
 
 			$("#myfile").change(function() {
 				readURL(this);
 			});
+		</script>
+		<script type="text/javascript">
+			function readURL(input) {
+
+				if (input.files && input.files[0]) {
+					var fu1 = document.getElementById("myVideo");
+					$("#videoUrl").attr('value',fu1.value.split("\\")[2].split(".")[0]);
+				}
+			}
+
+			$("#myVideo").change(function() {
+				readURL(this);
+			});
+		</script>
+		<script>
 		</script>
 		<!-- /datepicker -->
 		<!-- /footer content -->

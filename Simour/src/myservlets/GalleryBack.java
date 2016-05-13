@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.Image;
+import beans.Video;
 import classes.DAO;
 
 /**
@@ -43,9 +44,17 @@ public class GalleryBack extends HttpServlet {
 				System.out.println(image.getUrl() + " : "+ image.getLikes());
 				imageList.add(image);
 			}
+			rs = dao.getMostLikedVideos();
+			ArrayList<Video> mlvList = new ArrayList<>();
+			while(rs.next()){
+				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4));
+				//System.out.println(image.getUrl() + " : "+ image.getLikes());
+				mlvList.add(video);
+			}
 
 			HttpSession session = request.getSession();
 			session.setAttribute("topImages", imageList);
+			session.setAttribute("topVideos", mlvList);
 			
 			request.getRequestDispatcher("gallery.jsp").forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {

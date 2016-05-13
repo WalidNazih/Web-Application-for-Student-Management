@@ -137,12 +137,10 @@
                   <li>
                     <a href="javascript:;">Help</a>
                   </li>
-                  <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  <li><a href="http://localhost:8070/Simour/LogOut"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </li>
                 </ul>
               </li>
-
-             
           </nav>
         </div>
 
@@ -163,13 +161,7 @@
 						<div class="title_right">
 							<div
 								class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-								<div class="input-group">
-									<input type="text" class="form-control"
-										placeholder="Search for..."> <span
-										class="input-group-btn">
-										<button class="btn btn-default" type="button">Go!</button>
-									</span>
-								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -240,9 +232,9 @@
 												<div class="mail_heading row">
 													<div class="col-md-8">
 														<div class="compose-btn">
-															<a class="btn btn-sm btn-primary"
+															<!-- <a class="btn btn-sm btn-primary"
 																href="mail_compose.html"><i class="fa fa-reply"></i>
-																Reply</a>
+																Reply</a> -->
 															<button title="" data-placement="top"
 																data-toggle="tooltip" type="button"
 																data-original-title="Print" class="btn  btn-sm tooltips">
@@ -266,7 +258,7 @@
 												<div class="sender-info">
 													<div class="row">
 														<div class="col-md-12">
-															<strong>${selectedMessage.from}</strong>
+															<strong>${selectedMessage.from} (${selectedMessage.email})</strong>
 															to <strong>me</strong> <a class="sender-dropdown"><i
 																class="fa fa-chevron-down"></i></a>
 														</div>

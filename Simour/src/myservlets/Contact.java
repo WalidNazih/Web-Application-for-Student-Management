@@ -26,13 +26,15 @@ public class Contact extends HttpServlet {
 		try {
 			DAO dao = new DAO("Simour", "root", "");
 			String sender = request.getParameter("sender");
+			String email = request.getParameter("email");
 			String subject = request.getParameter("subject");
 			String message = request.getParameter("message");
-			dao.insertMessage(sender, subject, message);
+			dao.insertMessage(sender, email, subject, message);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		request.getRequestDispatcher("contact.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request,

@@ -21,8 +21,6 @@ public class Video implements Serializable{
 		this.thumbnail = thumbnail;
 	}
 
-
-
 	public int getId() {
 		return id;
 	}

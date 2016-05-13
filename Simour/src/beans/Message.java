@@ -6,19 +6,20 @@ import java.util.Date;
 public class Message implements Serializable{
 	
 	int id;
-	String from, message, subject, date;
+	String from, message, subject, date, email;
 
 	public Message(){
 		
 	}
 
-	public Message(int id, String from, String subject, String message, String date) {
+	public Message(int id, String from, String email, String subject, String message, String date) {
 		super();
 		this.id = id;
 		this.from = from;
 		this.message = message;
 		this.date = date;
 		this.subject = subject;
+		this.email = email;
 	}
 
 	public int getId() {
@@ -59,6 +60,14 @@ public class Message implements Serializable{
 
 	public void setDate(String date) {
 		this.date = date;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	

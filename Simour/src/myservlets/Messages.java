@@ -44,7 +44,7 @@ public class Messages extends HttpServlet {
 			ResultSet rs = dao.getMessages();
 			ArrayList<Message> messageList = new ArrayList<>();
 			while(rs.next()){
-				Message message = new Message(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4), rs.getString(5));
+				Message message = new Message(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4), rs.getString(5),rs.getString(6));
 				messageList.add(message);
 			}
 
