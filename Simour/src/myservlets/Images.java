@@ -42,7 +42,12 @@ public class Images extends HttpServlet {
 			ResultSet rs = dao.getImages();
 			ArrayList<Image> imageList = new ArrayList<>();
 			while(rs.next()){
-				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6));
+				ResultSet res = dao.getImageLikes(rs.getInt(1), request.getRemoteAddr());
+				int i = 0;
+				while(res.next()) i++;
+				boolean boli = i == 0? false : true;
+				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6), boli);
+				System.out.println(image.getTitle()+" : "+image.isLiked());
 				imageList.add(image);
 			}
 			rs = dao.getVideos();

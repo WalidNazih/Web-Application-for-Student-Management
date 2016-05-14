@@ -401,6 +401,40 @@
 			});
 		});
 	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var toggled = true;
+			var liSize = $(".principale").width();
+			$("li").style("margin-left", "0");
+			$("#menu_toggle").click(function() {
+				$("#logosmall").toggle();
+				$("#logobig").toggle();
+				if (toggled) {
+					$(".principale").width(65);
+				} else {
+					$(".principale").width(liSize);
+				}
+				toggled = !toggled;
+			});
+
+			$(".principale").click(function() {
+				if (!toggled) {
+					$(this).width(70);
+				}
+			});
+
+		});
+	</script>
+	<script>
+		$('.pop').on('click', function() {
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');
+		});
+		$('.vidpop').on('click', function() {
+			$('.videopreview').attr('src', $(this).find('img').attr('src'));
+			$('#videomodal').modal('show');
+		});
+	</script>
 </body>
 
 </html>

@@ -31,13 +31,21 @@ public class WebVideo extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = request.getParameter("urlweb");
+		String modurl = null, thumbnail = null;
+		if(url.contains("youtube.com")){
+			modurl = "https://www.youtube.com/embed/";
+			String[] splitUrl = url.split("=");
+			modurl = modurl + splitUrl[1];
+			thumbnail = "https://i.ytimg.com/vi/"+splitUrl[1]+"/maxresdefault.jpg";
+		}
+		
 		String description = request.getParameter("desc");
-		System.out.println(url);
+		System.out.println(modurl);
 		System.out.println(description);
 		
 		try {
 			DAO dao = new DAO("simour","root","");
-			dao.insertVideo(url, description, 1);
+			dao.insertVideo(modurl, description, thumbnail, 1);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

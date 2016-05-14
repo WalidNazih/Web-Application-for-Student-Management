@@ -391,8 +391,7 @@
 		</script>
 		<script>
 		</script>
-		<!-- /datepicker -->
-		<!-- /footer content -->
+		<script src="js/custom.js"></script>
 </body>
 
 </html>

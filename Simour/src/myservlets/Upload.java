@@ -131,7 +131,7 @@ public class Upload extends HttpServlet {
                 	dao.insertImage("uploads/"+fileName, title, desc, 2);
                 }else if(fileName.endsWith(".avi") || fileName.endsWith(".mp4") || fileName.endsWith(".wmv")){
                 	System.out.println(desc);
-                	dao.insertVideo("uploads/"+fileName, title, 3);
+                	dao.insertVideo("uploads/"+fileName, title, null, 3);
                 }else if(fileName.endsWith(".doc") || fileName.endsWith(".docx") || fileName.endsWith(".pdf")){
                 	String ext = null;
                 	if(fileName.endsWith(".doc") || fileName.endsWith(".docx")) ext = "word";

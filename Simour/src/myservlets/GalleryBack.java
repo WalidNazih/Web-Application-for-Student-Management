@@ -40,7 +40,7 @@ public class GalleryBack extends HttpServlet {
 			ResultSet rs = dao.getMostLikedImages();
 			ArrayList<Image> imageList = new ArrayList<>();
 			while(rs.next()){
-				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6));
+				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6), false);
 				System.out.println(image.getUrl() + " : "+ image.getLikes());
 				imageList.add(image);
 			}

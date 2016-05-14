@@ -338,6 +338,7 @@
 			$('#videomodal').modal('show');
 		});
 	</script>
+	<script src="js/custom.js"></script>
 </body>
 
 </html>

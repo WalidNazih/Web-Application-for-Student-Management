@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.Article;
 import beans.Image;
 import classes.DAO;
 
@@ -34,18 +35,27 @@ public class IndexServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
 		try {
 			DAO dao = new DAO("Simour","root","");
 			ResultSet rs = dao.getLastImages(6);
 			ArrayList<Image> lastIm = new ArrayList<>();
 			while(rs.next()){
-				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6));
+				ResultSet res = dao.getImageLikes(rs.getInt(1), request.getRemoteAddr());
+				int i = 0;
+				while(res.next()) i++;
+				boolean boli = i == 0? false : true;
+				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6), boli);
 				lastIm.add(image);
 			}
-			HttpSession session = request.getSession();
+			rs = dao.getLastArticles(6);
+			ArrayList<Article> lastArt = new ArrayList<>();
+			while(rs.next()){
+				Article article = new Article(rs.getInt(1), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4), rs.getString(5));
+		    	lastArt.add(article);
+			}
 			session.setAttribute("lastIm", lastIm);
-			
+			session.setAttribute("lastArt", lastArt);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

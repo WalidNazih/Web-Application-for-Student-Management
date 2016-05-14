@@ -70,7 +70,6 @@
 
 		var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
-		
 		//responsive code end
 	});
 </script>
@@ -158,9 +157,10 @@
 .jssora12r.jssora12rdn {
 	background-position: -315px -37px;
 }
+
 .shadow {
--moz-box-shadow: 0 0 30px 5px #999;
--webkit-box-shadow: 0 0 30px 5px #999;
+	-moz-box-shadow: 0 0 30px 5px #999;
+	-webkit-box-shadow: 0 0 30px 5px #999;
 }
 </style>
 </head>
@@ -214,7 +214,8 @@
 
 						<div class="menu_section">
 							<ul class="nav side-menu">
-								<li class="principale"><a href="http://localhost:8070/Simour/IndexServlet"><i
+								<li class="principale"><a
+									href="http://localhost:8070/Simour/IndexServlet"><i
 										class="fa fa-home"></i> Home</a></li>
 								<li class="principale"><a
 									href="http://localhost:8070/Simour/Images"><i
@@ -224,7 +225,8 @@
 									<ul class="nav child_menu" style="display: none">
 										<li><a href="http://localhost:8070/Simour/Books">Books</a></li>
 										<li><a href="http://localhost:8070/Simour/Articles">Articles</a></li>
-										<li><a href="http://localhost:8070/Simour/Chapters">Book Chapters</a></li>
+										<li><a href="http://localhost:8070/Simour/Chapters">Book
+												Chapters</a></li>
 									</ul></li>
 								<li class="principale"><a><i
 										class="fa fa-graduation-cap"></i> Pedagogy <span
@@ -258,18 +260,19 @@
 				</div>
 
 				<div class="title_right">
-					<div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+					<div
+						class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
 						<form action="Search" method="POST">
 							<div class="input-group"
 								style="margin-top: -50px; width: 250px; float: right">
 								<input type="text" class="form-control" name="searchQuery"
 									placeholder="Search for..."> <span
-									class="input-group-btn">
-									 <input class="btn btn-default" type="submit" value="GO">
+									class="input-group-btn"> <input class="btn btn-default"
+									type="submit" value="GO">
 								</span>
 							</div>
-							</form>
-						</div>
+						</form>
+					</div>
 				</div>
 
 			</div>
@@ -289,7 +292,7 @@
 								<div class="row">
 									<div class="col-md-8 col-xs-8 col-sm-8">
 										<div class="shadow" id="jssor_1"
-											style=" position: relative; margin: 0 auto; top: 0px; left: 0px; width: 500vw; height: 400vh; overflow: hidden; visibility: hidden;">
+											style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 500vw; height: 400vh; overflow: hidden; visibility: hidden;">
 											<!-- Loading Screen -->
 											<div data-u="loading"
 												style="position: absolute; top: 0px; left: 0px;">
@@ -300,44 +303,57 @@
 											</div>
 											<div data-u="slides"
 												style="cursor: default; position: relative; top: 0px; left: 0px; width: 500vw; height: 400vh; overflow: hidden;">
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/slide-01.jpg" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/slide-01.jpg"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/slide-02.jpg" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/slide-02.jpg"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/slide-04.jpg" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/slide-04.jpg"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/slide-05.jpg" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/slide-05.jpg"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/slide-06.PNG" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/slide-06.PNG"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/slide-07.PNG" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/slide-07.PNG"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/Capture3.PNG" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/Capture3.PNG"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/Capture4.PNG" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/Capture4.PNG"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/Capture5.PNG" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/Capture5.PNG"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/Capture6.PNG" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/Capture6.PNG"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/Capture7.PNG" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/Capture7.PNG"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/Capture10.PNG" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/Capture10.PNG"
+														class="img-thumbnail" />
 												</div>
-												<div data-p="112.50" style="display: none;" >
-													<img data-u="image" src="images/Capture11.PNG" class="img-thumbnail"/>
+												<div data-p="112.50" style="display: none;">
+													<img data-u="image" src="images/Capture11.PNG"
+														class="img-thumbnail" />
 												</div>
 											</div>
 											<!-- Bullet Navigator -->
@@ -382,7 +398,7 @@
 							<div>
 								<c:forEach var="image" items="${lastIm}">
 									<div style="margin-left: -10px; margin-top: 20px"
-										class="col-md-2">
+										class="col-md-2 col-xs-2 col-md-2">
 										<div style="height: 180px; width: 180px" class="thumbnail">
 											<div class="image view view-first">
 												<a href="#" class="pop"> <img
@@ -397,63 +413,83 @@
 										</div>
 									</div>
 								</c:forEach>
-								
+
 							</div>
 							<div class="clearfix"></div>
 							<div class="x_title">
 								<h2>Latest Articles</h2>
 								<div class="clearfix"></div>
-								</div>	
-								<br>
-								<div class="clearfix">
-									<div id="footer">
-										<div class="footer-box col-md-4">
-											<h3>Popular Posts</h3>
-											<ul class="popular-posts">
-												<li><a href="#"><img src="style/images/art/s1.jpg"
-														alt="" /></a>
-													<h5>
-														<a href="#">Dolor Commodo Consectetur</a>
-													</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
+							</div>
+							<div>
+								<c:forEach var="ar" items="${lastArt}">
+												<div class="col-sm-3 col-md-3 col-xs-3" style="height:154px">
+													<div style="float:left; display:block;margin-right:20px">
+														<div style="width:100px;height:100px">
+															<img style="width: 100%; height: 150px; display: block;"
+																src="${ar.icon}" alt="image" id="clickImage" />
+															
+														</div>
+														
+													</div>
+													<div style="margin-left:50px">
+															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${ar.title}</h3>
+															<p >${ar.description}</p>
+															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
+														</div>
+												</div> 
+											</c:forEach>
 
-												<li><a href="#"><img src="style/images/art/s2.jpg"
-														alt="" /></a>
-													<h5>
-														<a href="#">Dolor Commodo Consectetur</a>
-													</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
+							</div>
+							<br>
+							<div class="clearfix">
+							
+								<div id="footer" class="col-md-12 col-xs-12 col-sm-12">
+								<hr/><br>
+									<div class="footer-box col-md-4">
+										<h3>Popular Posts</h3>
+										<ul class="popular-posts">
+											<li><a href="#"><img src="style/images/art/s1.jpg"
+													alt="" /></a>
+												<h5>
+													<a href="#">Dolor Commodo Consectetur</a>
+												</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
 
-												<li><a href="#"><img src="style/images/art/s3.jpg"
-														alt="" /></a>
-													<h5>
-														<a href="#">Dolor Commodo Consectetur</a>
-													</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
+											<li><a href="#"><img src="style/images/art/s2.jpg"
+													alt="" /></a>
+												<h5>
+													<a href="#">Dolor Commodo Consectetur</a>
+												</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
 
-											</ul>
-										</div>
-										<div class="footer-box col-md-4">
-											<h3>About</h3>
-											<p>Donec id elit non mi porta gravida at eget metus.
-												Donec ullamcorper nulla non metus auctor fringilla.</p>
-											<p>
-												Lorem Ipsum Dolor Sit Moon Avenue No:11/21 Planet City,
-												Earth<br> <br> <span class="lite1">Fax:</span>
-												+555 797 534 01<br> <span class="lite1">Tel:</span>
-												+555 636 646 62<br> <span class="lite1">E-mail:</span>
-												name@domain.com
-											</p>
+											<li><a href="#"><img src="style/images/art/s3.jpg"
+													alt="" /></a>
+												<h5>
+													<a href="#">Dolor Commodo Consectetur</a>
+												</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
+
+										</ul>
+									</div>
+									<div class="footer-box col-md-4">
+										<h3>About</h3>
+										<p>Donec id elit non mi porta gravida at eget metus. Donec
+											ullamcorper nulla non metus auctor fringilla.</p>
+										<p>
+											Lorem Ipsum Dolor Sit Moon Avenue No:11/21 Planet City, Earth<br>
+											<br> <span class="lite1">Fax:</span> +555 797 534 01<br>
+											<span class="lite1">Tel:</span> +555 636 646 62<br> <span
+												class="lite1">E-mail:</span> name@domain.com
+										</p>
 
 
-										</div>
+									</div>
 
-										<div class="footer-box col-md-4 last">
-											<h3>Custom Text</h3>
-											<p>Nullam quis risus eget urna mollis ornare vel eu leo.
-												Maecenas faucibus mollis interdum. Etiam porta sem malesuada
-												magna mollis euismod. Nulla vitae elit.</p>
-											<p>Donec ullamcorper nulla non metus auctor fringilla.
-												Maecenas faucibus mollis interdum. Curabitur blandit tempus
-												porttitor.</p>
-										</div>
+									<div class="footer-box col-md-4 last">
+										<h3>Custom Text</h3>
+										<p>Nullam quis risus eget urna mollis ornare vel eu leo.
+											Maecenas faucibus mollis interdum. Etiam porta sem malesuada
+											magna mollis euismod. Nulla vitae elit.</p>
+										<p>Donec ullamcorper nulla non metus auctor fringilla.
+											Maecenas faucibus mollis interdum. Curabitur blandit tempus
+											porttitor.</p>
 									</div>
 								</div>
 							</div>
@@ -462,6 +498,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
 
 
@@ -501,8 +538,7 @@
 			$('#imagemodal').modal('show');
 		});
 	</script>
-	<!-- /datepicker -->
-	<!-- /footer content -->
+	<script src="js/custom.js"></script>
 </body>
 
 </html>

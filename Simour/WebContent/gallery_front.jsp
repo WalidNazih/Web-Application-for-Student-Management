@@ -52,13 +52,16 @@
 			});
 		});
 		$("#video").click(function() {
-			$.get('VideoAjax', function(responseText) {
+			var cat = 3;
+			$.get('VideoAjax', {
+				cat : cat
+			}, function(responseText) {
 				$("#image-container").html(responseText);
 			});
 		});
 		$("#web").click(function() {
 			var cat = 1;
-			$.get('ImageAjax', {
+			$.get('VideoAjax', {
 				cat : cat
 			}, function(responseText) {
 				$("#image-container").html(responseText);
@@ -67,12 +70,15 @@
 		$(".like").click(function() {
 			var imgurl = $(this).find('img').attr('src');
 			var obj = $(this);
+			var boli;
+			if(obj.find('i').hasClass("fa-heart-o")) boli = 1;
+			else boli = 0;
 			$.get('LikeAjax', {
-				imgurl : imgurl
+				imgurl : imgurl, boli : boli
 			}, function(responseText) {
 				obj.siblings('#likecount').text(responseText + " likes")
-				obj.find('i').removeClass("fa-heart-o");
-				obj.find('i').addClass("fa-heart");
+				obj.find('i').toggleClass("fa-heart-o");
+				obj.find('i').toggleClass("fa-heart");
 			});
 		});
 	});
@@ -203,7 +209,7 @@
 							<button type="button" class="close" data-dismiss="modal">
 								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 							</button>
-							<h4 class="modal-title" id="myModalLabel">Image preview</h4>
+							<h4 class="modal-title" id="myModalLabel">Video preview</h4>
 						</div>
 						<div class="modal-body">
 							<center>
@@ -269,11 +275,24 @@
 															<img style="width: 100%; height: 230px; display: block;"
 																src="${image.url}" alt="image" id="clickImage" />
 															<div class="mask" style="color: white">
+																<c:choose>
+																	<c:when test="${image.liked}">
+																<a href="#" class="like"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-heart fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${image.url}" alt="image" id="clickImage" /> </a>
+																</c:when>
+																<c:otherwise>
 																<a href="#" class="like"><i
 																	style="color: white; margin-top: 90px"
 																	class="fa fa-heart-o fa-2x"></i> <img
 																	style="display: none; width: 100%; height: 230px;"
-																	src="${image.url}" alt="image" id="clickImage" /> </a> <a
+																	src="${image.url}" alt="image" id="clickImage" /> </a>
+																</c:otherwise>
+																</c:choose>
+																	
+																<a	
 																	href="#" class="pop"><i
 																	style="color: white; margin-top: 90px"
 																	class="fa fa-search fa-2x"></i> <img
@@ -343,7 +362,7 @@
 		$(document).ready(function() {
 			var toggled = true;
 			var liSize = $(".principale").width();
-			$("li").style("margin-left", "0");
+			$("li").css("margin-left", "0");
 			$("#menu_toggle").click(function() {
 				$("#logosmall").toggle();
 				$("#logobig").toggle();
@@ -363,7 +382,7 @@
 
 		});
 	</script>
-	<script>
+	<script type="text/javascript">
 		$('.pop').on('click', function() {
 			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
 			$('#imagemodal').modal('show');
@@ -372,9 +391,14 @@
 			$('.videopreview').attr('src', $(this).find('img').attr('src'));
 			$('#videomodal').modal('show');
 		});
+		$('#videomodal').on('hide.bs.modal', function(e) {    
+		    var $if = $(e.delegateTarget).find('iframe');
+		    var src = $if.attr("src");
+		    $if.attr("src", '/empty.jsp');
+		    
+		});
 	</script>
+	<script src="js/custom.js"></script>
 </body>
-
-</html>
 
 </html>

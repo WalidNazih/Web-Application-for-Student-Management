@@ -29,6 +29,22 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public void insertImageLike(int image, String visitor) throws SQLException{
+		String sql = "INSERT INTO imagelikes (image,visitor) values(?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, image);
+		preparedStatement.setString(2, visitor);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void deleteImageLike(int image, String visitor) throws SQLException{
+		String sql = "delete from imagelikes where (image = ? and visitor = ?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, image);
+		preparedStatement.setString(2, visitor);
+		preparedStatement.executeUpdate();
+	}
+	
 	public ResultSet getImages() throws SQLException{
 		String sql = "SELECT * FROM Images";
 		preparedStatement = con.prepareStatement(sql);
@@ -67,6 +83,15 @@ public class DAO {
 	public ResultSet getChapterByName(String name) throws SQLException{
 		String sql = "SELECT * FROM chapters where title like '%"+name+"%'";
 		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getImageLikes(int image, String visitor) throws SQLException{
+		String sql = "SELECT * FROM imagelikes where (image=? and visitor like ?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, image);
+		preparedStatement.setString(2, visitor);
 		preparedStatement.executeQuery();
 		return preparedStatement.executeQuery();
 	}
@@ -115,6 +140,14 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getLastArticles(int count) throws SQLException{
+		String sql = "SELECT * FROM ( SELECT * FROM article ORDER BY id DESC LIMIT ? ) sub ORDER BY id ASC";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1,count);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getMostLikedImages() throws SQLException{
 		String sql = "SELECT * FROM Images order by likes desc";
 		preparedStatement = con.prepareStatement(sql);
@@ -157,12 +190,13 @@ public class DAO {
 		preparedStatement.executeUpdate();
 	}
 	
-	public void insertVideo(String url, String desc, int category) throws SQLException{
-		String sql = "INSERT INTO videos (url,description,category) values(?,?,?)";
+	public void insertVideo(String url, String desc, String thumb, int category) throws SQLException{
+		String sql = "INSERT INTO videos (url,description,thumb,category) values(?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, url);
 		preparedStatement.setString(2, desc);
-		preparedStatement.setInt(3, category);
+		preparedStatement.setString(3, thumb);
+		preparedStatement.setInt(4, category);
 		preparedStatement.executeUpdate();
 	}
 	
@@ -197,6 +231,14 @@ public class DAO {
 		String sql = "UPDATE images set likes=? where url=?";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setInt(1, like+1);
+		preparedStatement.setString(2, url);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void deleteLike(String url, int like) throws SQLException{
+		String sql = "UPDATE images set likes=? where url=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, like-1);
 		preparedStatement.setString(2, url);
 		preparedStatement.executeUpdate();
 	}
@@ -253,6 +295,14 @@ public class DAO {
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setInt(1,level);
 		preparedStatement.setInt(2,option);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getVideoByCategory(int category) throws SQLException{
+		String sql = "SELECT * FROM videos WHERE category=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1,category);
 		preparedStatement.executeQuery();
 		return preparedStatement.executeQuery();
 	}

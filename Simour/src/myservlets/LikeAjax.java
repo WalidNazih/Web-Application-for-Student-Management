@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import classes.DAO;
 
@@ -34,12 +35,24 @@ public class LikeAjax extends HttpServlet {
 		try {
 			DAO dao = new DAO("simour","root","");
 			String imgurl = request.getParameter("imgurl");
+			int boli = Integer.parseInt(request.getParameter("boli"));
 			ResultSet rs = dao.getImageInfo(imgurl);
 			rs.next();
-			dao.addLike(rs.getString(2), rs.getInt(6));
-			response.setContentType("text/plain");
-			response.getWriter().write(""+(rs.getInt(6)+1));
-			response.getWriter().close();
+			if(boli == 1) {
+				dao.insertImageLike(rs.getInt(1), request.getRemoteAddr());
+				dao.addLike(rs.getString(2), rs.getInt(6));
+				response.setContentType("text/plain");
+				response.getWriter().write(""+(rs.getInt(6)+1));
+				response.getWriter().close();
+			}else{
+				dao.deleteImageLike(rs.getInt(1), request.getRemoteAddr());
+				dao.deleteLike(rs.getString(2), rs.getInt(6));
+				response.setContentType("text/plain");
+				response.getWriter().write(""+(rs.getInt(6)-1));
+				response.getWriter().close();
+			}
+			
+			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

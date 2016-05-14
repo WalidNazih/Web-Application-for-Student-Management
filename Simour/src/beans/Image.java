@@ -5,9 +5,10 @@ import java.io.Serializable;
 public class Image implements Serializable{
 	private int id, category, likes;
 	private String url, title, description;
+	private boolean liked;
 
 	public Image(int id, int category, String url, String title,
-			String description, int likes) {
+			String description, int likes, boolean liked) {
 		super();
 		this.id = id;
 		this.category = category;
@@ -15,6 +16,7 @@ public class Image implements Serializable{
 		this.title = title;
 		this.description = description;
 		this.likes = likes;
+		this.liked = liked;
 	}
 
 	public Image() {
@@ -64,5 +66,15 @@ public class Image implements Serializable{
 	public int getLikes(){
 		return this.likes;
 	}
+
+	public boolean isLiked() {
+		return liked;
+	}
+
+	public void setLiked(boolean liked) {
+		this.liked = liked;
+	}
+	
+	
 
 }
