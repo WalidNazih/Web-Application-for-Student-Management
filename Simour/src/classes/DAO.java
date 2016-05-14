@@ -209,6 +209,53 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getOptions() throws SQLException{
+		String sql = "SELECT * FROM options";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getLevel() throws SQLException{
+		String sql = "SELECT * FROM niveaux";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getClasses() throws SQLException{
+		String sql = "SELECT * FROM classes";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public void insertLesson(String url, String title, String icon, int classe) throws SQLException{
+		String sql = "INSERT INTO lessons (url,title,icon,class) values(?,?,?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, url);
+		preparedStatement.setString(2, title);
+		preparedStatement.setString(3, icon);
+		preparedStatement.setInt(4, classe);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void insertClass(int niveau, int option) throws SQLException{
+		String sql = "INSERT INTO classes (niveau,options) values(?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, niveau);
+		preparedStatement.setInt(2, option);
+		preparedStatement.executeUpdate();
+	}
+	
+	public ResultSet getClassByOption(int option, int level) throws SQLException{
+		String sql = "SELECT * FROM classes WHERE (niveau=? and options=?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1,level);
+		preparedStatement.setInt(2,option);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
 }
 
 

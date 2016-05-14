@@ -243,19 +243,6 @@
 					</div>
 					<!-- /sidebar menu -->
 
-					<!-- /menu footer buttons -->
-					<div class="sidebar-footer hidden-small">
-						<a data-toggle="tooltip" data-placement="top" title="Settings">
-							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-						</a> <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-							<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-						</a> <a data-toggle="tooltip" data-placement="top" title="Lock"> <span
-							class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-						</a> <a data-toggle="tooltip" data-placement="top" title="Logout">
-							<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-						</a>
-					</div>
-					<!-- /menu footer buttons -->
 				</div>
 			</div>
 
@@ -294,7 +281,7 @@
 				<div class="page-title"></div>
 				<div class="clearfix"></div>
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="x_panel">
 
 							<div class="x_content">
@@ -302,7 +289,7 @@
 								<div class="row">
 									<div class="col-md-8 col-xs-8 col-sm-8">
 										<div class="shadow" id="jssor_1"
-											style=" position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 400px; overflow: hidden; visibility: hidden;">
+											style=" position: relative; margin: 0 auto; top: 0px; left: 0px; width: 500vw; height: 400vh; overflow: hidden; visibility: hidden;">
 											<!-- Loading Screen -->
 											<div data-u="loading"
 												style="position: absolute; top: 0px; left: 0px;">
@@ -312,7 +299,7 @@
 													style="position: absolute; display: block; background: url('img/loading.gif') no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
 											</div>
 											<div data-u="slides"
-												style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 400px; overflow: hidden;">
+												style="cursor: default; position: relative; top: 0px; left: 0px; width: 500vw; height: 400vh; overflow: hidden;">
 												<div data-p="112.50" style="display: none;" >
 													<img data-u="image" src="images/slide-01.jpg" class="img-thumbnail"/>
 												</div>

@@ -7,6 +7,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -15,7 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
- 
+import javax.servlet.http.HttpSession;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.filechooser.FileSystemView;
@@ -25,6 +27,8 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.jcodec.api.awt.FrameGrab;
 
+import beans.Niveau;
+import beans.Option;
 import classes.DAO;
  
 /**
@@ -91,7 +95,7 @@ public class Upload extends HttpServlet {
             List<FileItem> formItems = upload.parseRequest(request);
  
             if (formItems != null && formItems.size() > 0) {
-            	String title = null, desc= null, fileName= null;
+            	String title = null, desc= null, fileName= null, classe=null;
                 // iterates over form's fields
                 for (FileItem item : formItems) {
                     // processes only fields that are not form fields
@@ -106,6 +110,10 @@ public class Upload extends HttpServlet {
                         	button = "article";
                         }else if(item.getFieldName().equals("chapterbtn")){
                         	button = "chapter";
+                        }else if(item.getFieldName().equals("lessonbtn")){
+                        	button = "lesson";
+                        }else if(item.getFieldName().equals("classSelect")){
+                        	classe= item.getString();
                         }
                     }else{
                     	fileName = new File(item.getName()).getName();
@@ -137,6 +145,23 @@ public class Upload extends HttpServlet {
                 		System.out.println("book "+ ext);
                 	}else if(button.equals("chapter")){
                 		dao.insertChapters("uploads/"+fileName, title, desc, "images/"+ext+".png");
+                		System.out.println("chapter");
+                	}else if(button.equals("lesson")){
+                		System.out.println("lesson");
+                		HttpSession session = request.getSession();
+                		
+                		String niv = classe.split("\\(")[1].substring(0,classe.split("\\(")[1].length()-1);
+                		String op = classe.split("\\(")[0].substring(0,classe.split("\\(")[0].length()-1);
+                		int nivId = 0, opId = 0;
+                		ArrayList<Niveau> nivL = (ArrayList<Niveau>) session.getAttribute("nivL");
+                		ArrayList<Option> opL = (ArrayList<Option>) session.getAttribute("opL");
+                		System.out.println(opL.get(0).getName());
+                		for(Niveau n : nivL) if(n.getName().equals(niv)) nivId = n.getId();
+                		for(Option o : opL) if(o.getName().equals(op)) opId = o.getId();
+                		
+                		ResultSet rs = dao.getClassByOption(opId, nivId);
+                		rs.next();
+                		dao.insertLesson("uploads/"+fileName, title, "images/"+ext+".png", rs.getInt(1));
                 		System.out.println(ext);
                 	}
                 }
@@ -146,14 +171,18 @@ public class Upload extends HttpServlet {
         } catch (Exception ex) {
             request.setAttribute("message",
                     "There was an error: " + ex.getMessage());
-            System.out.println(ex.getMessage());
+           ex.printStackTrace();
         }
         // redirects client to message page
         
         if(button.equals("book") || button.equals("article") || button.equals("chapter")){
         	getServletContext().getRequestDispatcher("/research.jsp").forward(
                     request, response);
-        }else{
+        }else if(button.equals("lesson")){
+        	getServletContext().getRequestDispatcher("/pedagogy.jsp").forward(
+                    request, response);
+        }
+        else{
         	getServletContext().getRequestDispatcher("/gallery.jsp").forward(
                     request, response);
         }
