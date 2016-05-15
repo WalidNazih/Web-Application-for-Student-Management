@@ -33,59 +33,14 @@
         
         <![endif]-->
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#all").click(function() {
-			var cat = 4;
-			$.get('ImageAjax', {
-				cat : cat
-			}, function(responseText) {
-				$("#image-container").html(responseText);
-			});
-		});
-		$("#photo").click(function() {
-			var cat = 2;
-			$.get('ImageAjax', {
-				cat : cat
-			}, function(responseText) {
-				$("#image-container").html(responseText);
-			});
-		});
-		$("#video").click(function() {
-			var cat = 3;
-			$.get('ImageAjax', {
-				cat : cat
-			}, function(responseText) {
-				$("#image-container").html(responseText);
-			});
-		});
-		$("#web").click(function() {
-			var cat = 1;
-			$.get('ImageAjax', {
-				cat : cat
-			}, function(responseText) {
-				$("#image-container").html(responseText);
-			});
-		});
-		$(".like").click(function() {
-			var imgurl = $(this).find('img').attr('src');
-			var obj = $(this);
-			$.get('LikeAjax', {
-				imgurl : imgurl
-			}, function(responseText) {
-				obj.siblings('#likecount').text(responseText + " likes")
-				obj.find('i').removeClass("fa-heart-o");
-				obj.find('i').addClass("fa-heart");
-			});
-		});
-	});
-</script>
+<script src="js/ajax.js"></script>
+<!-- 
 <style>
 .modal-content iframe {
 	margin: 0 auto;
 	display: block;
 }
-</style>
+ -->
 </head>
 
 
@@ -142,6 +97,7 @@
 							</ul>
 						</div>
 					</div>
+
 				</div>
 			</div>
 
@@ -203,7 +159,7 @@
 							<button type="button" class="close" data-dismiss="modal">
 								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 							</button>
-							<h4 class="modal-title" id="myModalLabel">Image preview</h4>
+							<h4 class="modal-title" id="myModalLabel">Video preview</h4>
 						</div>
 						<div class="modal-body">
 							<center>
@@ -238,21 +194,21 @@
 				</div>
 			</div> -->
 
-			<div class="right_col" style="height:780px" role="main">
+			<div class="right_col" role="main">
 				<div class="page-title"></div>
 				<div class="clearfix"></div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="x_panel">
 							<div class="x_title">
-								<h2>Article Gallery</h2>
+								<h2>Articles Gallery</h2>
 								<div class="clearfix"></div>
 							</div>
-							<div class="x_content">
+							<div class="x_content" >
 								<div class="row">
 									<div id="portfolio">
 										<div id="image-container">
-											<c:forEach var="ar" items="${artL}">
+										<c:forEach var="ar" items="${artL}">
 												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
@@ -268,7 +224,7 @@
 															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
 														</div>
 												</div> 
-											</c:forEach>
+											</c:forEach>											
 										</div>
 									</div>
 
@@ -276,6 +232,7 @@
 							</div>
 						</div>
 					</div>
+									
 				</div>
 			</div>
 		</div>
@@ -287,7 +244,7 @@
 		$(document).ready(function() {
 			var toggled = true;
 			var liSize = $(".principale").width();
-			$("li").style("margin-left", "0");
+			$("li").css("margin-left", "0");
 			$("#menu_toggle").click(function() {
 				$("#logosmall").toggle();
 				$("#logobig").toggle();
@@ -307,19 +264,8 @@
 
 		});
 	</script>
-	<script>
-		$('.pop').on('click', function() {
-			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
-			$('#imagemodal').modal('show');
-		});
-		$('.vidpop').on('click', function() {
-			$('.videopreview').attr('src', $(this).find('img').attr('src'));
-			$('#videomodal').modal('show');
-		});
-	</script>
+	<script src="js/modalshow.js"></script>
 	<script src="js/custom.js"></script>
 </body>
-
-</html>
 
 </html>

@@ -53,6 +53,47 @@ public class DAO {
 		preparedStatement.executeUpdate();
 	}
 	
+	public void deleteBook(String title) throws SQLException{
+		String sql = "delete from books where title = ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, title);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void deleteImage(String title) throws SQLException{
+		String sql = "delete from images where title = ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, title);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void deleteArticle(String title) throws SQLException{
+		String sql = "delete from article where title = ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, title);
+		preparedStatement.executeUpdate();
+	}
+	public void deleteLesson(String title) throws SQLException{
+		String sql = "delete from lessons where title = ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, title);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void deleteChapter(String title) throws SQLException{
+		String sql = "delete from chapters where title = ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, title);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void deleteVideo(String title) throws SQLException{
+		String sql = "delete from videos where description = ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, title);
+		preparedStatement.executeUpdate();
+	}
+	
 	public void deleteVidLike(int image, String visitor) throws SQLException{
 		String sql = "delete from videolikes where (video = ? and visitor = ?)";
 		preparedStatement = con.prepareStatement(sql);

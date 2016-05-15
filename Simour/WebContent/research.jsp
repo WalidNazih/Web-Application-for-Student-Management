@@ -36,6 +36,7 @@
 
 <script src="js/jquery.min.js"></script>
 <script src="js/nprogress.js"></script>
+<script src="js/ajax.js"></script>
 
 <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -243,58 +244,51 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
-								<h2>Most Downloaded Books</h2>
+								<h2>Delete From Research</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+								<div>
+									<center>
+										<img src="img/trash_empty.ico" width="60px" height="60px" />
+										<br><br><h4>Select type and item to delete</h4>
+									</center>
+									<form action="DeleteServlet" method="POST">
+									
+										Type : <br> <select name="type" id="typeSelect" style="width:100%">
+											<option value="Book">Book</option>
+											<option value="Article">Article</option>
+											<option value="Book Chapter">Book Chapter</option>
+										</select> <br>
+										<br> Item : <br> <div id="itemsDiv"><select name="item" id="item" style="width:100%">
+											<c:forEach var="bo" items="${bookL}">
+												<option value="${bo.title }">${bo.title }</option>
+											</c:forEach>	
+										</select></div>
+										<br> <input type="submit" value="Delete" class="btn btn-primary" name="deleteGallery" style="margin-top:24px"/>
+									</form>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8 col-sm-8 col-xs-8">
+						<div class="x_panel tile fixed_height_400">
+							<div class="x_title">
+								<h2>Top Research Documents</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div>
-								<c:forEach var="image" items="${topImages}">
-									<div style="margin-left: -10px; margin-top: 20px"
-										class="col-md-2">
-										<div style="height: 120px; width: 130px" class="thumbnail">
-											<div class="image view view-first">
-												<a href="#" class="pop"> <img
-													style="width: 100%; height: 130px; display: block;"
-													src="${image.url}" alt="image" id="clickImage" />
-													<div class="mask">
-														<div style="margin-top: 51px">
-															<i id="likecount"
-																style="font-weight: bold; color: white;">${image.likes}
-																likes</i>
-														</div>
-													</div>
-												</a>
-
-											</div>
-
-										</div>
-									</div>
-								</c:forEach>
+								
 							</div>
 							<div class="clearfix"></div>
 						</div>
 					</div>
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						<div class="x_panel tile fixed_height_400">
-							<div class="x_title">
-								<h2>Most Downloaded Articles</h2>
-								<div class="clearfix"></div>
-							</div>
-							<div class="x_content"></div>
-						</div>
-					</div>
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						<div class="x_panel tile fixed_height_400">
-							<div class="x_title">
-								<h2>Most Downloaded Book Chapters</h2>
-								<div class="clearfix"></div>
-							</div>
-							<div class="x_content"></div>
-						</div>
-					</div>
-
+					
 				</div>
 				<!-- /page content -->
 

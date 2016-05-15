@@ -95,8 +95,6 @@
 							</ul>
 						</div>
 					</div>
-					<!-- /sidebar menu -->
-
 
 				</div>
 			</div>
@@ -223,7 +221,7 @@
 					</div>
 
 
-					<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 						<div class="x_panel tile fixed_height_400 overflow_hidden">
 							<div class="x_title">
 								<h2>Manage Absence</h2>
@@ -262,7 +260,69 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-12 col-sm-12 col-xs-12">
+					
+					
+				</div>
+				<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-4">
+							<div class="x_panel tile fixed_height_400">
+								<div class="x_title">
+									<h2>Delete From Pedagogy</h2>
+									<div class="clearfix"></div>
+								</div>
+								<div class="x_content">
+									<div>
+										<center>
+											<img src="img/trash_empty.ico" width="60px" height="60px" />
+											<br>
+											<br>
+											<h4>Select type and item to delete</h4>
+										</center>
+										<form action="DeleteServlet" method="POST">
+
+											Type : <br> <select name="type" id="typeSelect"
+												style="width: 100%">
+												<c:forEach var="cl" items="${classL }">
+												<option value="${cl.option} (${cl.niveau}) ">${cl.option} (${cl.niveau}) </option>
+											</c:forEach>
+											</select> <br> <br> Item : <br>
+											<div id="itemsDiv">
+												<select name="item" id="item" style="width: 100%">
+													<c:forEach var="les" items="${lessonL}">
+														<option value="${les.title }">${les.title }</option>
+													</c:forEach>
+												</select>
+											</div>
+											<br> <input type="submit" value="Delete"
+												class="btn btn-primary" name="deleteGallery"
+												style="margin-top: 24px" />
+										</form>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-md-8 col-sm-8 col-xs-8">
+							<div class="x_panel tile fixed_height_400">
+								<div class="x_title">
+									<h2>Your Current Classes</h2>
+									<div class="clearfix"></div>
+								</div>
+								<div class="x_content">
+									<c:forEach var="cl" items="${classL}">
+										<div class="col-md-4 col-xs-4 col-sm-4"
+											style="margin-left: -10px; margin-top: 20px">
+											<h2>${cl.option}</h2>
+											<h4>(${ cl.niveau})</h4>
+										</div>
+									</c:forEach>
+									
+								</div>
+								
+							</div>
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
 								<h2>Most Downloaded Lessons</h2>
@@ -285,30 +345,18 @@
 														</div>
 												</div> 
 											</c:forEach>
+											
 							</div>
 						</div>
 					</div>
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						<div class="x_panel tile fixed_height_400">
-							<div class="x_title">
-								<h2>Your Current Classes</h2>
-								<div class="clearfix"></div>
-							</div>
-							<div class="x_content">
-								<c:forEach var="cl" items="${classL}">
-									<div class="col-md-3 col-xs-3 col-sm-3" 
-										style="margin-left: -10px; margin-top: 20px">
-										<h2> ${cl.option}</h2>
-										<h4>(${ cl.niveau}) </h4>
-									</div>
-								</c:forEach>
-							</div>
-						</div>
 					</div>
-				</div>
+					
 			</div>
+			
+			
 
 		</div>
+		
 
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/custom.js"></script>

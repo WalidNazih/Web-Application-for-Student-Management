@@ -41,6 +41,15 @@ $(document).ready(function() {
 			});
 		});
 		
+		$('#typeSelect').on('change', function() {
+			var value = this.value;
+			$.get('DeleteAjax', {
+				value : value
+			}, function(responseText) {
+				$("#itemsDiv").html(responseText);
+			});
+		});
+		
 		$(".like").click(function() {
 			var imgurl = $(this).find('img').attr('src');
 			var obj = $(this);

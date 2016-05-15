@@ -46,6 +46,7 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <script src="js/ajax.js"></script>
 </head>
 
 
@@ -140,7 +141,7 @@
 				<!-- top tiles -->
 				<div class="row tile_count"></div>
 				<div class="row">
-					<div class="col-md-5 col-sm-5 col-xs-5">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
 								<h2>Import Picture</h2>
@@ -149,7 +150,7 @@
 							<div class="x_content">
 
 								<form id="uploadPic" action="Upload" method="POST"
-									enctype="multipart/form-data">
+									enctype="multipart/form-data" style="width:100%">
 									<center>
 										<label id="filelbl" for="myfile"> <img
 											src="img/imgupload.png" width="60px" height="60px" id="blah" /><br>
@@ -158,12 +159,12 @@
 										</label>
 									</center>
 									<div id="fields">
-										Title :<br> <input type="text" name="title" id="title" size="59"
-											required="" /><br> Description:<br>
+										Title :<br> <input type="text" name="title" id="title"
+											width="100%" required="" /><br> Description:<br>
 										<textarea style="width: 446px" name="desc" form="uploadPic"
 											required=""> </textarea>
 										<br> <input type="submit" name="addPic" value="Add"
-											class="btn btn-primary" style="margin-top: 10px"
+											class="btn btn-primary" style="margin-top: 14px"
 											onclick="showModal()" />
 									</div>
 									<br>
@@ -173,34 +174,38 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-2 col-sm-2 col-xs-2">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
-								<h2>Upload Info</h2>
+								<h2>Delete From Gallery</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content">
 								<div>
 									<center>
-										<img src="img/imgupload.png" width="40px" height="37px" />
+										<img src="img/trash_empty.ico" width="60px" height="60px" />
+										<br><br><h4>Select type and item to delete</h4>
 									</center>
-									<br>
-									<p>Upload Limit : 100 Mo.</p>
-									<p>Supported Formats : jpg, gif, png.</p>
+									<form action="DeleteServlet" method="POST">
+									
+										Type : <br> <select name="type" id="typeSelect" style="width:100%">
+											<option value="Picture">Picture</option>
+											<option value="Video">Video</option>
+										</select> <br>
+										<br> Item : <br> <div id="itemsDiv"><select name="item" id="item" style="width:100%">
+											<c:forEach var="image" items="${topImages}">
+												<option value="${image.title }">${image.title }</option>
+											</c:forEach>	
+										</select></div>
+										<br> <input type="submit" value="Delete" class="btn btn-primary" name="deleteGallery" style="margin-top:24px"/>
+									</form>
+
 								</div>
-								<hr>
-								<div>
-									<center>
-										<img src="img/vidupload.png" width="40px" height="36px" />
-									</center>
-									<br>
-									<p>Upload Limit : 100 Mo.</p>
-									<p>Supported Formats : mp4, avi, wmv.</p>
-								</div>
+
 							</div>
 						</div>
 					</div>
-					<div class="col-md-5 col-sm-5 col-xs-5">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_content">
 
@@ -208,11 +213,10 @@
 									<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
 										<li role="presentation" class="active"><a
 											href="#tab_content1" id="home-tab" role="tab"
-											data-toggle="tab" aria-expanded="true">Import Video From
-												Computer</a></li>
+											data-toggle="tab" aria-expanded="true">Upload Video </a></li>
 										<li role="presentation" class=""><a href="#tab_content2"
 											role="tab" id="profile-tab" data-toggle="tab"
-											aria-expanded="false">Import Video From Web</a></li>
+											aria-expanded="false">Embed URL</a></li>
 									</ul>
 									<div id="myTabContent" class="tab-content">
 										<div role="tabpanel" class="tab-pane fade active in"
@@ -229,12 +233,11 @@
 												</center>
 												<div id="fields">
 													Title :<br> <input type="text" name="title" size="59"
-														required="" id="videoUrl"/><br> Description:<br>
+														required="" id="videoUrl" /><br> Description:<br>
 													<textarea style="width: 446px" name="desc" form="uploadVid"
 														required=""> </textarea>
 													<br> <input type="submit" name="addVid" value="Add"
-														class="btn btn-primary" style="margin-top: 19px"
-														/>
+														class="btn btn-primary" style="margin-top: 19px" />
 												</div>
 
 											</form>
@@ -249,20 +252,16 @@
 													</label>
 
 												</center>
-												
-												<div id="fields" style="margin-top:13px">
-													URL : <br> <input type="text" name="urlweb"
-														id="url" size="59" ><br>
-													
-													Description :  <br>
-													<input type="text" name="desc"
-														id="url" size="59" ><br>
-														<!-- 
+
+												<div id="fields" style="margin-top: 13px">
+													URL : <br> <input type="text" name="urlweb" id="url"
+														size="59"><br> Description : <br> <input
+														type="text" name="desc" id="url" size="59"><br>
+													<!-- 
 													<div style="margin-top:6px">Description:<br><textarea style="width: 446px" name="desc" form="uploadPic"
 														required="" > </textarea></div> -->
 													<br> <input type="submit" name="addWeb" value="Add"
-														class="btn btn-primary" 
-														onclick="showModal()" />
+														class="btn btn-primary" onclick="showModal()" />
 												</div>
 
 											</form>
@@ -314,33 +313,34 @@
 							</div>
 							<div class="x_content">
 								<c:forEach var="vid" items="${topVideos}">
-												<div class="col-md-2" style="margin-left: -10px; margin-top: 20px">
-													<div class="thumbnail" style="height: 180px; width: 180px">
-														<div class="image view view-first">
+									<div class="col-md-2"
+										style="margin-left: -10px; margin-top: 20px">
+										<div class="thumbnail" style="height: 180px; width: 180px">
+											<div class="image view view-first">
 
-															<img style="width: 100%; height: 180px; display: block;"
-																src="${vid.thumbnail}" alt="video" id="clickImage" />
-															<div class="mask" style="color: white">
-																<a href="#" class="like"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-heart-o fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${vid.url}" alt="image" id="clickImage" /> </a> <a
-																	href="#" class="vidpop"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-search fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${vid.url}" alt="image" id="clickImage" /> </a> <br>
-																<i id="likecount" style="font-weight: bold">${vid.likes}
-																	likes</i>
-															</div>
-
-
-														</div>
-														
-													</div>
+												<img style="width: 100%; height: 180px; display: block;"
+													src="${vid.thumbnail}" alt="video" id="clickImage" />
+												<div class="mask" style="color: white">
+													<a href="#" class="like"><i
+														style="color: white; margin-top: 90px"
+														class="fa fa-heart-o fa-2x"></i> <img
+														style="display: none; width: 100%; height: 230px;"
+														src="${vid.url}" alt="image" id="clickImage" /> </a> <a
+														href="#" class="vidpop"><i
+														style="color: white; margin-top: 90px"
+														class="fa fa-search fa-2x"></i> <img
+														style="display: none; width: 100%; height: 230px;"
+														src="${vid.url}" alt="image" id="clickImage" /> </a> <br>
+													<i id="likecount" style="font-weight: bold">${vid.likes}
+														likes</i>
 												</div>
-											</c:forEach>
+
+
+											</div>
+
+										</div>
+									</div>
+								</c:forEach>
 							</div>
 						</div>
 					</div>
@@ -367,7 +367,7 @@
 
 					reader.readAsDataURL(input.files[0]);
 					var fu1 = document.getElementById("myVideo");
-					$("#videoUrl").attr('value',fu1.value);
+					$("#videoUrl").attr('value', fu1.value);
 					alert(fu1.value);
 				}
 			}
@@ -381,7 +381,8 @@
 
 				if (input.files && input.files[0]) {
 					var fu1 = document.getElementById("myVideo");
-					$("#videoUrl").attr('value',fu1.value.split("\\")[2].split(".")[0]);
+					$("#videoUrl").attr('value',
+							fu1.value.split("\\")[2].split(".")[0]);
 				}
 			}
 
@@ -390,6 +391,7 @@
 			});
 		</script>
 		<script>
+			
 		</script>
 		<script src="js/custom.js"></script>
 </body>
