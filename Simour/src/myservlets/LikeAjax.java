@@ -36,20 +36,38 @@ public class LikeAjax extends HttpServlet {
 			DAO dao = new DAO("simour","root","");
 			String imgurl = request.getParameter("imgurl");
 			int boli = Integer.parseInt(request.getParameter("boli"));
-			ResultSet rs = dao.getImageInfo(imgurl);
-			rs.next();
-			if(boli == 1) {
-				dao.insertImageLike(rs.getInt(1), request.getRemoteAddr());
-				dao.addLike(rs.getString(2), rs.getInt(6));
-				response.setContentType("text/plain");
-				response.getWriter().write(""+(rs.getInt(6)+1));
-				response.getWriter().close();
-			}else{
-				dao.deleteImageLike(rs.getInt(1), request.getRemoteAddr());
-				dao.deleteLike(rs.getString(2), rs.getInt(6));
-				response.setContentType("text/plain");
-				response.getWriter().write(""+(rs.getInt(6)-1));
-				response.getWriter().close();
+			if(imgurl.endsWith(".jpg") || imgurl.endsWith(".png") || imgurl.endsWith(".gif") || imgurl.endsWith(".jpeg")){
+				ResultSet rs = dao.getImageInfo(imgurl);
+				rs.next();
+				if(boli == 1) {
+					dao.insertImageLike(rs.getInt(1), request.getRemoteAddr());
+					dao.addLike(rs.getString(2), rs.getInt(6));
+					response.setContentType("text/plain");
+					response.getWriter().write(""+(rs.getInt(6)+1));
+					response.getWriter().close();
+				}else{
+					dao.deleteImageLike(rs.getInt(1), request.getRemoteAddr());
+					dao.deleteLike(rs.getString(2), rs.getInt(6));
+					response.setContentType("text/plain");
+					response.getWriter().write(""+(rs.getInt(6)-1));
+					response.getWriter().close();
+				}
+			}else if(imgurl.endsWith(".avi") || imgurl.endsWith(".mp4") || imgurl.endsWith(".wmv") || imgurl.contains("youtube.com")){
+				ResultSet rs = dao.getVideoInfo(imgurl);
+				rs.next();
+				if(boli == 1) {
+					dao.insertVideoLike(rs.getInt(1), request.getRemoteAddr());
+					dao.addLikeVideo(rs.getString(2), rs.getInt(6));
+					response.setContentType("text/plain");
+					response.getWriter().write(""+(rs.getInt(6)+1));
+					response.getWriter().close();
+				}else{
+					dao.deleteVidLike(rs.getInt(1), request.getRemoteAddr());
+					dao.deleteLikeVideo(rs.getString(2), rs.getInt(6));
+					response.setContentType("text/plain");
+					response.getWriter().write(""+(rs.getInt(6)-1));
+					response.getWriter().close();
+				}
 			}
 			
 			

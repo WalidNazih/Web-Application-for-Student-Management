@@ -422,29 +422,32 @@
 							</div>
 							<div>
 								<c:forEach var="ar" items="${lastArt}">
-												<div class="col-sm-3 col-md-3 col-xs-3" style="height:154px">
-													<div style="float:left; display:block;margin-right:20px">
-														<div style="width:100px;height:100px">
-															<img style="width: 100%; height: 150px; display: block;"
-																src="${ar.icon}" alt="image" id="clickImage" />
-															
-														</div>
-														
-													</div>
-													<div style="margin-left:50px">
-															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${ar.title}</h3>
-															<p >${ar.description}</p>
-															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
-														</div>
-												</div> 
-											</c:forEach>
+									<div class="col-sm-3 col-md-3 col-xs-3" style="height: 154px">
+										<div style="float: left; display: block; margin-right: 20px">
+											<div style="width: 100px; height: 100px">
+												<img style="width: 100%; height: 150px; display: block;"
+													src="${ar.icon}" alt="image" id="clickImage" />
+
+											</div>
+
+										</div>
+										<div style="margin-left: 50px">
+											<h3
+												style="font-family: 'Titillium Web', sans-serif; font-weight: bold">${ar.title}</h3>
+											<p>${ar.description}</p>
+											<a href="${ar.url}" style="position: absolute; bottom: 0;"
+												class="btn btn-primary"> Download </a>
+										</div>
+									</div>
+								</c:forEach>
 
 							</div>
 							<br>
 							<div class="clearfix">
-							
+
 								<div id="footer" class="col-md-12 col-xs-12 col-sm-12">
-								<hr/><br>
+									<hr />
+									<br>
 									<div class="footer-box col-md-4">
 										<h3>Popular Posts</h3>
 										<ul class="popular-posts">
@@ -498,15 +501,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-
-
-	</div>
-	<!-- /page content -->
-
-	</div>
-
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function() {

@@ -5,18 +5,20 @@ public class Lesson {
 	int id;
 	String url, title, icon;
 	int classe;
+	int downloads;
 
 	public Lesson(){
 		
 	}
 
-	public Lesson(int id, String url, String title, String icon, int classe) {
+	public Lesson(int id, String url, String title, String icon, int classe, int downloads) {
 		super();
 		this.id = id;
 		this.url = url;
 		this.title = title;
 		this.icon = icon;
 		this.classe = classe;
+		this.downloads = downloads;
 	}
 
 	public int getId() {
@@ -45,6 +47,10 @@ public class Lesson {
 
 	public String getIcon() {
 		return icon;
+	}
+
+	public int getDownloads() {
+		return downloads;
 	}
 
 	public void setIcon(String icon) {

@@ -201,99 +201,30 @@
 					<div class="col-md-12">
 						<div class="x_panel">
 							<div class="x_title">
-								<h2>Media Gallery</h2>
+								<h2>Lesson Gallery (Formation Initiale)</h2>
 								<div class="clearfix"></div>
 							</div>
-							<div class="x_content">
+							<div class="x_content" >
 								<div class="row">
 									<div id="portfolio">
-										<div class="btn-group" style="float: left; margin-left: 10px">
-											<button id="all" class="btn btn-default btn-sm" type="button">All</button>
-											<button id="photo" class="btn btn-default btn-sm"
-												type="button">Photo</button>
-											<button id="video" class="btn btn-default btn-sm"
-												type="button">Video</button>
-											<button id="web" class="btn btn-default btn-sm" type="button">Web</button>
-										</div>
-										<br> <br>
 										<div id="image-container">
-											<c:forEach var="image" items="${imageL}">
-												<div class="col-sm-3">
-													<div class="thumbnail">
-														<div class="image view view-first">
-
-															<img style="width: 100%; height: 230px; display: block;"
-																src="${image.url}" alt="image" id="clickImage" />
-															<div class="mask" style="color: white">
-																<c:choose>
-																	<c:when test="${image.liked}">
-																<a href="#" class="like"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-heart fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${image.url}" alt="image" id="clickImage" /> </a>
-																</c:when>
-																<c:otherwise>
-																<a href="#" class="like"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-heart-o fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${image.url}" alt="image" id="clickImage" /> </a>
-																</c:otherwise>
-																</c:choose>
-																	
-																<a	
-																	href="#" class="pop"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-search fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${image.url}" alt="image" id="clickImage" /> </a> <br>
-																<i id="likecount" style="font-weight: bold">${image.likes}
-																	likes</i>
-															</div>
-
-
+											<c:forEach var="ar" items="${normaleLesson}">
+												<div class="col-sm-3 col-md-3 col-xs-3" style="height:154px">
+													<div style="float:left; display:block;margin-right:20px">
+														<div style="width:100px;height:100px">
+															<img style="width: 100%; height: 150px; display: block;"
+																src="${ar.icon}" alt="image" id="clickImage" />
+															
 														</div>
-														<div class="caption">
-															<center>
-																<p style="font-weight: bold; font-size: 20px">${image.title }</p>
-															</center>
-														</div>
+														
 													</div>
-												</div>
-											</c:forEach>
-											<c:forEach var="vid" items="${vidL}">
-												<div class="col-sm-3">
-													<div class="thumbnail">
-														<div class="image view view-first">
-
-															<img style="width: 100%; height: 230px; display: block;"
-																src="${vid.thumbnail}" alt="video" id="clickImage" />
-															<div class="mask" style="color: white">
-																<a href="" class="like"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-heart-o fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${vid.url}" alt="image" id="clickImage" /> </a> <a
-																	href="" class="vidpop"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-search fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${vid.url}" alt="image" id="clickImage" /> </a> <br>
-																<i id="likecount" style="font-weight: bold">${vid.likes}
-																	likes</i>
-															</div>
-
-
+													<div style="margin-left:50px">
+															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${ar.title}</h3>
+															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary lessonDown"> Download </a>
 														</div>
-														<div class="caption">
-															<center>
-																<p style="font-weight: bold; font-size: 20px">${vid.description}</p>
-															</center>
-														</div>
-													</div>
-												</div>
+												</div> 
 											</c:forEach>
+											
 										</div>
 									</div>
 
@@ -301,6 +232,7 @@
 							</div>
 						</div>
 					</div>
+									
 				</div>
 			</div>
 		</div>

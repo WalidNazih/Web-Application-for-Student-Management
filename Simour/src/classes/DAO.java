@@ -37,8 +37,24 @@ public class DAO {
 		preparedStatement.executeUpdate();
 	}
 	
+	public void insertVideoLike(int image, String visitor) throws SQLException{
+		String sql = "INSERT INTO videolikes (video,visitor) values(?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, image);
+		preparedStatement.setString(2, visitor);
+		preparedStatement.executeUpdate();
+	}
+	
 	public void deleteImageLike(int image, String visitor) throws SQLException{
 		String sql = "delete from imagelikes where (image = ? and visitor = ?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, image);
+		preparedStatement.setString(2, visitor);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void deleteVidLike(int image, String visitor) throws SQLException{
+		String sql = "delete from videolikes where (video = ? and visitor = ?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setInt(1, image);
 		preparedStatement.setString(2, visitor);
@@ -235,7 +251,22 @@ public class DAO {
 		preparedStatement.executeUpdate();
 	}
 	
+	public void addLikeVideo(String url, int like) throws SQLException{
+		String sql = "UPDATE images set likes=? where url=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, like+1);
+		preparedStatement.setString(2, url);
+		preparedStatement.executeUpdate();
+	}
+	
 	public void deleteLike(String url, int like) throws SQLException{
+		String sql = "UPDATE images set likes=? where url=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, like-1);
+		preparedStatement.setString(2, url);
+		preparedStatement.executeUpdate();
+	}
+	public void deleteLikeVideo(String url, int like) throws SQLException{
 		String sql = "UPDATE images set likes=? where url=?";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setInt(1, like-1);
@@ -245,6 +276,14 @@ public class DAO {
 	
 	public ResultSet getImageInfo(String url) throws SQLException{
 		String sql = "SELECT * FROM IMAGES WHERE url=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1,url);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getVideoInfo(String url) throws SQLException{
+		String sql = "SELECT * FROM videos WHERE url=?";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1,url);
 		preparedStatement.executeQuery();
@@ -282,6 +321,14 @@ public class DAO {
 		preparedStatement.executeUpdate();
 	}
 	
+	public void insertLessonDownload(int id, int downloads) throws SQLException{
+		String sql = "UPDATE lessons set downloads=? where id=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(2, id);
+		preparedStatement.setInt(1, downloads+1);
+		preparedStatement.executeUpdate();
+	}
+	
 	public void insertClass(int niveau, int option) throws SQLException{
 		String sql = "INSERT INTO classes (niveau,options) values(?,?)";
 		preparedStatement = con.prepareStatement(sql);
@@ -303,6 +350,36 @@ public class DAO {
 		String sql = "SELECT * FROM videos WHERE category=?";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setInt(1,category);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getLessons() throws SQLException{
+		String sql = "SELECT * FROM lessons";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getLessonByUrl(String url) throws SQLException{
+		String sql = "SELECT * FROM lessons WHERE url=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1,url);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getMostDownLessons() throws SQLException{
+		String sql = "SELECT * FROM lessons order by downloads desc";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getLessonByClass(int classe) throws SQLException{
+		String sql = "SELECT * FROM lessons WHERE class=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1,classe);
 		preparedStatement.executeQuery();
 		return preparedStatement.executeQuery();
 	}
