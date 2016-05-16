@@ -46,12 +46,17 @@ public class DeleteServlet extends HttpServlet {
 				dao.deleteArticle(item);
 			}else if(type.contains("Book Chapter")){
 				dao.deleteChapter(item);
+				ServletContext context= getServletContext();
+				RequestDispatcher rd= context.getRequestDispatcher("/");
+				rd.forward(request, response);
 			}else if(type.contains("(")){
+				
 				dao.deleteLesson(item);
+				ServletContext context= getServletContext();
+				RequestDispatcher rd= context.getRequestDispatcher("/Pedagogy");
+				rd.forward(request, response);
 			}
-			ServletContext context= getServletContext();
-			RequestDispatcher rd= context.getRequestDispatcher("/GalleryBack");
-			rd.forward(request, response);
+			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

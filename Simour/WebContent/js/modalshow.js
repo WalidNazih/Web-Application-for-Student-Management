@@ -4,7 +4,6 @@
 			$('#imagemodal').modal('show');
 		});
 		$('.vidpop').on('click', function() {
-			alert("clicked");
 			$('.videopreview').attr('src', $(this).find('img').attr('src'));
 			$('#videomodal').modal('show');
 		});

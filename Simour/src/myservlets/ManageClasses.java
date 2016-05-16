@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -51,7 +53,9 @@ public class ManageClasses extends HttpServlet {
 				
 	    		dao.insertClass(nivId,opId);
 			}
-			request.getRequestDispatcher("/pedagogy.jsp").forward(request, response);
+			ServletContext context= getServletContext();
+			RequestDispatcher rd= context.getRequestDispatcher("/Pedagogy");
+			rd.forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

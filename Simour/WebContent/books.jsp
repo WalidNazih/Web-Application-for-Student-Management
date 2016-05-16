@@ -308,7 +308,7 @@
 		$(document).ready(function() {
 			var toggled = true;
 			var liSize = $(".principale").width();
-			$("li").style("margin-left", "0");
+			$("li").css("margin-left", "0");
 			$("#menu_toggle").click(function() {
 				$("#logosmall").toggle();
 				$("#logobig").toggle();
@@ -328,16 +328,7 @@
 
 		});
 	</script>
-	<script>
-		$('.pop').on('click', function() {
-			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
-			$('#imagemodal').modal('show');
-		});
-		$('.vidpop').on('click', function() {
-			$('.videopreview').attr('src', $(this).find('img').attr('src'));
-			$('#videomodal').modal('show');
-		});
-	</script>
+	<script src="js/modalshow.js"></script>
 	<script src="js/custom.js"></script>
 </body>
 

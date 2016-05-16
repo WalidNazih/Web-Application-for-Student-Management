@@ -47,7 +47,7 @@ public class LikeAjax extends HttpServlet {
 					response.getWriter().close();
 				}else{
 					dao.deleteImageLike(rs.getInt(1), request.getRemoteAddr());
-					dao.deleteLike(rs.getString(2), rs.getInt(6));
+					dao.deleteLike(rs.getString(2), rs.getInt(6)-1);
 					response.setContentType("text/plain");
 					response.getWriter().write(""+(rs.getInt(6)-1));
 					response.getWriter().close();
@@ -64,7 +64,7 @@ public class LikeAjax extends HttpServlet {
 					response.getWriter().close();
 				}else{
 					dao.deleteVidLike(rs.getInt(1), request.getRemoteAddr());
-					dao.deleteLikeVideo(rs.getString(2), rs.getInt(6));
+					dao.deleteLikeVideo(rs.getString(2), rs.getInt(6)-1);
 					response.setContentType("text/plain");
 					response.getWriter().write(""+(rs.getInt(6)-1));
 					response.getWriter().close();

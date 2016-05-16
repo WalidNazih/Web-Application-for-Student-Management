@@ -357,14 +357,14 @@ public class DAO {
 	public void deleteLike(String url, int like) throws SQLException{
 		String sql = "UPDATE images set likes=? where url=?";
 		preparedStatement = con.prepareStatement(sql);
-		preparedStatement.setInt(1, like-1);
+		preparedStatement.setInt(1, like);
 		preparedStatement.setString(2, url);
 		preparedStatement.executeUpdate();
 	}
 	public void deleteLikeVideo(String url, int like) throws SQLException{
-		String sql = "UPDATE images set likes=? where url=?";
+		String sql = "UPDATE videos set likes=? where url=?";
 		preparedStatement = con.prepareStatement(sql);
-		preparedStatement.setInt(1, like-1);
+		preparedStatement.setInt(1, like);
 		preparedStatement.setString(2, url);
 		preparedStatement.executeUpdate();
 	}

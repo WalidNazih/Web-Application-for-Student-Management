@@ -22,8 +22,6 @@
 
 <!-- Custom styling plus plugins -->
 <link href="css/custom.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css"
-	href="css/maps/jquery-jvectormap-2.0.3.css" />
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 
@@ -136,12 +134,12 @@
 
 
 			<!-- page content -->
-			<div class="right_col" role="main">
+			<div class="right_col" role="main" style="height:1372px">
 
 				<!-- top tiles -->
 				<div class="row tile_count"></div>
 				<div class="row">
-					<div class="col-md-4 col-sm-4 col-xs-4">
+					<div class="col-md-4 col-sm-4 col-xs-4 image-import">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
 								<h2>Import Picture</h2>
@@ -150,7 +148,7 @@
 							<div class="x_content">
 
 								<form id="uploadPic" action="Upload" method="POST"
-									enctype="multipart/form-data" style="width:100%">
+									enctype="multipart/form-data" >
 									<center>
 										<label id="filelbl" for="myfile"> <img
 											src="img/imgupload.png" width="60px" height="60px" id="blah" /><br>
@@ -168,7 +166,6 @@
 											onclick="showModal()" />
 									</div>
 									<br>
-
 								</form>
 
 							</div>
@@ -347,18 +344,31 @@
 
 				</div>
 				<!-- /page content -->
+				<!-- footer content -->
+
+				<footer>
+				<div class="copyright-info">
+					<p class="pull-right">
+						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				</footer>
+				<!-- /footer content -->
 
 			</div>
 
 		</div>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/custom.js"></script>
 		<script type="text/javascript">
-			function readURL(input) {
+			function readImage(input) {
 
 				if (input.files && input.files[0]) {
 					var reader = new FileReader();
 
 					reader.onload = function(e) {
+						
 						$('#blah').attr('src', e.target.result);
 						$('#blah').width("150px");
 						$('#blah').height("150px");
@@ -366,14 +376,12 @@
 					}
 
 					reader.readAsDataURL(input.files[0]);
-					var fu1 = document.getElementById("myVideo");
-					$("#videoUrl").attr('value', fu1.value);
-					alert(fu1.value);
+					
 				}
 			}
 
 			$("#myfile").change(function() {
-				readURL(this);
+				readImage(this);
 			});
 		</script>
 		<script type="text/javascript">
@@ -390,10 +398,13 @@
 				readURL(this);
 			});
 		</script>
-		<script>
-			
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#title").width($(".image-import").width()-400+"vw");
+			});
 		</script>
-		<script src="js/custom.js"></script>
+		
 </body>
 
 </html>

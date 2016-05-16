@@ -199,13 +199,13 @@
 										<br> <br>
 										<div id="image-container">
 											<c:forEach var="image" items="${imageL}">
-												<div class="col-sm-3">
-													<div class="thumbnail">
+												<div class="col-md-2" style="margin-top:10px">
+													<div>
 														<div class="image view view-first">
 
 															<img style="width: 100%; height: 230px; display: block;"
 																src="${image.url}" alt="image" id="clickImage" />
-															<div class="mask" style="color: white">
+															<div class="mask" style="color: white;height:230px">
 																<c:choose>
 																	<c:when test="${image.liked}">
 																<a href="#" class="like"><i
@@ -244,13 +244,13 @@
 												</div>
 											</c:forEach>
 											<c:forEach var="vid" items="${vidL}">
-												<div class="col-sm-3">
-													<div class="thumbnail">
+												<div class="col-md-3" style="margin-top:10px">
+													<div>
 														<div class="image view view-first">
 
 															<img style="width: 100%; height: 230px; display: block;"
 																src="${vid.thumbnail}" alt="video" id="clickImage" />
-															<div class="mask" style="color: white">
+															<div class="mask" style="color: white;height:230px">
 															<c:choose>
 																	<c:when test="${vid.liked}">
 																<a href="#" class="like"><i

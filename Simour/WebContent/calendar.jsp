@@ -78,21 +78,24 @@
 						class="main_menu_side hidden-print main_menu">
 
 						<div class="menu_section">
-							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a href="dashboard.jsp"><i class="fa fa-home"></i>
-										Home</a></li>
-								<li><a href="gallery.jsp"><i class="fa fa-camera-retro"></i>
-										Gallery</a></li>
-								<li><a href="research.jsp"><i class="fa fa-book"></i>
-										Research </a></li>
-
-								<li><a href="pedagogy.jsp"><i
-										class="fa fa-graduation-cap"></i> Pedagogy</a></li>
-								<li><a href="calendar.jsp"><i class="fa fa-calendar"></i>
-										Calendar</a></li>
-								<li><a href="about.jsp"><i class="fa fa-edit"></i>
-										About </a></li>
+								<li class="principale"><a
+									href="http://localhost:8070/Simour/SimLogPan"><i
+										class="fa fa-home"></i> Home</a></li>
+								<li class="principale"><a
+									href="http://localhost:8070/Simour/GalleryBack"><i
+										class="fa fa-camera-retro"></i> Gallery</a></li>
+								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
+										Research</a>
+								</li>
+								<li class="principale"><a href="http://localhost:8070/Simour/Pedagogy"><i
+										class="fa fa-graduation-cap"></i> Pedagogy </a>
+									
+</li>
+								<li class="principale"><a href="calendar.jsp"><i
+										class="fa fa-calendar"></i> Calendar</a></li>
+								<li class="principale"><a href="about_front.jsp"><i
+										class="fa fa-edit"></i> About </a></li>
 							</ul>
 						</div>
 					</div>
@@ -182,7 +185,17 @@
 				</div>
 
 				<!-- footer content -->
+<!-- footer content -->
 
+				<footer>
+				<div class="copyright-info">
+					<p class="pull-right">
+						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				</footer>
+				<!-- /footer content -->
 				<!-- /footer content -->
 
 			</div>
@@ -399,6 +412,30 @@
 					url : 'http://google.com/'
 				} ]
 			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var toggled = true;
+			var liSize = $(".principale").width();
+
+			$("#menu_toggle").click(function() {
+				$("#logosmall").toggle();
+				$("#logobig").toggle();
+				if (toggled) {
+					$(".principale").width(65);
+				} else {
+					$(".principale").width(liSize);
+				}
+				toggled = !toggled;
+			});
+
+			$(".principale").click(function() {
+				if (!toggled) {
+					$(this).width(70);
+				}
+			});
+
 		});
 	</script>
 	<script type="text/javascript">

@@ -454,7 +454,7 @@
 								<br>
 								<div class="footer-box col-md-3">
 									<h3>Latest Articles</h3>
-									<ul class="popular-posts" style="list-style:none">
+									<ul class="popular-posts"  style="list-style:dot">
 									<c:forEach var="ar" items="${lastArt}">
 									<li>
 											<h5>
@@ -468,7 +468,7 @@
 								</div>
 								<div class="footer-box col-md-3">
 									<h3>Latest Lessons</h3>
-									<ul class="popular-posts" style="list-style:none">
+									<ul class="popular-posts" style="list-style:dot">
 										<c:forEach var="ar" items="${lastLess}">
 									<li>
 											<h5>

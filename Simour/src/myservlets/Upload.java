@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -88,7 +90,7 @@ public class Upload extends HttpServlet {
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
         }
-        String button = null;	
+        String button = "";	
         try {
             // parses the request's content to extract file data
             @SuppressWarnings("unchecked")
@@ -175,14 +177,19 @@ public class Upload extends HttpServlet {
         }
         // redirects client to message page
         
-        if(button.equals("book") || button.equals("article") || button.equals("chapter")){
-        	getServletContext().getRequestDispatcher("/research.jsp").forward(
-                    request, response);
-        }else if(button.equals("lesson")){
-        	getServletContext().getRequestDispatcher("/pedagogy.jsp").forward(
-                    request, response);
-        }
-        else{
+        if(!button.equals("")){
+        	if(button.equals("book") || button.equals("article") || button.equals("chapter")){
+            	getServletContext().getRequestDispatcher("/research.jsp").forward(
+                        request, response);
+            }else if(button.equals("lesson")){
+            	ServletContext context= getServletContext();
+    			RequestDispatcher rd= context.getRequestDispatcher("/Pedagogy");
+    			rd.forward(request, response);
+            }
+            else{
+            	
+            }
+        }else{
         	getServletContext().getRequestDispatcher("/gallery.jsp").forward(
                     request, response);
         }

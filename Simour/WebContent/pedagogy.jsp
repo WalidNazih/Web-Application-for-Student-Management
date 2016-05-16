@@ -330,9 +330,9 @@
 							</div>
 							<div class="x_content">
 								<c:forEach var="ar" items="${topLesson}">
-												<div class="col-sm-3 col-md-3 col-xs-3" style="height:154px">
+												<div class="col-md-4" style="height:154px">
 													<div style="float:left; display:block;margin-right:20px">
-														<div style="width:100px;height:100px">
+														<div style="width:140px;height:100px">
 															<img style="width: 100%; height: 150px; display: block;"
 																src="${ar.icon}" alt="image" id="clickImage" />
 															
@@ -350,7 +350,17 @@
 						</div>
 					</div>
 					</div>
-					
+					<!-- footer content -->
+
+				<footer>
+				<div class="copyright-info">
+					<p class="pull-right">
+						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				</footer>
+				<!-- /footer content -->
 			</div>
 			
 			
