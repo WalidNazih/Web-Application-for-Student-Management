@@ -56,8 +56,9 @@ public class LikeAjax extends HttpServlet {
 				ResultSet rs = dao.getVideoInfo(imgurl);
 				rs.next();
 				if(boli == 1) {
+					//System.out.println(imgurl);
 					dao.insertVideoLike(rs.getInt(1), request.getRemoteAddr());
-					dao.addLikeVideo(rs.getString(2), rs.getInt(6));
+					dao.addLikeVideo(rs.getString(2), rs.getInt(6)+1);
 					response.setContentType("text/plain");
 					response.getWriter().write(""+(rs.getInt(6)+1));
 					response.getWriter().close();

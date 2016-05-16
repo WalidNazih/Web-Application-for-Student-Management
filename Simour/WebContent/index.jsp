@@ -163,6 +163,9 @@
 	-webkit-box-shadow: 0 0 30px 5px #999;
 }
 </style>
+<script>
+	
+</script>
 </head>
 
 
@@ -170,6 +173,32 @@
 	<div class="container body">
 		<div class="main_container">
 
+
+			<div class="modal fade" id="myModal">
+				<div class="modal-header">
+					<a class="close" data-dismiss="modal">×</a>
+					<h3>Modal header</h3>
+				</div>
+				<div class="modal-body">
+					<div class="">
+						<img src="images/androidlogo.png" width="90px" height="100px"
+							style="float: left; display: block; margin-left: 39px; margin-top: 20px" />
+						<h1
+							style="margin-top: 35px; font-weight: bold; margin-left: 50px; font-family: 'Indie Flower', cursive;">
+							Android Application <br> Coming Soon
+						</h1>
+						<br>
+						<center>
+							<img src="images/googleplay.png" width="200px" height="80px"
+								style="display: block; margin-top: 20px" />
+						</center>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="btn">Close</a> <a href="#"
+						class="btn btn-primary">Save changes</a>
+				</div>
+			</div>
 
 			<div class="col-md-3 left_col">
 				<div class="left_col scroll-view">
@@ -184,29 +213,6 @@
 							src="images/logosmall.png"></a>
 					</div>
 					<div class="clearfix"></div>
-					<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog"
-						aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal">
-										<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-									</button>
-									<h4 class="modal-title" id="myModalLabel">Image preview</h4>
-								</div>
-								<div class="modal-body">
-									<center>
-										<img src="" class="imagepreview"
-											style="width: 570px; height: 470px;">
-									</center>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">Close</button>
-								</div>
-							</div>
-						</div>
-					</div>
 
 					<br />
 					<div id="sidebar-menu"
@@ -284,223 +290,234 @@
 				<div class="page-title"></div>
 				<div class="clearfix"></div>
 				<div class="row">
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						<div class="x_panel">
+					<div class="x_panel">
 
-							<div class="x_content">
-
-								<div class="row">
-									<div class="col-md-8 col-xs-8 col-sm-8">
-										<div class="shadow" id="jssor_1"
-											style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 500vw; height: 400vh; overflow: hidden; visibility: hidden;">
-											<!-- Loading Screen -->
-											<div data-u="loading"
-												style="position: absolute; top: 0px; left: 0px;">
-												<div
-													style="filter: alpha(opacity = 70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-												<div
-													style="position: absolute; display: block; background: url('img/loading.gif') no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-											</div>
-											<div data-u="slides"
-												style="cursor: default; position: relative; top: 0px; left: 0px; width: 500vw; height: 400vh; overflow: hidden;">
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/slide-01.jpg"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/slide-02.jpg"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/slide-04.jpg"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/slide-05.jpg"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/slide-06.PNG"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/slide-07.PNG"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/Capture3.PNG"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/Capture4.PNG"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/Capture5.PNG"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/Capture6.PNG"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/Capture7.PNG"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/Capture10.PNG"
-														class="img-thumbnail" />
-												</div>
-												<div data-p="112.50" style="display: none;">
-													<img data-u="image" src="images/Capture11.PNG"
-														class="img-thumbnail" />
-												</div>
-											</div>
-											<!-- Bullet Navigator -->
-											<div data-u="navigator" class="jssorb05"
-												style="bottom: 16px; right: 16px;" data-autocenter="1">
-												<!-- bullet navigator item prototype -->
-												<div data-u="prototype" style="width: 16px; height: 16px;"></div>
-											</div>
-											<!-- Arrow Navigator -->
-											<span data-u="arrowleft" class="jssora12l"
-												style="top: 0px; left: 0px; width: 30px; height: 46px;"
-												data-autocenter="2"></span> <span data-u="arrowright"
-												class="jssora12r"
-												style="top: 0px; right: 0px; width: 30px; height: 46px;"
-												data-autocenter="2"></span>
+						<div class="x_content">
+							<div class="col-md-8 col-xs-12 col-sm-2">
+								<div class="shadow" id="jssor_1"
+									style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 500px; overflow: hidden; visibility: hidden;">
+									<!-- Loading Screen -->
+									<div data-u="loading"
+										style="position: absolute; top: 0px; left: 0px;">
+										<div
+											style="filter: alpha(opacity = 70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+										<div
+											style="position: absolute; display: block; background: url('img/loading.gif') no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+									</div>
+									<div data-u="slides"
+										style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 500px; overflow: hidden;">
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/slide-01.jpg"
+												class="img-thumbnail" />
 										</div>
-
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/slide-02.jpg"
+												class="img-thumbnail" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/slide-04.jpg"
+												class="img-thumbnail" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/slide-05.jpg"
+												class="img-thumbnail" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/slide-06.PNG"
+												class="img-thumbnail" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/slide-07.PNG"
+												class="img-thumbnail" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/Capture3.PNG"
+												class="img-thumbnail" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/Capture4.PNG"
+												class="img-thumbnail" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/Capture5.PNG"
+												class="img-thumbnail" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/Capture6.PNG"
+												class="img-thumbnail" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/Capture7.PNG"
+												class="img-thumbnail" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/Capture10.PNG"
+												class="img-thumbnail" />
+										</div>
+										<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="images/Capture11.PNG"
+												class="img-thumbnail" />
+										</div>
 									</div>
-									<div class="col-md-4 col-xs-4 col-sm-4">
-										<img src="images/androidlogo.png" width="90px" height="100px"
-											style="float: left; display: block; margin-left: 39px; margin-top: 20px" />
-										<h1
-											style="margin-top: 35px; font-weight: bold; margin-left: 50px; font-family: 'Indie Flower', cursive;">
-											Android Application <br> Coming Soon
-										</h1>
-										<br>
-										<center>
-											<img src="images/googleplay.png" width="200px" height="80px"
-												style="display: block; margin-top: 20px" />
-										</center>
+									<!-- Bullet Navigator -->
+									<div data-u="navigator" class="jssorb05"
+										style="bottom: 16px; right: 16px;" data-autocenter="1">
+										<!-- bullet navigator item prototype -->
+										<div data-u="prototype" style="width: 16px; height: 16px;"></div>
 									</div>
+									<!-- Arrow Navigator -->
+									<span data-u="arrowleft" class="jssora12l"
+										style="top: 0px; left: 0px; width: 30px; height: 46px;"
+										data-autocenter="2"></span> <span data-u="arrowright"
+										class="jssora12r"
+										style="top: 0px; right: 0px; width: 30px; height: 46px;"
+										data-autocenter="2"></span>
 								</div>
-								<br> <br>
 
 							</div>
+							<div class="col-md-4">
+								<img src="images/androidlogo.png" width="90px" height="100px"
+							style="float: left; display: block; margin-left: 39px; margin-top: 20px" />
+						<h1
+							style="margin-top: 35px; font-weight: bold; margin-left: 50px; font-family: 'Indie Flower', cursive;">
+							Android Application <br> Coming Soon
+						</h1>
+						<br>
+						<center>
+							<img src="images/googleplay.png" width="200px" height="80px"
+								style="display: block; margin-top: 20px" />
+							</div>
+
 							<br> <br>
-							<div class="x_title">
-								<h2>Latest Media</h2>
-								<div class="clearfix"></div>
-							</div>
 
-							<div>
-								<c:forEach var="image" items="${lastIm}">
-									<div style="margin-left: -10px; margin-top: 20px"
-										class="col-md-2 col-xs-2 col-md-2">
-										<div style="height: 180px; width: 180px" class="thumbnail">
-											<div class="image view view-first">
-												<a href="#" class="pop"> <img
-													style="width: 100%; height: 180px; display: block;"
-													src="${image.url}" alt="image" id="clickImage" />
-													<div class="mask">
-														<i style="margin-top: 55px" class="fa fa-search"></i>
-													</div>
-												</a>
-											</div>
-
-										</div>
-									</div>
-								</c:forEach>
-
-							</div>
+						</div>
+						<br> <br>
+						<div class="x_title">
+							<h2>Latest Pictures</h2>
 							<div class="clearfix"></div>
-							<div class="x_title">
-								<h2>Latest Articles</h2>
-								<div class="clearfix"></div>
-							</div>
-							<div>
-								<c:forEach var="ar" items="${lastArt}">
-									<div class="col-sm-3 col-md-3 col-xs-3" style="height: 154px">
-										<div style="float: left; display: block; margin-right: 20px">
-											<div style="width: 100px; height: 100px">
-												<img style="width: 100%; height: 150px; display: block;"
-													src="${ar.icon}" alt="image" id="clickImage" />
+						</div>
 
-											</div>
-
+						<div>
+							<c:forEach var="image" items="${lastIm}">
+								<div style="margin-left: -10px; margin-top: 20px"
+									class="col-md-2">
+									<div style="height: 180px; width: 180px" class="thumbnail">
+										<div class="image view view-first">
+											<a href="#" class="pop"> <img
+												style="width: 100%; height: 180px; display: block;"
+												src="${image.url}" alt="image" id="clickImage" />
+												
+											</a>
 										</div>
-										<div style="margin-left: 50px">
-											<h3
-												style="font-family: 'Titillium Web', sans-serif; font-weight: bold">${ar.title}</h3>
-											<p>${ar.description}</p>
-											<a href="${ar.url}" style="position: absolute; bottom: 0;"
-												class="btn btn-primary"> Download </a>
-										</div>
-									</div>
-								</c:forEach>
 
-							</div>
-							<br>
-							<div class="clearfix">
-
-								<div id="footer" class="col-md-12 col-xs-12 col-sm-12">
-									<hr />
-									<br>
-									<div class="footer-box col-md-4">
-										<h3>Popular Posts</h3>
-										<ul class="popular-posts">
-											<li><a href="#"><img src="style/images/art/s1.jpg"
-													alt="" /></a>
-												<h5>
-													<a href="#">Dolor Commodo Consectetur</a>
-												</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
-
-											<li><a href="#"><img src="style/images/art/s2.jpg"
-													alt="" /></a>
-												<h5>
-													<a href="#">Dolor Commodo Consectetur</a>
-												</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
-
-											<li><a href="#"><img src="style/images/art/s3.jpg"
-													alt="" /></a>
-												<h5>
-													<a href="#">Dolor Commodo Consectetur</a>
-												</h5> <span>26 Aug 2011 | <a href="#">21 Comments</a></span></li>
-
-										</ul>
-									</div>
-									<div class="footer-box col-md-4">
-										<h3>About</h3>
-										<p>Donec id elit non mi porta gravida at eget metus. Donec
-											ullamcorper nulla non metus auctor fringilla.</p>
-										<p>
-											Lorem Ipsum Dolor Sit Moon Avenue No:11/21 Planet City, Earth<br>
-											<br> <span class="lite1">Fax:</span> +555 797 534 01<br>
-											<span class="lite1">Tel:</span> +555 636 646 62<br> <span
-												class="lite1">E-mail:</span> name@domain.com
-										</p>
-
-
-									</div>
-
-									<div class="footer-box col-md-4 last">
-										<h3>Custom Text</h3>
-										<p>Nullam quis risus eget urna mollis ornare vel eu leo.
-											Maecenas faucibus mollis interdum. Etiam porta sem malesuada
-											magna mollis euismod. Nulla vitae elit.</p>
-										<p>Donec ullamcorper nulla non metus auctor fringilla.
-											Maecenas faucibus mollis interdum. Curabitur blandit tempus
-											porttitor.</p>
 									</div>
 								</div>
+							</c:forEach>
+
+						</div>
+						<div class="clearfix"></div>
+						<div class="x_title">
+							<h2>Latest Videos</h2>
+							<div class="clearfix"></div>
+						</div>
+						<div>
+							<c:forEach var="ar" items="${lastVid}">
+								<div class="col-sm-3">
+													<div class="thumbnail">
+														<div class="image view view-first">
+
+															<img style="width: 100%; height: 230px; display: block;"
+																src="${ar.thumbnail}" alt="video" id="clickImage" />
+															<div class="mask" style="color: white">
+																 <br>
+																<i id="likecount" style="font-weight: bold">${ar.likes}
+																	likes</i>
+															</div>
+
+
+														</div>
+														<div class="caption">
+															<center>
+																<p style="font-weight: bold; font-size: 20px">${ar.description}</p>
+															</center>
+														</div>
+													</div>
+												</div>
+							</c:forEach>
+
+						</div>
+						<br>
+						<div class="clearfix">
+
+							<div id="footer" class="col-md-12 col-xs-12 col-sm-12">
+								<hr />
+								<br>
+								<div class="footer-box col-md-3">
+									<h3>Latest Articles</h3>
+									<ul class="popular-posts" style="list-style:none">
+									<c:forEach var="ar" items="${lastArt}">
+									<li>
+											<h5>
+												<p>${ar.title}</p>
+											</h5></li>
+									</c:forEach>
+										
+
+
+									</ul>
+								</div>
+								<div class="footer-box col-md-3">
+									<h3>Latest Lessons</h3>
+									<ul class="popular-posts" style="list-style:none">
+										<c:forEach var="ar" items="${lastLess}">
+									<li>
+											<h5>
+												<p>${ar.title}</p>
+											</h5></li>
+									</c:forEach>
+									</ul>
+								</div>
+								<div class="footer-box col-md-3">
+									<h3>About</h3>
+									<p>Donec id elit non mi porta gravida at eget metus. Donec
+										ullamcorper nulla non metus auctor fringilla.</p>
+									<p>
+										Lorem Ipsum Dolor Sit Moon Avenue No:11/21 Planet City, Earth<br>
+										<br> <span class="lite1">Fax:</span> +555 797 534 01<br>
+										<span class="lite1">Tel:</span> +555 636 646 62<br> <span
+											class="lite1">E-mail:</span> name@domain.com
+									</p>
+
+
+								</div>
+								<div class="footer-box col-md-3">
+									<div id="map" style="width:300px;height:300px"></div>
+										
+										<script>
+											function initMap() {
+												var mapDiv = document
+														.getElementById('map');
+												var map = new google.maps.Map(
+														mapDiv, {
+															center : {
+																lat : 33.540,
+																lng : -7.65
+															},
+															zoom : 13
+														});
+											}
+										</script>
+										<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+								</div>
+							
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -526,12 +543,7 @@
 
 		});
 	</script>
-	<script>
-		$('.pop').on('click', function() {
-			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
-			$('#imagemodal').modal('show');
-		});
-	</script>
+
 	<script src="js/custom.js"></script>
 </body>
 

@@ -311,6 +311,22 @@
 														</div>
 												</div> 
 											</c:forEach>
+											<c:forEach var="bo" items="${lessonRes}">
+												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
+													<div style="float:left; display:block;margin-right:20px">
+														<div style="width:150px;height:150px">
+															<img style="width: 100%; height: 150px; display: block;"
+																src="${bo.icon}" alt="image" id="clickImage" />
+															
+														</div>
+														
+													</div>
+													<div style="margin-left:50px">
+															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${bo.title}</h3>
+															<a href="${bo.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
+														</div>
+												</div> 
+											</c:forEach>
 											<c:forEach var="ch" items="${chapterRes}">
 												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
 													<div style="float:left; display:block;margin-right:20px">

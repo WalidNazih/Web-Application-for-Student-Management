@@ -153,6 +153,29 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getVideoLikes(int image, String visitor) throws SQLException{
+		String sql = "SELECT * FROM videolikes where (video=? and visitor like ?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, image);
+		preparedStatement.setString(2, visitor);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getLastVideoLikes() throws SQLException{
+		String sql = "SELECT * FROM ( SELECT * FROM videolikes ORDER BY id DESC LIMIT 6 ) sub ORDER BY id ASC";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getLastImageLikes() throws SQLException{
+		String sql = "SELECT * FROM ( SELECT * FROM imagelikes ORDER BY id DESC LIMIT 6 ) sub ORDER BY id ASC";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getBooks() throws SQLException{
 		String sql = "SELECT * FROM book";
 		preparedStatement = con.prepareStatement(sql);
@@ -181,6 +204,13 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getLessonByName(String name) throws SQLException{
+		String sql = "SELECT * FROM lesson where title like '%"+name+"%'";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getImageByCategory(int category) throws SQLException{
 		String sql = "SELECT * FROM IMAGES WHERE CATEGORY=?";
 		preparedStatement = con.prepareStatement(sql);
@@ -191,6 +221,22 @@ public class DAO {
 	
 	public ResultSet getLastImages(int count) throws SQLException{
 		String sql = "SELECT * FROM ( SELECT * FROM images ORDER BY id DESC LIMIT ? ) sub ORDER BY id ASC";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1,count);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getLastLessons(int count) throws SQLException{
+		String sql = "SELECT * FROM ( SELECT * FROM lessons ORDER BY id DESC LIMIT ? ) sub ORDER BY id ASC";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1,count);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getLastVideos(int count) throws SQLException{
+		String sql = "SELECT * FROM ( SELECT * FROM videos ORDER BY id DESC LIMIT ? ) sub ORDER BY id ASC";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setInt(1,count);
 		preparedStatement.executeQuery();
@@ -292,10 +338,18 @@ public class DAO {
 		preparedStatement.executeUpdate();
 	}
 	
-	public void addLikeVideo(String url, int like) throws SQLException{
-		String sql = "UPDATE images set likes=? where url=?";
+	public void updateSettings(String col, String value) throws SQLException{
+		String sql = "UPDATE images set value=? where setting=?";
 		preparedStatement = con.prepareStatement(sql);
-		preparedStatement.setInt(1, like+1);
+		preparedStatement.setString(1, col);
+		preparedStatement.setString(2, value);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void addLikeVideo(String url, int like) throws SQLException{
+		String sql = "UPDATE videos set likes=? where url=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, like);
 		preparedStatement.setString(2, url);
 		preparedStatement.executeUpdate();
 	}
@@ -319,6 +373,22 @@ public class DAO {
 		String sql = "SELECT * FROM IMAGES WHERE url=?";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1,url);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getImageInfo(int id) throws SQLException{
+		String sql = "SELECT * FROM IMAGES WHERE id=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1,id);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getVideoInfo(int id) throws SQLException{
+		String sql = "SELECT * FROM videos WHERE id=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1,id);
 		preparedStatement.executeQuery();
 		return preparedStatement.executeQuery();
 	}

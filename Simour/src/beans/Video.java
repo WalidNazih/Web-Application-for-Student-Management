@@ -6,12 +6,11 @@ public class Video implements Serializable{
 
 	protected int id, category, likes;
 	protected String url, description, thumbnail;
+	protected boolean liked;
 	
 	public Video(){}
 	
-	
-
-	public Video(int id, int category, int likes, String url, String description, String thumbnail) {
+	public Video(int id, int category, int likes, String url, String description, String thumbnail, boolean liked) {
 		super();
 		this.id = id;
 		this.category = category;
@@ -19,6 +18,7 @@ public class Video implements Serializable{
 		this.url = url;
 		this.description = description;
 		this.thumbnail = thumbnail;
+		this.liked = liked;
 	}
 
 	public int getId() {
@@ -69,6 +69,12 @@ public class Video implements Serializable{
 		this.thumbnail = thumbnail;
 	}
 	
-	
+	public boolean isLiked() {
+		return liked;
+	}
+
+	public void setLiked(boolean liked) {
+		this.liked = liked;
+	}
 	
 }

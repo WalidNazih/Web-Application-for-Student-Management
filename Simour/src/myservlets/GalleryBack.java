@@ -47,7 +47,7 @@ public class GalleryBack extends HttpServlet {
 			rs = dao.getMostLikedVideos();
 			ArrayList<Video> mlvList = new ArrayList<>();
 			while(rs.next()){
-				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4));
+				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4), false);
 				//System.out.println(image.getUrl() + " : "+ image.getLikes());
 				mlvList.add(video);
 			}

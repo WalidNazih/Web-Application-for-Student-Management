@@ -16,6 +16,7 @@ import beans.Article;
 import beans.Book;
 import beans.Chapter;
 import beans.Image;
+import beans.Lesson;
 import beans.Video;
 import classes.DAO;
 
@@ -74,8 +75,14 @@ public class Search extends HttpServlet {
 			rs = dao.getVideoByName(query);
 			ArrayList<Video> videoList = new ArrayList<>();
 			while(rs.next()){
-				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4));
+				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4), false);
 				videoList.add(video);
+			}
+			rs = dao.getLessonByName(query);
+			ArrayList<Lesson> lessonList = new ArrayList<>();
+			while(rs.next()){
+				Lesson image = new Lesson(rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getInt(6));
+				lessonList.add(image);
 			}
 			
 			HttpSession session = request.getSession();
@@ -84,6 +91,7 @@ public class Search extends HttpServlet {
 			session.setAttribute("artRes", artList);
 			session.setAttribute("bookRes", bookList);
 			session.setAttribute("chapterRes", chapList);
+			session.setAttribute("lessonRes", lessonList);
 			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

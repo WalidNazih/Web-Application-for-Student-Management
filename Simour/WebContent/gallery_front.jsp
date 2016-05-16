@@ -174,25 +174,6 @@
 				</div>
 			</div>
 
-			<!-- Video Modal -->
-			<!-- <div class="modal" id="videomodal">
-				<div></div>
-			</div> -->
-			<!-- 
-			<div class="modal fade videomodal">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-hidden="true">&times;</button>
-							<h4 class="modal-title">Video Preview</h4>
-						</div>
-						<div class="modal-body">
-							 <iframe class="videopreview" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>				
-						</div>
-					</div>
-				</div>
-			</div> -->
 
 			<div class="right_col" role="main">
 				<div class="page-title"></div>
@@ -270,12 +251,24 @@
 															<img style="width: 100%; height: 230px; display: block;"
 																src="${vid.thumbnail}" alt="video" id="clickImage" />
 															<div class="mask" style="color: white">
-																<a href="" class="like"><i
+															<c:choose>
+																	<c:when test="${vid.liked}">
+																<a href="#" class="like"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-heart fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${vid.url}" alt="image" id="clickImage" /> </a>
+																</c:when>
+																<c:otherwise>
+																<a href="#" class="like"><i
 																	style="color: white; margin-top: 90px"
 																	class="fa fa-heart-o fa-2x"></i> <img
 																	style="display: none; width: 100%; height: 230px;"
-																	src="${vid.url}" alt="image" id="clickImage" /> </a> <a
-																	href="" class="vidpop"><i
+																	src="${vid.url}" alt="image" id="clickImage" /> </a>
+																</c:otherwise>
+																</c:choose>
+																<a
+																	href="#" class="vidpop"><i
 																	style="color: white; margin-top: 90px"
 																	class="fa fa-search fa-2x"></i> <img
 																	style="display: none; width: 100%; height: 230px;"
@@ -331,6 +324,11 @@
 			});
 
 		});
+	</script>
+	<script>
+	$('.like').click(function(e) {
+	    e.preventDefault();
+	});
 	</script>
 	<script src="js/modalshow.js"></script>
 	<script src="js/custom.js"></script>

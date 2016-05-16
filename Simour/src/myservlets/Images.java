@@ -53,7 +53,11 @@ public class Images extends HttpServlet {
 			rs = dao.getVideos();
 			ArrayList<Video> videoList = new ArrayList<>();
 			while(rs.next()){
-				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4));
+				ResultSet res = dao.getVideoLikes(rs.getInt(1), request.getRemoteAddr());
+				int i = 0;
+				while(res.next()) i++;
+				boolean boli = i == 0? false : true;
+				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4), boli);
 				videoList.add(video);
 			}
 

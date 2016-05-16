@@ -14,6 +14,8 @@ import javax.servlet.http.HttpSession;
 
 import beans.Article;
 import beans.Image;
+import beans.Lesson;
+import beans.Video;
 import classes.DAO;
 
 /**
@@ -54,8 +56,22 @@ public class IndexServlet extends HttpServlet {
 				Article article = new Article(rs.getInt(1), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4), rs.getString(5));
 		    	lastArt.add(article);
 			}
+			rs = dao.getLastLessons(6);
+			ArrayList<Lesson> lastLess = new ArrayList<>();
+			while(rs.next()){
+				Lesson article = new Lesson(rs.getInt(1),  rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(5),rs.getInt(6));
+		    	lastLess.add(article);
+			}
+			rs = dao.getLastVideos(6);
+			ArrayList<Video> lastVid = new ArrayList<>();
+			while(rs.next()){
+				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4), false);
+				lastVid.add(video);
+			}
 			session.setAttribute("lastIm", lastIm);
 			session.setAttribute("lastArt", lastArt);
+			session.setAttribute("lastLess", lastLess);
+			session.setAttribute("lastVid", lastVid);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
