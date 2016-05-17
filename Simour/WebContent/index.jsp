@@ -21,8 +21,6 @@
 
 <!-- Custom styling plus plugins -->
 <link href="css/custom.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css"
-	href="css/maps/jquery-jvectormap-2.0.3.css" />
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 
@@ -42,7 +40,6 @@
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Indie+Flower'
 	rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
 <!-- use jssor.slider.debug.js instead for debug -->
 <script>
@@ -72,99 +69,6 @@
 
 		//responsive code end
 	});
-</script>
-
-<style>
-
-/* jssor slider bullet navigator skin 05 css */
-/*
-        .jssorb05 div           (normal)
-        .jssorb05 div:hover     (normal mouseover)
-        .jssorb05 .av           (active)
-        .jssorb05 .av:hover     (active mouseover)
-        .jssorb05 .dn           (mousedown)
-        */
-.jssorb05 {
-	position: absolute;
-}
-
-.jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
-	position: absolute;
-	/* size of bullet elment */
-	width: 16px;
-	height: 16px;
-	background: url('img/b05.png') no-repeat;
-	overflow: hidden;
-	cursor: pointer;
-}
-
-.jssorb05 div {
-	background-position: -7px -7px;
-}
-
-.jssorb05 div:hover, .jssorb05 .av:hover {
-	background-position: -37px -7px;
-}
-
-.jssorb05 .av {
-	background-position: -67px -7px;
-}
-
-.jssorb05 .dn, .jssorb05 .dn:hover {
-	background-position: -97px -7px;
-}
-
-/* jssor slider arrow navigator skin 12 css */
-/*
-        .jssora12l                  (normal)
-        .jssora12r                  (normal)
-        .jssora12l:hover            (normal mouseover)
-        .jssora12r:hover            (normal mouseover)
-        .jssora12l.jssora12ldn      (mousedown)
-        .jssora12r.jssora12rdn      (mousedown)
-        */
-.jssora12l, .jssora12r {
-	display: block;
-	position: absolute;
-	/* size of arrow element */
-	width: 30px;
-	height: 46px;
-	cursor: pointer;
-	background: url('img/a12.png') no-repeat;
-	overflow: hidden;
-}
-
-.jssora12l {
-	background-position: -16px -37px;
-}
-
-.jssora12r {
-	background-position: -75px -37px;
-}
-
-.jssora12l:hover {
-	background-position: -136px -37px;
-}
-
-.jssora12r:hover {
-	background-position: -195px -37px;
-}
-
-.jssora12l.jssora12ldn {
-	background-position: -256px -37px;
-}
-
-.jssora12r.jssora12rdn {
-	background-position: -315px -37px;
-}
-
-.shadow {
-	-moz-box-shadow: 0 0 30px 5px #999;
-	-webkit-box-shadow: 0 0 30px 5px #999;
-}
-</style>
-<script>
-	
 </script>
 </head>
 
@@ -517,7 +421,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function() {

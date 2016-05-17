@@ -44,6 +44,7 @@ public class Login extends HttpServlet {
         		sess.setAttribute("logged", true);
         		try {
 					DAO dao = new DAO("Simour", "root", "");
+					dao.insertLog("Logged in to backoffice", request.getRemoteAddr());
 					ResultSet rs = dao.getLastImageLikes();
 					ArrayList<ImageLikes> lastImgLike = new ArrayList<>();
 					while(rs.next()){

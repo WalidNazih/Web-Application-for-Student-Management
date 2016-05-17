@@ -20,8 +20,6 @@
 
 <!-- Custom styling plus plugins -->
 <link href="css/custom.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css"
-	href="css/maps/jquery-jvectormap-2.0.3.css" />
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,700' rel='stylesheet' type='text/css'>
@@ -37,59 +35,6 @@
         
         <![endif]-->
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#all").click(function() {
-			var cat = 4;
-			$.get('ImageAjax', {
-				cat : cat
-			}, function(responseText) {
-				$("#image-container").html(responseText);
-			});
-		});
-		$("#photo").click(function() {
-			var cat = 2;
-			$.get('ImageAjax', {
-				cat : cat
-			}, function(responseText) {
-				$("#image-container").html(responseText);
-			});
-		});
-		$("#video").click(function() {
-			var cat = 3;
-			$.get('ImageAjax', {
-				cat : cat
-			}, function(responseText) {
-				$("#image-container").html(responseText);
-			});
-		});
-		$("#web").click(function() {
-			var cat = 1;
-			$.get('ImageAjax', {
-				cat : cat
-			}, function(responseText) {
-				$("#image-container").html(responseText);
-			});
-		});
-		$(".like").click(function() {
-			var imgurl = $(this).find('img').attr('src');
-			var obj = $(this);
-			$.get('LikeAjax', {
-				imgurl : imgurl
-			}, function(responseText) {
-				obj.siblings('#likecount').text(responseText + " likes")
-				obj.find('i').removeClass("fa-heart-o");
-				obj.find('i').addClass("fa-heart");
-			});
-		});
-	});
-</script>
-<style>
-.modal-content iframe {
-	margin: 0 auto;
-	display: block;
-}
-</style>
 </head>
 
 

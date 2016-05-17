@@ -60,7 +60,6 @@ public class Pedagogy extends HttpServlet {
 				for(Niveau n : nivList) if(n.getId() == rs.getInt(2)) niveau = n.getName();
 				for(Option o : opList) if(o.getId() == rs.getInt(3)) option = o.getName();
 				Classe image = new Classe(rs.getInt(1), niveau, option);
-				System.out.println(image.getOption());
 				classList.add(image);
 			}
 			rs = dao.getMostDownLessons();

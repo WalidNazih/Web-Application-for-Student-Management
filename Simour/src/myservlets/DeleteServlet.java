@@ -38,20 +38,26 @@ public class DeleteServlet extends HttpServlet {
 			String item = request.getParameter("item");
 			if(type.contains("Picture")){
 				dao.deleteImage(item);
+				dao.insertLog("Deleted the picture ("+item+")", request.getRemoteAddr());
 			}else if(type.contains("Video")){
 				dao.deleteVideo(item);
+				dao.insertLog("Deleted the video ("+item+")", request.getRemoteAddr());
 			}else if(type.contains("Book")){
 				dao.deleteBook(item);
+				dao.insertLog("Deleted the book ("+item+")", request.getRemoteAddr());
 			}else if(type.contains("Article")){
 				dao.deleteArticle(item);
+				dao.insertLog("Deleted the article ("+item+")", request.getRemoteAddr());
 			}else if(type.contains("Book Chapter")){
 				dao.deleteChapter(item);
+				dao.insertLog("Deleted the book chapter ("+item+")", request.getRemoteAddr());
 				ServletContext context= getServletContext();
 				RequestDispatcher rd= context.getRequestDispatcher("/");
 				rd.forward(request, response);
 			}else if(type.contains("(")){
 				
 				dao.deleteLesson(item);
+				dao.insertLog("Deleted the lesson ("+item+")", request.getRemoteAddr());
 				ServletContext context= getServletContext();
 				RequestDispatcher rd= context.getRequestDispatcher("/Pedagogy");
 				rd.forward(request, response);

@@ -18,8 +18,6 @@
 <link href="css/animate.min.css" rel="stylesheet">
 
 <link href="css/custom.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css"
-	href="css/maps/jquery-jvectormap-2.0.3.css" />
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 
@@ -34,13 +32,6 @@
         <![endif]-->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/ajax.js"></script>
-<!-- 
-<style>
-.modal-content iframe {
-	margin: 0 auto;
-	display: block;
-}
- -->
 </head>
 
 
@@ -173,26 +164,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- Video Modal -->
-			<!-- <div class="modal" id="videomodal">
-				<div></div>
-			</div> -->
-			<!-- 
-			<div class="modal fade videomodal">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-hidden="true">&times;</button>
-							<h4 class="modal-title">Video Preview</h4>
-						</div>
-						<div class="modal-body">
-							 <iframe class="videopreview" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>				
-						</div>
-					</div>
-				</div>
-			</div> -->
 
 			<div class="right_col" role="main">
 				<div class="page-title"></div>

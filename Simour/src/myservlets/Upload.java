@@ -141,15 +141,14 @@ public class Upload extends HttpServlet {
                 	System.out.println(ext+"");
                 	if(button.equals("book")){
                 		dao.insertBook("uploads/"+fileName, title, desc, "images/"+ext+".png");
-                		System.out.println("book "+ ext);
+                		dao.insertLog("Uploaded the book ("+title+")", request.getRemoteAddr());
                 	}else if(button.equals("article")){
                 		dao.insertArticle("uploads/"+fileName, title, desc, "images/"+ext+".png");
-                		System.out.println("book "+ ext);
+                		dao.insertLog("Uploaded the article ("+title+")", request.getRemoteAddr());
                 	}else if(button.equals("chapter")){
                 		dao.insertChapters("uploads/"+fileName, title, desc, "images/"+ext+".png");
-                		System.out.println("chapter");
+                		dao.insertLog("Uploaded the book chapter ("+title+")", request.getRemoteAddr());
                 	}else if(button.equals("lesson")){
-                		System.out.println("lesson");
                 		HttpSession session = request.getSession();
                 		
                 		String niv = classe.split("\\(")[1].substring(0,classe.split("\\(")[1].length()-1);
@@ -157,14 +156,13 @@ public class Upload extends HttpServlet {
                 		int nivId = 0, opId = 0;
                 		ArrayList<Niveau> nivL = (ArrayList<Niveau>) session.getAttribute("nivL");
                 		ArrayList<Option> opL = (ArrayList<Option>) session.getAttribute("opL");
-                		System.out.println(opL.get(0).getName());
                 		for(Niveau n : nivL) if(n.getName().equals(niv)) nivId = n.getId();
                 		for(Option o : opL) if(o.getName().equals(op)) opId = o.getId();
                 		
                 		ResultSet rs = dao.getClassByOption(opId, nivId);
                 		rs.next();
                 		dao.insertLesson("uploads/"+fileName, title, "images/"+ext+".png", rs.getInt(1));
-                		System.out.println(ext);
+                		dao.insertLog("Uploaded the lesson ("+title+")", request.getRemoteAddr());
                 	}
                 }
                 

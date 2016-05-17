@@ -462,16 +462,6 @@
 
 		});
 	</script>
-	<script>
-		$('.pop').on('click', function() {
-			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
-			$('#imagemodal').modal('show');
-		});
-		$('.vidpop').on('click', function() {
-			$('.videopreview').attr('src', $(this).find('img').attr('src'));
-			$('#videomodal').modal('show');
-		});
-	</script>
 </body>
 
 </html>

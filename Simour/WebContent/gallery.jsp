@@ -28,8 +28,6 @@
 <!-- Include jQuery form & jQuery script file. -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
 <script src="http://malsup.github.com/jquery.form.js"></script>
-<script src="js/fileUploadScript.js"></script>
-<!-- Include css styles here -->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 
 <script src="js/jquery.min.js"></script>

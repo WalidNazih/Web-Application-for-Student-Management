@@ -29,6 +29,13 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getLogs() throws SQLException{
+		String sql = "SELECT * FROM LOGS";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public void insertImageLike(int image, String visitor) throws SQLException{
 		String sql = "INSERT INTO imagelikes (image,visitor) values(?,?)";
 		preparedStatement = con.prepareStatement(sql);
@@ -328,6 +335,15 @@ public class DAO {
 		preparedStatement.setString(2, title);
 		preparedStatement.setString(3, desc);
 		preparedStatement.setString(4, icon);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void insertLog(String desc, String ip) throws SQLException{
+		String sql = "INSERT INTO logs (description,ip,date) values(?,?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, desc);
+		preparedStatement.setString(2, ip);
+		preparedStatement.setString(3, new java.util.Date().toString());
 		preparedStatement.executeUpdate();
 	}
 	public void addLike(String url, int like) throws SQLException{

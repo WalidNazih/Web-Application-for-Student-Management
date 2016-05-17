@@ -35,6 +35,7 @@ public class UpdateSettings extends HttpServlet {
 			try {
 				DAO dao = new DAO("Simour","root","");
 				dao.updateSettings("absence", absence);
+				dao.insertLog("Updated absence setting to ("+absence+")", request.getRemoteAddr());
 				request.getRequestDispatcher("dashboard.jsp").forward(request, response);
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block

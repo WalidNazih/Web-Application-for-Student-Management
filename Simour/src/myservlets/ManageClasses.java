@@ -41,17 +41,16 @@ public class ManageClasses extends HttpServlet {
 		try {
 			dao = new DAO("simour","root","");
 			if(request.getParameter("add") != null){
-				System.out.println("sd");
 				HttpSession session = request.getSession();
 				ArrayList<Niveau> nivL = (ArrayList<Niveau>) session.getAttribute("nivL");
 	    		ArrayList<Option> opL = (ArrayList<Option>) session.getAttribute("opL");
 	    		int nivId =0, opId = 0;
-	    		//System.out.println(nivL.get(2).getName().equals(request.getParameter("levelSelect").trim()));
 	    		
 	    		for(Niveau n : nivL) if(n.getName().contains(request.getParameter("levelSelect").trim())) nivId = n.getId();
 	    		for(Option o : opL) if(o.getName().contains(request.getParameter("optionSelect").trim())) opId = o.getId();
 				
 	    		dao.insertClass(nivId,opId);
+	    		dao.insertLog("Added a class ("+request.getParameter("optionSelect") +"("+request.getParameter("levelSelect")+")"+")", request.getRemoteAddr());
 			}
 			ServletContext context= getServletContext();
 			RequestDispatcher rd= context.getRequestDispatcher("/Pedagogy");

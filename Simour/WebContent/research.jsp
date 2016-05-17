@@ -22,17 +22,12 @@
 
 <!-- Custom styling plus plugins -->
 <link href="css/custom.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css"
-	href="css/maps/jquery-jvectormap-2.0.3.css" />
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 
 <!-- Include jQuery form & jQuery script file. -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
 <script src="http://malsup.github.com/jquery.form.js"></script>
-<script src="js/fileUploadScript.js"></script>
-<!-- Include css styles here -->
-<link href="css/style.css" rel="stylesheet" type="text/css" />
 
 <script src="js/jquery.min.js"></script>
 <script src="js/nprogress.js"></script>
