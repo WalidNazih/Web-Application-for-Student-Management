@@ -29,6 +29,21 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getSlides() throws SQLException{
+		String sql = "SELECT * FROM slides";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getSlideById(int id) throws SQLException{
+		String sql = "SELECT * FROM slides where id=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, id);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getLogs() throws SQLException{
 		String sql = "SELECT * FROM LOGS";
 		preparedStatement = con.prepareStatement(sql);
@@ -123,6 +138,49 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getImageByDate(String month, String year) throws SQLException{
+		String sql = "SELECT * FROM Images where (date like '%"+month+"%' and date like '%"+year+"%')";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getVideoByDate(String month, String year) throws SQLException{
+		String sql = "SELECT * FROM videos where (date like '%"+month+"%' and date like '%"+year+"%')";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getBookByDate(String month, String year) throws SQLException{
+		String sql = "SELECT * FROM books where (date like '%"+month+"%' and date like '%"+year+"%')";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getArticleByDate(String month, String year) throws SQLException{
+		String sql = "SELECT * FROM article where (date like '%"+month+"%' and date like '%"+year+"%')";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getLessonByDate(String month, String year) throws SQLException{
+		String sql = "SELECT * FROM lessons where (date like '%"+month+"%' and date like '%"+year+"%')";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getChapterByDate(String month, String year) throws SQLException{
+		String sql = "SELECT * FROM chapters where (date like '%"+month+"%' and date like '%"+year+"%')";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	
 	public ResultSet getVideos() throws SQLException{
 		String sql = "SELECT * FROM videos";
 		preparedStatement = con.prepareStatement(sql);
@@ -212,7 +270,7 @@ public class DAO {
 	}
 	
 	public ResultSet getLessonByName(String name) throws SQLException{
-		String sql = "SELECT * FROM lesson where title like '%"+name+"%'";
+		String sql = "SELECT * FROM lessons where title like '%"+name+"%'";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.executeQuery();
 		return preparedStatement.executeQuery();
@@ -291,50 +349,62 @@ public class DAO {
 	}
 	
 	public void insertImage(String url, String title, String desc, int category) throws SQLException{
-		String sql = "INSERT INTO images (url,title,description,category) values(?,?,?,?)";
+		String sql = "INSERT INTO images (url,title,description,category,date) values(?,?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, url);
 		preparedStatement.setString(2, title);
 		preparedStatement.setString(3, desc);
 		preparedStatement.setInt(4, category);
+		preparedStatement.setString(5, new java.util.Date().toString());
+		preparedStatement.executeUpdate();
+	}
+	
+	public void insertSlide(String url) throws SQLException{
+		String sql = "INSERT INTO slides (url) values(?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, url);
 		preparedStatement.executeUpdate();
 	}
 	
 	public void insertVideo(String url, String desc, String thumb, int category) throws SQLException{
-		String sql = "INSERT INTO videos (url,description,thumb,category) values(?,?,?,?)";
+		String sql = "INSERT INTO videos (url,description,thumb,category,date) values(?,?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, url);
 		preparedStatement.setString(2, desc);
 		preparedStatement.setString(3, thumb);
 		preparedStatement.setInt(4, category);
+		preparedStatement.setString(5, new java.util.Date().toString());
 		preparedStatement.executeUpdate();
 	}
 	
 	public void insertArticle(String url, String title, String desc, String icon) throws SQLException{
-		String sql = "INSERT INTO article (url,title,description,icon) values(?,?,?,?)";
+		String sql = "INSERT INTO article (url,title,description,icon,date) values(?,?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, url);
 		preparedStatement.setString(2, title);
 		preparedStatement.setString(3, desc);
 		preparedStatement.setString(4, icon);
+		preparedStatement.setString(5, new java.util.Date().toString());
 		preparedStatement.executeUpdate();
 	}
 	public void insertBook(String url, String title, String desc, String icon) throws SQLException{
-		String sql = "INSERT INTO book (url,title,description,icon) values(?,?,?,?)";
+		String sql = "INSERT INTO book (url,title,description,icon,date) values(?,?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, url);
 		preparedStatement.setString(2, title);
 		preparedStatement.setString(3, desc);
 		preparedStatement.setString(4, icon);
+		preparedStatement.setString(5, new java.util.Date().toString());
 		preparedStatement.executeUpdate();
 	}
 	public void insertChapters(String url, String title, String desc, String icon) throws SQLException{
-		String sql = "INSERT INTO chapters (url,title,description,icon) values(?,?,?,?)";
+		String sql = "INSERT INTO chapters (url,title,description,icon,date) values(?,?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, url);
 		preparedStatement.setString(2, title);
 		preparedStatement.setString(3, desc);
 		preparedStatement.setString(4, icon);
+		preparedStatement.setString(5, new java.util.Date().toString());
 		preparedStatement.executeUpdate();
 	}
 	
@@ -375,6 +445,13 @@ public class DAO {
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setInt(1, like);
 		preparedStatement.setString(2, url);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void deleteSlide(int id) throws SQLException{
+		String sql = "delete from slides where id=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, id);
 		preparedStatement.executeUpdate();
 	}
 	public void deleteLikeVideo(String url, int like) throws SQLException{
@@ -439,12 +516,13 @@ public class DAO {
 	}
 	
 	public void insertLesson(String url, String title, String icon, int classe) throws SQLException{
-		String sql = "INSERT INTO lessons (url,title,icon,class) values(?,?,?,?)";
+		String sql = "INSERT INTO lessons (url,title,icon,class,date) values(?,?,?,?,?)";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, url);
 		preparedStatement.setString(2, title);
 		preparedStatement.setString(3, icon);
 		preparedStatement.setInt(4, classe);
+		preparedStatement.setString(5, new java.util.Date().toString());
 		preparedStatement.executeUpdate();
 	}
 	

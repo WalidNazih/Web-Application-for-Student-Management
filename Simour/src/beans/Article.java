@@ -5,14 +5,14 @@ import java.io.Serializable;
 public class Article implements Serializable{
 	
 	protected int id, likes;
-	protected String url, title, description, icon;
+	protected String url, title, description, icon, date;
 	
 	public Article(){}
 	
 	
 
 	public Article(int id, int likes, String url, String title,
-			String description, String icon) {
+			String description, String icon, String date) {
 		super();
 		this.id = id;
 		this.likes = likes;
@@ -20,6 +20,7 @@ public class Article implements Serializable{
 		this.title = title;
 		this.description = description;
 		this.icon = icon;
+		this.date = date;
 	}
 
 
@@ -70,6 +71,14 @@ public class Article implements Serializable{
 
 	public void setIcon(String icon) {
 		this.icon = icon;
+	}
+	
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 }

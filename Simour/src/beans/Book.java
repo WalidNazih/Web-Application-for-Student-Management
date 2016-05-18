@@ -5,11 +5,11 @@ import java.io.Serializable;
 public class Book implements Serializable{
 	
 	protected int id, likes;
-	protected String url, title, description, icon;
+	protected String url, title, description, icon, date;
 	
 	public Book(){}
 
-	public Book(int id, int likes, String url, String title, String description, String icon) {
+	public Book(int id, int likes, String url, String title, String description, String icon, String date) {
 		super();
 		this.id = id;
 		this.likes = likes;
@@ -17,6 +17,7 @@ public class Book implements Serializable{
 		this.title = title;
 		this.description = description;
 		this.icon = icon;
+		this.date = date;
 	}
 
 	public int getId() {
@@ -67,6 +68,12 @@ public class Book implements Serializable{
 		this.icon = icon;
 	}
 	
-	
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
 
 }

@@ -5,12 +5,12 @@ import java.io.Serializable;
 public class Video implements Serializable{
 
 	protected int id, category, likes;
-	protected String url, description, thumbnail;
+	protected String url, description, thumbnail, date;
 	protected boolean liked;
 	
 	public Video(){}
 	
-	public Video(int id, int category, int likes, String url, String description, String thumbnail, boolean liked) {
+	public Video(int id, int category, int likes, String url, String description, String thumbnail, boolean liked, String date) {
 		super();
 		this.id = id;
 		this.category = category;
@@ -19,6 +19,7 @@ public class Video implements Serializable{
 		this.description = description;
 		this.thumbnail = thumbnail;
 		this.liked = liked;
+		this.date = date;
 	}
 
 	public int getId() {
@@ -77,4 +78,11 @@ public class Video implements Serializable{
 		this.liked = liked;
 	}
 	
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
 }

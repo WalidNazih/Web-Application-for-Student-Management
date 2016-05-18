@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import beans.ImageLikes;
 import beans.Lesson;
+import beans.Slide;
 import beans.VideoLikes;
 import classes.DAO;
 
@@ -65,8 +66,16 @@ public class Login extends HttpServlet {
 						lastVidLike.add(image);
 						
 					}
+					rs = dao.getSlides();
+					ArrayList<Slide> slideList = new ArrayList<>();
+					while(rs.next()){
+						Slide image = new Slide(rs.getInt(1), rs.getString(2));
+						slideList.add(image);
+						
+					}
 					sess.setAttribute("lastImgLike", lastImgLike);
 					sess.setAttribute("lastVidLike", lastVidLike);
+					sess.setAttribute("slideL", slideList);
 				} catch (ClassNotFoundException | SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

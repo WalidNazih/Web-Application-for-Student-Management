@@ -3,7 +3,7 @@ package beans;
 public class Lesson {
 	
 	int id;
-	String url, title, icon;
+	String url, title, icon, date;
 	int classe;
 	int downloads;
 
@@ -11,7 +11,7 @@ public class Lesson {
 		
 	}
 
-	public Lesson(int id, String url, String title, String icon, int classe, int downloads) {
+	public Lesson(int id, String url, String title, String icon, int classe, int downloads, String date) {
 		super();
 		this.id = id;
 		this.url = url;
@@ -19,6 +19,7 @@ public class Lesson {
 		this.icon = icon;
 		this.classe = classe;
 		this.downloads = downloads;
+		this.date = date;
 	}
 
 	public int getId() {
@@ -65,7 +66,13 @@ public class Lesson {
 		this.classe = classe;
 	}
 	
-	
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
 	
 	
 	

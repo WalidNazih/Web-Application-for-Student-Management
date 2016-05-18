@@ -139,11 +139,14 @@
 							</div>
 							<div class="x_content">
 								<div class="row">
-									<div id="portfolio">
-										<br>
+									<div style="margin-left:5px">
+									<ul>
 										<c:forEach var="log" items="${logList }">
-											<h5>${log.date } : ${log.ip } ${log.desc }</h5>
+											<li>
+										<h4>${log.date } : ${log.ip } ${log.desc }</h4></li>
 										</c:forEach>
+									</ul>
+										
 									</div>
 
 								</div>

@@ -63,7 +63,7 @@ public class Continue extends HttpServlet {
 					ResultSet rs1 = dao.getLessonByClass(image.getId());
 					
 					while(rs1.next()){
-						Lesson lesson = new Lesson(rs1.getInt(1), rs1.getString(2),rs1.getString(3),rs1.getString(4),rs1.getInt(5),rs1.getInt(6));
+						Lesson lesson = new Lesson(rs1.getInt(1), rs1.getString(2),rs1.getString(3),rs1.getString(4),rs1.getInt(5),rs1.getInt(6), rs1.getString(7));
 						continueLesson.add(lesson);
 					}
 				}

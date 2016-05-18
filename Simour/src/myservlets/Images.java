@@ -46,7 +46,7 @@ public class Images extends HttpServlet {
 				int i = 0;
 				while(res.next()) i++;
 				boolean boli = i == 0? false : true;
-				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6), boli);
+				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6), boli, rs.getString(7));
 				System.out.println(image.getTitle()+" : "+image.isLiked());
 				imageList.add(image);
 			}
@@ -57,7 +57,7 @@ public class Images extends HttpServlet {
 				int i = 0;
 				while(res.next()) i++;
 				boolean boli = i == 0? false : true;
-				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4), boli);
+				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4), boli, rs.getString(5));
 				videoList.add(video);
 			}
 

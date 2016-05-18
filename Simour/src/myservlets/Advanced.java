@@ -21,16 +21,16 @@ import beans.Video;
 import classes.DAO;
 
 /**
- * Servlet implementation class Search
+ * Servlet implementation class Advanced
  */
-@WebServlet("/Search")
-public class Search extends HttpServlet {
+@WebServlet("/Advanced")
+public class Advanced extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Search() {
+    public Advanced() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,66 +39,67 @@ public class Search extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		try {
 			DAO dao = new DAO("Simour","root","");
-			String query = request.getParameter("searchQuery");
-			System.out.println(query);
-			ResultSet rs = dao.getImageByName(query);
+			String month = request.getParameter("monthAv");
+			String year = request.getParameter("yearAv");
+			ResultSet rs = dao.getImageByDate(month, year);
 			ArrayList<Image> imageList = new ArrayList<>();
 			while(rs.next()){
 				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6), false, rs.getString(7));
 				System.out.println(image.getTitle());
 				imageList.add(image);
 			}
-			rs = dao.getBookByName(query);
+			/*
+			rs = dao.getBookByDate(month, year);
 			ArrayList<Book> bookList = new ArrayList<>();
 			while(rs.next()){
 				Book article = new Book(rs.getInt(1), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6));
 				System.out.println(article.getTitle());
 		    	bookList.add(article);
-			}
-			rs = dao.getArticleByName(query);
+			}*/
+			rs = dao.getArticleByDate(month, year);
 			ArrayList<Article> artList = new ArrayList<>();
 			while(rs.next()){
 				Article article = new Article(rs.getInt(1), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
 				System.out.println(article.getTitle());
 		    	artList.add(article);
 			}
-			 rs = dao.getChapterByName(query);
+			/* rs = dao.getChapterByDate(month, year);
 			ArrayList<Chapter> chapList = new ArrayList<>();
 			while(rs.next()){
 				Chapter chapter = new Chapter(rs.getInt(1), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
 				System.out.println(chapter.getTitle());
 				chapList.add(chapter);
-			}
-			rs = dao.getVideoByName(query);
+			}*/
+			rs = dao.getVideoByDate(month, year);
 			ArrayList<Video> videoList = new ArrayList<>();
 			while(rs.next()){
 				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4), false, rs.getString(6));
 				videoList.add(video);
 			}
-			rs = dao.getLessonByName(query);
+			rs = dao.getLessonByDate(month, year);
 			ArrayList<Lesson> lessonList = new ArrayList<>();
 			while(rs.next()){
 				Lesson image = new Lesson(rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getInt(6), rs.getString(7));
 				lessonList.add(image);
+				
 			}
 			
 			HttpSession session = request.getSession();
-			session.setAttribute("imageRes", imageList);
-			session.setAttribute("videoRes", videoList);
-			session.setAttribute("artRes", artList);
-			session.setAttribute("bookRes", bookList);
-			session.setAttribute("chapterRes", chapList);
-			session.setAttribute("lessonRes", lessonList);
+			session.setAttribute("imageResAv", imageList);
+			session.setAttribute("videoResAv", videoList);
+			session.setAttribute("artResAv", artList);
+			//session.setAttribute("bookResAv", bookList);
+			//session.setAttribute("chapterResAv", chapList);
+			session.setAttribute("lessonResAv", lessonList);
 			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		getServletContext().getRequestDispatcher("/search.jsp").forward(
+		getServletContext().getRequestDispatcher("/rechercheAvancee.jsp").forward(
                 request, response);
 	}
 
@@ -106,7 +107,8 @@ public class Search extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request,response);
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

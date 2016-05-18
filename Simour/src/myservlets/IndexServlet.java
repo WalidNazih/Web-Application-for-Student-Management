@@ -47,25 +47,25 @@ public class IndexServlet extends HttpServlet {
 				int i = 0;
 				while(res.next()) i++;
 				boolean boli = i == 0? false : true;
-				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6), boli);
+				Image image = new Image(rs.getInt(1), rs.getInt(5), rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(6), boli, rs.getString(7));
 				lastIm.add(image);
 			}
 			rs = dao.getLastArticles(6);
 			ArrayList<Article> lastArt = new ArrayList<>();
 			while(rs.next()){
-				Article article = new Article(rs.getInt(1), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4), rs.getString(5));
+				Article article = new Article(rs.getInt(1), rs.getInt(6), rs.getString(2),rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
 		    	lastArt.add(article);
 			}
 			rs = dao.getLastLessons(6);
 			ArrayList<Lesson> lastLess = new ArrayList<>();
 			while(rs.next()){
-				Lesson article = new Lesson(rs.getInt(1),  rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(5),rs.getInt(6));
+				Lesson article = new Lesson(rs.getInt(1),  rs.getString(2),rs.getString(3), rs.getString(4), rs.getInt(5),rs.getInt(6),rs.getString(7));
 		    	lastLess.add(article);
 			}
 			rs = dao.getLastVideos(6);
 			ArrayList<Video> lastVid = new ArrayList<>();
 			while(rs.next()){
-				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4), false);
+				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4), false,rs.getString(5));
 				lastVid.add(video);
 			}
 			session.setAttribute("lastIm", lastIm);

@@ -65,7 +65,7 @@ public class Pedagogy extends HttpServlet {
 			rs = dao.getMostDownLessons();
 			ArrayList<Lesson> topLesson = new ArrayList<>();
 			while(rs.next()){
-				Lesson image = new Lesson(rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getInt(6));
+				Lesson image = new Lesson(rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getInt(6), rs.getString(7));
 				topLesson.add(image);
 			}
 			

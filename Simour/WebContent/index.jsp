@@ -67,7 +67,19 @@
 
 		var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
-		//responsive code end
+		//you can remove responsive code if you don't want the slider scales while window resizes
+		function ScaleSlider() {
+			var bodyWidth = jssor_1_slider.$Elmt.parentNode.clientWidth;
+			if (bodyWidth)
+				jssor_1_slider.$ScaleWidth(Math.min(bodyWidth, 1920));
+			else
+				window.setTimeout(ScaleSlider, 30);
+		}
+		ScaleSlider();
+
+		$(window).bind("load", ScaleSlider);
+		$(window).bind("resize", ScaleSlider);
+		$(window).bind("orientationchange", ScaleSlider);
 	});
 </script>
 </head>
@@ -195,12 +207,10 @@
 				<div class="clearfix"></div>
 				<div class="row">
 					<div class="x_panel">
-
 						<div class="x_content">
-							<div class="col-md-8 col-xs-12 col-sm-2">
-								<div class="shadow" id="jssor_1"
-									style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 500px; overflow: hidden; visibility: hidden;">
-									<!-- Loading Screen -->
+							<div class="col-md-8 col-xs-12 col-sm-12">
+								<div class="" id="jssor_1"
+									style="position: relative; margin: 0 auto; top: 0px; width: 800px; left: 0px; height: 500px; overflow: hidden; visibility: hidden;">
 									<div data-u="loading"
 										style="position: absolute; top: 0px; left: 0px;">
 										<div
@@ -281,21 +291,20 @@
 							</div>
 							<div class="col-md-4">
 								<img src="images/androidlogo.png" width="90px" height="100px"
-							style="float: left; display: block; margin-left: 39px; margin-top: 20px" />
-						<h1
-							style="margin-top: 35px; font-weight: bold; margin-left: 50px; font-family: 'Indie Flower', cursive;">
-							Android Application <br> Coming Soon
-						</h1>
-						<br>
-						<center>
-							<img src="images/googleplay.png" width="200px" height="80px"
-								style="display: block; margin-top: 20px" />
+									style="float: left; display: block; margin-left: 39px; margin-top: 20px" />
+								<h1
+									style="margin-top: 35px; font-weight: bold; margin-left: 50px; font-family: 'Indie Flower', cursive;">
+									Android Application <br> Coming Soon
+								</h1>
+								<br>
+								<center>
+									<img src="images/googleplay.png" width="200px" height="80px"
+										style="display: block; margin-top: 20px" />
+								</center>
 							</div>
 
-							<br> <br>
-
 						</div>
-						<br> <br>
+
 						<div class="x_title">
 							<h2>Latest Pictures</h2>
 							<div class="clearfix"></div>
@@ -310,7 +319,7 @@
 											<a href="#" class="pop"> <img
 												style="width: 100%; height: 180px; display: block;"
 												src="${image.url}" alt="image" id="clickImage" />
-												
+
 											</a>
 										</div>
 
@@ -319,7 +328,10 @@
 							</c:forEach>
 
 						</div>
+						<br>
+						<br>
 						<div class="clearfix"></div>
+
 						<div class="x_title">
 							<h2>Latest Videos</h2>
 							<div class="clearfix"></div>
@@ -327,26 +339,26 @@
 						<div>
 							<c:forEach var="ar" items="${lastVid}">
 								<div class="col-sm-3">
-													<div class="thumbnail">
-														<div class="image view view-first">
+									<div class="">
+										<div class="image view view-first">
 
-															<img style="width: 100%; height: 230px; display: block;"
-																src="${ar.thumbnail}" alt="video" id="clickImage" />
-															<div class="mask" style="color: white">
-																 <br>
-																<i id="likecount" style="font-weight: bold">${ar.likes}
-																	likes</i>
-															</div>
+											<img style="width: 100%; height: 230px; display: block;"
+												src="${ar.thumbnail}" alt="video" id="clickImage" />
+											<div class="mask" style="color: white; height: 230px">
+												<br> <i id="likecount"
+													style="font-weight: bold; font-size: 20px;">${ar.likes}
+													likes</i>
+											</div>
 
 
-														</div>
-														<div class="caption">
-															<center>
-																<p style="font-weight: bold; font-size: 20px">${ar.description}</p>
-															</center>
-														</div>
-													</div>
-												</div>
+										</div>
+										<div class="caption">
+											<center>
+												<p style="font-weight: bold; font-size: 20px">${ar.description}</p>
+											</center>
+										</div>
+									</div>
+								</div>
 							</c:forEach>
 
 						</div>
@@ -358,27 +370,29 @@
 								<br>
 								<div class="footer-box col-md-3">
 									<h3>Latest Articles</h3>
-									<ul class="popular-posts"  style="list-style:dot">
-									<c:forEach var="ar" items="${lastArt}">
-									<li>
-											<h5>
-												<p>${ar.title}</p>
-											</h5></li>
-									</c:forEach>
-										
+									<ul class="popular-posts" style="list-style: dot">
+										<c:forEach var="ar" items="${lastArt}">
+											<li>
+												<h5>
+													<p>${ar.title}</p>
+												</h5>
+											</li>
+										</c:forEach>
+
 
 
 									</ul>
 								</div>
 								<div class="footer-box col-md-3">
 									<h3>Latest Lessons</h3>
-									<ul class="popular-posts" style="list-style:dot">
+									<ul class="popular-posts" style="list-style: dot">
 										<c:forEach var="ar" items="${lastLess}">
-									<li>
-											<h5>
-												<p>${ar.title}</p>
-											</h5></li>
-									</c:forEach>
+											<li>
+												<h5>
+													<p>${ar.title}</p>
+												</h5>
+											</li>
+										</c:forEach>
 									</ul>
 								</div>
 								<div class="footer-box col-md-3">
@@ -395,26 +409,27 @@
 
 								</div>
 								<div class="footer-box col-md-3">
-									<div id="map" style="width:300px;height:300px"></div>
-										
-										<script>
-											function initMap() {
-												var mapDiv = document
-														.getElementById('map');
-												var map = new google.maps.Map(
-														mapDiv, {
-															center : {
-																lat : 33.540,
-																lng : -7.65
-															},
-															zoom : 13
-														});
-											}
-										</script>
-										<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-        async defer></script>
+									<div id="map" style="width: 300px; height: 300px"></div>
+
+									<script>
+										function initMap() {
+											var mapDiv = document
+													.getElementById('map');
+											var map = new google.maps.Map(
+													mapDiv, {
+														center : {
+															lat : 33.540,
+															lng : -7.65
+														},
+														zoom : 13
+													});
+										}
+									</script>
+									<script
+										src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+										async defer></script>
 								</div>
-							
+
 							</div>
 						</div>
 					</div>

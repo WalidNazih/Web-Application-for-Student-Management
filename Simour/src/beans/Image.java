@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class Image implements Serializable{
 	private int id, category, likes;
-	private String url, title, description;
+	private String url, title, description, date;
 	private boolean liked;
 
 	public Image(int id, int category, String url, String title,
-			String description, int likes, boolean liked) {
+			String description, int likes, boolean liked, String date) {
 		super();
 		this.id = id;
 		this.category = category;
@@ -17,6 +17,7 @@ public class Image implements Serializable{
 		this.description = description;
 		this.likes = likes;
 		this.liked = liked;
+		this.date = date;
 	}
 
 	public Image() {
@@ -75,6 +76,12 @@ public class Image implements Serializable{
 		this.liked = liked;
 	}
 	
-	
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
 
 }

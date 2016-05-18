@@ -203,30 +203,30 @@
 					<div class="col-md-4 col-sm-4 col-xs-12">
 						<div class="x_panel tile fixed_height_320">
 							<div class="x_title">
-								<h2>Downloads</h2>
+								<h2>Slides Management</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content">
-								<div class="dashboard-widget-content">
-									<ul class="quick-list">
-										<li><i class="fa fa-film"></i><a href="#">Gallery</a></li>
-										<li><i class="fa fa-book"></i><a href="#">Books</a></li>
-										<li><i class="fa fa-file"></i><a href="#">Articles</a></li>
-										<li><i class="fa fa-leanpub"></i><a href="#">Book
-												Chapters</a></li>
-									</ul>
-
-									<div class="sidebar-widget">
-										<h4>Profile Completion</h4>
-										<canvas width="150" height="80" id="foo" class=""
-											style="width: 160px; height: 100px;"></canvas>
-										<div class="goal-wrapper">
-											<span class="gauge-value pull-left">$</span> <span
-												id="gauge-text" class="gauge-value pull-left">3,200</span> <span
-												id="goal-text" class="goal-value pull-right">$5,000</span>
-										</div>
-									</div>
-								</div>
+								<form id="uploadPic" action="Upload" method="POST"
+									enctype="multipart/form-data" >
+									<center>
+										<label id="filelbl" for="myfile"> <img
+											src="img/imgupload.png" width="60px" height="60px" id="blah" /><br>
+											<input type="file" name="myfile" id="myfile" size="60"
+											style="opacity: 0"> Upload
+										</label>
+									<input type="submit" value="Add" name="slideAdd" class="btn btn-primary btn-sm">
+									</center>
+								</form><br>
+								<form action="DeleteServlet" method="POST">
+									<div id="itemsDiv"><select name="item" id="item" style="width:100%">
+											<c:forEach var="image" items="${slideL}">
+												<option value="${image.id }">Slide ${image.id }</option>
+											</c:forEach>	
+										</select></div>
+										<br>
+									<input type="submit" value="Remove" name="slideBtn" class="btn btn-primary btn-sm">
+								</form>
 							</div>
 						</div>
 					</div>

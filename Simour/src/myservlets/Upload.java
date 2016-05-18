@@ -116,6 +116,8 @@ public class Upload extends HttpServlet {
                         	button = "lesson";
                         }else if(item.getFieldName().equals("classSelect")){
                         	classe= item.getString();
+                        }else if(item.getFieldName().equals("slideAdd")){
+                        	button = "slide";
                         }
                     }else{
                     	fileName = new File(item.getName()).getName();
@@ -130,15 +132,21 @@ public class Upload extends HttpServlet {
                 }
                 DAO dao = new DAO("simour","root","");
                 if(fileName.endsWith(".jpg") || fileName.endsWith(".png") || fileName.endsWith(".gif")){
-                	dao.insertImage("uploads/"+fileName, title, desc, 2);
+                	if(button.equals("slide")){
+                		System.out.println("Slide");
+                		dao.insertSlide("uploads/"+fileName);
+                    	dao.insertLog("Added slide ("+fileName+")", request.getRemoteAddr());
+                	}else{
+                		dao.insertImage("uploads/"+fileName, title, desc, 2);
+                    	dao.insertLog("Uploaded the image ("+title+")", request.getRemoteAddr());
+                	}
                 }else if(fileName.endsWith(".avi") || fileName.endsWith(".mp4") || fileName.endsWith(".wmv")){
-                	System.out.println(desc);
                 	dao.insertVideo("uploads/"+fileName, title, null, 3);
+                	dao.insertLog("Uploaded the video ("+title+")", request.getRemoteAddr());
                 }else if(fileName.endsWith(".doc") || fileName.endsWith(".docx") || fileName.endsWith(".pdf")){
                 	String ext = null;
                 	if(fileName.endsWith(".doc") || fileName.endsWith(".docx")) ext = "word";
                 	else ext = "pdf";
-                	System.out.println(ext+"");
                 	if(button.equals("book")){
                 		dao.insertBook("uploads/"+fileName, title, desc, "images/"+ext+".png");
                 		dao.insertLog("Uploaded the book ("+title+")", request.getRemoteAddr());
@@ -184,8 +192,10 @@ public class Upload extends HttpServlet {
     			RequestDispatcher rd= context.getRequestDispatcher("/Pedagogy");
     			rd.forward(request, response);
             }
-            else{
-            	
+            else if(button.equals("lesson")){
+            	ServletContext context= getServletContext();
+    			RequestDispatcher rd= context.getRequestDispatcher("/SimLogPan");
+    			rd.forward(request, response);
             }
         }else{
         	getServletContext().getRequestDispatcher("/gallery.jsp").forward(
