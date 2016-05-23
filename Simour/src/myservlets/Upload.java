@@ -148,15 +148,20 @@ public class Upload extends HttpServlet {
                 	if(fileName.endsWith(".doc") || fileName.endsWith(".docx")) ext = "word";
                 	else ext = "pdf";
                 	if(button.equals("book")){
+                		System.out.println("HERE");
                 		dao.insertBook("uploads/"+fileName, title, desc, "images/"+ext+".png");
                 		dao.insertLog("Uploaded the book ("+title+")", request.getRemoteAddr());
+                		dao.insertNotifi("New Book Arrived", title);
                 	}else if(button.equals("article")){
                 		dao.insertArticle("uploads/"+fileName, title, desc, "images/"+ext+".png");
                 		dao.insertLog("Uploaded the article ("+title+")", request.getRemoteAddr());
+                		dao.insertNotifi("New Article Arrived", title);
                 	}else if(button.equals("chapter")){
                 		dao.insertChapters("uploads/"+fileName, title, desc, "images/"+ext+".png");
                 		dao.insertLog("Uploaded the book chapter ("+title+")", request.getRemoteAddr());
+                		dao.insertNotifi("New Chapter Arrived", title);
                 	}else if(button.equals("lesson")){
+                		System.out.println("HERE");
                 		HttpSession session = request.getSession();
                 		
                 		String niv = classe.split("\\(")[1].substring(0,classe.split("\\(")[1].length()-1);
@@ -171,6 +176,7 @@ public class Upload extends HttpServlet {
                 		rs.next();
                 		dao.insertLesson("uploads/"+fileName, title, "images/"+ext+".png", rs.getInt(1));
                 		dao.insertLog("Uploaded the lesson ("+title+")", request.getRemoteAddr());
+                		dao.insertNotifi("New Lesson Arrived", title);
                 	}
                 }
                 

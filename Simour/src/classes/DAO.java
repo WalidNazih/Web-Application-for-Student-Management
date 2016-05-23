@@ -44,6 +44,14 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getConfig(String name) throws SQLException{
+		String sql = "SELECT * FROM config where name=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, name);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getLogs() throws SQLException{
 		String sql = "SELECT * FROM LOGS";
 		preparedStatement = con.prepareStatement(sql);
@@ -416,6 +424,8 @@ public class DAO {
 		preparedStatement.setString(3, new java.util.Date().toString());
 		preparedStatement.executeUpdate();
 	}
+	
+	
 	public void addLike(String url, int like) throws SQLException{
 		String sql = "UPDATE images set likes=? where url=?";
 		preparedStatement = con.prepareStatement(sql);
@@ -423,9 +433,23 @@ public class DAO {
 		preparedStatement.setString(2, url);
 		preparedStatement.executeUpdate();
 	}
-	
+	public void insertNotifi(String message, String item) throws SQLException{
+		String sql = "INSERT INTO notifications (message,item) values(?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, message);
+		preparedStatement.setString(2, item);
+		preparedStatement.executeUpdate();
+	}
 	public void updateSettings(String col, String value) throws SQLException{
-		String sql = "UPDATE images set value=? where setting=?";
+		String sql = "UPDATE settings set value=? where setting=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, col);
+		preparedStatement.setString(2, value);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void updateConfig(String col, String value) throws SQLException{
+		String sql = "UPDATE config set value=? where name=?";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, col);
 		preparedStatement.setString(2, value);

@@ -190,10 +190,13 @@
 										<img src="img/settings.png" width="50px" height="50px" />
 										<br><br>
 									</center>
-							<form action="UpdateSettings" method="POST">
+							<form action="UpdateSettings" method="POST" id="sett">
 								Absence Marks Off Student By : <br>
-								<input type="text" size="35" name="mark">
-								<input type="submit" value="update" name="markUpdate" class="btn btn-primary btn-sm">
+								<input type="text" size="12" name="mark"><br>
+								<input type="submit" value="update" name="markUpdate" class="btn btn-primary btn-sm" style="margin-top:10px">
+								<br>News : <br>
+								<textarea rows="1" name="news" for="sett"></textarea>
+								<input type="submit" value="update" name="newsUpdate" class="btn btn-primary btn-sm" style="margin-top:10px">
 							</form>	
 							</div>
 						</div>

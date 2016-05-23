@@ -41,6 +41,19 @@ public class UpdateSettings extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}else if(request.getParameter("newsUpdate") != null){
+			String news = request.getParameter("news");
+			System.out.println(news);
+			try {
+				DAO dao = new DAO("Simour","root","");
+				dao.updateSettings("news", news);
+				dao.insertLog("Updated news to ("+news+")", request.getRemoteAddr());
+				dao.insertNotifi("Message from Mr Simour", news);
+				request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 
