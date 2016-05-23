@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import beans.Article;
 import beans.Image;
 import beans.Lesson;
+import beans.Slide;
 import beans.Video;
 import classes.DAO;
 
@@ -68,10 +69,18 @@ public class IndexServlet extends HttpServlet {
 				Video video = new Video(rs.getInt(1), rs.getInt(5), rs.getInt(6), rs.getString(2), rs.getString(3),rs.getString(4), false,rs.getString(5));
 				lastVid.add(video);
 			}
+			rs = dao.getSlides();
+			ArrayList<Slide> slideList = new ArrayList<>();
+			while(rs.next()){
+				Slide image = new Slide(rs.getInt(1), rs.getString(2));
+				slideList.add(image);
+				
+			}
 			session.setAttribute("lastIm", lastIm);
 			session.setAttribute("lastArt", lastArt);
 			session.setAttribute("lastLess", lastLess);
 			session.setAttribute("lastVid", lastVid);
+			session.setAttribute("slideL", slideList);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

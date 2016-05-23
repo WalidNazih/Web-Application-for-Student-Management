@@ -73,7 +73,7 @@
 			if (bodyWidth)
 				jssor_1_slider.$ScaleWidth(Math.min(bodyWidth, 1920));
 			else
-				window.setTimeout(ScaleSlider, 30);
+				window.setTimeout(ScaleSlider, 10);
 		}
 		ScaleSlider();
 
@@ -210,7 +210,7 @@
 						<div class="x_content">
 							<div class="col-md-8 col-xs-12 col-sm-12">
 								<div class="" id="jssor_1"
-									style="position: relative; margin: 0 auto; top: 0px; width: 800px; left: 0px; height: 500px; overflow: hidden; visibility: hidden;">
+									style="position: relative; margin: 0 auto; top: 0px; width:800px; left: 0px; height: 400px; overflow: hidden; visibility: hidden;">
 									<div data-u="loading"
 										style="position: absolute; top: 0px; left: 0px;">
 										<div
@@ -220,58 +220,13 @@
 									</div>
 									<div data-u="slides"
 										style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 500px; overflow: hidden;">
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/slide-01.jpg"
+										<c:forEach var="sl" items="${slideL }">
+											<div data-p="112.50" style="display: none;">
+											<img data-u="image" src="${sl.url }"
 												class="img-thumbnail" />
 										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/slide-02.jpg"
-												class="img-thumbnail" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/slide-04.jpg"
-												class="img-thumbnail" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/slide-05.jpg"
-												class="img-thumbnail" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/slide-06.PNG"
-												class="img-thumbnail" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/slide-07.PNG"
-												class="img-thumbnail" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/Capture3.PNG"
-												class="img-thumbnail" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/Capture4.PNG"
-												class="img-thumbnail" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/Capture5.PNG"
-												class="img-thumbnail" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/Capture6.PNG"
-												class="img-thumbnail" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/Capture7.PNG"
-												class="img-thumbnail" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/Capture10.PNG"
-												class="img-thumbnail" />
-										</div>
-										<div data-p="112.50" style="display: none;">
-											<img data-u="image" src="images/Capture11.PNG"
-												class="img-thumbnail" />
-										</div>
+										</c:forEach>
+										
 									</div>
 									<!-- Bullet Navigator -->
 									<div data-u="navigator" class="jssorb05"
@@ -289,6 +244,8 @@
 								</div>
 
 							</div>
+							<br>
+							
 							<div class="col-md-4">
 								<img src="images/androidlogo.png" width="90px" height="100px"
 									style="float: left; display: block; margin-left: 39px; margin-top: 20px" />
@@ -378,9 +335,6 @@
 												</h5>
 											</li>
 										</c:forEach>
-
-
-
 									</ul>
 								</div>
 								<div class="footer-box col-md-3">
