@@ -122,7 +122,7 @@
 						</a>
 							<ul
 								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-								<li><a href="index.jsp"> See Changes</a></li>
+								<li><a href="IndexServlet"> See Changes</a></li>
 								
 								<li><a href="http://localhost:8070/Simour/LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
@@ -297,7 +297,7 @@
 						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
 					</p>
 				</div>
-				<div class="clearfix"></div>
+				
 				</footer>
 				<!-- /footer content -->
 			</div>

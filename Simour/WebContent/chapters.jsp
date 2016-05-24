@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Gallery |</title>
+<title>Chapters |</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -196,18 +196,18 @@
 								<h2>Chapter Gallery</h2>
 								<div class="clearfix"></div>
 							</div>
-							<div class="x_content">
+							
+								<div class="x_content" >
 								<div class="row">
 									<div id="portfolio">
 										<div id="image-container">
-										<c:forEach var="ch" items="${chapL}">
+											<c:forEach var="ch" items="${chapL}">
 												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
 																src="${ch.icon}" alt="image" id="clickImage" />
 															
-															</div>
 														</div>
 														
 													</div>
@@ -217,11 +217,13 @@
 															<a href="${ch.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
 														</div>
 												</div> 
-										</c:forEach>
+											</c:forEach>
+											
 										</div>
 									</div>
 
 								</div>
+							</div>
 							</div>
 						</div>
 					</div>

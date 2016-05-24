@@ -83,7 +83,7 @@
 						<div class="menu_section">
 							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a href="dashboard.jsp"><i class="fa fa-home"></i>
+								<li><a href="http://localhost:8070/Simour/SimLogPan"><i class="fa fa-home"></i>
 										Home</a></li>
 								<li><a href="gallery.jsp"><i class="fa fa-camera-retro"></i>
 										Gallery</a></li>
@@ -120,7 +120,7 @@
 						</a>
 							<ul
 								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-								<li><a href="index.jsp"> See Changes</a></li>
+								<li><a href="IndexServlet"> See Changes</a></li>
 								<li><a href="http://localhost:8070/Simour/LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 							</ul></li>
@@ -132,7 +132,7 @@
 
 
 			<!-- page content -->
-			<div class="right_col" role="main" style="height:1372px">
+			<div class="right_col" role="main" ">
 
 				<!-- top tiles -->
 				<div class="row tile_count"></div>
@@ -192,7 +192,7 @@
 												<option value="${image.title }">${image.title }</option>
 											</c:forEach>	
 										</select></div>
-										<br> <input type="submit" value="Delete" class="btn btn-primary" name="deleteGallery" style="margin-top:24px"/>
+										<br> <input type="submit" value="Delete" class="btn btn-primary" name="deleteGallery" style="margin-top:30px"/>
 									</form>
 
 								</div>
@@ -232,7 +232,7 @@
 													<textarea style="width: 446px" name="desc" form="uploadVid"
 														required=""> </textarea>
 													<br> <input type="submit" name="addVid" value="Add"
-														class="btn btn-primary" style="margin-top: 19px" />
+														class="btn btn-primary" style="margin-top: 20px" />
 												</div>
 
 											</form>
@@ -256,7 +256,7 @@
 													<div style="margin-top:6px">Description:<br><textarea style="width: 446px" name="desc" form="uploadPic"
 														required="" > </textarea></div> -->
 													<br> <input type="submit" name="addWeb" value="Add"
-														class="btn btn-primary" onclick="showModal()" />
+														class="btn btn-primary" onclick="showModal()" style="margin-top: 37px" />
 												</div>
 
 											</form>
@@ -350,7 +350,7 @@
 						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
 					</p>
 				</div>
-				<div class="clearfix"></div>
+				
 				</footer>
 				<!-- /footer content -->
 

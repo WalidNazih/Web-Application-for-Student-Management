@@ -83,7 +83,7 @@
 						<div class="menu_section">
 							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a href="dashboard.jsp"><i class="fa fa-home"></i>
+								<li><a href="http://localhost:8070/Simour/SimLogPan"><i class="fa fa-home"></i>
 										Home</a></li>
 								<li><a href="http://localhost:8070/Simour/GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
@@ -118,7 +118,7 @@
 						</a>
 							<ul
 								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-								<li><a href="index.jsp"> See Changes</a></li>
+								<li><a href="IndexServlet"> See Changes</a></li>
 								<li><a href="http://localhost:8070/Simour/LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 							</ul></li>
@@ -187,7 +187,7 @@
 							</div>
 							<div class="x_content">
 							<center>
-										<img src="img/settings.png" width="50px" height="50px" />
+										<img src="img/settings.png" width="40px" height="40px" />
 										<br><br>
 									</center>
 							<form action="UpdateSettings" method="POST" id="sett">
@@ -195,7 +195,7 @@
 								<input type="text" size="12" name="mark"><br>
 								<input type="submit" value="update" name="markUpdate" class="btn btn-primary btn-sm" style="margin-top:10px">
 								<br>News : <br>
-								<textarea rows="1" name="news" for="sett"></textarea>
+								<textarea rows="1" " name="news" for="sett"></textarea>
 								<input type="submit" value="update" name="newsUpdate" class="btn btn-primary btn-sm" style="margin-top:10px">
 							</form>	
 							</div>
@@ -218,6 +218,7 @@
 											<input type="file" name="myfile" id="myfile" size="60"
 											style="opacity: 0"> Upload
 										</label>
+										<br>
 									<input type="submit" value="Add" name="slideAdd" class="btn btn-primary btn-sm">
 									</center>
 								</form><br>
@@ -228,6 +229,7 @@
 											</c:forEach>	
 										</select></div>
 										<br>
+									
 									<input type="submit" value="Remove" name="slideBtn" class="btn btn-primary btn-sm">
 								</form>
 							</div>
@@ -401,7 +403,7 @@
 						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
 					</p>
 				</div>
-				<div class="clearfix"></div>
+				
 				</footer>
 				<!-- /footer content -->
 			</div>
