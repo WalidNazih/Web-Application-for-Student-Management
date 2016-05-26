@@ -415,6 +415,12 @@
 	<script src="js/bootstrap.min.js"></script>
 
 	<script src="js/custom.js"></script>
+	<script>
+		NProgress.done();
+	</script>
+	<script src="js/progressbar/bootstrap-progressbar.min.js"></script>
+	<script type="text/javascript" src="js/moment/moment.min.js"></script>
+	<script type="text/javascript" src="js/datepicker/daterangepicker.js"></script>
 	<script type="text/javascript">
 		$(document)
 				.ready(
@@ -531,11 +537,6 @@
 									});
 						});
 	</script>
-	<script>
-		NProgress.done();
-	</script>
-	<!-- /datepicker -->
-	<!-- /footer content -->
 </body>
 
 </html>
