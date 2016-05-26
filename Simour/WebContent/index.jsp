@@ -270,7 +270,7 @@
 						<div>
 							<c:forEach var="image" items="${lastIm}">
 								<div style="margin-left: -10px; margin-top: 20px"
-									class="col-md-2">
+									class="col-md-3 col-sm-3 col-lg-2">
 									<div style="height: 180px; width: 180px" class="thumbnail">
 										<div class="image view view-first">
 											<a href="#" class="pop"> <img
@@ -351,19 +351,20 @@
 								</div>
 								<div class="footer-box col-md-3">
 									<h3>About</h3>
-									<p>Donec id elit non mi porta gravida at eget metus. Donec
-										ullamcorper nulla non metus auctor fringilla.</p>
+									<h4>Lhoussain Simour</h4>
+									<p>Assistant Professor of English and Cultural Studies.<br>
+									   University of Hassan II. Casablanca.</p>
 									<p>
-										Lorem Ipsum Dolor Sit Moon Avenue No:11/21 Planet City, Earth<br>
-										<br> <span class="lite1">Fax:</span> +555 797 534 01<br>
-										<span class="lite1">Tel:</span> +555 636 646 62<br> <span
-											class="lite1">E-mail:</span> name@domain.com
+										
+										<br>
+										<span class="lite1">Tel:</span> +212 6 66 88 50 64<br> <span
+											class="lite1">E-mail:</span> simour2@hotmail.com
 									</p>
 
 
 								</div>
 								<div class="footer-box col-md-3">
-									<div id="map" style="width: 300px; height: 300px"></div>
+									<div id="map" style="width: 100%; height: 300px"></div>
 
 									<script>
 										function initMap() {
@@ -394,8 +395,8 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var toggled = true;
-			var liSize = $(".principale").width();
-
+			var liSize = $(".left_col").width();
+			$(".principale").width(liSize);
 			$("#menu_toggle").click(function() {
 				$("#logosmall").toggle();
 				$("#logobig").toggle();

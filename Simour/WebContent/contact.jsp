@@ -275,7 +275,8 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var toggled = true;
-			var liSize = $(".principale").width();
+			var liSize = $(".left_col").width();
+			$(".principale").width(liSize);
 			$("#menu_toggle").click(function() {
 				$("#logosmall").toggle();
 				$("#logobig").toggle();

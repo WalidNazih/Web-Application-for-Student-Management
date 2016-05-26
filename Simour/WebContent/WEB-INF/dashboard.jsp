@@ -132,11 +132,10 @@
 
 
 			<!-- page content -->
-			<div class="right_col" role="main" style="height:1259px">
+			<div class="right_col" role="main">
 
-				<!-- top tiles -->
-				<div class="row tile_count"></div>
-				<!-- /top tiles -->
+				<div class="page-title"></div>
+				<div class="clearfix"></div>
 
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
@@ -413,40 +412,9 @@
 
 	</div>
 
-	<div id="custom_notifications" class="custom-notifications dsp_none">
-		<ul class="list-unstyled notifications clearfix"
-			data-tabbed_notifications="notif-group">
-		</ul>
-		<div class="clearfix"></div>
-		<div id="notif-group" class="tabbed_notifications"></div>
-	</div>
-
 	<script src="js/bootstrap.min.js"></script>
 
 	<script src="js/custom.js"></script>
-
-	<!-- dashbord linegraph -->
-	<script>
-		Chart.defaults.global.legend = {
-			enabled : false
-		};
-
-		var data = {
-			labels : [ "Books", "Articles", "Book Chapters" ],
-			datasets : [ {
-				data : [ 30, 50, 20 ],
-				backgroundColor : [ "#BDC3C7", "#1589D1", "#9B59B6" ],
-				hoverBackgroundColor : [ "#CFD4D8", "#34495E", "#B370CF" ]
-
-			} ]
-		};
-
-		var canvasDoughnut = new Chart(document.getElementById("canvas1"), {
-			type : 'doughnut',
-			tooltipFillColor : "rgba(51, 51, 51, 0.55)",
-			data : data
-		});
-	</script>
 	<script type="text/javascript">
 		$(document)
 				.ready(
@@ -569,7 +537,5 @@
 	<!-- /datepicker -->
 	<!-- /footer content -->
 </body>
-
-</html>
 
 </html>
