@@ -98,7 +98,51 @@
 					<!-- /menu footer buttons -->
 				</div>
 			</div>
-
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">Image preview</h4>
+						</div>
+						<div class="modal-body">
+							<center>
+								<img src="" class="imagepreview"
+									style="width: 570px; height: 470px;">
+							</center>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="videomodal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">Video preview</h4>
+						</div>
+						<div class="modal-body">
+							<center>
+								<iframe class="videopreview" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+							</center>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
 			<!-- top navigation -->
 			<div class="top_nav">
 
@@ -160,9 +204,13 @@
 									<div id="portfolio">
 										
 										<div id="image-container">
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>PictuResAv</h4></center>
+											<hr>
 											<c:forEach var="image" items="${imageResAv}">
 												<div class="col-sm-3">
-													<div class="thumbnail">
+													<div class="">
 														<div class="image view view-first">
 
 															<img style="width: 100%; height: 230px; display: block;"
@@ -186,15 +234,23 @@
 														</div>
 														<div class="caption">
 															<center>
-																<p style="font-weight: bold; font-size: 20px">${image.title }</p>
+																<p style="font-weight: bold; font-size: 15px; height:20px">${image.title }</p>
 															</center>
 														</div>
 													</div>
 												</div>
 											</c:forEach>
-											<c:forEach var="vid" items="${videoResAv}">
-												<div class="col-sm-3">
-													<div class="thumbnail">
+													
+											</div>
+											<br>
+											<br>
+											<div class="col-sm-12">
+											<hr>
+											<center><h4>Videos</h4></center>
+											<hr>
+												<c:forEach var="vid" items="${videoResAv}">
+												<div class="col-sm-4">
+													<div class="">
 														<div class="image view view-first">
 
 															<img style="width: 100%; height: 230px; display: block;"
@@ -218,14 +274,21 @@
 														</div>
 														<div class="caption">
 															<center>
-																<p style="font-weight: bold; font-size: 20px">${vid.description}</p>
+																<p style="font-weight: bold; font-size: 15px; height:20px">${vid.description}</p>
 															</center>
 														</div>
 													</div>
 												</div>
 											</c:forEach>
+											</div>
+											<br>
+											<br>
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>Articles</h4></center>
+											<hr>
 											<c:forEach var="ar" items="${artResAv}">
-												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
+												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -241,8 +304,15 @@
 														</div>
 												</div> 
 											</c:forEach>
+											</div>
+											<br>
+											<br>
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>Books</h4></center>
+											<hr>
 											<c:forEach var="bo" items="${bookResAv}">
-												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
+												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -258,8 +328,15 @@
 														</div>
 												</div> 
 											</c:forEach>
+											</div>
+											<br>
+											<br>
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>Lessons</h4></center>
+											<hr>
 											<c:forEach var="bo" items="${lessonResAv}">
-												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
+												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -274,14 +351,19 @@
 														</div>
 												</div> 
 											</c:forEach>
+											</div>
+											<br>
+											<br>
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>Chapters</h4></center>
+											<hr>
 											<c:forEach var="ch" items="${chapterResAv}">
-												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
+												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
 																src="${ch.icon}" alt="image" id="clickImage" />
-															
-															</div>
 														</div>
 														
 													</div>
@@ -289,8 +371,10 @@
 															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${ch.title}</h3>
 															<p >${ch.description}</p>
 															<a href="${ch.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
-														</div>
+													</div>
+												</div> 
 											</c:forEach>
+											</div>
 										</div>
 									</div>
 
@@ -345,8 +429,7 @@
 	<script>
 		NProgress.done();
 	</script>
-	<!-- /datepicker -->
-	<!-- /footer content -->
+	<script src="js/modalshow.js"></script>
 </body>
 
 </html>

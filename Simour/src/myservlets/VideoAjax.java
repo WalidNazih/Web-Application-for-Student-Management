@@ -39,12 +39,12 @@ public class VideoAjax extends HttpServlet {
 			response.setContentType("text/html");
 			while (rs.next()) {
 				response.getWriter().println("<div class=\"col-sm-3\">"
-													+ "<div class=\"thumbnail\">"
+													+ "<div class=\"\">"
 													+ "	<div class=\"image view view-first\">"
 
 													+ "	<img style=\"width: 100%; height: 230px; display: block;\" "
 														+ "		src=\""+rs.getString(4)+"\" alt=\"video\" id=\"clickImage\" />"
-														+ "<div class=\"mask\" style=\"color: white\">"
+														+ "<div class=\"mask\" style=\"color: white;height:230px\">"
 															+ "	<a href=\"#\" class=\"like\"><i"
 																+ "	style=\"color: white; margin-top: 90px\" "
 																	+ "class=\"fa fa-heart-o fa-2x\"></i> <img "
@@ -63,7 +63,7 @@ public class VideoAjax extends HttpServlet {
 														+ "</div>"
 														+ "<div class=\"caption\">"
 															+ "<center>"
-																+ "<p style=\"font-weight: bold; font-size: 20px\">"+rs.getString(3)+"</p>"
+																+ "<p style=\"font-weight: bold; font-size: 20px; font-size: 15px; height:20px\">"+rs.getString(3)+"</p>"
 															+ "</center>"
 														+ "</div>"
 													+ "</div>"

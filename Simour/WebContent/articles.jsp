@@ -166,26 +166,6 @@
 				</div>
 			</div>
 
-			<!-- Video Modal -->
-			<!-- <div class="modal" id="videomodal">
-				<div></div>
-			</div> -->
-			<!-- 
-			<div class="modal fade videomodal">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-hidden="true">&times;</button>
-							<h4 class="modal-title">Video Preview</h4>
-						</div>
-						<div class="modal-body">
-							 <iframe class="videopreview" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>				
-						</div>
-					</div>
-				</div>
-			</div> -->
-
 			<div class="right_col" role="main">
 				<div class="page-title"></div>
 				<div class="clearfix"></div>
@@ -201,7 +181,7 @@
 									<div id="portfolio">
 										<div id="image-container">
 										<c:forEach var="ar" items="${artL}">
-												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
+												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -210,7 +190,7 @@
 														</div>
 														
 													</div>
-													<div style="margin-left:50px">
+													<div style="margin-left:">
 															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${ar.title}</h3>
 															<p >${ar.description}</p>
 															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>

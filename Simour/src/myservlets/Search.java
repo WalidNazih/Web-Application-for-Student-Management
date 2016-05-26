@@ -90,7 +90,7 @@ public class Search extends HttpServlet {
 			session.setAttribute("videoRes", videoList);
 			session.setAttribute("artRes", artList);
 			session.setAttribute("bookRes", bookList);
-			session.setAttribute("chapterRes", chapList);
+			//session.setAttribute("chapterRes", chapList);
 			session.setAttribute("lessonRes", lessonList);
 			
 		} catch (ClassNotFoundException | SQLException e) {

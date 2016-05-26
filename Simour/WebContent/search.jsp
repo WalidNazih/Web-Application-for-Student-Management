@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Contact |</title>
+<title>Search |</title>
 
 <!-- Bootstrap core CSS -->
 
@@ -36,11 +36,12 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <script src="js/ajax.js"></script>
 
 </head>
 
 
-<body class="nav-md" onload="getCaptcha();">
+<body class="nav-md">
 
 	<div class="container body">
 
@@ -95,20 +96,52 @@
 							</ul>
 						</div>
 					</div>
-
-					<!-- /menu footer buttons -->
-					<div class="sidebar-footer hidden-small">
-						<a data-toggle="tooltip" data-placement="top" title="Settings">
-							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-						</a> <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-							<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-						</a> <a data-toggle="tooltip" data-placement="top" title="Lock"> <span
-							class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-						</a> <a data-toggle="tooltip" data-placement="top" title="Logout">
-							<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-						</a>
+				</div>
+			</div>
+			
+			<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">Image preview</h4>
+						</div>
+						<div class="modal-body">
+							<center>
+								<img src="" class="imagepreview"
+									style="width: 570px; height: 470px;">
+							</center>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
 					</div>
-					<!-- /menu footer buttons -->
+				</div>
+			</div>
+			<div class="modal fade" id="videomodal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">Video preview</h4>
+						</div>
+						<div class="modal-body">
+							<center>
+								<iframe class="videopreview" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+							</center>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -157,19 +190,35 @@
 									<div id="portfolio">
 										
 										<div id="image-container">
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>Pictures</h4></center>
+											<hr>
 											<c:forEach var="image" items="${imageRes}">
 												<div class="col-sm-3">
-													<div class="thumbnail">
+													<div class="">
 														<div class="image view view-first">
 
 															<img style="width: 100%; height: 230px; display: block;"
 																src="${image.url}" alt="image" id="clickImage" />
-															<div class="mask" style="color: white">
+															<div class="mask" style="color: white;height:230px">
+																<c:choose>
+																	<c:when test="${image.liked}">
+																<a href="#" class="like"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-heart fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${image.url}" alt="image" id="clickImage" /> </a>
+																</c:when>
+																<c:otherwise>
 																<a href="#" class="like"><i
 																	style="color: white; margin-top: 90px"
 																	class="fa fa-heart-o fa-2x"></i> <img
 																	style="display: none; width: 100%; height: 230px;"
-																	src="${image.url}" alt="image" id="clickImage" /> </a> <a
+																	src="${image.url}" alt="image" id="clickImage" /> </a>
+																</c:otherwise>
+																</c:choose>
+																<a
 																	href="#" class="pop"><i
 																	style="color: white; margin-top: 90px"
 																	class="fa fa-search fa-2x"></i> <img
@@ -183,25 +232,44 @@
 														</div>
 														<div class="caption">
 															<center>
-																<p style="font-weight: bold; font-size: 20px">${image.title }</p>
+																<p style="font-weight: bold; font-size: 15px; height:20px">${image.title }</p>
 															</center>
 														</div>
 													</div>
 												</div>
 											</c:forEach>
-											<c:forEach var="vid" items="${videoRes}">
-												<div class="col-sm-3">
-													<div class="thumbnail">
+													
+											</div>
+											<br>
+											<br>
+											<div class="col-sm-12">
+											<hr>
+											<center><h4>Videos</h4></center>
+											<hr>
+												<c:forEach var="vid" items="${videoRes}">
+												<div class="col-sm-4">
+													<div class="">
 														<div class="image view view-first">
 
 															<img style="width: 100%; height: 230px; display: block;"
 																src="${vid.thumbnail}" alt="video" id="clickImage" />
-															<div class="mask" style="color: white">
+															<div class="mask" style="color: white;height:230px">
+																<c:choose>
+																	<c:when test="${vid.liked}">
+																<a href="#" class="like"><i
+																	style="color: white; margin-top: 90px"
+																	class="fa fa-heart fa-2x"></i> <img
+																	style="display: none; width: 100%; height: 230px;"
+																	src="${vid.url}" alt="image" id="clickImage" /> </a>
+																</c:when>
+																<c:otherwise>
 																<a href="#" class="like"><i
 																	style="color: white; margin-top: 90px"
 																	class="fa fa-heart-o fa-2x"></i> <img
 																	style="display: none; width: 100%; height: 230px;"
-																	src="${vid.url}" alt="image" id="clickImage" /> </a> <a
+																	src="${vid.url}" alt="image" id="clickImage" /> </a>
+																</c:otherwise>
+																</c:choose><a
 																	href="#" class="vidpop"><i
 																	style="color: white; margin-top: 90px"
 																	class="fa fa-search fa-2x"></i> <img
@@ -215,14 +283,21 @@
 														</div>
 														<div class="caption">
 															<center>
-																<p style="font-weight: bold; font-size: 20px">${vid.description}</p>
+																<p style="font-weight: bold; font-size: 15px; height:20px">${vid.description}</p>
 															</center>
 														</div>
 													</div>
 												</div>
 											</c:forEach>
+											</div>
+											<br>
+											<br>
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>Articles</h4></center>
+											<hr>
 											<c:forEach var="ar" items="${artRes}">
-												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
+												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -238,8 +313,15 @@
 														</div>
 												</div> 
 											</c:forEach>
+											</div>
+											<br>
+											<br>
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>Books</h4></center>
+											<hr>
 											<c:forEach var="bo" items="${bookRes}">
-												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
+												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -255,8 +337,15 @@
 														</div>
 												</div> 
 											</c:forEach>
+											</div>
+											<br>
+											<br>
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>Lessons</h4></center>
+											<hr>
 											<c:forEach var="bo" items="${lessonRes}">
-												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
+												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -271,14 +360,19 @@
 														</div>
 												</div> 
 											</c:forEach>
+											</div>
+											<br>
+											<br>
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>Chapters</h4></center>
+											<hr>
 											<c:forEach var="ch" items="${chapterRes}">
-												<div class="col-sm-4 col-md-4 col-xs-4" style="height:154px">
+												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
 																src="${ch.icon}" alt="image" id="clickImage" />
-															
-															</div>
 														</div>
 														
 													</div>
@@ -286,9 +380,10 @@
 															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${ch.title}</h3>
 															<p >${ch.description}</p>
 															<a href="${ch.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
-														</div>
+													</div>
 												</div> 
 											</c:forEach>
+											</div>
 										</div>
 									</div>
 
@@ -320,7 +415,8 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var toggled = true;
-			var liSize = $(".principale").width();
+			var liSize = $(".left_col").width();
+			$(".principale").width(liSize);
 			$("#menu_toggle").click(function() {
 				$("#logosmall").toggle();
 				$("#logobig").toggle();
@@ -343,8 +439,18 @@
 	<script>
 		NProgress.done();
 	</script>
-	<!-- /datepicker -->
-	<!-- /footer content -->
+	<script>
+		$('.like').click(function(e) {
+		    e.preventDefault();
+		});
+		$('.pop').click(function(e) {
+		    e.preventDefault();
+		});
+		$('.vidpop').click(function(e) {
+		    e.preventDefault();
+		});
+	</script>
+	<script src="js/modalshow.js"></script>
 </body>
 
 </html>

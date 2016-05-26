@@ -180,7 +180,7 @@
 								<div class="row">
 									<div id="portfolio">
 										<div class="btn-group" style="float: left; margin-left: 10px">
-											<button id="all" class="btn btn-default btn-sm" type="button">All</button>
+											<a href="http://localhost:8070/Simour/Images" id="all" class="btn btn-default btn-sm" type="button">All</a>
 											<button id="photo" class="btn btn-default btn-sm"
 												type="button">Photo</button>
 											<button id="video" class="btn btn-default btn-sm"
@@ -190,7 +190,7 @@
 										<br> <br>
 										<div id="image-container">
 											<c:forEach var="image" items="${imageL}">
-												<div class="col-md-2" style="margin-top:10px">
+												<div class="col-md-2" style="margin-top:10px; ">
 													<div>
 														<div class="image view view-first">
 
@@ -228,7 +228,7 @@
 														</div>
 														<div class="caption">
 															<center>
-																<p style="font-weight: bold; font-size: 20px">${image.title }</p>
+																<p style="font-weight: bold; font-size: 15px; height:20px">${image.title }</p>
 															</center>
 														</div>
 													</div>
@@ -272,7 +272,7 @@
 														</div>
 														<div class="caption">
 															<center>
-																<p style="font-weight: bold; font-size: 20px">${vid.description}</p>
+																<p style="font-weight: bold; font-size: 15px; height:20px">${vid.description}</p>
 															</center>
 														</div>
 													</div>
