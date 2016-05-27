@@ -76,7 +76,7 @@
             <div class="menu_section">
               <h3>General</h3>
                <ul class="nav side-menu">
-                <li><a  href="dashboard.jsp"><i class="fa fa-home"></i> Home</a>
+                <li><a  href="SimLogPan"><i class="fa fa-home"></i> Home</a>
                 </li>
                 <li><a  href="http://localhost:8070/Simour/GalleryBack"><i class="fa fa-camera-retro"></i> Gallery</a>
                 </li>
@@ -87,8 +87,7 @@
                 </li>
                 <li><a href="calendar.jsp"><i class="fa fa-calendar"></i> Calendar</a>
                 </li>
-                <li><a href="about.jsp"><i class="fa fa-edit"></i> About </a>
-                </li>
+               
               </ul>
             </div>
           </div>
@@ -114,15 +113,7 @@
                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
                   <li><a href="index.jsp">  See Changes</a>
                   </li>
-                  <li>
-                    <a href="javascript:;">
-                      <span class="badge bg-red pull-right">50%</span>
-                      <span>Settings</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:;">Help</a>
-                  </li>
+
                   <li><a href="http://localhost:8070/Simour/LogOut"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </li>
                 </ul>
@@ -221,16 +212,7 @@
 															<!-- <a class="btn btn-sm btn-primary"
 																href="mail_compose.html"><i class="fa fa-reply"></i>
 																Reply</a> -->
-															<button title="" data-placement="top"
-																data-toggle="tooltip" type="button"
-																data-original-title="Print" class="btn  btn-sm tooltips">
-																<i class="fa fa-print"></i>
-															</button>
-															<button title="" data-placement="top"
-																data-toggle="tooltip" data-original-title="Trash"
-																class="btn btn-sm tooltips">
-																<i class="fa fa-trash-o"></i>
-															</button>
+															
 														</div>
 
 													</div>
@@ -286,7 +268,33 @@
 	<script src="js/progressbar/bootstrap-progressbar.min.js"></script>
 	<script src="js/icheck/icheck.min.js"></script>
 	<script src="js/custom.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var toggled = true;
+			var liSize = $(".left_col").width();
+			$(".principale").width(liSize);
+			$("#menu_toggle").click(function() {
+				$("#logosmall").toggle();
+				$("#logobig").toggle();
+				if (toggled) {
+					$(".principale").width(65);
+				} else {
+					$(".principale").width(liSize);
+				}
+				toggled = !toggled;
+			});
 
+			$(".principale").click(function() {
+				if (!toggled) {
+					$(this).width(70);
+				}
+			});
+
+		});
+	</script>
+	<script>
+		NProgress.done();
+	</script>
 </body>
 
 </html>

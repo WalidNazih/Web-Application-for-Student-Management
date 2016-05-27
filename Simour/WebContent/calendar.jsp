@@ -94,8 +94,6 @@
 </li>
 								<li class="principale"><a href="calendar.jsp"><i
 										class="fa fa-calendar"></i> Calendar</a></li>
-								<li class="principale"><a href="about_front.jsp"><i
-										class="fa fa-edit"></i> About </a></li>
 							</ul>
 						</div>
 					</div>
@@ -140,7 +138,7 @@
 					<div class="page-title">
 						<div class="title_left">
 							<h3>
-								Calendar <small> Click to add/edit events </small>
+								Calendar
 							</h3>
 						</div>
 

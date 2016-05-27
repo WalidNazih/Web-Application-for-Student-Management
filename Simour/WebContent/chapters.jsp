@@ -76,13 +76,13 @@
 										class="fa fa-graduation-cap"></i> Pedagogy <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="form.html">Formation Initiale</a></li>
-										<li><a href="form_advanced.html">Formation Continue</a></li>
-										<li><a href="form_advanced.html">Encadrement</a></li>
+										<li><a href="http://localhost:8070/Simour/Initiale">Formation Initiale</a></li>
+										<li><a href="http://localhost:8070/Simour/Continue">Formation Continue</a></li>
+										<li><a href="">Encadrement</a></li>
 									</ul></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
-								<li class="principale"><a href="about_front.jsp"><i
+								<li class="principale"><a href="about.jsp"><i
 										class="fa fa-edit"></i> About </a></li>
 							</ul>
 						</div>
@@ -182,7 +182,7 @@
 									<div id="portfolio">
 										<div id="image-container">
 											<c:forEach var="ch" items="${chapL}">
-												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px">
+												<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" style="height:154px; margin-top:10px">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -192,7 +192,7 @@
 														
 													</div>
 													<div style="margin-left:50px">
-															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${ch.title}</h3>
+															<h3 style="font-family: 'Titillium Web', sans-serif; font-size:40%; font-weight:bold">${ch.title}</h3>
 															<p >${ch.description}</p>
 															<a href="${ch.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
 														</div>
@@ -207,6 +207,11 @@
 							</div>
 						</div>
 					</div>
+					<div class="copyright-info">
+					<p class="pull-right">
+						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
+					</p>
+				</div>
 				</div>
 			</div>
 		</div>

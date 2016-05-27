@@ -154,13 +154,13 @@
 										class="fa fa-graduation-cap"></i> Pedagogy <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="form.html">Formation Initiale</a></li>
-										<li><a href="form_advanced.html">Formation Continue</a></li>
-										<li><a href="form_advanced.html">Encadrement</a></li>
+										<li><a href="http://localhost:8070/Simour/Initiale">Formation Initiale</a></li>
+										<li><a href="http://localhost:8070/Simour/Continue">Formation Continue</a></li>
+										<li><a href="">Encadrement</a></li>
 									</ul></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
-								<li class="principale"><a href="about_front.jsp"><i
+								<li class="principale"><a href="about.jsp"><i
 										class="fa fa-edit"></i> About </a></li>
 							</ul>
 						</div>
@@ -270,7 +270,7 @@
 						<div>
 							<c:forEach var="image" items="${lastIm}">
 								<div style="margin-left: -10px; margin-top: 20px"
-									class="col-md-3 col-sm-12 col-lg-3">
+									class="col-md-6 col-xs-12 col-sm-3 col-lg-2"">
 									<div style="height: 180px; width: 180px" class="thumbnail">
 										<div class="image view view-first">
 											<a href="#" class="pop"> <img
@@ -295,7 +295,7 @@
 						</div>
 						<div>
 							<c:forEach var="ar" items="${lastVid}">
-								<div class="col-md-3 col-sm-12 col-lg-3">
+								<div class="col-md-6 col-xs-12 col-sm-3 col-lg-2"">
 									<div class="">
 										<div class="image view view-first">
 
@@ -388,6 +388,11 @@
 							</div>
 						</div>
 					</div>
+					<div class="copyright-info">
+					<p class="pull-right">
+						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
+					</p>
+				</div>
 				</div>
 			</div>
 		</div>

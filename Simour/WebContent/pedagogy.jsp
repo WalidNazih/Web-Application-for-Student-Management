@@ -88,8 +88,6 @@
 										class="fa fa-graduation-cap"></i> Pedagogy</a></li>
 								<li><a href="calendar.jsp"><i class="fa fa-calendar"></i>
 										Calendar</a></li>
-								<li><a href="about.jsp"><i class="fa fa-edit"></i>
-										About </a></li>
 							</ul>
 						</div>
 					</div>
@@ -115,10 +113,6 @@
 							<ul
 								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
 								<li><a href="IndexServlet"> See Changes</a></li>
-								<li><a href="javascript:;"> <span
-										class="badge bg-red pull-right">50%</span> <span>Settings</span>
-								</a></li>
-								<li><a href="javascript:;">Help</a></li>
 								<li><a href="http://localhost:8070/Simour/LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 							</ul></li>
@@ -138,7 +132,7 @@
 				<br />
 
 				<div class="row">
-					<div class="col-md-4 col-sm-4 col-xs-4">
+					<div class="col-md-4 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_400 overflow_hidden">
 							<div class="x_title">
 								<h2>Import Lesson</h2>
@@ -175,7 +169,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="col-md-4 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_400 overflow_hidden">
 							<div class="x_title">
 								<h2>Manage Classes</h2>
@@ -219,7 +213,7 @@
 					</div>
 
 
-					<div class="col-md-4 col-sm-4 col-xs-4">
+					<div class="col-md-4 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_400 overflow_hidden">
 							<div class="x_title">
 								<h2>Manage Absence</h2>
@@ -262,7 +256,7 @@
 					
 				</div>
 				<div class="row">
-						<div class="col-md-4 col-sm-4 col-xs-4">
+						<div class="col-md-4 col-sm-12 col-xs-12">
 							<div class="x_panel tile fixed_height_400">
 								<div class="x_title">
 									<h2>Delete From Pedagogy</h2>
@@ -301,7 +295,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-8 col-sm-8 col-xs-8">
+						<div class="col-md-8 col-sm-12 col-xs-12">
 							<div class="x_panel tile fixed_height_400">
 								<div class="x_title">
 									<h2>Your Current Classes</h2>
@@ -309,7 +303,7 @@
 								</div>
 								<div class="x_content">
 									<c:forEach var="cl" items="${classL}">
-										<div class="col-md-4 col-xs-4 col-sm-4"
+										<div class="col-md-4 col-xs-12 col-sm-12"
 											style="margin-left: -10px; margin-top: 20px">
 											<h2>${cl.option}</h2>
 											<h4>(${ cl.niveau})</h4>
@@ -328,7 +322,7 @@
 							</div>
 							<div class="x_content">
 								<c:forEach var="ar" items="${topLesson}">
-												<div class="col-md-4" style="height:154px">
+												<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" style="height:154px">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:140px;height:100px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -338,7 +332,7 @@
 														
 													</div>
 													<div style="margin-left:50px">
-															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${ar.title}</h3>
+															<h3 style="font-family: 'Titillium Web', sans-serif; font-size:2vw; font-weight:bold">${ar.title}</h3>
 															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary lessonDown"> Download </a>
 														</div>
 												</div> 
@@ -349,14 +343,6 @@
 					</div>
 					</div>
 					<!-- footer content -->
-
-				<footer>
-				<div class="copyright-info">
-					<p class="pull-right">
-						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
-					</p>
-				</div>
-				</footer>
 				<!-- /footer content -->
 			</div>
 			

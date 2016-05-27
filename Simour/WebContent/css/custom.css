@@ -336,6 +336,14 @@ body {
 .page-title .title_left h3 {
   margin: 9px 0;
 }
+
+h3{
+	
+	font-size: 3vw;
+}
+p{
+	font-size: 2.5vw;
+}
 .page-title .title_right {
   width: 55%;
   float: left;

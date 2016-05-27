@@ -96,8 +96,6 @@
 </li>
 								<li class="principale"><a href="calendar.jsp"><i
 										class="fa fa-calendar"></i> Calendar</a></li>
-								<li class="principale"><a href="about_front.jsp"><i
-										class="fa fa-edit"></i> About </a></li>
 							</ul>
 						</div>
 					</div>
@@ -289,17 +287,7 @@
 					
 				</div>
 				<!-- /page content -->
-<!-- footer content -->
 
-				<footer>
-				<div class="copyright-info">
-					<p class="pull-right">
-						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
-					</p>
-				</div>
-				
-				</footer>
-				<!-- /footer content -->
 			</div>
 
 		</div>

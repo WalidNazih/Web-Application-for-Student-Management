@@ -94,8 +94,6 @@
 										class="fa fa-graduation-cap"></i> Pedagogy</a></li>
 								<li><a href="calendar.jsp"><i class="fa fa-calendar"></i>
 										Calendar</a></li>
-								<li><a href="about.jsp"><i class="fa fa-edit"></i>
-										About </a></li>
 							</ul>
 						</div>
 					</div>
@@ -137,7 +135,7 @@
 				<!-- top tiles -->
 				<div class="row tile_count"></div>
 				<div class="row">
-					<div class="col-md-4 col-sm-4 col-xs-4 image-import">
+					<div class="col-md-4 col-sm-12 col-xs-12 image-import">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
 								<h2>Import Picture</h2>
@@ -169,7 +167,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4">
+					<div class="col-md-4 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_title">
 								<h2>Delete From Gallery</h2>
@@ -200,7 +198,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4">
+					<div class="col-md-4 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_400">
 							<div class="x_content">
 
@@ -276,7 +274,7 @@
 							<div>
 								<c:forEach var="image" items="${topImages}">
 									<div style="margin-left: -10px; margin-top: 20px"
-										class="col-md-3">
+										class="col-md-6 col-xs-12 col-sm-3 col-lg-2">
 										<div style="height: 180px; width: 180px" class="thumbnail">
 											<div class="image view view-first">
 												<a href="#" class="pop"> <img
@@ -308,7 +306,7 @@
 							</div>
 							<div class="x_content">
 								<c:forEach var="vid" items="${topVideos}">
-									<div class="col-md-3"
+									<div class="col-md-6 col-xs-12 col-sm-3 col-lg-2"
 										style="margin-left: -10px; margin-top: 20px">
 										<div class="thumbnail" style="height: 180px; width: 180px">
 											<div class="image view view-first">
@@ -346,7 +344,31 @@
 		</div>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/custom.js"></script>
-		<script type="text/javascript">
+        <script type="text/javascript">
+		$(document).ready(function() {
+			var toggled = true;
+			var liSize = $(".principale").width();
+
+			$("#menu_toggle").click(function() {
+				$("#logosmall").toggle();
+				$("#logobig").toggle();
+				if (toggled) {
+					$(".principale").width(65);
+				} else {
+					$(".principale").width(liSize);
+				}
+				toggled = !toggled;
+			});
+
+			$(".principale").click(function() {
+				if (!toggled) {
+					$(this).width(70);
+				}
+			});
+
+		});
+	</script>
+	<script type="text/javascript">
 			function readImage(input) {
 
 				if (input.files && input.files[0]) {
@@ -390,30 +412,6 @@
 			});
 		</script>
 		
-		<script type="text/javascript">
-		$(document).ready(function() {
-			var toggled = true;
-			var liSize = $(".left_col").width();
-			$(".principale").width(liSize);
-			$("#menu_toggle").click(function() {
-				$("#logosmall").toggle();
-				$("#logobig").toggle();
-				if (toggled) {
-					$(".principale").width(65);
-				} else {
-					$(".principale").width(liSize);
-				}
-				toggled = !toggled;
-			});
-
-			$(".principale").click(function() {
-				if (!toggled) {
-					$(this).width(70);
-				}
-			});
-
-		});
-	</script>
 		
 		
 </body>

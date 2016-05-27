@@ -77,9 +77,9 @@
 										class="fa fa-graduation-cap"></i> Pedagogy <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="form.html">Formation Initiale</a></li>
-										<li><a href="form_advanced.html">Formation Continue</a></li>
-										<li><a href="form_advanced.html">Encadrement</a></li>
+										<li><a href="http://localhost:8070/Simour/Initiale">Formation Initiale</a></li>
+										<li><a href="http://localhost:8070/Simour/Continue">Formation Continue</a></li>
+										<li><a href="">Encadrement</a></li>
 									</ul></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
@@ -298,11 +298,16 @@
 							</div>
 						</div>
 					</div>
+					<div class="copyright-info">
+					<p class="pull-right">
+						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
+					</p>
 				</div>
+				</div>
+				
 			</div>
 		</div>
-
-	</div>
+		</div>
 
 
 	<script type="text/javascript">

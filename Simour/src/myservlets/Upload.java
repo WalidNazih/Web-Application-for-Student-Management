@@ -131,11 +131,14 @@ public class Upload extends HttpServlet {
                     }
                 }
                 DAO dao = new DAO("simour","root","");
-                if(fileName.endsWith(".jpg") || fileName.endsWith(".png") || fileName.endsWith(".gif")){
+                if(fileName.endsWith(".jpg") || fileName.endsWith(".png") || fileName.endsWith(".gif") || fileName.endsWith(".JPG") || fileName.endsWith(".PNG") || fileName.endsWith(".GIF")){
                 	if(button.equals("slide")){
                 		System.out.println("Slide");
                 		dao.insertSlide("uploads/"+fileName);
                     	dao.insertLog("Added slide ("+fileName+")", request.getRemoteAddr());
+                    	ServletContext context= getServletContext();
+            			RequestDispatcher rd= context.getRequestDispatcher("/SimLogPan");
+            			rd.forward(request, response);
                 	}else{
                 		dao.insertImage("uploads/"+fileName, title, desc, 2);
                     	dao.insertLog("Uploaded the image ("+title+")", request.getRemoteAddr());

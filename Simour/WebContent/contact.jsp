@@ -116,13 +116,13 @@
 										class="fa fa-graduation-cap"></i> Pedagogy <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="form.html">Formation Initiale</a></li>
-										<li><a href="form_advanced.html">Formation Continue</a></li>
-										<li><a href="form_advanced.html">Encadrement</a></li>
+										<li><a href="http://localhost:8070/Simour/Initiale">Formation Initiale</a></li>
+										<li><a href="http://localhost:8070/Simour/Continue">Formation Continue</a></li>
+										<li><a href="">Encadrement</a></li>
 									</ul></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
-								<li class="principale"><a href="about_front.jsp"><i
+								<li class="principale"><a href="about.jsp"><i
 										class="fa fa-edit"></i> About </a></li>
 							</ul>
 						</div>
@@ -251,7 +251,6 @@
 					</form>
 
 				</div>
-				
 			</div>
 			<!-- /page content -->
 

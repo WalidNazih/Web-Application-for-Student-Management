@@ -78,13 +78,13 @@
 										class="fa fa-graduation-cap"></i> Pedagogy <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="form.html">Formation Initiale</a></li>
-										<li><a href="form_advanced.html">Formation Continue</a></li>
-										<li><a href="form_advanced.html">Encadrement</a></li>
+										<li><a href="http://localhost:8070/Simour/Initiale">Formation Initiale</a></li>
+										<li><a href="http://localhost:8070/Simour/Continue">Formation Continue</a></li>
+										<li><a href="">Encadrement</a></li>
 									</ul></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
-								<li class="principale"><a href="about_front.jsp"><i
+								<li class="principale"><a href="about.jsp"><i
 										class="fa fa-edit"></i> About </a></li>
 							</ul>
 						</div>
@@ -120,51 +120,6 @@
 
 			</div>
 
-			<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog"
-				aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">
-								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-							</button>
-							<h4 class="modal-title" id="myModalLabel">Image preview</h4>
-						</div>
-						<div class="modal-body">
-							<center>
-								<img src="" class="imagepreview"
-									style="width: 570px; height: 470px;">
-							</center>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Close</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="modal fade" id="videomodal" tabindex="-1" role="dialog"
-				aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">
-								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-							</button>
-							<h4 class="modal-title" id="myModalLabel">Video preview</h4>
-						</div>
-						<div class="modal-body">
-							<center>
-								<iframe class="videopreview" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-							</center>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Close</button>
-						</div>
-					</div>
-				</div>
-			</div>
 
 			<div class="right_col" role="main">
 				<div class="page-title"></div>
@@ -181,7 +136,7 @@
 									<div id="portfolio">
 										<div id="image-container">
 										<c:forEach var="ar" items="${artL}">
-												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
+												<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -191,8 +146,8 @@
 														
 													</div>
 													<div style="margin-left:">
-															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${ar.title}</h3>
-															<p >${ar.description}</p>
+															<h3 style="font-family: 'Titillium Web', sans-serif; font-size:2vw; font-weight:bold">${ar.title}</h3>
+															
 															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
 														</div>
 												</div> 
@@ -204,7 +159,11 @@
 							</div>
 						</div>
 					</div>
-									
+					<div class="copyright-info">
+					<p class="pull-right">
+						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
+					</p>
+				</div>				
 				</div>
 			</div>
 		</div>

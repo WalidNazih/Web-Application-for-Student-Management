@@ -96,13 +96,13 @@
 										class="fa fa-graduation-cap"></i> Pedagogy <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="form.html">Formation Initiale</a></li>
-										<li><a href="form_advanced.html">Formation Continue</a></li>
-										<li><a href="form_advanced.html">Encadrement</a></li>
+										<li><a href="http://localhost:8070/Simour/Initiale">Formation Initiale</a></li>
+										<li><a href="http://localhost:8070/Simour/Continue">Formation Continue</a></li>
+										<li><a href="">Encadrement</a></li>
 									</ul></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
-								<li class="principale"><a href="about_front.jsp"><i
+								<li class="principale"><a href="about.jsp"><i
 										class="fa fa-edit"></i> About </a></li>
 							</ul>
 						</div>
@@ -121,20 +121,20 @@
 					<div class="nav toggle">
 						<a id="menu_toggle"><i class="fa fa-bars"></i></a>
 					</div>
-
-					<ul class="nav navbar-nav navbar-right">
-						<li class=""><a href="javascript:;"
-							class="user-profile dropdown-toggle" data-toggle="dropdown"
-							aria-expanded="false"> <img src="images/img.jpg" alt="">Simour
-								Houssein <span class=" fa fa-angle-down"></span>
-						</a>
-							<ul
-								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-								<li><a href="index.jsp"> See Changes</a></li>
-								<li><a href="http://localhost:8070/Simour/LogOut"><i
-										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-							</ul></li>
 					</nav>
+				</div>
+				<div class="title_right">
+					<div
+						class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+						<div class="input-group"
+							style="margin-top: -50px; width: 200px; float: right">
+							<input type="text" class="form-control"
+								placeholder="Search for..."> <span
+								class="input-group-btn">
+								<button class="btn btn-default" type="button">Go!</button>
+							</span>
+						</div>
+					</div>
 				</div>
 
 			</div>
@@ -146,9 +146,6 @@
 
 				<!-- top tiles -->
 				<div class="row tile_count"></div>
-
-				<br />
-
 				<div class="row">
 					<section id="about">
 					<div class="container">

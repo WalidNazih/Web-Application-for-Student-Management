@@ -93,8 +93,6 @@
 										class="fa fa-graduation-cap"></i> Pedagogy</a></li>
 								<li><a href="calendar.jsp"><i class="fa fa-calendar"></i>
 										Calendar</a></li>
-								<li><a href="about.jsp"><i class="fa fa-edit"></i>
-										About </a></li>
 							</ul>
 						</div>
 					</div>

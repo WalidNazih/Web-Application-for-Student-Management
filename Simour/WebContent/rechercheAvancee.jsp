@@ -288,7 +288,7 @@
 												<center><h4>Articles</h4></center>
 											<hr>
 											<c:forEach var="ar" items="${artResAv}">
-												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
+												<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -298,8 +298,7 @@
 														
 													</div>
 													<div style="margin-left:50px">
-															<h3 style="font-family: 'Titillium Web', sans-serif; font-weight:bold">${ar.title}</h3>
-															<p >${ar.description}</p>
+															<h3 style="font-family: 'Titillium Web', sans-serif;  font-weight:bold">${ar.title}</h3>
 															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
 														</div>
 												</div> 
@@ -312,7 +311,7 @@
 												<center><h4>Books</h4></center>
 											<hr>
 											<c:forEach var="bo" items="${bookResAv}">
-												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
+												<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -336,7 +335,7 @@
 												<center><h4>Lessons</h4></center>
 											<hr>
 											<c:forEach var="bo" items="${lessonResAv}">
-												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
+												<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
@@ -359,7 +358,7 @@
 												<center><h4>Chapters</h4></center>
 											<hr>
 											<c:forEach var="ch" items="${chapterResAv}">
-												<div class="col-sm-6 col-md-5 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
+												<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" style="height:154px; margin-top:10px;">
 													<div style="float:left; display:block;margin-right:20px">
 														<div style="width:150px;height:150px">
 															<img style="width: 100%; height: 150px; display: block;"
