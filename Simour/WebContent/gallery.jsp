@@ -276,7 +276,7 @@
 							<div>
 								<c:forEach var="image" items="${topImages}">
 									<div style="margin-left: -10px; margin-top: 20px"
-										class="col-md-2">
+										class="col-md-3">
 										<div style="height: 180px; width: 180px" class="thumbnail">
 											<div class="image view view-first">
 												<a href="#" class="pop"> <img
@@ -308,7 +308,7 @@
 							</div>
 							<div class="x_content">
 								<c:forEach var="vid" items="${topVideos}">
-									<div class="col-md-2"
+									<div class="col-md-3"
 										style="margin-left: -10px; margin-top: 20px">
 										<div class="thumbnail" style="height: 180px; width: 180px">
 											<div class="image view view-first">
@@ -341,19 +341,6 @@
 					</div>
 
 				</div>
-				<!-- /page content -->
-				<!-- footer content -->
-
-				<footer>
-				<div class="copyright-info">
-					<p class="pull-right">
-						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
-					</p>
-				</div>
-				
-				</footer>
-				<!-- /footer content -->
-
 			</div>
 
 		</div>
@@ -402,6 +389,32 @@
 				$("#title").width($(".image-import").width()-400+"vw");
 			});
 		</script>
+		
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var toggled = true;
+			var liSize = $(".left_col").width();
+			$(".principale").width(liSize);
+			$("#menu_toggle").click(function() {
+				$("#logosmall").toggle();
+				$("#logobig").toggle();
+				if (toggled) {
+					$(".principale").width(65);
+				} else {
+					$(".principale").width(liSize);
+				}
+				toggled = !toggled;
+			});
+
+			$(".principale").click(function() {
+				if (!toggled) {
+					$(this).width(70);
+				}
+			});
+
+		});
+	</script>
+		
 		
 </body>
 

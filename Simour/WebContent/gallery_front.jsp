@@ -189,8 +189,12 @@
 										</div>
 										<br> <br>
 										<div id="image-container">
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>Pictures</h4></center>
+											<hr>
 											<c:forEach var="image" items="${imageL}">
-												<div class="col-md-2" style="margin-top:10px; ">
+												<div class="col-md-3" style="margin-top:10px; ">
 													<div>
 														<div class="image view view-first">
 
@@ -228,12 +232,20 @@
 														</div>
 														<div class="caption">
 															<center>
-																<p style="font-weight: bold; font-size: 15px; height:20px">${image.title }</p>
+																<p style="font-weight: bold; font-size: 15px; height:40px">${image.title }</p>
 															</center>
 														</div>
 													</div>
 												</div>
 											</c:forEach>
+											</div>
+											<br>
+											<br>
+											<br>
+											<div class="col-sm-12">
+											<hr>
+												<center><h4>Videos</h4></center>
+											<hr>
 											<c:forEach var="vid" items="${vidL}">
 												<div class="col-md-3" style="margin-top:10px">
 													<div>
@@ -272,12 +284,13 @@
 														</div>
 														<div class="caption">
 															<center>
-																<p style="font-weight: bold; font-size: 15px; height:20px">${vid.description}</p>
+																<p style="font-weight: bold; font-size: 15px; height:40px">${vid.description}</p>
 															</center>
 														</div>
 													</div>
 												</div>
 											</c:forEach>
+											</div>
 										</div>
 									</div>
 

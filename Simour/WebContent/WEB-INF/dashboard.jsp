@@ -385,28 +385,10 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- start of weather widget -->
-							
-							<!-- end of weather widget -->
 						</div>
 					</div>
-
 				</div>
-
-				<!-- footer content -->
-
-				<footer>
-				<div class="copyright-info">
-					<p class="pull-right">
-						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
-					</p>
-				</div>
-				
-				</footer>
-				<!-- /footer content -->
 			</div>
-			<!-- /page content -->
 
 		</div>
 
@@ -537,6 +519,31 @@
 									});
 						});
 	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var toggled = true;
+			var liSize = $(".left_col").width();
+			$(".principale").width(liSize);
+			$("#menu_toggle").click(function() {
+				$("#logosmall").toggle();
+				$("#logobig").toggle();
+				if (toggled) {
+					$(".principale").width(65);
+				} else {
+					$(".principale").width(liSize);
+				}
+				toggled = !toggled;
+			});
+
+			$(".principale").click(function() {
+				if (!toggled) {
+					$(this).width(70);
+				}
+			});
+
+		});
+	</script>
+	
 </body>
 
 </html>

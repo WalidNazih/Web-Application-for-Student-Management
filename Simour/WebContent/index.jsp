@@ -270,7 +270,7 @@
 						<div>
 							<c:forEach var="image" items="${lastIm}">
 								<div style="margin-left: -10px; margin-top: 20px"
-									class="col-md-3 col-sm-3 col-lg-2">
+									class="col-md-3 col-sm-12 col-lg-3">
 									<div style="height: 180px; width: 180px" class="thumbnail">
 										<div class="image view view-first">
 											<a href="#" class="pop"> <img
@@ -295,7 +295,7 @@
 						</div>
 						<div>
 							<c:forEach var="ar" items="${lastVid}">
-								<div class="col-sm-3">
+								<div class="col-md-3 col-sm-12 col-lg-3">
 									<div class="">
 										<div class="image view view-first">
 
