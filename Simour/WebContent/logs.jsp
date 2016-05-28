@@ -80,7 +80,7 @@
 							<ul class="nav side-menu">
 								<li><a href="dashboard.jsp"><i class="fa fa-home"></i>
 										Home</a></li>
-								<li><a href="http://localhost:8070/Simour/GalleryBack"><i
+								<li><a href="GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
 								<li><a href="research.jsp"><i class="fa fa-book"></i>
 										Research </a></li>
@@ -120,7 +120,7 @@
 										class="badge bg-red pull-right">50%</span> <span>Settings</span>
 								</a></li>
 								<li><a href="javascript:;">Help</a></li>
-								<li><a href="http://localhost:8070/Simour/LogOut"><i
+								<li><a href="LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 							</ul></li>
 					</nav>

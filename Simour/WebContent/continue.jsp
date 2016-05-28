@@ -61,24 +61,24 @@
 
 						<div class="menu_section">
 							<ul class="nav side-menu">
-								<li class="principale"><a href="http://localhost:8070/Simour/IndexServlet"><i
+								<li class="principale"><a href="IndexServlet"><i
 										class="fa fa-home"></i> Home</a></li>
 								<li class="principale"><a
-									href="http://localhost:8070/Simour/Images"><i
+									href="Images"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
 								<li class="principale"><a><i class="fa fa-book"></i>
 										Research <span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="http://localhost:8070/Simour/Books">Books</a></li>
-										<li><a href="http://localhost:8070/Simour/Articles">Articles</a></li>
-										<li><a href="http://localhost:8070/Simour/Chapters">Book Chapters</a></li>
+										<li><a href="Books">Books</a></li>
+										<li><a href="Articles">Articles</a></li>
+										<li><a href="Chapters">Book Chapters</a></li>
 									</ul></li>
 								<li class="principale"><a><i
 										class="fa fa-graduation-cap"></i> Pedagogy <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="http://localhost:8070/Simour/Initiale">Formation Initiale</a></li>
-										<li><a href="http://localhost:8070/Simour/Continue">Formation Continue</a></li>
+										<li><a href="Initiale">Formation Initiale</a></li>
+										<li><a href="Continue">Formation Continue</a></li>
 										<li><a href="">Encadrement</a></li>
 									</ul></li>
 								<li class="principale"><a href="contact.jsp"><i

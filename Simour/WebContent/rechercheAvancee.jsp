@@ -80,7 +80,7 @@
 							<ul class="nav side-menu">
 								<li><a href="dashboard.jsp"><i class="fa fa-home"></i>
 										Home</a></li>
-								<li><a href="http://localhost:8070/Simour/GalleryBack"><i
+								<li><a href="GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
 								<li><a href="research.jsp"><i class="fa fa-book"></i>
 										Research </a></li>

@@ -137,26 +137,26 @@
 						<div class="menu_section">
 							<ul class="nav side-menu">
 								<li class="principale"><a
-									href="http://localhost:8070/Simour/IndexServlet"><i
+									href="IndexServlet"><i
 										class="fa fa-home"></i> Home</a></li>
 								<li class="principale"><a
-									href="http://localhost:8070/Simour/Images"><i
+									href="Images"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
 								<li class="principale"><a><i class="fa fa-book"></i>
 										Research <span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="http://localhost:8070/Simour/Books">Books</a></li>
-										<li><a href="http://localhost:8070/Simour/Articles">Articles</a></li>
-										<li><a href="http://localhost:8070/Simour/Chapters">Book
+										<li><a href="Books">Books</a></li>
+										<li><a href="Articles">Articles</a></li>
+										<li><a href="Chapters">Book
 												Chapters</a></li>
 									</ul></li>
-								<li class="principale"><a><i
+								<li class="principale notac"><a><i
 										class="fa fa-graduation-cap"></i> Pedagogy <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
-										<li><a href="http://localhost:8070/Simour/Initiale">Formation Initiale</a></li>
-										<li><a href="http://localhost:8070/Simour/Continue">Formation Continue</a></li>
-										<li><a href="">Encadrement</a></li>
+										<li><a href="Initiale">Formation Initiale</a></li>
+										<li><a href="Continue">Formation Continue</a></li>
+										<li class="notac"><a href="">Encadrement</a></li>
 									</ul></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
@@ -325,9 +325,15 @@
 							<div id="footer" class="col-md-12 col-xs-12 col-sm-12">
 								<hr />
 								<br>
-								<div class="footer-box col-md-3">
-									<h3>Latest Articles</h3>
-									<ul class="popular-posts" style="list-style: dot">
+								
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="x_panel tile fixed_height_320 overflow_hidden">
+							<div class="x_title">
+								<h2>Latest Articles</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+							<ul class="popular-posts" style="list-style: dot">
 										<c:forEach var="ar" items="${lastArt}">
 											<li>
 												<h5>
@@ -336,10 +342,17 @@
 											</li>
 										</c:forEach>
 									</ul>
-								</div>
-								<div class="footer-box col-md-3">
-									<h3>Latest Lessons</h3>
-									<ul class="popular-posts" style="list-style: dot">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="x_panel tile fixed_height_320 overflow_hidden">
+							<div class="x_title">
+								<h2>Latest Lessons</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+							<ul class="popular-posts" style="list-style: dot">
 										<c:forEach var="ar" items="${lastLess}">
 											<li>
 												<h5>
@@ -348,10 +361,17 @@
 											</li>
 										</c:forEach>
 									</ul>
-								</div>
-								<div class="footer-box col-md-3">
-									<h3>About</h3>
-									<h4>Lhoussain Simour</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="x_panel tile fixed_height_320 overflow_hidden">
+							<div class="x_title">
+								<h2>About</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+							<h4>Lhoussain Simour</h4>
 									<p>Assistant Professor of English and Cultural Studies.<br>
 									   University of Hassan II. Casablanca.</p>
 									<p>
@@ -360,11 +380,13 @@
 										<span class="lite1">Tel:</span> +212 6 66 88 50 64<br> <span
 											class="lite1">E-mail:</span> simour2@hotmail.com
 									</p>
-
-
-								</div>
-								<div class="footer-box col-md-3">
-									<div id="map" style="width: 100%; height: 300px"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="x_panel tile fixed_height_320 overflow_hidden">
+							<div class="x_content">
+							<div id="map" style="width: 100%; height: 300px"></div>
 
 									<script>
 										function initMap() {
@@ -384,6 +406,11 @@
 										src="https://maps.googleapis.com/maps/api/js?callback=initMap"
 										async defer></script>
 								</div>
+						</div>
+					</div>
+							
+								<div class="footer-box col-md-3">
+									
 
 							</div>
 						</div>

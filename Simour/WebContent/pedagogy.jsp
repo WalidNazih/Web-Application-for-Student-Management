@@ -77,7 +77,7 @@
 						<div class="menu_section">
 							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a href="http://localhost:8070/Simour/SimLogPan"><i class="fa fa-home"></i>
+								<li><a href="SimLogPan"><i class="fa fa-home"></i>
 										Home</a></li>
 								<li><a href="gallery.jsp"><i class="fa fa-camera-retro"></i>
 										Gallery</a></li>
@@ -113,7 +113,7 @@
 							<ul
 								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
 								<li><a href="IndexServlet"> See Changes</a></li>
-								<li><a href="http://localhost:8070/Simour/LogOut"><i
+								<li><a href="LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 							</ul></li>
 					</nav>

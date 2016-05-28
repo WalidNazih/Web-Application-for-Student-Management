@@ -83,9 +83,9 @@
 						<div class="menu_section">
 							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a href="http://localhost:8070/Simour/SimLogPan"><i class="fa fa-home"></i>
+								<li><a href="SimLogPan"><i class="fa fa-home"></i>
 										Home</a></li>
-								<li><a href="http://localhost:8070/Simour/GalleryBack"><i
+								<li><a href="GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
 								<li><a href="research.jsp"><i class="fa fa-book"></i>
 										Research </a></li>
@@ -117,7 +117,7 @@
 							<ul
 								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
 								<li><a href="IndexServlet"> See Changes</a></li>
-								<li><a href="http://localhost:8070/Simour/LogOut"><i
+								<li><a href="LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 							</ul></li>
 					</ul>
@@ -168,7 +168,7 @@
 							</div>
 							<div class="x_content">
 								<br>
-								<br> <a href="http://localhost:8070/Simour/Messages"><center>
+								<br> <a href="Messages"><center>
 										<img src="images/messageicon.png" width="140" height="140" /><br>Display
 										messages
 									</center></a>

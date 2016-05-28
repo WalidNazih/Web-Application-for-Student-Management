@@ -82,15 +82,15 @@
 						<div class="menu_section">
 							<ul class="nav side-menu">
 								<li class="principale"><a
-									href="http://localhost:8070/Simour/SimLogPan"><i
+									href="SimLogPan"><i
 										class="fa fa-home"></i> Home</a></li>
 								<li class="principale"><a
-									href="http://localhost:8070/Simour/GalleryBack"><i
+									href="GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
 								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
 										Research</a>
 								</li>
-								<li class="principale"><a href="http://localhost:8070/Simour/Pedagogy"><i
+								<li class="principale"><a href="Pedagogy"><i
 										class="fa fa-graduation-cap"></i> Pedagogy </a>
 									
 </li>
@@ -122,7 +122,7 @@
 								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
 								<li><a href="IndexServlet"> See Changes</a></li>
 								
-								<li><a href="http://localhost:8070/Simour/LogOut"><i
+								<li><a href="LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 							</ul></li>
 					</nav>

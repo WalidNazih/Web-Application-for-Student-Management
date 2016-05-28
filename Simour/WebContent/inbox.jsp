@@ -78,7 +78,7 @@
                <ul class="nav side-menu">
                 <li><a  href="SimLogPan"><i class="fa fa-home"></i> Home</a>
                 </li>
-                <li><a  href="http://localhost:8070/Simour/GalleryBack"><i class="fa fa-camera-retro"></i> Gallery</a>
+                <li><a  href="GalleryBack"><i class="fa fa-camera-retro"></i> Gallery</a>
                 </li>
                 <li><a href="research.jsp"><i class="fa fa-book"></i> Research </a>
                 </li>
@@ -114,7 +114,7 @@
                   <li><a href="index.jsp">  See Changes</a>
                   </li>
 
-                  <li><a href="http://localhost:8070/Simour/LogOut"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  <li><a href="LogOut"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </li>
                 </ul>
               </li>
@@ -170,7 +170,7 @@
 															<i class="fa fa-circle"></i> <i class="fa fa-edit"></i>
 														</div>
 														<div class="right">
-															<a style="text-decoration:none" href="http://localhost:8070/Simour/Messages?id=${messages[listSize-i].id}" >
+															<a style="text-decoration:none" href="Messages?id=${messages[listSize-i].id}" >
 															<h3>
 																<c:out value="${messages[listSize-i].from}" /> <small><c:out value="${messages[listSize-i].date}" /></small>
 															</h3>
@@ -188,7 +188,7 @@
 															<i class="fa fa-circle"></i> <i class="fa fa-edit"></i>
 														</div>
 														<div class="right">
-															<a style="text-decoration:none" href="http://localhost:8070/Simour/Messages?id=${message.id}" >
+															<a style="text-decoration:none" href="Messages?id=${message.id}" >
 															<h3>
 																<c:out value="${message.from}" /> <small><c:out value="${message.date}" /></small>
 															</h3>
