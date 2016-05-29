@@ -216,39 +216,38 @@
 					<div class="col-md-4 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_400 overflow_hidden">
 							<div class="x_title">
-								<h2>Manage Absence</h2>
+								<h2>Add Students</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content">
-								<form id="uploadPic" action="Upload" method="POST"
-									enctype="multipart/form-data">
-									<center>
-										<label id="filelbl" for="mylesson"> <img
-											src="img/employee.png" width="60px" height="60px" id="blah" /><br>
-										</label><br><br><br>
-									</center>
+								<form action="Students" method="POST">
+																<br>
+								<br>
 									<div id="fields">
-										Class name :<br> <select style="width: 100%"
-											name="removeBranch">
+										CNE : <input type="text" name="cne" size="59"
+											required=""  id="lessonUrl" /><br>
+										Last Name : <input type="text" name="nom" size="59"
+											 id="lessonUrl" /><br> 
+										First Name : <input type="text" name="prenom" size="59"
+											 id="lessonUrl" /><br> 	
+										Class :<select style="width: 100%"
+											name="classeStu">
 											<c:forEach var="cl" items="${classL }">
 												<option value="${cl.option} (${cl.niveau})">${cl.option}
 													(${cl.niveau})</option>
 											</c:forEach>
 										</select><br>
-										<br> Student's name :<br> <select
-											style="width: 100%" name="removeBranch">
-											<option value="volvo">Volvo</option>
-											<option value="saab">Saab</option>
-											<option value="mercedes">Mercedes</option>
-											<option value="audi">Audi</option>
-										</select> <br> <input type="submit" name="addPic" value="Remove"
+										<input type="submit" name="removestu" value="Remove"
 											class="btn btn-primary" style="margin-top: 10px"
-											onclick="showModal()" /><br>
+											onclick="showModal()" />
+										<input type="submit" name="addstu" value="Add"
+											class="btn btn-primary" style="margin-top: 10px"
+											onclick="showModal()" />
 									</div>
-									<br>
-									<br>
-
 								</form>
+								<br>
+								<br>
+
 							</div>
 						</div>
 					</div>
@@ -295,7 +294,41 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-8 col-sm-12 col-xs-12">
+						<div class="col-md-4 col-sm-12 col-xs-12">
+						<div class="x_panel tile fixed_height_400 overflow_hidden">
+							<div class="x_title">
+								<h2>Manage Absence and Marks</h2>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+								<form id="uploadPic" action="Students" method="POST">
+									<center>
+										<label id="filelbl" for="mylesson"> <img
+											src="img/employee.png" width="60px" height="60px" id="blah" /><br>
+										</label><br><br><br>
+									</center>
+									<div id="fields">
+										CNE : <input type="text" name="cne" size="59"
+											required=""  id="lessonUrl" /><br>
+										Mark : <input type="text" name="mark" size="59"
+											 id="lessonUrl" /><br>	
+
+										 <br> <input type="submit" name="absent" value="Mark as absent"
+											class="btn btn-primary" style="margin-top: 15px"
+											onclick="showModal()" />
+											<input type="submit" name="upMark" value="Update Mark"
+											class="btn btn-primary" style="margin-top: 15px"
+											onclick="showModal()" /><br>
+									</div>
+									<br>
+									<br>
+									<br>
+									<br>
+								</form>
+							</div>
+						</div>
+					</div>
+						<div class="col-md-4 col-sm-12 col-xs-12">
 							<div class="x_panel tile fixed_height_400">
 								<div class="x_title">
 									<h2>Your Current Classes</h2>

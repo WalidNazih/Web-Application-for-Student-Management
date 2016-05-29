@@ -433,6 +433,23 @@ public class DAO {
 		preparedStatement.setString(2, url);
 		preparedStatement.executeUpdate();
 	}
+	
+	public void markAbsent(String cne, int absence, double note) throws SQLException{
+		String sql = "UPDATE etudiants set absence=? and note=? where cne like ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, absence);
+		preparedStatement.setDouble(2, note);
+		preparedStatement.setString(3, cne);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void updateMark(String cne, double note) throws SQLException{
+		String sql = "UPDATE etudiants set note=? where cne like ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setDouble(1, note);
+		preparedStatement.setString(2, cne);
+		preparedStatement.executeUpdate();
+	}
 	public void insertNotifi(String message, String item) throws SQLException{
 		String sql = "INSERT INTO notifications (message,item) values(?,?)";
 		preparedStatement = con.prepareStatement(sql);
@@ -494,6 +511,14 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getStudentInfo(String cne) throws SQLException{
+		String sql = "SELECT * FROM etudiants WHERE cne like ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1,cne);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getImageInfo(int id) throws SQLException{
 		String sql = "SELECT * FROM IMAGES WHERE id=?";
 		preparedStatement = con.prepareStatement(sql);
@@ -524,10 +549,17 @@ public class DAO {
 		preparedStatement.executeQuery();
 		return preparedStatement.executeQuery();
 	}
-	
+
 	public ResultSet getLevel() throws SQLException{
 		String sql = "SELECT * FROM niveaux";
 		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	public ResultSet getSetting(String setting) throws SQLException{
+		String sql = "SELECT * FROM settings where setting like ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, setting);
 		preparedStatement.executeQuery();
 		return preparedStatement.executeQuery();
 	}
@@ -560,6 +592,40 @@ public class DAO {
 	
 	public void insertClass(int niveau, int option) throws SQLException{
 		String sql = "INSERT INTO classes (niveau,options) values(?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, niveau);
+		preparedStatement.setInt(2, option);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void insertStudent(String cne, String nom, String prenom, int classe) throws SQLException{
+		String sql = "INSERT INTO etudiants (cne,nom,prenom,classe) values(?,?,?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, cne);
+		preparedStatement.setString(2, nom);
+		preparedStatement.setString(3, prenom);
+		preparedStatement.setInt(4, classe);
+		preparedStatement.executeUpdate();
+	}
+	
+	
+	
+	public void deleteStudent(String cne) throws SQLException{
+		String sql = "DELETE FROM etudiants WHERE cne like ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, cne);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void deleteStudentByClass(int classe) throws SQLException{
+		String sql = "DELETE FROM etudiants WHERE classe=?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setInt(1, classe);
+		preparedStatement.executeUpdate();
+	}
+	
+	public void deleteClass(int niveau, int option) throws SQLException{
+		String sql = "DELETE FROM classes WHERE niveau=? and options=?";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setInt(1, niveau);
 		preparedStatement.setInt(2, option);

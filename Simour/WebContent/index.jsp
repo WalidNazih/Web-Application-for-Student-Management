@@ -156,8 +156,10 @@
 									<ul class="nav child_menu" style="display: none">
 										<li><a href="Initiale">Formation Initiale</a></li>
 										<li><a href="Continue">Formation Continue</a></li>
-										<li class="notac"><a href="">Encadrement</a></li>
+										<li><a href="Continue">Encadrement</a></li>
 									</ul></li>
+								<li class="principale"><a href="students.jsp"><i
+										class="fa fa-university"></i> Students Area</a></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
 								<li class="principale"><a href="about.jsp"><i
@@ -326,7 +328,7 @@
 								<hr />
 								<br>
 								
-					<div class="col-md-3 col-sm-3 col-xs-12">
+					<div class="col-md-3 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_320 overflow_hidden">
 							<div class="x_title">
 								<h2>Latest Articles</h2>
@@ -345,7 +347,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-3 col-xs-12">
+					<div class="col-md-3 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_320 overflow_hidden">
 							<div class="x_title">
 								<h2>Latest Lessons</h2>
@@ -364,7 +366,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-3 col-xs-12">
+					<div class="col-md-3 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_320 overflow_hidden">
 							<div class="x_title">
 								<h2>About</h2>
@@ -383,7 +385,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-3 col-xs-12">
+					<div class="col-md-3 col-sm-12 col-xs-12">
 						<div class="x_panel tile fixed_height_320 overflow_hidden">
 							<div class="x_content">
 							<div id="map" style="width: 100%; height: 300px"></div>
@@ -424,6 +426,7 @@
 			</div>
 		</div>
 	</div>
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var toggled = true;
@@ -448,7 +451,7 @@
 
 		});
 	</script>
-
+	
 	<script src="js/custom.js"></script>
 </body>
 

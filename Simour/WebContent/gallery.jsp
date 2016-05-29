@@ -380,9 +380,14 @@
 						$('#blah').width("150px");
 						$('#blah').height("150px");
 						$('#blah').addClass("img-thumbnail");
+						var fu1 = document.getElementById("myfile");
+						$("#title").attr('value',
+								fu1.value.split("\\")[2].split(".")[0]);
 					}
-
+					
 					reader.readAsDataURL(input.files[0]);
+					
+					
 					
 				}
 			}
@@ -401,7 +406,7 @@
 				}
 			}
 
-			$("#myVideo").change(function() {
+			$("#myVideo").change(function() {"C:/Documents and Settings/saadia/My Documents/Downloads/javacv-1.2.jar"
 				readURL(this);
 			});
 		</script>
@@ -411,6 +416,7 @@
 				$("#title").width($(".image-import").width()-400+"vw");
 			});
 		</script>
+		
 		
 		
 		

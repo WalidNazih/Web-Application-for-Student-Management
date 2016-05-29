@@ -100,7 +100,8 @@
 
 						<div class="menu_section">
 							<ul class="nav side-menu">
-								<li class="principale"><a href="IndexServlet"><i
+								<li class="principale"><a
+									href="IndexServlet"><i
 										class="fa fa-home"></i> Home</a></li>
 								<li class="principale"><a
 									href="Images"><i
@@ -110,16 +111,19 @@
 									<ul class="nav child_menu" style="display: none">
 										<li><a href="Books">Books</a></li>
 										<li><a href="Articles">Articles</a></li>
-										<li><a href="Chapters">Book Chapters</a></li>
+										<li><a href="Chapters">Book
+												Chapters</a></li>
 									</ul></li>
-								<li class="principale"><a><i
+								<li class="principale notac"><a><i
 										class="fa fa-graduation-cap"></i> Pedagogy <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu" style="display: none">
 										<li><a href="Initiale">Formation Initiale</a></li>
 										<li><a href="Continue">Formation Continue</a></li>
-										<li><a href="">Encadrement</a></li>
+										<li><a href="Continue">Encadrement</a></li>
 									</ul></li>
+								<li class="principale"><a href="students.jsp"><i
+										class="fa fa-university"></i> Students Area</a></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
 								<li class="principale"><a href="about.jsp"><i

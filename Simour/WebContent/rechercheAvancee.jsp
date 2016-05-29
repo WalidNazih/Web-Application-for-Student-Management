@@ -215,17 +215,8 @@
 
 															<img style="width: 100%; height: 230px; display: block;"
 																src="${image.url}" alt="image" id="clickImage" />
-															<div class="mask" style="color: white">
-																<a href="#" class="like"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-heart-o fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${image.url}" alt="image" id="clickImage" /> </a> <a
-																	href="#" class="pop"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-search fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${image.url}" alt="image" id="clickImage" /> </a> <br>
+															<div class="mask" style="color: white;height:230px">
+																<br>
 																<i id="likecount" style="font-weight: bold">${image.likes}
 																	likes</i>
 															</div>
@@ -255,17 +246,8 @@
 
 															<img style="width: 100%; height: 230px; display: block;"
 																src="${vid.thumbnail}" alt="video" id="clickImage" />
-															<div class="mask" style="color: white">
-																<a href="#" class="like"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-heart-o fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${vid.url}" alt="image" id="clickImage" /> </a> <a
-																	href="#" class="vidpop"><i
-																	style="color: white; margin-top: 90px"
-																	class="fa fa-search fa-2x"></i> <img
-																	style="display: none; width: 100%; height: 230px;"
-																	src="${vid.url}" alt="image" id="clickImage" /> </a> <br>
+															<div class="mask" style="color: white;height:230px">
+																 <br>
 																<i id="likecount" style="font-weight: bold">${vid.likes}
 																	likes</i>
 															</div>

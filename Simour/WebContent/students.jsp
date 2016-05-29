@@ -10,13 +10,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Formation Continue |</title>
+<title>Students Area |</title>
+
+<!-- Bootstrap core CSS -->
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
 <link href="css/animate.min.css" rel="stylesheet">
 
+<!-- Custom styling plus plugins -->
 <link href="css/custom.css" rel="stylesheet">
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
@@ -26,19 +29,68 @@
 
 <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
-         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        
         <![endif]-->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/ajax.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Indie+Flower'
+	rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+<!-- use jssor.slider.debug.js instead for debug -->
+<script>
+	jQuery(document).ready(function($) {
+
+		var jssor_1_SlideshowTransitions = [ {
+			$Duration : 1200,
+			$Opacity : 2
+		} ];
+
+		var jssor_1_options = {
+			$AutoPlay : true,
+			$SlideshowOptions : {
+				$Class : $JssorSlideshowRunner$,
+				$Transitions : jssor_1_SlideshowTransitions,
+				$TransitionsOrder : 1
+			},
+			$ArrowNavigatorOptions : {
+				$Class : $JssorArrowNavigator$
+			},
+			$BulletNavigatorOptions : {
+				$Class : $JssorBulletNavigator$
+			}
+		};
+
+		var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+		//you can remove responsive code if you don't want the slider scales while window resizes
+		function ScaleSlider() {
+			var bodyWidth = jssor_1_slider.$Elmt.parentNode.clientWidth;
+			if (bodyWidth)
+				jssor_1_slider.$ScaleWidth(Math.min(bodyWidth, 1920));
+			else
+				window.setTimeout(ScaleSlider, 10);
+		}
+		ScaleSlider();
+
+		$(window).bind("load", ScaleSlider);
+		$(window).bind("resize", ScaleSlider);
+		$(window).bind("orientationchange", ScaleSlider);
+	});
+</script>
 </head>
 
 
 <body class="nav-md">
-
 	<div class="container body">
 		<div class="main_container">
+
+
+	
 
 			<div class="col-md-3 left_col">
 				<div class="left_col scroll-view">
@@ -53,7 +105,6 @@
 							src="images/logosmall.png"></a>
 					</div>
 					<div class="clearfix"></div>
-
 
 					<br />
 					<div id="sidebar-menu"
@@ -92,10 +143,12 @@
 							</ul>
 						</div>
 					</div>
+					<!-- /sidebar menu -->
 
 				</div>
 			</div>
 
+			<!-- top navigation -->
 			<div class="top_nav">
 
 				<div class="nav_menu">
@@ -107,71 +160,65 @@
 				</div>
 
 				<div class="title_right">
-					<div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+					<div
+						class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
 						<form action="Search" method="POST">
 							<div class="input-group"
 								style="margin-top: -50px; width: 250px; float: right">
 								<input type="text" class="form-control" name="searchQuery"
 									placeholder="Search for..."> <span
-									class="input-group-btn">
-									 <input class="btn btn-default" type="submit" value="GO">
+									class="input-group-btn"> <input class="btn btn-default"
+									type="submit" value="GO">
 								</span>
 							</div>
-							</form>
-						</div>
+						</form>
+					</div>
 				</div>
 
 			</div>
+			<!-- /top navigation -->
 
+
+			<!-- page content -->
 			<div class="right_col" role="main">
 				<div class="page-title"></div>
 				<div class="clearfix"></div>
 				<div class="row">
-					<div class="col-md-12">
-						<div class="x_panel">
-							<div class="x_title">
-								<h2>Lesson Gallery (Formation Continue)</h2>
-								<div class="clearfix"></div>
-							</div>
-							<div class="x_content" >
-								<div class="row">
-									<div id="portfolio">
-										<div id="image-container">
-											<c:forEach var="ar" items="${continueLesson}">
-												<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" style="height:154px; margin-top:10px">
-													<div style="float:left; display:block;margin-right:20px">
-														<div style="width:150px;height:100px">
-															<img style="width: 100%; height: 150px; display: block;"
-																src="${ar.icon}" alt="image" id="clickImage" />
-															
-														</div>
-														
-													</div>
-													<div style="margin-left:50px">
-															<h3 style="font-family: 'Titillium Web', sans-serif; font-size:2vw;font-weight:bold">${ar.title}</h3>
-															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary lessonDown"> Download </a>
-														</div>
-												</div> 
-											</c:forEach>
-											
-										</div>
-									</div>
-
+					<div class="x_panel">
+						<div class="x_content">
+						<div style="margin-top:200px; margin-bottom:200px">
+							<center>
+							<h1>Welcome to Students' Area</h1>
+							<h2>Please type your CNE to display your info.</h2>
+							<br><br>
+								<div style="width:200px">
+									<form action="Students" method="POST">
+										<input type="text" name="cne" required=""/><br><br>
+										<input type="submit" class="btn btn-primary" name="infostu" value="Submit"/>
+									</form>
 								</div>
-							</div>
+								<br>
+								<br>
+								<c:if test="${not empty student.lastName}">
+								<h4>Hello, ${student.lastName } ${student.firstName} </h4>
+								<h4>You've skipped class ${student.absence } time(s). <br>
+									Thus, you've been marked off by ${absenceMark } points, ${absenceDef } each time. <br>
+									Your mark is ${student.note }</h4>
+								</c:if>
+								
+							</center>
+						</div>
 						</div>
 					</div>
-						<div class="copyright-info">
+					<div class="copyright-info">
 					<p class="pull-right">
 						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
 					</p>
-				</div>			
+				</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
-
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -197,7 +244,7 @@
 
 		});
 	</script>
-	<script src="js/modalshow.js"></script>
+	
 	<script src="js/custom.js"></script>
 </body>
 

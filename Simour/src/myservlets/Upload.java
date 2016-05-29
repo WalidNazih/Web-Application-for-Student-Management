@@ -1,5 +1,6 @@
 package myservlets;
 
+import java.awt.Frame;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
@@ -11,7 +12,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -20,14 +20,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.filechooser.FileSystemView;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.jcodec.api.awt.FrameGrab;
 
 import beans.Niveau;
 import beans.Option;
@@ -144,7 +140,7 @@ public class Upload extends HttpServlet {
                     	dao.insertLog("Uploaded the image ("+title+")", request.getRemoteAddr());
                 	}
                 }else if(fileName.endsWith(".avi") || fileName.endsWith(".mp4") || fileName.endsWith(".wmv")){
-                	dao.insertVideo("uploads/"+fileName, title, null, 3);
+                	dao.insertVideo("uploads/"+fileName, title, "images/videologo.jpg", 3);
                 	dao.insertLog("Uploaded the video ("+title+")", request.getRemoteAddr());
                 }else if(fileName.endsWith(".doc") || fileName.endsWith(".docx") || fileName.endsWith(".pdf")){
                 	String ext = null;
@@ -164,7 +160,7 @@ public class Upload extends HttpServlet {
                 		dao.insertLog("Uploaded the book chapter ("+title+")", request.getRemoteAddr());
                 		dao.insertNotifi("New Chapter Arrived", title);
                 	}else if(button.equals("lesson")){
-                		System.out.println("HERE");
+                		
                 		HttpSession session = request.getSession();
                 		
                 		String niv = classe.split("\\(")[1].substring(0,classe.split("\\(")[1].length()-1);

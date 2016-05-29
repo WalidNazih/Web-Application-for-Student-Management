@@ -1,6 +1,7 @@
 package myservlets;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -51,6 +52,22 @@ public class ManageClasses extends HttpServlet {
 				
 	    		dao.insertClass(nivId,opId);
 	    		dao.insertLog("Added a class ("+request.getParameter("optionSelect") +"("+request.getParameter("levelSelect")+")"+")", request.getRemoteAddr());
+			}else if(request.getParameter("remove") != null){
+				System.out.println("Remove");
+				HttpSession session = request.getSession();
+				ArrayList<Niveau> nivL = (ArrayList<Niveau>) session.getAttribute("nivL");
+	    		ArrayList<Option> opL = (ArrayList<Option>) session.getAttribute("opL");
+	    		int nivId =0, opId = 0;
+	    		
+	    		for(Niveau n : nivL) if(n.getName().contains(request.getParameter("levelSelect").trim())) nivId = n.getId();
+	    		for(Option o : opL) if(o.getName().contains(request.getParameter("optionSelect").trim())) opId = o.getId();
+	    		
+	    		ResultSet rs = dao.getClassByOption(opId, nivId);
+        		rs.next();
+				dao.deleteStudentByClass(rs.getInt(1));
+	    		dao.deleteClass(nivId,opId);
+	    		
+	    		dao.insertLog("Deleted a class ("+request.getParameter("optionSelect") +"("+request.getParameter("levelSelect")+")"+")", request.getRemoteAddr());
 			}
 			ServletContext context= getServletContext();
 			RequestDispatcher rd= context.getRequestDispatcher("/Pedagogy");
