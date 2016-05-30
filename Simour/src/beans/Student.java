@@ -8,7 +8,7 @@ public class Student implements Serializable {
 	protected String cne, lastName, firstName;
 	protected int classe;
 	protected double note;
-	protected int absence;
+	protected double absence;
 	
 	public Student(){
 		
@@ -16,7 +16,7 @@ public class Student implements Serializable {
 	
 	
 
-	public Student(int id, String cne, String lastName, String firstName, int classe, double note, int absence) {
+	public Student(int id, String cne, String lastName, String firstName, int classe, double note, double absence) {
 		super();
 		this.id = id;
 		this.cne = cne;
@@ -77,11 +77,11 @@ public class Student implements Serializable {
 		this.note = note;
 	}
 
-	public int getAbsence() {
+	public double getAbsence() {
 		return absence;
 	}
 
-	public void setAbsence(int absence) {
+	public void setAbsence(double absence) {
 		this.absence = absence;
 	}
 	

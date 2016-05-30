@@ -2,14 +2,24 @@ package beans;
 
 import java.io.Serializable;
 
-public class Slide implements Serializable{
+public class Link implements Serializable {
 	
-	int id;
-	String url;
-	
-	public Slide(){
-		
+	protected int id;
+	protected String url;
+
+	public Link() {
+		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public Link(int id, String url) {
+		super();
+		this.id = id;
+		this.url = url;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -24,12 +34,6 @@ public class Slide implements Serializable{
 	}
 
 	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public Slide(int id, String url) {
-		super();
-		this.id = id;
 		this.url = url;
 	}
 	

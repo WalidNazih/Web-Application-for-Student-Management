@@ -129,7 +129,8 @@
 							src="images/logosmall.png"></a>
 					</div>
 					<div class="clearfix"></div>
-
+					
+					
 					<br />
 					<div id="sidebar-menu"
 						class="main_menu_side hidden-print main_menu">
@@ -156,10 +157,10 @@
 									<ul class="nav child_menu" style="display: none">
 										<li><a href="Initiale">Formation Initiale</a></li>
 										<li><a href="Continue">Formation Continue</a></li>
-										<li><a href="Continue">Encadrement</a></li>
+
 									</ul></li>
 								<li class="principale"><a href="students.jsp"><i
-										class="fa fa-university"></i> Students Area</a></li>
+										class="fa fa-university"></i> Students' Space</a></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
 								<li class="principale"><a href="about.jsp"><i
@@ -265,14 +266,13 @@
 						</div>
 						
 						<div class="clearfix"></div>
-
 						<div class="x_title">
 							<h2>News</h2>
 							<div class="clearfix"></div>
 						</div>
 						<div>
 							<center>
-								<h3>${newsSetting }</h3>
+								<h4 style="color:red; font-size:1.5vw; font-weight:bold">${newsSetting }</h4>
 							</center>
 
 						</div>

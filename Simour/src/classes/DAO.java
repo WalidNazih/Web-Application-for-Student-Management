@@ -67,6 +67,15 @@ public class DAO {
 		preparedStatement.executeUpdate();
 	}
 	
+	public void insertGroup(String name, String project, int classe) throws SQLException{
+		String sql = "INSERT INTO groups (name,project,classe) values(?,?,?)";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setString(1, name);
+		preparedStatement.setString(2, project);
+		preparedStatement.setInt(3, classe);
+		preparedStatement.executeUpdate();
+	}
+	
 	public void insertVideoLike(int image, String visitor) throws SQLException{
 		String sql = "INSERT INTO videolikes (video,visitor) values(?,?)";
 		preparedStatement = con.prepareStatement(sql);
@@ -134,6 +143,13 @@ public class DAO {
 	
 	public ResultSet getImages() throws SQLException{
 		String sql = "SELECT * FROM Images";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getGroups() throws SQLException{
+		String sql = "SELECT * FROM Groups";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.executeQuery();
 		return preparedStatement.executeQuery();
@@ -451,14 +467,26 @@ public class DAO {
 		String sql = "UPDATE images set likes=? where url=?";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setInt(1, like+1);
-		preparedStatement.setString(2, url);
 		preparedStatement.executeUpdate();
 	}
 	
-	public void markAbsent(String cne, int absence, double note) throws SQLException{
-		String sql = "UPDATE etudiants set absence=? and note=? where cne like ?";
+	public void addLink(String url) throws SQLException{
+		String sql = "INSERT INTO links (url) values(?)";
 		preparedStatement = con.prepareStatement(sql);
-		preparedStatement.setInt(1, absence);
+		preparedStatement.setString(1, url);
+		preparedStatement.executeUpdate();
+	}
+	
+	public ResultSet getLinks() throws SQLException{
+		String sql = "SELECT * FROM links";
+		preparedStatement = con.prepareStatement(sql);
+		return preparedStatement.executeQuery();
+	}
+	
+	public void markAbsent(String cne, double absence, double note) throws SQLException{
+		String sql = "UPDATE etudiants set absence=?, note=? where cne like ?";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.setDouble(1, absence);
 		preparedStatement.setDouble(2, note);
 		preparedStatement.setString(3, cne);
 		preparedStatement.executeUpdate();
@@ -481,8 +509,8 @@ public class DAO {
 	public void updateSettings(String col, String value) throws SQLException{
 		String sql = "UPDATE settings set value=? where setting=?";
 		preparedStatement = con.prepareStatement(sql);
-		preparedStatement.setString(1, col);
-		preparedStatement.setString(2, value);
+		preparedStatement.setString(1, value);
+		preparedStatement.setString(2, col);
 		preparedStatement.executeUpdate();
 	}
 	

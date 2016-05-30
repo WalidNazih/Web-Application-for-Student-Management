@@ -57,7 +57,7 @@
 				<div class="left_col scroll-view">
 
 					<div class="navbar nav_title" style="border: 0;">
-						<a href="dashboard.jsp" class="site_title"><i
+						<a href="SimLogPan" class="site_title"><i
 							class="fa fa-cog"></i> <span>Dashboard</span></a>
 					</div>
 					<div class="clearfix"></div>
@@ -65,12 +65,12 @@
 					<!-- menu prile quick info -->
 					<div class="profile">
 						<div class="profile_pic">
-							<img src="images/img.jpg" alt="..."
-								class="img-circle profile_img">
+							<img src="images/sim.png" alt="..."
+								width="55px" height="55px" class="img-circle profile_img">
 						</div>
 						<div class="profile_info">
 							<br> <span>Welcome,</span>
-							<h2>Simour Houssein</h2>
+							<h2>Simour LHoussain</h2>
 						</div>
 					</div>
 					<!-- /menu prile quick info -->
@@ -81,7 +81,7 @@
 					<br />
 					<!-- sidebar menu -->
 					<div id="sidebar-menu"
-						class="main_menu_side hidden-print main_menu">
+						class="main_menu_side hidden-print main_menu" >
 
 						<div class="menu_section">
 							<ul class="nav side-menu">
@@ -95,11 +95,9 @@
 										Research</a>
 								</li>
 								<li class="principale"><a href="Pedagogy"><i
-										class="fa fa-graduation-cap"></i> Pedagogy </a>
-									
-</li>
-								<li class="principale"><a href="calendar.jsp"><i
-										class="fa fa-calendar"></i> Calendar</a></li>
+										class="fa fa-graduation-cap"></i> Pedagogy </a></li>
+								<li class="principale"><a href="Encadrement"><i
+										class="fa fa-laptop"></i>Encadrement</a></li>
 								<li class="principale"><a href="Logs"><i
 										class="fa fa-file-text"></i> Logs</a></li>
 								<li class="principale"><a href="rechercheAvancee.jsp"><i
@@ -122,8 +120,8 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li class=""><a href="javascript:;"
 							class="user-profile dropdown-toggle" data-toggle="dropdown"
-							aria-expanded="false"> <img src="images/img.jpg" alt="">Simour
-								Houssein <span class=" fa fa-angle-down"></span>
+							aria-expanded="false"> <img src="images/sim.png" alt="">Simour
+								Lhoussain <span class=" fa fa-angle-down"></span>
 						</a>
 							<ul
 								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
@@ -152,7 +150,11 @@
 
 							<div class="row x_title">
 								<div class="col-md-6">
-									<h3>Calendar</h3>
+									<a href="Messages" class="btn btn-primary">Display
+										messages
+									</a>
+									<a href="Links" class="btn btn-primary">Interesting Links
+									</a>
 								</div>
 								<div class="col-md-6">
 									<div id="reportrange" class="pull-right"
@@ -174,15 +176,21 @@
 					<div class="col-md-4 col-sm-4 col-xs-12">
 						<div class="x_panel tile fixed_height_320">
 							<div class="x_title">
-								<h2>Messages</h2>
+								<h2>Add Interesting Link</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content">
-								<br>
-								<br> <a href="Messages"><center>
-										<img src="images/messageicon.png" width="140" height="140" /><br>Display
-										messages
-									</center></a>
+							<br>
+							<br>
+								<center>
+										<img src="images/broken-link.png" width="60px" height="60px" />
+										<br><br>
+									</center>
+									<form action="Links" method="POST">
+									Link : <br>
+								<input type="text" name="link"><br>
+								<input type="submit" value="Add" name="addlink" class="btn btn-primary btn-sm" style="margin-top:10px">
+								</form>
 							</div>
 						</div>
 					</div>
@@ -199,7 +207,7 @@
 										<br><br>
 									</center>
 							<form action="UpdateSettings" method="POST" id="sett">
-								Absence Marks Off Student By : <br>
+								Attendance Grade : <br>
 								<input type="text" size="12" name="mark"><br>
 								<input type="submit" value="update" name="markUpdate" class="btn btn-primary btn-sm" style="margin-top:10px">
 								<br>News : <br>

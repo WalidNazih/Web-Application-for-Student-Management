@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Students Area |</title>
+<title>Students' Space |</title>
 
 <!-- Bootstrap core CSS -->
 
@@ -91,10 +91,9 @@
 									<ul class="nav child_menu" style="display: none">
 										<li><a href="Initiale">Formation Initiale</a></li>
 										<li><a href="Continue">Formation Continue</a></li>
-										<li><a href="Continue">Encadrement</a></li>
 									</ul></li>
 								<li class="principale"><a href="students.jsp"><i
-										class="fa fa-university"></i> Students Area</a></li>
+										class="fa fa-university"></i> Students' Space</a></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
 								<li class="principale"><a href="about.jsp"><i
@@ -147,7 +146,7 @@
 						<div class="x_content">
 						<div style="margin-top:200px; margin-bottom:200px">
 							<center>
-							<h1>Welcome to Students' Area</h1>
+							<h1>Welcome to Students' Space</h1>
 							<h2>Please type your CNE to display your info.</h2>
 							<br><br>
 								<div style="width:200px">
@@ -160,8 +159,8 @@
 								<br>
 								<c:if test="${not empty student.lastName}">
 								<h4>Hello, ${student.lastName } ${student.firstName} </h4>
-								<h4>You've skipped class ${student.absence } time(s). <br>
-									Thus, you've been marked off by ${absenceMark } points, ${absenceDef } each time. <br>
+								<h4>You've skipped class ${student.absence } hours. <br>
+									Thus, you've been marked off by ${absenceMark } points, 1 point each ${absenceDef } hours . <br>
 									Your mark is ${student.note }</h4>
 								</c:if>
 								

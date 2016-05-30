@@ -52,25 +52,28 @@
 					<div class="left_col scroll-view">
 
 					<div class="navbar nav_title" style="border: 0;">
-						<a href="dashboard.jsp" class="site_title"><i
+						<a href="SimLogPan" class="site_title"><i
 							class="fa fa-cog"></i> <span>Dashboard</span></a>
 					</div>
 					<div class="clearfix"></div>
 
 					<!-- menu prile quick info -->
-					<div class="profile">
+				<div class="profile">
 						<div class="profile_pic">
-							<img src="images/img.jpg" alt="..."
+							<img src="images/sim.png" alt="..."
 								class="img-circle profile_img">
 						</div>
 						<div class="profile_info">
 							<br> <span>Welcome,</span>
-							<h2>Simour Houssein</h2>
+							<h2>Simour LHoussain</h2>
 						</div>
 					</div>
 					<!-- /menu prile quick info -->
 
 					<br />
+			<br>
+			<br>
+			<br>
 					<!-- sidebar menu -->
 					<div id="sidebar-menu"
 						class="main_menu_side hidden-print main_menu">
@@ -88,10 +91,9 @@
 								</li>
 								<li class="principale"><a href="Pedagogy"><i
 										class="fa fa-graduation-cap"></i> Pedagogy </a>
-									
-</li>
-								<li class="principale"><a href="calendar.jsp"><i
-										class="fa fa-calendar"></i> Calendar</a></li>
+								</li>
+								<li class="principale"><a href="Encadrement"><i
+										class="fa fa-laptop"></i>Encadrement</a></li>
 								<li class="principale"><a href="Logs"><i
 										class="fa fa-file-text"></i> Logs</a></li>
 								<li class="principale"><a href="rechercheAvancee.jsp"><i
@@ -99,56 +101,11 @@
 							</ul>
 						</div>
 					</div>
+					<!-- /sidebar menu -->
+				</div>
+			</div>
+			
 
-					<!-- /menu footer buttons -->
-					<!-- /menu footer buttons -->
-				</div>
-			</div>
-<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog"
-				aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">
-								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-							</button>
-							<h4 class="modal-title" id="myModalLabel">Image preview</h4>
-						</div>
-						<div class="modal-body">
-							<center>
-								<img src="" class="imagepreview"
-									style="width: 570px; height: 470px;">
-							</center>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Close</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="modal fade" id="videomodal" tabindex="-1" role="dialog"
-				aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">
-								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-							</button>
-							<h4 class="modal-title" id="myModalLabel">Video preview</h4>
-						</div>
-						<div class="modal-body">
-							<center>
-								<iframe class="videopreview" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-							</center>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Close</button>
-						</div>
-					</div>
-				</div>
-			</div>
 			<!-- top navigation -->
 			<div class="top_nav">
 
@@ -157,13 +114,26 @@
 					<div class="nav toggle">
 						<a id="menu_toggle"><i class="fa fa-bars"></i></a>
 					</div>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li class=""><a href="javascript:;"
+							class="user-profile dropdown-toggle" data-toggle="dropdown"
+							aria-expanded="false"> <img src="images/sim.png" alt="">Simour
+								Houssein <span class=" fa fa-angle-down"></span>
+						</a>
+							<ul
+								class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+								<li><a href="IndexServlet"> See Changes</a></li>
+								<li><a href="LogOut"><i
+										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+							</ul></li>
+					</ul>		
 					</nav>
-				</div>
-				<div class="title_right">
-					
 				</div>
 
 			</div>
+			
+			<!-- top navigation -->
 			<!-- /top navigation -->
 			<%int date = Integer.parseInt(new java.util.Date().toString().split(" ")[5]);
                pageContext.setAttribute("date", date);%>

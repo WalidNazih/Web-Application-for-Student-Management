@@ -51,7 +51,7 @@
 				<div class="left_col scroll-view">
 
 					<div class="navbar nav_title" style="border: 0;">
-						<a href="index.html" class="site_title"><i class="fa fa-cog"></i>
+						<a href="SimLogPan" class="site_title"><i class="fa fa-cog"></i>
 							<span>Dashboard</span></a>
 					</div>
 					<div class="clearfix"></div>
@@ -59,17 +59,20 @@
 					<!-- menu prile quick info -->
 					<div class="profile">
 						<div class="profile_pic">
-							<img src="images/img.jpg" alt="..."
+							<img src="images/sim.png" alt="..."
 								class="img-circle profile_img">
 						</div>
 						<div class="profile_info">
 							<br> <span>Welcome,</span>
-							<h2>Simour Houssein</h2>
+							<h2>Simour LHoussain</h2>
 						</div>
 					</div>
 					<!-- /menu prile quick info -->
 
 					<br />
+			<br>
+			<br>
+			<br>
 					<!-- sidebar menu -->
 					<div id="sidebar-menu"
 						class="main_menu_side hidden-print main_menu">
@@ -87,10 +90,9 @@
 								</li>
 								<li class="principale"><a href="Pedagogy"><i
 										class="fa fa-graduation-cap"></i> Pedagogy </a>
-									
-</li>
-								<li class="principale"><a href="calendar.jsp"><i
-										class="fa fa-calendar"></i> Calendar</a></li>
+								</li>
+								<li class="principale"><a href="Encadrement"><i
+										class="fa fa-laptop"></i>Encadrement</a></li>
 								<li class="principale"><a href="Logs"><i
 										class="fa fa-file-text"></i> Logs</a></li>
 								<li class="principale"><a href="rechercheAvancee.jsp"><i
@@ -98,9 +100,10 @@
 							</ul>
 						</div>
 					</div>
-
+					<!-- /sidebar menu -->
 				</div>
 			</div>
+			
 
 			<!-- top navigation -->
 			<div class="top_nav">
@@ -114,7 +117,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li class=""><a href="javascript:;"
 							class="user-profile dropdown-toggle" data-toggle="dropdown"
-							aria-expanded="false"> <img src="images/img.jpg" alt="">Simour
+							aria-expanded="false"> <img src="images/sim.png" alt="">Simour
 								Houssein <span class=" fa fa-angle-down"></span>
 						</a>
 							<ul
@@ -123,6 +126,7 @@
 								<li><a href="LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 							</ul></li>
+					</ul>		
 					</nav>
 				</div>
 
@@ -204,9 +208,9 @@
 											</c:forEach>
 										</select><br>
 										<input type="submit" name="remove" value="Remove"
-											class="btn btn-primary" style="margin-top: 10px"
+											class="btn btn-primary" style="margin-top: 17px"
 											onclick="showModal()" /> <input type="submit" name="add"
-											value="Add" class="btn btn-primary" style="margin-top: 14px"
+											value="Add" class="btn btn-primary" style="margin-top: 17px"
 											onclick="showModal()" /><br>
 										
 										<br>
@@ -245,14 +249,13 @@
 											</c:forEach>
 										</select><br>
 										<input type="submit" name="removestu" value="Remove"
-											class="btn btn-primary" style="margin-top: 11px"
+											class="btn btn-primary" style="margin-top: 25px"
 											onclick="showModal()" />
 										<input type="submit" name="addstu" value="Add"
-											class="btn btn-primary" style="margin-top: 11px"
+											class="btn btn-primary" style="margin-top: 25px"
 											onclick="showModal()" />
 									</div>
 								</form>
-								<br>
 								<br>
 
 							</div>
@@ -317,18 +320,18 @@
 									<div id="fields">
 										CNE : <input type="text" name="cne" size="59"
 											required=""  id="lessonUrl" /><br>
-										Mark : <input type="text" name="mark" size="59"
+										Number of hours : <input type="text" name="absHour" size="59"
+											 id="lessonUrl" /><br>
+										Grade : <input type="text" name="mark" size="59"
 											 id="lessonUrl" /><br>	
 
 										 <br> <input type="submit" name="absent" value="Mark as absent"
-											class="btn btn-primary" style="margin-top: 14px"
+											class="btn btn-primary" style="margin-top: 0px"
 											onclick="showModal()" />
 											<input type="submit" name="upMark" value="Update Mark"
-											class="btn btn-primary" style="margin-top: 14px"
+											class="btn btn-primary" style="margin-top: 0px"
 											onclick="showModal()" /><br>
 									</div>
-									<br>
-									<br>
 								</form>
 							</div>
 						</div>

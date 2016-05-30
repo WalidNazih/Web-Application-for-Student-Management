@@ -88,7 +88,7 @@ public class Students extends HttpServlet {
 			}else if(request.getParameter("absent") != null){
 				HttpSession session = request.getSession();
 				String cne = request.getParameter("cne");
-        		
+				String absHour = request.getParameter("absHour");
         		ResultSet rs = dao.getStudentInfo(cne);
         		rs.next();
         		
@@ -99,7 +99,7 @@ public class Students extends HttpServlet {
         		rs = dao.getSetting("absence");
         		rs.next();
         		System.out.println(Double.parseDouble(rs.getString(3)));
-        		dao.markAbsent(cne, abs+1, note - Double.parseDouble(rs.getString(3)));
+        		dao.markAbsent(cne, Double.parseDouble(absHour), note - (Double.parseDouble(absHour) / Double.parseDouble(rs.getString(3))));
         		
 	    		dao.insertLog("Marked Student as absent "+cne, request.getRemoteAddr());
 	    		ServletContext context= getServletContext();
@@ -125,7 +125,7 @@ public class Students extends HttpServlet {
         		request.setAttribute("student", s);
         		rs = dao.getSetting("absence");
         		rs.next();
-        		request.setAttribute("absenceMark", s.getAbsence() * Integer.parseInt(rs.getString(3)));
+        		request.setAttribute("absenceMark", s.getAbsence() / Double.parseDouble(rs.getString(3)));
         		request.setAttribute("absenceDef", rs.getString(3));
         		request.getRequestDispatcher("/students.jsp").forward(request,response);
 			}

@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- Meta, title, CSS, favicons, etc. -->
@@ -10,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Encadrement Settings |</title>
+<title>Interesting links |</title>
 
 <!-- Bootstrap core CSS -->
 
@@ -21,11 +22,10 @@
 
 <!-- Custom styling plus plugins -->
 <link href="css/custom.css" rel="stylesheet">
-<link href="css/icheck/flat/green.css" rel="stylesheet" />
-<link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
+<link href="css/icheck/flat/green.css" rel="stylesheet">
+
 
 <script src="js/jquery.min.js"></script>
-<script src="js/nprogress.js"></script>
 
 <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -51,10 +51,11 @@
 				<div class="left_col scroll-view">
 
 					<div class="navbar nav_title" style="border: 0;">
-						<a href="SimLogPan" class="site_title"><i class="fa fa-cog"></i>
-							<span>Dashboard</span></a>
+						<a href="dashboard.jsp" class="site_title"><i
+							class="fa fa-cog"></i> <span>Dashboard</span></a>
 					</div>
 					<div class="clearfix"></div>
+
 
 					<!-- menu prile quick info -->
 					<div class="profile">
@@ -131,111 +132,64 @@
 				</div>
 
 			</div>
-			<!-- /top navigation -->
-
-
-			<!-- page content -->
 			<div class="right_col" role="main">
-
-				<!-- top tiles -->
-				<div class="row tile_count"></div>
-
-				<br />
-
+				<div class="page-title"></div>
+				<div class="clearfix"></div>
 				<div class="row">
-					<div class="col-md-4 col-sm-12 col-xs-12">
-						<div class="x_panel tile fixed_height_400 overflow_hidden">
+					<div class="col-md-12">
+						<div class="x_panel">
 							<div class="x_title">
-								<h2>Add Group</h2>
+								<h2>Interesting links</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content">
-
-								<form action="Encadrement" method="POST">
-									<div id="fields">
-										Name :<br> <input type="text" name="name" size="59"
-											required="" id="lessonUrl" /><br> <br> 
-										Project :<br> <input type="text" name="project" size="59"
-											required="" id="lessonUrl" /><br> <br> Class :<br>
-										<select style="width: 100%" name="classSelect">
-											<c:forEach var="cl" items="${classL }">
-												<option value="${cl.option} (${cl.niveau})">${cl.option}
-													(${cl.niveau})</option>
-											</c:forEach>
-										</select> <br> <br><input type="submit" name="groupbtn" value="Add"
-											class="btn btn-primary" style="margin-top: 10px"
-											onclick="showModal()" />
+								<div class="row">
+									<div style="margin-left:5px">
+									<ul>
+										<c:forEach var="log" items="${linkList }">
+											<li>
+										<a href="${log.url}"></a>${log.url}</li>
+										</c:forEach>
+									</ul>
+										
 									</div>
-									<br>
 
-								</form>
-								<br>
+								</div>
 							</div>
+							</div>
+
 						</div>
+						<!-- /page content -->
 					</div>
+
+				</div>
+
+				<div id="custom_notifications" class="custom-notifications dsp_none">
+					<ul class="list-unstyled notifications clearfix"
+						data-tabbed_notifications="notif-group">
+					</ul>
+					<div class="clearfix"></div>
+					<div id="notif-group" class="tabbed_notifications"></div>
+				</div>
+
+				<script src="js/bootstrap.min.js"></script>
+
+				<script src="js/progressbar/bootstrap-progressbar.min.js"></script>
+				<script src="js/icheck/icheck.min.js"></script>
 				
-						<div class="col-md-8 col-sm-12 col-xs-12">
-							<div class="x_panel tile fixed_height_400">
-								<div class="x_title">
-									<h2>Groups</h2>
-									<div class="clearfix"></div>
-								</div>
-								<div class="x_content">
-									<c:forEach var="cl" items="${groupList}">
-										<div class="col-md-4 col-xs-12 col-sm-12"
-											style="margin-left: -10px; margin-top: 20px">
-											<h2>${cl.name}</h2>
-											<h4>(${ cl.project})</h4>
-										</div>
-									</c:forEach>
-									
-								</div>
-								
-							</div>
-						</div>
-					</div>
-					<!-- footer content -->
-				<!-- /footer content -->
-			</div>
-			
-			
-</div>
-		</div>
-		
-
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/custom.js"></script>
-		<script src="js/ajax.js"></script>
-		
-		<script>
-			NProgress.done();
-		</script>
-		<script type="text/javascript">
-			function readURL(input) {
-
-				if (input.files && input.files[0]) {
-					var fu1 = document.getElementById("myLesson");
-					$("#lessonUrl").attr('value',
-							fu1.value.split("\\")[2].split(".")[0]);
-				}
-			}
-
-			$("#myLesson").change(function() {
-				readURL(this);
-			});
-		</script>
-		<script type="text/javascript">
+				
+				<script type="text/javascript">
 		$(document).ready(function() {
 			var toggled = true;
-			var liSize = $(".principale").width() - 5;
-
+			var liSize = $(".left_col").width();
+			$(".principale").width(liSize);
 			$("#menu_toggle").click(function() {
 				$("#logosmall").toggle();
 				$("#logobig").toggle();
 				if (toggled) {
 					$(".principale").width(65);
 				} else {
-					$(".principale").width(liSize);
+					$(".principale").width(liSize-5);
 				}
 				toggled = !toggled;
 			});
@@ -248,6 +202,7 @@
 
 		});
 	</script>
+	<script src="js/custom.js"></script>
 </body>
 
 </html>

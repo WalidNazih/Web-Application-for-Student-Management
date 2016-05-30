@@ -80,10 +80,9 @@
 									<ul class="nav child_menu" style="display: none">
 										<li><a href="Initiale">Formation Initiale</a></li>
 										<li><a href="Continue">Formation Continue</a></li>
-										<li><a href="Continue">Encadrement</a></li>
 									</ul></li>
 								<li class="principale"><a href="students.jsp"><i
-										class="fa fa-university"></i> Students Area</a></li>
+										class="fa fa-university"></i> Students' Space</a></li>
 								<li class="principale"><a href="contact.jsp"><i
 										class="fa fa-envelope-o"></i> Contact</a></li>
 								<li class="principale"><a href="about.jsp"><i

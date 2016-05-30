@@ -1,7 +1,9 @@
 package myservlets;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -11,19 +13,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.Link;
 import classes.DAO;
 
 /**
- * Servlet implementation class UpdateSettings
+ * Servlet implementation class Links
  */
-@WebServlet("/UpdateSettings")
-public class UpdateSettings extends HttpServlet {
+@WebServlet("/Links")
+public class Links extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateSettings() {
+    public Links() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,34 +35,32 @@ public class UpdateSettings extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(request.getParameter("markUpdate") != null){
-			String absence = request.getParameter("mark");
-			try {
-				DAO dao = new DAO("Simour","root","");
-				dao.updateSettings("absence", absence);
-				dao.insertLog("Updated absence setting to ("+absence+")", request.getRemoteAddr());
+		
+		System.out.println("links servlet");
+		try {
+			DAO dao = new DAO("simour", "root", "");
+			if(request.getParameter("addlink") != null){
+				String link = request.getParameter("link");
+				System.out.println(link);
+				dao.addLink(link);
 				ServletContext context= getServletContext();
 				RequestDispatcher rd= context.getRequestDispatcher("/SimLogPan");
 				rd.forward(request, response);
-			} catch (ClassNotFoundException | SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}else if(request.getParameter("newsUpdate") != null){
-			String news = request.getParameter("news");
-			System.out.println(news);
-			try {
-				DAO dao = new DAO("Simour","root","");
-				dao.updateSettings("news", news);
-				dao.insertLog("Updated news to ("+news+")", request.getRemoteAddr());
-				dao.insertNotifi("Message from Mr Simour", news);
-				ServletContext context= getServletContext();
-				RequestDispatcher rd= context.getRequestDispatcher("/SimLogPan");
+			}else{
+				ResultSet rs = dao.getLinks();
+				ArrayList<Link> ar = new ArrayList<>();
+				while(rs.next()){
+					Link l = new Link(rs.getInt(1), rs.getString(2));
+					ar.add(l);
+				}
+				request.setAttribute("linkList", ar);
+				RequestDispatcher rd= request.getRequestDispatcher("links.jsp");
 				rd.forward(request, response);
-			} catch (ClassNotFoundException | SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -67,7 +68,6 @@ public class UpdateSettings extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
