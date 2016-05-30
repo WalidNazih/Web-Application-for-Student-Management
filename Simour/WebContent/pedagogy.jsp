@@ -82,7 +82,7 @@
 								<li class="principale"><a
 									href="GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
-								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
+								<li class="principale"><a href="Research"><i class="fa fa-book"></i>
 										Research</a>
 								</li>
 								<li class="principale"><a href="Pedagogy"><i
@@ -413,7 +413,7 @@
 		<script type="text/javascript">
 		$(document).ready(function() {
 			var toggled = true;
-			var liSize = $(".principale").width();
+			var liSize = $(".principale").width() - 5;
 
 			$("#menu_toggle").click(function() {
 				$("#logosmall").toggle();

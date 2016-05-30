@@ -242,6 +242,27 @@ public class DAO {
 		return preparedStatement.executeQuery();
 	}
 	
+	public ResultSet getTopBooks() throws SQLException{
+		String sql = "SELECT * FROM ( SELECT * FROM book ORDER BY downloads DESC LIMIT 1 ) sub ORDER BY id ASC";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getTopArticles() throws SQLException{
+		String sql = "SELECT * FROM ( SELECT * FROM article ORDER BY downloads DESC LIMIT 1 ) sub ORDER BY id ASC";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
+	public ResultSet getTopChapters() throws SQLException{
+		String sql = "SELECT * FROM ( SELECT * FROM chapters ORDER BY id DESC LIMIT 1 ) sub ORDER BY id ASC";
+		preparedStatement = con.prepareStatement(sql);
+		preparedStatement.executeQuery();
+		return preparedStatement.executeQuery();
+	}
+	
 	public ResultSet getLastImageLikes() throws SQLException{
 		String sql = "SELECT * FROM ( SELECT * FROM imagelikes ORDER BY id DESC LIMIT 6 ) sub ORDER BY id ASC";
 		preparedStatement = con.prepareStatement(sql);

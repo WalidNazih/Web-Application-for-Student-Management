@@ -71,26 +71,33 @@
 
           <br />
           <!-- sidebar menu -->
-          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+          <div id="sidebar-menu"
+						class="main_menu_side hidden-print main_menu">
 
-            <div class="menu_section">
-              <h3>General</h3>
-               <ul class="nav side-menu">
-                <li><a  href="SimLogPan"><i class="fa fa-home"></i> Home</a>
-                </li>
-                <li><a  href="GalleryBack"><i class="fa fa-camera-retro"></i> Gallery</a>
-                </li>
-                <li><a href="research.jsp"><i class="fa fa-book"></i> Research </a>
-                </li>
-
-                <li><a href="pedagogy.jsp"><i class="fa fa-graduation-cap"></i> Pedagogy</a>
-                </li>
-                <li><a href="calendar.jsp"><i class="fa fa-calendar"></i> Calendar</a>
-                </li>
-               
-              </ul>
-            </div>
-          </div>
+						<div class="menu_section">
+							<ul class="nav side-menu">
+								<li class="principale"><a
+									href="SimLogPan"><i
+										class="fa fa-home"></i> Home</a></li>
+								<li class="principale"><a
+									href="GalleryBack"><i
+										class="fa fa-camera-retro"></i> Gallery</a></li>
+								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
+										Research</a>
+								</li>
+								<li class="principale"><a href="Pedagogy"><i
+										class="fa fa-graduation-cap"></i> Pedagogy </a>
+									
+</li>
+								<li class="principale"><a href="calendar.jsp"><i
+										class="fa fa-calendar"></i> Calendar</a></li>
+								<li class="principale"><a href="Logs"><i
+										class="fa fa-file-text"></i> Logs</a></li>
+								<li class="principale"><a href="rechercheAvancee.jsp"><i
+										class="fa fa-search"></i> Advanced Search</a></li>		
+							</ul>
+						</div>
+					</div>
           <!-- /sidebar menu -->
 				</div>
 			</div>

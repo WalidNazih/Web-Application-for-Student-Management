@@ -76,11 +76,14 @@ public class IndexServlet extends HttpServlet {
 				slideList.add(image);
 				
 			}
+			rs = dao.getSetting("news");
+			rs.next();
 			session.setAttribute("lastIm", lastIm);
 			session.setAttribute("lastArt", lastArt);
 			session.setAttribute("lastLess", lastLess);
 			session.setAttribute("lastVid", lastVid);
 			session.setAttribute("slideL", slideList);
+			session.setAttribute("newsSetting", rs.getString(3));
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

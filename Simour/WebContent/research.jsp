@@ -87,7 +87,7 @@
 								<li class="principale"><a
 									href="GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
-								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
+								<li class="principale"><a href="Research"><i class="fa fa-book"></i>
 										Research</a>
 								</li>
 								<li class="principale"><a href="Pedagogy"><i
@@ -283,7 +283,54 @@
 								<div class="clearfix"></div>
 							</div>
 							<div>
-								
+								<c:forEach var="ar" items="${topBook}">
+												<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" style="height:154px">
+													<div style="float:left; display:block;margin-right:20px">
+														<div style="width:140px;height:100px">
+															<img style="width: 100%; height: 150px; display: block;"
+																src="${ar.icon}" alt="image" id="clickImage" />
+															
+														</div>
+														
+													</div>
+													<div style="margin-left:50px">
+															<h3 style="font-family: 'Titillium Web', sans-serif; font-size:2vw; font-weight:bold">${ar.title}</h3>
+															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary lessonDown"> Download </a>
+														</div>
+												</div> 
+											</c:forEach>
+											<c:forEach var="ar" items="${topChap}">
+												<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" style="height:154px">
+													<div style="float:left; display:block;margin-right:20px">
+														<div style="width:140px;height:100px">
+															<img style="width: 100%; height: 150px; display: block;"
+																src="${ar.icon}" alt="image" id="clickImage" />
+															
+														</div>
+														
+													</div>
+													<div style="margin-left:50px">
+															<h3 style="font-family: 'Titillium Web', sans-serif; font-size:2vw; font-weight:bold">${ar.title}</h3>
+															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary lessonDown"> Download </a>
+														</div>
+												</div> 
+											</c:forEach>
+											<c:forEach var="ar" items="${topArt}">
+												<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6" style="height:154px">
+													<div style="float:left; display:block;margin-right:20px">
+														<div style="width:140px;height:100px">
+															<img style="width: 100%; height: 150px; display: block;"
+																src="${ar.icon}" alt="image" id="clickImage" />
+															
+														</div>
+														
+													</div>
+													<div style="margin-left:50px">
+															<h3 style="font-family: 'Titillium Web', sans-serif; font-size:2vw; font-weight:bold">${ar.title}</h3>
+															<a href="${ar.url}" style="position: absolute;bottom:0;" class="btn btn-primary lessonDown"> Download </a>
+														</div>
+												</div> 
+											</c:forEach>
 							</div>
 							<div class="clearfix"></div>
 						</div>
@@ -299,7 +346,7 @@
 		<script type="text/javascript">
 		$(document).ready(function() {
 			var toggled = true;
-			var liSize = $(".principale").width();
+			var liSize = $(".principale").width() - 5;
 
 			$("#menu_toggle").click(function() {
 				$("#logosmall").toggle();

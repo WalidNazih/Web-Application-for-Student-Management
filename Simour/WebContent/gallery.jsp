@@ -88,7 +88,7 @@
 								<li class="principale"><a
 									href="GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
-								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
+								<li class="principale"><a href="Research"><i class="fa fa-book"></i>
 										Research</a>
 								</li>
 								<li class="principale"><a href="Pedagogy"><i
@@ -97,6 +97,10 @@
 </li>
 								<li class="principale"><a href="calendar.jsp"><i
 										class="fa fa-calendar"></i> Calendar</a></li>
+								<li class="principale"><a href="Logs"><i
+										class="fa fa-file-text"></i> Logs</a></li>
+								<li class="principale"><a href="rechercheAvancee.jsp"><i
+										class="fa fa-search"></i> Advanced Search</a></li>		
 							</ul>
 						</div>
 					</div>
@@ -125,6 +129,7 @@
 								<li><a href="LogOut"><i
 										class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 							</ul></li>
+					</ul>		
 					</nav>
 				</div>
 
@@ -343,7 +348,7 @@
         <script type="text/javascript">
 		$(document).ready(function() {
 			var toggled = true;
-			var liSize = $(".principale").width();
+			var liSize = $(".principale").width()-5;
 
 			$("#menu_toggle").click(function() {
 				$("#logosmall").toggle();

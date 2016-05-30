@@ -82,12 +82,12 @@
 			<div class="col-md-3 left_col">
 				<div class="left_col scroll-view">
 					<div>
-						<a id="logobig" href="index.jsp"><img
+						<a id="logobig" href="IndexServlet"><img
 							style="margin-bottom: -10px; width: 180px; height: 60px; margin-top: 20px; margin-left: 10px"
 							src="images/logo.png"></a>
 					</div>
 					<div>
-						<a id="logosmall" hidden="true" href="index.jsp"><img
+						<a id="logosmall" hidden="true" href="IndexServlet"><img
 							style="height: 30px; width: 35px; margin-top: 20px; margin-left: 17px"
 							src="images/logosmall.png"></a>
 					</div>
@@ -245,6 +245,12 @@
 					</form>
 
 				</div>
+				<br><br>
+				<div class="copyright-info">
+					<p class="pull-right">
+						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
+					</p>
+				</div>
 			</div>
 			<!-- /page content -->
 
@@ -276,7 +282,7 @@
 				if (toggled) {
 					$(".principale").width(65);
 				} else {
-					$(".principale").width(liSize);
+					$(".principale").width(liSize-5);
 				}
 				toggled = !toggled;
 			});

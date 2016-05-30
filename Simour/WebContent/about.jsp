@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>About|</title>
+<title>Simour |</title>
 
 <!-- Bootstrap core CSS -->
 
@@ -20,20 +21,8 @@
 
 <!-- Custom styling plus plugins -->
 <link href="css/custom.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css"
-	href="css/maps/jquery-jvectormap-2.0.3.css" />
 <link href="css/icheck/flat/green.css" rel="stylesheet" />
 <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" type="text/css">
-<link href='https://fonts.googleapis.com/css?family=Kaushan+Script'
-	rel='stylesheet' type='text/css'>
-<link
-	href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'
-	rel='stylesheet' type='text/css'>
-<link
-	href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
-	rel='stylesheet' type='text/css'>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/nprogress.js"></script>
@@ -48,25 +37,30 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Indie+Flower'
+	rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+<!-- use jssor.slider.debug.js instead for debug -->
+
 </head>
 
 
 <body class="nav-md">
-
 	<div class="container body">
-
-
 		<div class="main_container">
+
+
 
 			<div class="col-md-3 left_col">
 				<div class="left_col scroll-view">
 					<div>
-						<a id="logobig" href="index.jsp"><img
+						<a id="logobig" href="IndexServlet"><img
 							style="margin-bottom: -10px; width: 180px; height: 60px; margin-top: 20px; margin-left: 10px"
 							src="images/logo.png"></a>
 					</div>
 					<div>
-						<a id="logosmall" hidden="true" href="index.jsp"><img
+						<a id="logosmall" hidden="true" href="IndexServlet"><img
 							style="height: 30px; width: 35px; margin-top: 20px; margin-left: 17px"
 							src="images/logosmall.png"></a>
 					</div>
@@ -111,7 +105,6 @@
 					</div>
 					<!-- /sidebar menu -->
 
-
 				</div>
 			</div>
 
@@ -125,8 +118,21 @@
 					</div>
 					</nav>
 				</div>
+
 				<div class="title_right">
-					
+					<div
+						class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+						<form action="Search" method="POST">
+							<div class="input-group"
+								style="margin-top: -50px; width: 250px; float: right">
+								<input type="text" class="form-control" name="searchQuery"
+									placeholder="Search for..."> <span
+									class="input-group-btn"> <input class="btn btn-default"
+									type="submit" value="GO">
+								</span>
+							</div>
+						</form>
+					</div>
 				</div>
 
 			</div>
@@ -135,11 +141,12 @@
 
 			<!-- page content -->
 			<div class="right_col" role="main">
-
-				<!-- top tiles -->
-				<div class="row tile_count"></div>
+				<div class="page-title"></div>
+				<div class="clearfix"></div>
 				<div class="row">
-					<section id="about" style="margin-top:-150px">
+					<div class="x_panel">
+						<div class="x_content">
+							<section id="about" style="margin-top:-120px;margin-bottom:20px">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12 text-center">
@@ -231,13 +238,19 @@
 						</div>
 					</div>
 					</section>
+						</div>
+					</div>
+					<div class="copyright-info">
+					<p class="pull-right">
+						Developed by:  Askour Safa&agrave & Nazih Walid | D&eacutepartement Informatique 
+					</p>
+				</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
 
-		<script type="text/javascript">
+	<script type="text/javascript">
 		$(document).ready(function() {
 			var toggled = true;
 			var liSize = $(".left_col").width();
@@ -248,7 +261,7 @@
 				if (toggled) {
 					$(".principale").width(65);
 				} else {
-					$(".principale").width(liSize);
+					$(".principale").width(liSize-5);
 				}
 				toggled = !toggled;
 			});
@@ -262,16 +275,7 @@
 		});
 	</script>
 	
-
-	<script src="js/bootstrap.min.js"></script>s
 	<script src="js/custom.js"></script>
-
-	<script>
-		NProgress.done();
-	</script>
-
 </body>
-
-</html>
 
 </html>

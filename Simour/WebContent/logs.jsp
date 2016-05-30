@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Inbox settings |</title>
+<title>Logs |</title>
 
 <!-- Bootstrap core CSS -->
 
@@ -83,7 +83,7 @@
 								<li class="principale"><a
 									href="GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
-								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
+								<li class="principale"><a href="Research"><i class="fa fa-book"></i>
 										Research</a>
 								</li>
 								<li class="principale"><a href="Pedagogy"><i
@@ -189,7 +189,7 @@
 				if (toggled) {
 					$(".principale").width(65);
 				} else {
-					$(".principale").width(liSize);
+					$(".principale").width(liSize-5);
 				}
 				toggled = !toggled;
 			});
