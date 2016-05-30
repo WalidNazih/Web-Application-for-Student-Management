@@ -81,19 +81,22 @@
 						class="main_menu_side hidden-print main_menu">
 
 						<div class="menu_section">
-							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a href="SimLogPan"><i class="fa fa-home"></i>
-										Home</a></li>
-								<li><a href="gallery.jsp"><i class="fa fa-camera-retro"></i>
-										Gallery</a></li>
-								<li><a href="research.jsp"><i class="fa fa-book"></i>
-										Research </a></li>
-
-								<li><a href="pedagogy.jsp"><i
-										class="fa fa-graduation-cap"></i> Pedagogy</a></li>
-								<li><a href="calendar.jsp"><i class="fa fa-calendar"></i>
-										Calendar</a></li>
+								<li class="principale"><a
+									href="SimLogPan"><i
+										class="fa fa-home"></i> Home</a></li>
+								<li class="principale"><a
+									href="GalleryBack"><i
+										class="fa fa-camera-retro"></i> Gallery</a></li>
+								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
+										Research</a>
+								</li>
+								<li class="principale"><a href="Pedagogy"><i
+										class="fa fa-graduation-cap"></i> Pedagogy </a>
+									
+</li>
+								<li class="principale"><a href="calendar.jsp"><i
+										class="fa fa-calendar"></i> Calendar</a></li>
 							</ul>
 						</div>
 					</div>
@@ -314,18 +317,11 @@
 												<img style="width: 100%; height: 180px; display: block;"
 													src="${vid.thumbnail}" alt="video" id="clickImage" />
 												<div class="mask" style="color: white">
-													<a href="#" class="like"><i
-														style="color: white; margin-top: 90px"
-														class="fa fa-heart-o fa-2x"></i> <img
-														style="display: none; width: 100%; height: 230px;"
-														src="${vid.url}" alt="image" id="clickImage" /> </a> <a
-														href="#" class="vidpop"><i
-														style="color: white; margin-top: 90px"
-														class="fa fa-search fa-2x"></i> <img
-														style="display: none; width: 100%; height: 230px;"
-														src="${vid.url}" alt="image" id="clickImage" /> </a> <br>
-													<i id="likecount" style="font-weight: bold">${vid.likes}
+													<div style="margin-top: 80px">
+															<i id="likecount" style="font-weight: bold">${vid.likes}
 														likes</i>
+														</div>
+													
 												</div>
 
 

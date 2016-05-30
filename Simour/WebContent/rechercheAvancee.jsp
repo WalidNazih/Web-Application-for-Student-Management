@@ -76,20 +76,26 @@
 						class="main_menu_side hidden-print main_menu">
 
 						<div class="menu_section">
-							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a href="dashboard.jsp"><i class="fa fa-home"></i>
-										Home</a></li>
-								<li><a href="GalleryBack"><i
+								<li class="principale"><a
+									href="SimLogPan"><i
+										class="fa fa-home"></i> Home</a></li>
+								<li class="principale"><a
+									href="GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
-								<li><a href="research.jsp"><i class="fa fa-book"></i>
-										Research </a></li>
-								<li><a href="pedagogy.jsp"><i
-										class="fa fa-graduation-cap"></i> Pedagogy</a></li>
-								<li><a href="calendar.jsp"><i class="fa fa-calendar"></i>
-										Calendar</a></li>
-								<li><a href="about.jsp"><i class="fa fa-edit"></i>
-										About </a></li>
+								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
+										Research</a>
+								</li>
+								<li class="principale"><a href="Pedagogy"><i
+										class="fa fa-graduation-cap"></i> Pedagogy </a>
+									
+</li>
+								<li class="principale"><a href="calendar.jsp"><i
+										class="fa fa-calendar"></i> Calendar</a></li>
+								<li class="principale"><a href="Logs"><i
+										class="fa fa-file-text"></i> Logs</a></li>
+								<li class="principale"><a href="rechercheAvancee.jsp"><i
+										class="fa fa-search"></i> Advanced Search</a></li>		
 							</ul>
 						</div>
 					</div>
@@ -217,7 +223,7 @@
 																src="${image.url}" alt="image" id="clickImage" />
 															<div class="mask" style="color: white;height:230px">
 																<br>
-																<i id="likecount" style="font-weight: bold">${image.likes}
+																<i id="likecount" style="font-weight: bold; margin-top:110px;">${image.likes}
 																	likes</i>
 															</div>
 
@@ -248,7 +254,7 @@
 																src="${vid.thumbnail}" alt="video" id="clickImage" />
 															<div class="mask" style="color: white;height:230px">
 																 <br>
-																<i id="likecount" style="font-weight: bold">${vid.likes}
+																<i id="likecount" style="font-weight: bold; margin-top:110px;">${vid.likes}
 																	likes</i>
 															</div>
 

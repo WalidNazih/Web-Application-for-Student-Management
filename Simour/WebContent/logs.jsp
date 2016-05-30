@@ -76,21 +76,26 @@
 						class="main_menu_side hidden-print main_menu">
 
 						<div class="menu_section">
-							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a href="dashboard.jsp"><i class="fa fa-home"></i>
-										Home</a></li>
-								<li><a href="GalleryBack"><i
+								<li class="principale"><a
+									href="SimLogPan"><i
+										class="fa fa-home"></i> Home</a></li>
+								<li class="principale"><a
+									href="GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
-								<li><a href="research.jsp"><i class="fa fa-book"></i>
-										Research </a></li>
-
-								<li><a href="pedagogy.jsp"><i
-										class="fa fa-graduation-cap"></i> Pedagogy</a></li>
-								<li><a href="calendar.jsp"><i class="fa fa-calendar"></i>
-										Calendar</a></li>
-								<li><a href="about.jsp"><i class="fa fa-edit"></i>
-										About </a></li>
+								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
+										Research</a>
+								</li>
+								<li class="principale"><a href="Pedagogy"><i
+										class="fa fa-graduation-cap"></i> Pedagogy </a>
+									
+</li>
+								<li class="principale"><a href="calendar.jsp"><i
+										class="fa fa-calendar"></i> Calendar</a></li>
+								<li class="principale"><a href="Logs"><i
+										class="fa fa-file-text"></i> Logs</a></li>
+								<li class="principale"><a href="rechercheAvancee.jsp"><i
+										class="fa fa-search"></i> Advanced Search</a></li>		
 							</ul>
 						</div>
 					</div>
@@ -171,7 +176,33 @@
 
 				<script src="js/progressbar/bootstrap-progressbar.min.js"></script>
 				<script src="js/icheck/icheck.min.js"></script>
-				<script src="js/custom.js"></script>
+				
+				
+				<script type="text/javascript">
+		$(document).ready(function() {
+			var toggled = true;
+			var liSize = $(".left_col").width();
+			$(".principale").width(liSize);
+			$("#menu_toggle").click(function() {
+				$("#logosmall").toggle();
+				$("#logobig").toggle();
+				if (toggled) {
+					$(".principale").width(65);
+				} else {
+					$(".principale").width(liSize);
+				}
+				toggled = !toggled;
+			});
+
+			$(".principale").click(function() {
+				if (!toggled) {
+					$(this).width(70);
+				}
+			});
+
+		});
+	</script>
+	<script src="js/custom.js"></script>
 </body>
 
 </html>

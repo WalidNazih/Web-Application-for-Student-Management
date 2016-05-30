@@ -76,23 +76,34 @@
 					<!-- /menu prile quick info -->
 
 					<br />
+					<br />
+					<br />
+					<br />
 					<!-- sidebar menu -->
 					<div id="sidebar-menu"
 						class="main_menu_side hidden-print main_menu">
 
 						<div class="menu_section">
-							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a href="SimLogPan"><i class="fa fa-home"></i>
-										Home</a></li>
-								<li><a href="GalleryBack"><i
+								<li class="principale"><a
+									href="SimLogPan"><i
+										class="fa fa-home"></i> Home</a></li>
+								<li class="principale"><a
+									href="GalleryBack"><i
 										class="fa fa-camera-retro"></i> Gallery</a></li>
-								<li><a href="research.jsp"><i class="fa fa-book"></i>
-										Research </a></li>
-								<li><a href="pedagogy.jsp"><i
-										class="fa fa-graduation-cap"></i> Pedagogy</a></li>
-								<li><a href="calendar.jsp"><i class="fa fa-calendar"></i>
-										Calendar</a></li>
+								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
+										Research</a>
+								</li>
+								<li class="principale"><a href="Pedagogy"><i
+										class="fa fa-graduation-cap"></i> Pedagogy </a>
+									
+</li>
+								<li class="principale"><a href="calendar.jsp"><i
+										class="fa fa-calendar"></i> Calendar</a></li>
+								<li class="principale"><a href="Logs"><i
+										class="fa fa-file-text"></i> Logs</a></li>
+								<li class="principale"><a href="rechercheAvancee.jsp"><i
+										class="fa fa-search"></i> Advanced Search</a></li>		
 							</ul>
 						</div>
 					</div>
@@ -248,32 +259,22 @@
 							<div class="x_content">
 								<div class="dashboard-widget-content">
 									 <h4>Pictures</h4>
-									<ul class="list-unstyled timeline widget">
+									<ul>
 									<c:forEach var="im" items="${lastImgLike }">
 										<li>
-											<div class="block">
-												<div class="block_content">
-													<h2 class="title">
-														<a>${im.visitor } liked ${im.image }</a>
-													</h2>
-												</div>	
-											</div>
+										
+														${im.visitor } liked ${im.image }
 										</li>
 									</c:forEach>
 										
 										
 									</ul>
 									<h4>Videos</h4>
-									<ul class="list-unstyled timeline widget">
+									<ul>
 									<c:forEach var="im" items="${lastVidLike }">
 										<li>
-											<div class="block">
-												<div class="block_content">
-													<h2 class="title">
-														<a>${im.visitor } liked ${im.video }</a>
-													</h2>
-												</div>	
-											</div>
+											
+														${im.visitor } liked ${im.video }
 										</li>
 									</c:forEach>
 										
@@ -394,7 +395,7 @@
 
 	<script src="js/bootstrap.min.js"></script>
 
-	<script src="js/custom.js"></script>
+
 	<script>
 		NProgress.done();
 	</script>
@@ -541,7 +542,7 @@
 
 		});
 	</script>
-	
+		<script src="js/custom.js"></script>
 </body>
 
 </html>

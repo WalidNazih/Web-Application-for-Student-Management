@@ -94,6 +94,10 @@
 </li>
 								<li class="principale"><a href="calendar.jsp"><i
 										class="fa fa-calendar"></i> Calendar</a></li>
+								<li class="principale"><a href="Logs"><i
+										class="fa fa-file-text"></i> Logs</a></li>
+								<li class="principale"><a href="rechercheAvancee.jsp"><i
+										class="fa fa-search"></i> Advanced Search</a></li>		
 							</ul>
 						</div>
 					</div>
@@ -293,15 +297,6 @@
 		</div>
 
 	</div>
-
-	<div id="custom_notifications" class="custom-notifications dsp_none">
-		<ul class="list-unstyled notifications clearfix"
-			data-tabbed_notifications="notif-group">
-		</ul>
-		<div class="clearfix"></div>
-		<div id="notif-group" class="tabbed_notifications"></div>
-	</div>
-
 	<script src="js/bootstrap.min.js"></script>
 
 	<script src="js/nprogress.js"></script>

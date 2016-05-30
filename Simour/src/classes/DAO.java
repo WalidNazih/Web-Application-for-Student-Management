@@ -84,7 +84,7 @@ public class DAO {
 	}
 	
 	public void deleteBook(String title) throws SQLException{
-		String sql = "delete from books where title = ?";
+		String sql = "delete from book where title = ?";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.setString(1, title);
 		preparedStatement.executeUpdate();
@@ -161,7 +161,7 @@ public class DAO {
 	}
 	
 	public ResultSet getBookByDate(String month, String year) throws SQLException{
-		String sql = "SELECT * FROM books where (date like '%"+month+"%' and date like '%"+year+"%')";
+		String sql = "SELECT * FROM book where (date like '%"+month+"%' and date like '%"+year+"%')";
 		preparedStatement = con.prepareStatement(sql);
 		preparedStatement.executeQuery();
 		return preparedStatement.executeQuery();

@@ -413,9 +413,7 @@
 
 	<script src="js/bootstrap.min.js"></script>
 
-	<script src="js/custom.js"></script>
 
-	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var toggled = true;
@@ -455,6 +453,9 @@
 		});
 	</script>
 	<script src="js/modalshow.js"></script>
+		<script src="js/custom.js"></script>
+
+	
 </body>
 
 </html>

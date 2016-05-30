@@ -196,8 +196,7 @@
 														
 													</div>
 													<div style="margin-left:50px">
-															<h3 style="font-family: 'Titillium Web', sans-serif; font-size:40%; font-weight:bold">${ch.title}</h3>
-															<p >${ch.description}</p>
+															<h3 style="font-family: 'Titillium Web', sans-serif; font-size:2vw; font-weight:bold">${ch.title}</h3>
 															<a href="${ch.url}" style="position: absolute;bottom:0;" class="btn btn-primary"> Download </a>
 														</div>
 												</div> 

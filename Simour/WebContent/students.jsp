@@ -40,48 +40,7 @@
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Indie+Flower'
 	rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/jssor.slider.mini.js"></script>
-<!-- use jssor.slider.debug.js instead for debug -->
-<script>
-	jQuery(document).ready(function($) {
 
-		var jssor_1_SlideshowTransitions = [ {
-			$Duration : 1200,
-			$Opacity : 2
-		} ];
-
-		var jssor_1_options = {
-			$AutoPlay : true,
-			$SlideshowOptions : {
-				$Class : $JssorSlideshowRunner$,
-				$Transitions : jssor_1_SlideshowTransitions,
-				$TransitionsOrder : 1
-			},
-			$ArrowNavigatorOptions : {
-				$Class : $JssorArrowNavigator$
-			},
-			$BulletNavigatorOptions : {
-				$Class : $JssorBulletNavigator$
-			}
-		};
-
-		var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-		//you can remove responsive code if you don't want the slider scales while window resizes
-		function ScaleSlider() {
-			var bodyWidth = jssor_1_slider.$Elmt.parentNode.clientWidth;
-			if (bodyWidth)
-				jssor_1_slider.$ScaleWidth(Math.min(bodyWidth, 1920));
-			else
-				window.setTimeout(ScaleSlider, 10);
-		}
-		ScaleSlider();
-
-		$(window).bind("load", ScaleSlider);
-		$(window).bind("resize", ScaleSlider);
-		$(window).bind("orientationchange", ScaleSlider);
-	});
-</script>
 </head>
 
 

@@ -77,9 +77,7 @@ public class DeleteServlet extends HttpServlet {
 				IOUtils.copy(input, output);
 				dao.deleteBook(item);
 				dao.insertLog("Deleted the book ("+item+")", request.getRemoteAddr());
-				ServletContext context= getServletContext();
-				RequestDispatcher rd= context.getRequestDispatcher("/Research");
-				rd.forward(request, response);
+				request.getRequestDispatcher("/research.jsp").forward(request, response);
 			}else if(type.contains("Article")){
 				ResultSet rs = dao.getArticleByName(item);
 				rs.next();
@@ -88,9 +86,8 @@ public class DeleteServlet extends HttpServlet {
 				IOUtils.copy(input, output);
 				dao.deleteArticle(item);
 				dao.insertLog("Deleted the article ("+item+")", request.getRemoteAddr());
-				ServletContext context= getServletContext();
-				RequestDispatcher rd= context.getRequestDispatcher("/Research");
-				rd.forward(request, response);
+				
+				request.getRequestDispatcher("/research.jsp").forward(request, response);
 			}else if(type.contains("Book Chapter")){
 				ResultSet rs = dao.getChapterByName(item);
 				rs.next();
@@ -99,9 +96,7 @@ public class DeleteServlet extends HttpServlet {
 				IOUtils.copy(input, output);
 				dao.deleteChapter(item);
 				dao.insertLog("Deleted the book chapter ("+item+")", request.getRemoteAddr());
-				ServletContext context= getServletContext();
-				RequestDispatcher rd= context.getRequestDispatcher("/Research");
-				rd.forward(request, response);
+				request.getRequestDispatcher("/research.jsp").forward(request, response);
 			}else if(type.contains("(")){
 				ResultSet rs = dao.getLessonByName(item);
 				rs.next();

@@ -75,19 +75,26 @@
 						class="main_menu_side hidden-print main_menu">
 
 						<div class="menu_section">
-							<h3>General</h3>
 							<ul class="nav side-menu">
-								<li><a href="SimLogPan"><i class="fa fa-home"></i>
-										Home</a></li>
-								<li><a href="gallery.jsp"><i class="fa fa-camera-retro"></i>
-										Gallery</a></li>
-								<li><a href="research.jsp"><i class="fa fa-book"></i>
-										Research </a></li>
-
-								<li><a href="pedagogy.jsp"><i
-										class="fa fa-graduation-cap"></i> Pedagogy</a></li>
-								<li><a href="calendar.jsp"><i class="fa fa-calendar"></i>
-										Calendar</a></li>
+								<li class="principale"><a
+									href="SimLogPan"><i
+										class="fa fa-home"></i> Home</a></li>
+								<li class="principale"><a
+									href="GalleryBack"><i
+										class="fa fa-camera-retro"></i> Gallery</a></li>
+								<li class="principale"><a href="research.jsp"><i class="fa fa-book"></i>
+										Research</a>
+								</li>
+								<li class="principale"><a href="Pedagogy"><i
+										class="fa fa-graduation-cap"></i> Pedagogy </a>
+									
+</li>
+								<li class="principale"><a href="calendar.jsp"><i
+										class="fa fa-calendar"></i> Calendar</a></li>
+								<li class="principale"><a href="Logs"><i
+										class="fa fa-file-text"></i> Logs</a></li>
+								<li class="principale"><a href="rechercheAvancee.jsp"><i
+										class="fa fa-search"></i> Advanced Search</a></li>		
 							</ul>
 						</div>
 					</div>
@@ -199,7 +206,7 @@
 										<input type="submit" name="remove" value="Remove"
 											class="btn btn-primary" style="margin-top: 10px"
 											onclick="showModal()" /> <input type="submit" name="add"
-											value="Add" class="btn btn-primary" style="margin-top: 10px"
+											value="Add" class="btn btn-primary" style="margin-top: 14px"
 											onclick="showModal()" /><br>
 										
 										<br>
@@ -238,10 +245,10 @@
 											</c:forEach>
 										</select><br>
 										<input type="submit" name="removestu" value="Remove"
-											class="btn btn-primary" style="margin-top: 10px"
+											class="btn btn-primary" style="margin-top: 11px"
 											onclick="showModal()" />
 										<input type="submit" name="addstu" value="Add"
-											class="btn btn-primary" style="margin-top: 10px"
+											class="btn btn-primary" style="margin-top: 11px"
 											onclick="showModal()" />
 									</div>
 								</form>
@@ -314,14 +321,12 @@
 											 id="lessonUrl" /><br>	
 
 										 <br> <input type="submit" name="absent" value="Mark as absent"
-											class="btn btn-primary" style="margin-top: 15px"
+											class="btn btn-primary" style="margin-top: 14px"
 											onclick="showModal()" />
 											<input type="submit" name="upMark" value="Update Mark"
-											class="btn btn-primary" style="margin-top: 15px"
+											class="btn btn-primary" style="margin-top: 14px"
 											onclick="showModal()" /><br>
 									</div>
-									<br>
-									<br>
 									<br>
 									<br>
 								</form>
@@ -405,6 +410,30 @@
 				readURL(this);
 			});
 		</script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var toggled = true;
+			var liSize = $(".principale").width();
+
+			$("#menu_toggle").click(function() {
+				$("#logosmall").toggle();
+				$("#logobig").toggle();
+				if (toggled) {
+					$(".principale").width(65);
+				} else {
+					$(".principale").width(liSize);
+				}
+				toggled = !toggled;
+			});
+
+			$(".principale").click(function() {
+				if (!toggled) {
+					$(this).width(70);
+				}
+			});
+
+		});
+	</script>
 </body>
 
 </html>
